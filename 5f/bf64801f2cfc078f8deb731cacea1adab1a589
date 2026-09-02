@@ -1,0 +1,68 @@
+FORUM_POST.md
+  s_33c6c7a35bd0ca::t_a43c51bca08407 25,30-32
+  s_33c6c7a35bd0ca::t_f7eabe2b567b26 26-29,33
+src/census.cpp
+  s_33c6c7a35bd0ca::t_29d03a4d0e21db 1-93
+CMakeLists.txt
+  s_33c6c7a35bd0ca::t_9953a78c26f6e4 18-21,33-37
+  s_33c6c7a35bd0ca::t_29d03a4d0e21db 22-25
+  s_80d4bd2d930f75::t_222a37d03cab6d 38
+src/research.hpp
+  s_33c6c7a35bd0ca::t_6ae98bd75f62ab 1-163,169-325,403-497
+  s_33c6c7a35bd0ca::t_08c7fe4323eb8c 164-168
+  s_33c6c7a35bd0ca::t_29d03a4d0e21db 326-402
+README.md
+  s_33c6c7a35bd0ca::t_f7eabe2b567b26 39-44,61,142,144-147,149,151-154,156,158-160,162,164-168,170,172-175,177,179-182,218-219,225
+  s_33c6c7a35bd0ca::t_a43c51bca08407 87-92,184,186-190,192,194-199,226-228
+docs/STATE_OF_THE_ART.md
+  s_33c6c7a35bd0ca::t_a43c51bca08407 75,77
+  s_33c6c7a35bd0ca::t_f7eabe2b567b26 70-71,73-74,76
+examples/research_pipeline.cpp
+  s_33c6c7a35bd0ca::t_04d2309614efff 25-26,32-35
+  s_33c6c7a35bd0ca::t_9953a78c26f6e4 1-24,27-31,36
+src/infragauge.hpp
+  s_33c6c7a35bd0ca::t_f7eabe2b567b26 8
+  s_33c6c7a35bd0ca::t_6ae98bd75f62ab 108,174
+  s_33c6c7a35bd0ca::t_08c7fe4323eb8c 175-177,434-447
+  s_33c6c7a35bd0ca::t_04d2309614efff 449,508-549
+  s_33c6c7a35bd0ca::t_ff3e6e9e271fa7 448
+  s_33c6c7a35bd0ca::t_7b297231058043 450
+tests/research.cpp
+  s_33c6c7a35bd0ca::t_29d03a4d0e21db 139-153,158-159
+  s_33c6c7a35bd0ca::t_04d2309614efff 125-138,157
+  s_33c6c7a35bd0ca::t_c8f113ebca8638 51-56
+  s_33c6c7a35bd0ca::t_9953a78c26f6e4 1-50,57-124,154-156,160-165
+.github/workflows/ci.yml
+  s_33c6c7a35bd0ca::t_879b318bb0857a 27-29
+  s_33c6c7a35bd0ca::t_9953a78c26f6e4 24-25
+  s_33c6c7a35bd0ca::t_29d03a4d0e21db 26,33-35
+docs/research-milestones.md
+  s_33c6c7a35bd0ca::t_04d2309614efff 2-74
+  s_33c6c7a35bd0ca::t_a43c51bca08407 1,75-103
+data/fiber-census-n4.json
+  s_33c6c7a35bd0ca::t_fbea437ba8e0e0 1-25
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.0",
+  "base_commit_sha": "5fbf64801f2cfc078f8deb731cacea1adab1a589",
+  "prompts": {},
+  "sessions": {
+    "s_33c6c7a35bd0ca": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a061ab-263d-7860-b882-4955b6e0b240",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "Nick Sweeting <git@sweeting.me>"
+    },
+    "s_80d4bd2d930f75": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a05e81-8ef7-7ee1-b52f-f712a0d60079",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "Nick Sweeting <git@sweeting.me>"
+    }
+  }
+}
