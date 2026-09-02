@@ -5,6 +5,7 @@
 #include <complex>
 #include <cstddef>
 #include <cstdint>
+#include <functional>
 #include <map>
 #include <limits>
 #include <numeric>
@@ -104,6 +105,7 @@ public:
     }
 
     uint32_t vertex_count() const { return vertex_count_; }
+    const std::set<Edge>& edges() const { return edges_; }
     bool adjacent(Vertex u, Vertex v) const {
         if (u >= vertex_count_ || v >= vertex_count_ || u == v) return false;
         return edges_.contains(canonical_edge(u, v));
@@ -169,6 +171,10 @@ public:
 
     uint16_t order() const { return static_cast<uint16_t>(group_.size()); }
     uint16_t fiber_size() const { return static_cast<uint16_t>(group_.front().size()); }
+    const std::vector<Permutation>& elements() const { return group_; }
+    const std::vector<uint16_t>& multiplication_data() const { return multiplication_; }
+    const std::vector<uint16_t>& inverse_data() const { return inverses_; }
+    const std::vector<uint16_t>& action_data() const { return action_; }
     uint16_t multiply(uint16_t left, uint16_t right) const {
         require_group_index(left);
         require_group_index(right);
@@ -425,6 +431,23 @@ public:
         return result;
     }
 
+    // One representative of the physical subdivision orbit. The fresh frame
+    // is fixed to identity, so callers that quotient gauge immediately never
+    // need to materialize |Aut(F)| equivalent connection copies.
+    FiberBundleConnection subdivide_edge_representative(
+        Vertex from, Vertex to, Vertex midpoint) const {
+        const auto total_transport = edge_transport(from, to);
+        FiberBundleConnection result(base_.subdivide(from, to, midpoint), fiber_);
+        for (const auto [u, v] : base_.edges()) {
+            if (canonical_edge(u, v) != canonical_edge(from, to)) {
+                result.set_transport(u, v, edge_transport(u, v));
+            }
+        }
+        result.set_transport(from, midpoint, Permutation::identity(fiber_.vertex_count()));
+        result.set_transport(midpoint, to, total_transport);
+        return result;
+    }
+
 private:
     BaseGraph base_;
     FiberGraph fiber_;
@@ -480,6 +503,48 @@ public:
         return static_cast<std::size_t>(std::count_if(
             amplitudes_.begin(), amplitudes_.end(),
             [=](const auto amplitude) { return std::abs(amplitude) > tolerance; }));
+    }
+
+    // The coefficient matrix for a subdivision orbit is monomial: each first
+    // transport determines exactly one second transport. Its nonzero entry
+    // magnitudes are therefore the exact Schmidt singular values. Computing
+    // them from the stored amplitudes keeps this diagnostic honest if the
+    // construction changes later.
+    std::vector<double> schmidt_spectrum(double tolerance = 1e-12) const {
+        std::vector<double> spectrum;
+        std::vector<std::size_t> column_counts(group_.size(), 0);
+        for (std::size_t row = 0; row < group_.size(); ++row) {
+            std::size_t row_count = 0;
+            for (std::size_t column = 0; column < group_.size(); ++column) {
+                const auto magnitude = std::abs(amplitudes_[index(row, column)]);
+                if (magnitude <= tolerance) continue;
+                ++row_count;
+                ++column_counts[column];
+                spectrum.push_back(magnitude);
+            }
+            if (row_count != 1) {
+                throw std::logic_error("subdivision state is no longer a monomial orbit matrix");
+            }
+        }
+        if (std::any_of(column_counts.begin(), column_counts.end(), [](const auto count) {
+                return count != 1;
+            })) {
+            throw std::logic_error("subdivision orbit matrix is not bijective");
+        }
+        std::sort(spectrum.begin(), spectrum.end(), std::greater<>());
+        return spectrum;
+    }
+
+    double best_rank_discarded_norm(std::size_t retained_rank) const {
+        const auto spectrum = schmidt_spectrum();
+        if (retained_rank > spectrum.size()) {
+            throw std::out_of_range("retained Schmidt rank exceeds exact rank");
+        }
+        double discarded = 0.0;
+        for (std::size_t i = retained_rank; i < spectrum.size(); ++i) {
+            discarded += spectrum[i] * spectrum[i];
+        }
+        return discarded;
     }
 
     SubdivisionWavefunction gauge_transform_midpoint(const Permutation& frame) const {

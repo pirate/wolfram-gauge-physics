@@ -36,6 +36,12 @@ adds rewrite-compatible gauge primitives that are currently missing between thos
 | Exact connection quotient | Gauge-fix a spanning forest and canonicalize chord holonomies | Invariant under arbitrary local frame changes |
 | GPU representation | Dense `uint16` multiplication, inverse, and action tables | Exact CPU/Metal differential check |
 | Multiway base evolution | Pinned official C++ rewriting engine | Exact isomorphism-aware quotient exploration |
+| Fiber inference | Exact canonical classes of induced vertex links | A wheel derives a square link and its order-eight symmetry |
+| Gauge-aware rewrite identity | Base relabeling plus local-frame quotient | Eight subdivision labelings register as one physical child |
+| Generalized fibers | Non-isomorphic fibers and partial induced embeddings | Missing horizontal lifts remain explicitly undefined |
+| Dynamics census | Reversible maps preserving identity, inversion, and conjugation | Eight exact candidates for `Aut(C4)` |
+| Causal curvature | Loop sectors compared with causal event reachability | Reports propagated and off-causal changes separately |
+| Compression diagnostic | Exact Schmidt spectrum and discarded-norm bound | The `D4` subdivision orbit is rank eight and flat-spectrum |
 
 The implementation is generic over finite fiber graphs. It does **not** declare `U(1)`, `SU(2)`,
 or another Lie group as its microscopic starting point. Different fibers derive different finite
@@ -52,6 +58,7 @@ cmake -S . -B build -DCMAKE_BUILD_TYPE=Release
 cmake --build build -j
 ctest --test-dir build -L wgphysics --output-on-failure
 ./build/fiber_demo
+./build/research_demo
 ```
 
 Expected core output:
@@ -75,6 +82,12 @@ Run a Wolfram-model rule with exact state canonicalization:
   --init '1,2;1,3' \
   --steps 3 \
   --output out/evolution.json
+```
+
+Generate the deterministic small-fiber census:
+
+```bash
+./build/wgphysics_census --output out/fiber-census.json
 ```
 
 ## Meaningful extensions relative to the inspected upstream state
@@ -126,54 +139,64 @@ Raw measurements are in
 
 ## Research program: useful next contributions
 
-### 1. Infer fibers from rewrites
+### 1. Infer fibers from rewrites — first exact prescription implemented
 
-The current fiber graph is explicit. The stronger Wolfram-model result would extract candidate
-fibers from local rule automorphisms, branchlike paths, or repeated neighborhoods in the multiway
-causal graph, then compare the inferred symmetry with `Aut(F)`.
+The code now extracts induced open-link graphs, groups them by exact graph isomorphism, and derives
+their automorphism groups. A wheel exposes a square link with order-eight symmetry. The stronger
+Wolfram-model result is to compare this prescription with local rule automorphisms, branchlike
+paths, and repeated neighborhoods in the multiway causal graph.
 
-### 2. Put connection state inside multiway evolution
+### 2. Put connection state inside multiway evolution — exact subdivision prototype implemented
 
-Extend the official engine's state identity from a bare hypergraph to a base hypergraph plus
-fiber-template IDs and connection sectors. Matching, rewriting, gauge quotienting, event identity,
-causal relations, and CPU/GPU differential tests must remain exact.
+Small uniform-fiber states now have a joint identity under arbitrary base relabeling and local frame
+changes. Gauge-aware subdivision evolution registers eight raw `D4` factorizations as one physical
+child. The next step is embedding this identity in the official engine's arena, match keys, event
+identity, causal relations, and CPU/GPU differential tests.
 
-### 3. Generalize the bundle
+### 3. Generalize the bundle — partial non-isomorphic lifts implemented
 
-Support non-isomorphic fibers, partial horizontal lifts, twisted bundles, directed/ribbon fibers,
-hypergraph fibers, higher connections, and dynamically changing fiber type. These cases are closer
-to InfraGaugeTheory's general total-space/projection formulation than the current uniform complete
-fiber specialization.
+The code supports different graph fibers at different base vertices and injective partial induced
+embeddings as horizontal lifts; undefined lifts fail explicitly. Twisted bundles, directed/ribbon
+fibers, hypergraph fibers, higher connections, and dynamically changing fiber type remain open.
 
-### 4. Search for dynamics instead of inserting forces
+### 4. Search for dynamics instead of inserting forces — finite census implemented
 
-Enumerate local, reversible, gauge-equivariant rewrite amplitudes. Reject rule families unless they
-produce propagating curvature disturbances, stable localized sectors, reproducible scattering,
-and bound composites without particle names or potentials in the microscopic rule.
+The first census exhaustively enumerates reversible maps on the derived finite group and keeps only
+updates preserving identity, edge-orientation inversion, and conjugation equivariance. `Aut(C4)`
+has eight such maps. They remain candidates: reject them unless coupled evolution produces
+propagating curvature disturbances, stable localized sectors, reproducible scattering, and bound
+composites without microscopic particle names or potentials.
 
-### 5. Connect gauge propagation to causal propagation
+### 5. Connect gauge propagation to causal propagation — analyzer implemented
 
-Measure whether changes in local holonomy track causal edges of rewrite events, whether propagation
-speeds converge under refinement, and whether different foliations produce gauge-equivalent
-observables.
+An exact analyzer now measures changed holonomy sectors reachable from declared disturbances along
+causal event edges, maximum causal depth, off-causal changes, and causal alignment. Automatic
+event-sector attachment, propagation-speed convergence under refinement, and comparison of
+gauge-equivalent observables across foliations remain next.
 
-### 6. Compress amplitudes without silently pruning physics
+### 6. Compress amplitudes without silently pruning physics — first obstruction measured
 
-Represent local rewrite maps as tensors and evaluate exact contraction or controlled tensor-network
-compression. Any approximation must be calibrated against complete small multiway closures and
-report discarded norm or observable error.
+The elementary `D4` subdivision orbit has an exact flat rank-eight Schmidt spectrum: retaining rank
+four necessarily discards half its norm. This rules out a free low-rank shortcut for that primitive.
+The next step is to evaluate multi-event contraction graphs and permit controlled tensor-network
+compression only where spectra decay, always reporting discarded norm and observable error.
 
-### 7. Integrate the GPU data path
+### 7. Integrate the GPU data path — physical-only CPU path implemented
 
-Fuse match, fiber extension, gauge quotient, affected-cycle update, canonical signature, dedup, and
-queue insertion in the rewriting engine's persistent CUDA kernel. Do not materialize fresh-frame
-gauge copies in device memory.
+Gauge-aware evolution now fixes the fresh frame and constructs one physical subdivision
+representative directly, while retaining the raw orbit size as event metadata. It no longer
+materializes `|Aut(F)|` copies before deduplication. Dense multiplication, inverse, and action table
+buffers are exposed as the device ABI. The next step is to fuse match, affected-cycle update,
+canonical signature, dedup, and queue insertion in the rewriting engine's persistent CUDA kernel.
 
-### 8. Publish a rule-and-fiber census
+### 8. Publish a rule-and-fiber census — first exact dataset published
 
-For small rules and fiber graphs, record automorphism groups, flat/curved sector counts, rewrite
-orbit counts, causal propagation, effective dimension, persistence, and computational cost. A
-negative-result corpus would be as useful as isolated attractive examples.
+The committed dataset covers all 18 unlabeled simple graph fibers with one through four vertices.
+It records automorphism-group order and commutativity, triangle curvature-sector count, admissible
+local-dynamics count when the exhaustive search is bounded, subdivision orbit reduction, exact
+Schmidt rank, and half-rank discarded norm. The next census should cross these fibers with small
+hypergraph rules and add causal propagation, effective dimension, persistence, and computational
+cost—including negative results.
 
 ## Questions for the Wolfram community
 
@@ -192,11 +215,17 @@ negative-result corpus would be as useful as isolated attractive examples.
 
 - [`src/infragauge.hpp`](src/infragauge.hpp) — fiber graphs, derived automorphisms, connections,
   holonomy, exact gauge quotient, rewrite extensions, and quantum orbit amplitudes.
+- [`src/research.hpp`](src/research.hpp) — inferred link fibers, gauge-aware evolution identity,
+  partial lifts, dynamics census, causal-curvature analysis, and finite research diagnostics.
 - [`src/main.cpp`](src/main.cpp) — exact multiway rewrite export harness.
 - [`tests/infragauge.cpp`](tests/infragauge.cpp) — finite differential/invariance tests.
 - [`docs/infragauge-foundations.md`](docs/infragauge-foundations.md) — mathematical construction.
 - [`docs/gpu-execution.md`](docs/gpu-execution.md) — persistent-kernel integration plan.
 - [`docs/STATE_OF_THE_ART.md`](docs/STATE_OF_THE_ART.md) — related work and contribution boundary.
+- [`docs/research-milestones.md`](docs/research-milestones.md) — exact definitions, evidence, and
+  remaining limitations for milestones 1–8.
+- [`data/fiber-census-n4.json`](data/fiber-census-n4.json) — deterministic census of every unlabeled
+  simple fiber graph through four vertices.
 - [`FORUM_POST.md`](FORUM_POST.md) — concise draft for a Wolfram Community introduction.
 
 ## Build without the rewrite-engine dependency

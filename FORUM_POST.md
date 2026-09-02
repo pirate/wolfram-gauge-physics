@@ -22,6 +22,15 @@ holonomies, then canonicalize their simultaneous conjugacy class. For a square f
 derives the nonabelian eight-element dihedral group and tests flat versus curved sectors without a
 named continuum gauge group.
 
+A second pass now implements the eight listed research milestones as finite tests: exact fiber
+candidate inference from vertex links, gauge-aware rewrite-state identity, non-isomorphic fibers
+with partial lifts, an exhaustive census of reversible conjugation-equivariant local updates, and a
+causal-curvature reachability score. The first compression result is negative but useful: the
+elementary `D4` subdivision state has a flat rank-eight Schmidt spectrum, so halving the rank must
+discard half the norm. The execution path now constructs one gauge-fixed physical child without
+materializing the eight frame copies, and a reproducible dataset covers all 18 unlabeled simple
+fiber graphs through four vertices.
+
 The repeated group operations compile to small integer lookup tables. A differential MLX/Metal
 probe on an M1 Max reached about 3.15 billion local-frame transforms/s and 24.1 billion group
 multiplications/s for length-eight paths, though this is deliberately reported only as a kernel

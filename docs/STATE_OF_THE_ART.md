@@ -67,13 +67,14 @@ rewrite evolution, with strict treatment of gauge copies.
 
 | Layer | Public upstream capability | Implemented here | Still open |
 |---|---|---|---|
-| Fiber | Total graph, projection, fiber predicates | Exact `Aut(F)` derivation and compact tables | Infer `F` from rewrite/multiway structure |
-| Connection | Connection subgraph and horizontal lifts | Explicit transport maps and local-frame action | General partial and non-isomorphic fibers |
+| Fiber | Total graph, projection, fiber predicates | Exact `Aut(F)` derivation, compact tables, and exact open-link inference | Compare rule, link, and multiway-derived fibers |
+| Connection | Connection subgraph and horizontal lifts | Explicit transport maps, local-frame action, non-isomorphic fibers, and partial lifts | Twists, hypergraph fibers, dynamic fiber type |
 | Curvature | Holonomy matrices and flatness | Conjugacy observables and exact gauge signature | Dynamical curvature action from rewrites |
-| Rewriting | Exact bare-hypergraph multiway evolution | Gauge-compatible edge subdivision | Arbitrary hyperedge rewrite transport |
-| Quantum | Multiway structure; separate community work | Normalized fresh-fiber orbit isometry | General complex amplitudes and interference |
-| Performance | Persistent CUDA rewrite engine | `uint16` group tables and verified Metal probe | End-to-end fiber-aware CUDA integration |
-| Physics | Conceptual gauge emergence program | Falsifiable finite invariants | Continuum limit, matter, forces, phenomenology |
+| Rewriting | Exact bare-hypergraph multiway evolution | Gauge-compatible edge subdivision and joint physical state identity | Embed identity into upstream arena and arbitrary rules |
+| Quantum | Multiway structure; separate community work | Normalized fresh-fiber orbit isometry and exact Schmidt bound | Multi-event complex amplitudes and interference |
+| Performance | Persistent CUDA rewrite engine | `uint16` group tables, physical-only subdivision, and verified Metal probe | End-to-end fiber-aware CUDA integration |
+| Physics | Conceptual gauge emergence program | Finite equivariant dynamics census and causal-curvature metric | Continuum limit, matter, forces, phenomenology |
+| Reproducibility | Public demonstrations and technical documents | Deterministic 18-fiber census with explicit computation bounds | Rule-by-fiber propagation census |
 
 ## Claim discipline
 

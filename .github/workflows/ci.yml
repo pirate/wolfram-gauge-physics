@@ -21,7 +21,15 @@ jobs:
         run: ctest --test-dir build -L wgphysics --output-on-failure
       - name: Fiber demo
         run: ./build/fiber_demo
+      - name: Research milestones demo
+        run: ./build/research_demo
+      - name: Deterministic fiber census
+        run: |
+          ./build/wgphysics_census --output out/fiber-census.json
+          diff -u data/fiber-census-n4.json out/fiber-census.json
       - name: Multiway smoke test
         run: ./build/wgphysics_evolve --steps 2 --output out/smoke.json
       - name: Validate JSON output
-        run: python3 -m json.tool out/smoke.json > /dev/null
+        run: |
+          python3 -m json.tool out/smoke.json > /dev/null
+          python3 -m json.tool out/fiber-census.json > /dev/null

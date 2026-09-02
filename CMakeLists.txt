@@ -15,12 +15,26 @@ add_executable(fiber_demo examples/fiber_rewrite.cpp)
 target_link_libraries(fiber_demo PRIVATE wgphysics)
 target_compile_options(fiber_demo PRIVATE -Wall -Wextra -Wpedantic)
 
+add_executable(research_demo examples/research_pipeline.cpp)
+target_link_libraries(research_demo PRIVATE wgphysics)
+target_compile_options(research_demo PRIVATE -Wall -Wextra -Wpedantic)
+
+add_executable(wgphysics_census src/census.cpp)
+target_link_libraries(wgphysics_census PRIVATE wgphysics)
+target_compile_options(wgphysics_census PRIVATE -Wall -Wextra -Wpedantic)
+
 enable_testing()
 add_executable(infragauge_test tests/infragauge.cpp)
 target_link_libraries(infragauge_test PRIVATE wgphysics)
 target_compile_options(infragauge_test PRIVATE -Wall -Wextra -Wpedantic)
 add_test(NAME infragauge COMMAND infragauge_test)
 set_tests_properties(infragauge PROPERTIES LABELS wgphysics)
+
+add_executable(research_test tests/research.cpp)
+target_link_libraries(research_test PRIVATE wgphysics)
+target_compile_options(research_test PRIVATE -Wall -Wextra -Wpedantic)
+add_test(NAME research COMMAND research_test)
+set_tests_properties(research PROPERTIES LABELS wgphysics)
 
 if(WGPHYSICS_BUILD_REWRITE_HARNESS)
   include(FetchContent)
