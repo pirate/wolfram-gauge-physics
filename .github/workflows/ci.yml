@@ -1,0 +1,27 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  build-and-test:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, macos-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Configure
+        run: cmake -S . -B build -DCMAKE_BUILD_TYPE=Release
+      - name: Build
+        run: cmake --build build -j 2
+      - name: Exact invariance tests
+        run: ctest --test-dir build -L wgphysics --output-on-failure
+      - name: Fiber demo
+        run: ./build/fiber_demo
+      - name: Multiway smoke test
+        run: ./build/wgphysics_evolve --steps 2 --output out/smoke.json
+      - name: Validate JSON output
+        run: python3 -m json.tool out/smoke.json > /dev/null

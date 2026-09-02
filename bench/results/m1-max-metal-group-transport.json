@@ -1,0 +1,34 @@
+{
+  "date": "2026-09-02",
+  "hardware": "Apple M1 Max, 32-core GPU",
+  "backend": "MLX custom Metal kernel",
+  "fiber": "cycle graph C4",
+  "derived_group": "Aut(C4), order 8",
+  "path_length": 8,
+  "verification": "exact CPU table equality at every measured size",
+  "measurements": [
+    {
+      "items": 1000,
+      "frame_transform_ms": 0.27454374994704267,
+      "path_transport_ms": 0.28176718751637964
+    },
+    {
+      "items": 10000,
+      "frame_transform_ms": 0.2558994749051635,
+      "path_transport_ms": 0.26537603753240546
+    },
+    {
+      "items": 100000,
+      "frame_transform_ms": 0.2747057375017903,
+      "path_transport_ms": 0.2808885375998216
+    },
+    {
+      "items": 1000000,
+      "frame_transform_ms": 0.3177260252414271,
+      "frame_transforms_per_second": 3147365719.3808427,
+      "path_transport_ms": 0.3326354250020813,
+      "group_multiplies_per_second": 24050354829.014206
+    }
+  ],
+  "scope": "kernel microbenchmark only; excludes matching, rewriting, state canonicalization, deduplication, queueing, and readback"
+}
