@@ -27,6 +27,9 @@ if(WGPHYSICS_BUILD_REWRITE_HARNESS)
   if(POLICY CMP0169)
     cmake_policy(SET CMP0169 OLD)
   endif()
+  if(POLICY CMP0097)
+    cmake_policy(SET CMP0097 NEW)
+  endif()
 
   set(BUILD_TESTS OFF CACHE BOOL "" FORCE)
   set(BUILD_EXAMPLES OFF CACHE BOOL "" FORCE)
@@ -41,6 +44,10 @@ if(WGPHYSICS_BUILD_REWRITE_HARNESS)
     GIT_REPOSITORY https://github.com/WolframInstitute/HypergraphRewritingEngine.git
     GIT_TAG 03fe60ddf338983060b6bb4b23e8b4b5d7ae7337
     GIT_SHALLOW TRUE
+    # The engine sources do not require its documentation-tool submodules.
+    # Skipping them also avoids nested example remotes that use SSH-only URLs.
+    GIT_SUBMODULES ""
+    GIT_SUBMODULES_RECURSE FALSE
   )
 
   # The pinned upstream top-level file currently assumes CMAKE_SOURCE_DIR. Patch
