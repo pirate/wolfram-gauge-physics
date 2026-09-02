@@ -59,6 +59,19 @@ The eventual high-performance integration should add fiber-template and connecti
 engine's canonical state itself. Only then can quotient exploration safely happen before raw
 provenance is expanded.
 
+## Dynamics boundary
+
+The runner can apply an exact unary holonomy map after subdivision, but the complete `D4` census
+shows that every reversible, flatness-preserving, inversion- and conjugation-equivariant unary map
+fixes all physical conjugacy sectors. Apparent changes of based holonomy are gauge-representative
+motion, not curvature propagation. See `causal-dynamics.md`.
+
+The implemented two-cell Hurwitz exchange escapes this no-go by coupling adjacent cells while
+remaining reversible and gauge-covariant. It is not yet attached to engine events: doing so
+correctly now builds on `evolve_cell_product`, which threads first-class `OrientedCellComplex` face
+boundaries through every raw spatial event. What remains is a distinct gauge-event type whose
+causal dependencies are derived from its explicit face/link read and write sets.
+
 ## Measured scaling
 
 On the recorded M1 Max run, depth four produced 436 raw states, 435 events, and 336 causal edges but

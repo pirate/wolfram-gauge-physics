@@ -19,6 +19,10 @@ add_executable(research_demo examples/research_pipeline.cpp)
 target_link_libraries(research_demo PRIVATE wgphysics)
 target_compile_options(research_demo PRIVATE -Wall -Wextra -Wpedantic)
 
+add_executable(cell_dynamics_demo examples/cell_dynamics.cpp)
+target_link_libraries(cell_dynamics_demo PRIVATE wgphysics)
+target_compile_options(cell_dynamics_demo PRIVATE -Wall -Wextra -Wpedantic)
+
 add_executable(wgphysics_census src/census.cpp)
 target_link_libraries(wgphysics_census PRIVATE wgphysics)
 target_compile_options(wgphysics_census PRIVATE -Wall -Wextra -Wpedantic)
@@ -116,4 +120,12 @@ if(WGPHYSICS_BUILD_REWRITE_HARNESS)
     "${hypergraph_rewriting_engine_BINARY_DIR}/generated"
   )
   target_compile_options(wgphysics_product_census PRIVATE -Wall -Wextra -Wpedantic)
+
+  add_executable(wgphysics_dynamics_census src/dynamics_census.cpp)
+  target_link_libraries(wgphysics_dynamics_census PRIVATE hypergraph wgphysics)
+  target_include_directories(wgphysics_dynamics_census PRIVATE
+    "${hypergraph_rewriting_engine_SOURCE_DIR}/common/include"
+    "${hypergraph_rewriting_engine_BINARY_DIR}/generated"
+  )
+  target_compile_options(wgphysics_dynamics_census PRIVATE -Wall -Wextra -Wpedantic)
 endif()

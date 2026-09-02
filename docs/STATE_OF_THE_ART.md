@@ -73,11 +73,11 @@ rewrite evolution, with strict treatment of gauge copies.
 | Fiber | Total graph, projection, fiber predicates | Exact `Aut(F)` derivation, compact tables, and exact open-link inference | Compare rule, link, and multiway-derived fibers |
 | Connection | Connection subgraph and horizontal lifts | Explicit transport maps, local-frame action, non-isomorphic fibers, and partial lifts | Twists, hypergraph fibers, dynamic fiber type |
 | Curvature | Holonomy matrices and flatness | Conjugacy observables and exact gauge signature | Dynamical curvature action from rewrites |
-| Rewriting | Exact bare-hypergraph multiway evolution | Strict event-provenance subdivision and joint physical state identity | Embed identity into upstream arena and add proven morphisms |
+| Rewriting | Exact bare-hypergraph multiway evolution | Strict event-provenance subdivision, explicit oriented faces, and joint physical state identity | Carry cell incidence in upstream arena and add proven morphisms |
 | Quantum | Multiway structure; separate community work | Normalized fresh-fiber orbit isometry and exact Schmidt bound | Multi-event complex amplitudes and interference |
 | Performance | Persistent CUDA rewrite engine | `uint16` group tables, physical-only subdivision, and verified Metal probe | End-to-end fiber-aware CUDA integration |
-| Physics | Conceptual gauge emergence program | Finite equivariant dynamics census and causal-curvature metric | Continuum limit, matter, forces, phenomenology |
-| Reproducibility | Public demonstrations and technical documents | Deterministic 18-fiber and subdivision-rule product censuses | Multi-rule propagation and localization census |
+| Physics | Conceptual gauge emergence program | Unary `D4` no-go census, reversible two-cell Hurwitz transport, and causal-curvature metric | Engine-integrated cell complex, continuum limit, matter, forces, phenomenology |
+| Reproducibility | Public demonstrations and technical documents | Deterministic 18-fiber, subdivision-product, and complete unary `D4` dynamics censuses | Multi-rule propagation and localization census |
 
 ## Claim discipline
 

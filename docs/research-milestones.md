@@ -47,9 +47,15 @@ retains only maps that:
 - commute with inversion, so reversing an oriented edge remains consistent;
 - commute with conjugation, so the update is independent of the local fiber frame.
 
-For `Aut(C4)`, eight maps pass. This is a finite candidate-rule census, not a force law. Candidates
-still have to be coupled locally across a base graph and rejected unless they show robust propagation,
-localized sectors, scattering, or binding.
+For `Aut(C4)`, eight maps pass. A second exhaustive pass computes their induced action on the five
+conjugacy sectors: all eight fix every sector. They can change a based holonomy representative, but
+they cannot create physical unary curvature dynamics. This negative result is committed as
+`data/d4-cell-dynamics-census.json`.
+
+The first nontrivial next primitive is also implemented: the two-cell Hurwitz move
+`(A,B) -> (ABA^-1,A)`. It is exactly reversible, commutes with local frame changes, preserves `AB`,
+and moves a nontrivial conjugacy sector between neighboring cells. It still needs explicit oriented
+cell-boundary state inside engine evolution before it can be judged as a causal multiway law.
 
 ## 5. Curvature changes measured against causality
 

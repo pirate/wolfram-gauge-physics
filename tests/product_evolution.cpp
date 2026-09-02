@@ -2,7 +2,6 @@
 
 #include <hypergraph/parallel_evolution.hpp>
 #include <hypergraph/pattern.hpp>
-
 #include <iostream>
 #include <stdexcept>
 #include <vector>
@@ -47,32 +46,99 @@ int main() {
                     [](const auto id) { return id != std::numeric_limits<std::size_t>::max(); }),
                 "a reachable raw engine state has no product identity");
         require(result.physical_states.size() == 3,
-                "triangle subdivisions should quotient to one physical state at each depth");
+                "triangle subdivisions should quotient to one physical state at "
+                "each depth");
         require(!result.causal_edges.empty(), "actual engine run produced no causal edges");
         require(result.causal_curvature.changed_events == 0 &&
                     result.causal_curvature.causal_alignment == 1.0,
                 "transport-preserving subdivision changed its curvature sector");
-        require(std::all_of(result.events.begin(), result.events.end(), [](const auto& event) {
-                    return !event.curvature_sector_changed && event.gauge_orbit_size == 8 &&
-                           std::abs(event.gauge_orbit_size *
-                                        event.amplitude_per_labeled_factorization *
-                                        event.amplitude_per_labeled_factorization -
-                                    1.0) < 1e-12;
-                }),
-                "an engine event has a spurious curvature change or non-isometric gauge orbit");
+        require(std::all_of(result.events.begin(), result.events.end(),
+                            [](const auto& event) {
+                                return !event.curvature_sector_changed &&
+                                       event.gauge_orbit_size == 8 &&
+                                       std::abs(event.gauge_orbit_size *
+                                                    event.amplitude_per_labeled_factorization *
+                                                    event.amplitude_per_labeled_factorization -
+                                                1.0) < 1e-12;
+                            }),
+                "an engine event has a spurious curvature change or non-isometric "
+                "gauge orbit");
+
+        const BaseGraph two_cell_base(
+            {0, 1, 2, 3}, {{0, 1}, {1, 2}, {2, 0}, {1, 3}, {3, 0}});
+        const wgphysics::research::OrientedCellComplex two_cell_complex(
+            two_cell_base, {{0, 1, 2, 0}, {1, 3, 0, 1}});
+        FiberBundleConnection two_cell_connection(two_cell_base, fiber);
+        two_cell_connection.set_transport(2, 0, Permutation({1, 2, 3, 0}));
+        hypergraph::Hypergraph cell_graph;
+        cell_graph.set_state_canonicalization_mode(
+            hypergraph::StateCanonicalizationMode::None);
+        hypergraph::ParallelEvolutionEngine cell_engine(&cell_graph, 1);
+        cell_engine.set_explore_from_canonical_states_only(false);
+        cell_engine.add_rule(
+            hypergraph::make_rule(0).lhs({0, 1}).rhs({0, 2}).rhs({2, 1}).build());
+        cell_engine.evolve({{0, 1}, {1, 2}, {2, 0}, {1, 3}, {3, 0}}, 1);
+        const auto cell_result = evolve_cell_product(
+            cell_graph, 0, {two_cell_complex, two_cell_connection});
+        require(cell_result.events.size() == cell_graph.num_published_events() &&
+                    cell_result.causal_curvature.changed_events == 0,
+                "explicit-cell engine closure lost an event or changed curvature");
+        require(std::all_of(
+                    cell_result.physical_states.begin(), cell_result.physical_states.end(),
+                    [](const auto& state) {
+                        return state.complex.faces().size() == 2 &&
+                               state.complex.base().edges() == state.connection.base().edges();
+                    }),
+                "explicit face incidence drifted from an engine product state");
+        const auto shared_subdivision = std::find_if(
+            cell_result.events.begin(), cell_result.events.end(), [](const auto& event) {
+                return canonical_edge(event.subdivided_from, event.subdivided_to) ==
+                       Edge{0, 1};
+            });
+        require(shared_subdivision != cell_result.events.end(),
+                "engine closure omitted the shared-cell edge");
+        const auto& shared_output =
+            cell_result.physical_states.at(shared_subdivision->physical_output_state);
+        require(std::all_of(
+                    shared_output.complex.faces().begin(),
+                    shared_output.complex.faces().end(), [&](const auto& face) {
+                        return std::find(face.begin(), face.end(),
+                                         shared_subdivision->fresh_vertex) != face.end();
+                    }),
+                "engine subdivision did not update every incident face boundary");
 
         const auto census = census_subdivision_rule(graph, 0, fiber);
         require(census.initial_curvature_sectors == 5,
                 "D4 product census has the wrong curvature-sector count");
         require(census.physical_product_states_across_sectors == 15,
                 "D4 product census has the wrong joint closure size");
-        require(census.curvature_violations == 0 &&
-                    census.maximum_gauge_orbit_norm_error < 1e-12,
+        require(census.curvature_violations == 0 && census.maximum_gauge_orbit_norm_error < 1e-12,
                 "D4 product census violated curvature preservation or orbit norm");
 
-        const auto framed = initial.gauge_transform({
-            {0, Permutation({0, 3, 2, 1})},
-            {1, Permutation({1, 2, 3, 0})}});
+        const AutomorphismTables tables(fiber.automorphisms());
+        const auto quarter_index = tables.index_of(Permutation({1, 2, 3, 0}));
+        const auto candidates = wgphysics::research::search_local_gauge_dynamics(tables);
+        const auto changing_rule = std::find_if(
+            candidates.begin(), candidates.end(),
+            [&](const auto& rule) { return rule.image[quarter_index] != quarter_index; });
+        require(changing_rule != candidates.end(), "no changing D4 cell dynamics is available");
+        const auto driven = evolve_product(graph, 0, initial, &*changing_rule);
+        require(driven.causal_curvature.changed_events == 0 &&
+                    driven.causal_curvature.source_events == 0 &&
+                    driven.causal_curvature.causal_alignment == 1.0,
+                "a pointwise D4 map spuriously changed a physical curvature sector");
+        const auto dynamics_census = census_cell_dynamics(graph, 0, fiber);
+        require(dynamics_census.size() == 8,
+                "D4 local dynamics census has the wrong candidate count");
+        require(std::all_of(dynamics_census.begin(), dynamics_census.end(),
+                            [](const auto& entry) {
+                                return entry.fixed_curvature_sectors == 5 &&
+                                       entry.changed_events == 0 && entry.off_causal_changes == 0;
+                            }),
+                "a unary D4 candidate escaped the exact physical no-go census");
+
+        const auto framed = initial.gauge_transform(
+            {{0, Permutation({0, 3, 2, 1})}, {1, Permutation({1, 2, 3, 0})}});
         const auto framed_result = evolve_product(graph, 0, framed);
         require(framed_result.physical_states.size() == result.physical_states.size(),
                 "local frame choice changed the product closure size");
@@ -107,12 +173,7 @@ int main() {
         unsupported.set_state_canonicalization_mode(hypergraph::StateCanonicalizationMode::None);
         hypergraph::ParallelEvolutionEngine unsupported_engine(&unsupported, 1);
         unsupported_engine.add_rule(
-            hypergraph::make_rule(0)
-                .lhs({0, 1})
-                .rhs({0, 2})
-                .rhs({2, 3})
-                .rhs({3, 1})
-                .build());
+            hypergraph::make_rule(0).lhs({0, 1}).rhs({0, 2}).rhs({2, 3}).rhs({3, 1}).build());
         unsupported_engine.evolve({{0, 1}, {1, 2}, {2, 0}}, 1);
         bool rejected = false;
         try {
@@ -120,7 +181,9 @@ int main() {
         } catch (const std::invalid_argument&) {
             rejected = true;
         }
-        require(rejected, "unsupported rule morphology was silently assigned a connection update");
+        require(rejected,
+                "unsupported rule morphology was silently assigned a "
+                "connection update");
 
         std::cout << "Official-engine gauge product evolution: PASS\n"
                   << "raw engine states: " << graph.num_published_states() << '\n'

@@ -22,13 +22,17 @@ jobs:
       - name: Fiber demo
         run: ./build/fiber_demo
       - name: Research milestones demo
-        run: ./build/research_demo
+        run: |
+          ./build/research_demo
+          ./build/cell_dynamics_demo
       - name: Deterministic fiber census
         run: |
           ./build/wgphysics_census --output out/fiber-census.json
           diff -u data/fiber-census-n4.json out/fiber-census.json
           ./build/wgphysics_product_census --output out/rule-fiber-census.json
           diff -u data/rule-fiber-census-subdivision.json out/rule-fiber-census.json
+          ./build/wgphysics_dynamics_census --output out/d4-cell-dynamics-census.json
+          diff -u data/d4-cell-dynamics-census.json out/d4-cell-dynamics-census.json
       - name: Multiway smoke test
         run: |
           ./build/wgphysics_evolve --steps 2 --output out/smoke.json
@@ -39,3 +43,4 @@ jobs:
           python3 -m json.tool out/product-smoke.json > /dev/null
           python3 -m json.tool out/fiber-census.json > /dev/null
           python3 -m json.tool out/rule-fiber-census.json > /dev/null
+          python3 -m json.tool out/d4-cell-dynamics-census.json > /dev/null

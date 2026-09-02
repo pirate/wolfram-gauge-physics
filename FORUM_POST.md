@@ -38,6 +38,18 @@ nontrivial starting holonomy is preserved. The code deliberately rejects unsuppo
 morphologies instead of inventing a transport rule. A rule-by-fiber dataset repeats this closure for
 all 18 fibers and every conjugacy sector.
 
+An additional exact dynamics census produced a useful negative result. Although eight reversible,
+identity-fixing, inversion- and conjugation-equivariant maps exist for `Aut(C4)=D4`, every one fixes
+all five gauge-invariant conjugacy sectors. Some move a based holonomy element, but that motion is
+purely between gauge-equivalent representatives. The repository therefore does not present those
+maps as field dynamics. The next implemented primitive couples two adjacent oriented cells through
+the reversible Hurwitz action `(A,B) -> (ABA^-1,A)`, which commutes with local frame changes,
+conserves `AB`, and can actually move curvature from one cell to the other. Integrating it with the
+engine now requires carrying explicit face boundaries through rewrites rather than guessing cells
+from the graph. The repository now carries that exact oriented two-complex state through official
+engine subdivision events with a canonical product identity; wiring independent gauge-event face
+and link read/write sets into causality is the next step.
+
 The repeated group operations compile to small integer lookup tables. A differential MLX/Metal
 probe on an M1 Max reached about 3.15 billion local-frame transforms/s and 24.1 billion group
 multiplications/s for length-eight paths, though this is deliberately reported only as a kernel

@@ -40,6 +40,9 @@ adds rewrite-compatible gauge primitives that are currently missing between thos
 | Gauge-aware rewrite identity | Base relabeling plus local-frame quotient | Eight subdivision labelings register as one physical child |
 | Generalized fibers | Non-isomorphic fibers and partial induced embeddings | Missing horizontal lifts remain explicitly undefined |
 | Dynamics census | Reversible maps preserving identity, inversion, and conjugation | Eight exact candidates for `Aut(C4)` |
+| Unary-dynamics no-go | Exhaustively quotient every `D4` candidate by conjugacy | All eight maps fix all five physical curvature sectors |
+| Two-cell curvature transport | Reversible Hurwitz exchange on adjacent oriented cells | Moves a nontrivial sector while conserving total holonomy |
+| Explicit two-complex product | Oriented faces carried through official engine events and exact identity | Shared-edge subdivision updates every incident face |
 | Causal curvature | Loop sectors compared with causal event reachability | Reports propagated and off-causal changes separately |
 | Compression diagnostic | Exact Schmidt spectrum and discarded-norm bound | The `D4` subdivision orbit is rank eight and flat-spectrum |
 | Engine × gauge product | Connection sectors propagated through actual raw engine events | 16 raw states and 15 events become three physical depth sectors |
@@ -62,6 +65,7 @@ cmake --build build -j
 ctest --test-dir build -L wgphysics --output-on-failure
 ./build/fiber_demo
 ./build/research_demo
+./build/cell_dynamics_demo
 ```
 
 Expected core output:
@@ -92,13 +96,20 @@ Generate the deterministic small-fiber census:
 ```bash
 ./build/wgphysics_census --output out/fiber-census.json
 ./build/wgphysics_product_census --output out/rule-fiber-census.json
+./build/wgphysics_dynamics_census --output out/d4-cell-dynamics-census.json
 ```
 
 Run the exact engine × gauge product evolution:
 
 ```bash
 ./build/wgphysics_product_evolve --steps 2 --output out/product-evolution.json
+./build/wgphysics_product_evolve \
+  --steps 2 --cell-dynamics-index 7 --output out/product-unary-rule-7.json
 ```
+
+The second export deliberately still reports zero physical curvature changes: candidate 7 moves
+six of eight based `D4` elements but, like every admissible unary candidate, fixes all conjugacy
+sectors. This is a reproducible no-go check, not a propagation demo.
 
 ## Meaningful extensions relative to the inspected upstream state
 
@@ -175,9 +186,12 @@ fibers, hypergraph fibers, higher connections, and dynamically changing fiber ty
 
 The first census exhaustively enumerates reversible maps on the derived finite group and keeps only
 updates preserving identity, edge-orientation inversion, and conjugation equivariance. `Aut(C4)`
-has eight such maps. They remain candidates: reject them unless coupled evolution produces
-propagating curvature disturbances, stable localized sectors, reproducible scattering, and bound
-composites without microscopic particle names or potentials.
+has eight such maps, but the exact product census now rejects all eight as physical unary dynamics:
+each fixes all five conjugacy sectors despite sometimes changing a based group element. The first
+nontrivial replacement is a two-cell Hurwitz exchange `(A,B) -> (ABA^-1,A)`, which is reversible,
+gauge-covariant, conserves `AB`, and transports curvature between neighboring cells. Carrying
+oriented face boundaries through engine rewrites is now exact; introducing independent gauge events
+with causal dependencies derived from their face/link read and write sets is the next step.
 
 ### 5. Connect gauge propagation to causal propagation — automatic event attachment implemented
 
@@ -248,7 +262,8 @@ See [Exact engine × gauge product evolution](docs/product-evolution.md) and the
 - [`src/infragauge.hpp`](src/infragauge.hpp) — fiber graphs, derived automorphisms, connections,
   holonomy, exact gauge quotient, rewrite extensions, and quantum orbit amplitudes.
 - [`src/research.hpp`](src/research.hpp) — inferred link fibers, gauge-aware evolution identity,
-  partial lifts, dynamics census, causal-curvature analysis, and finite research diagnostics.
+  oriented cell complexes, partial lifts, dynamics census, causal-curvature analysis, and finite
+  research diagnostics.
 - [`src/main.cpp`](src/main.cpp) — exact multiway rewrite export harness.
 - [`src/product_evolution.hpp`](src/product_evolution.hpp) — strict engine-event morphisms, joint
   product identity, automatic curvature sectors, causal attachment, and rule-by-fiber census.
@@ -257,6 +272,8 @@ See [Exact engine × gauge product evolution](docs/product-evolution.md) and the
 - [`docs/gpu-execution.md`](docs/gpu-execution.md) — persistent-kernel integration plan.
 - [`docs/product-evolution.md`](docs/product-evolution.md) — product-state semantics, supported
   morphism, exactness boundary, causal integration, and measured scaling.
+- [`docs/causal-dynamics.md`](docs/causal-dynamics.md) — exact unary no-go census and reversible
+  two-cell curvature transport.
 - [`docs/STATE_OF_THE_ART.md`](docs/STATE_OF_THE_ART.md) — related work and contribution boundary.
 - [`docs/research-milestones.md`](docs/research-milestones.md) — exact definitions, evidence, and
   remaining limitations for milestones 1–8.
@@ -264,6 +281,8 @@ See [Exact engine × gauge product evolution](docs/product-evolution.md) and the
   simple fiber graph through four vertices.
 - [`data/rule-fiber-census-subdivision.json`](data/rule-fiber-census-subdivision.json) — all 18
   fibers and curvature sectors crossed with the real depth-two subdivision closure.
+- [`data/d4-cell-dynamics-census.json`](data/d4-cell-dynamics-census.json) — every admissible unary
+  `D4` map and its induced physical-sector and causal behavior.
 - [`FORUM_POST.md`](FORUM_POST.md) — concise draft for a Wolfram Community introduction.
 
 ## Build without the rewrite-engine dependency

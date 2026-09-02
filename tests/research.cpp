@@ -20,8 +20,8 @@ std::vector<wgphysics::infragauge::Vertex> slow_canonical_connection_state(
     const wgphysics::infragauge::FiberBundleConnection& connection) {
     using namespace wgphysics::infragauge;
     using wgphysics::research::canonical_graph_code;
-    const std::vector<Vertex> old_vertices(
-        connection.base().vertices().begin(), connection.base().vertices().end());
+    const std::vector<Vertex> old_vertices(connection.base().vertices().begin(),
+                                           connection.base().vertices().end());
     std::vector<Vertex> labels(old_vertices.size());
     std::iota(labels.begin(), labels.end(), 0);
     std::vector<Vertex> best;
@@ -70,15 +70,15 @@ int main() {
 
         // #1: a wheel's center has a C4 link, so its local symmetry is inferred
         // as D4 without supplying a group or calling the link a gauge fiber.
-        const BaseGraph wheel(
-            {0, 1, 2, 3, 4},
-            {{0, 1}, {0, 2}, {0, 3}, {0, 4}, {1, 2}, {2, 3}, {3, 4}, {4, 1}});
+        const BaseGraph wheel({0, 1, 2, 3, 4},
+                              {{0, 1}, {0, 2}, {0, 3}, {0, 4}, {1, 2}, {2, 3}, {3, 4}, {4, 1}});
         const auto inferred = infer_link_fibers(wheel);
         const auto c4_class = std::find_if(inferred.begin(), inferred.end(), [](const auto& item) {
             return item.representative.vertex_count() == 4 && item.automorphism_order == 8;
         });
         require(c4_class != inferred.end(), "failed to infer the C4 link fiber");
-        require(c4_class->centers == std::vector<Vertex>{0}, "C4 link was assigned to the wrong center");
+        require(c4_class->centers == std::vector<Vertex>{0},
+                "C4 link was assigned to the wrong center");
 
         const FiberGraph square(4, {{0, 1}, {1, 2}, {2, 3}, {3, 0}});
         const auto group = square.automorphisms();
@@ -96,17 +96,18 @@ int main() {
         require(evolution.state_count() == 2, "unexpected physical state count after subdivision");
         require(evolution.events().size() == 1 && evolution.events().front().raw_extensions == 8,
                 "rewrite event lost its raw-to-physical orbit count");
-        const auto physical_identity =
-            canonical_connection_state(evolution.state(outputs.front()));
+        const auto physical_identity = canonical_connection_state(evolution.state(outputs.front()));
         for (const auto& raw_extension : curved.subdivide_edge_extensions(0, 1, 3)) {
             require(canonical_connection_state(raw_extension) == physical_identity,
-                    "physical-only subdivision disagrees with an exhaustive orbit member");
+                    "physical-only subdivision disagrees with an exhaustive orbit "
+                    "member");
         }
-        const auto framed = curved.gauge_transform({{0, reflection}, {1, quarter_turn}});
+        const std::map<Vertex, Permutation> local_frames{{0, reflection}, {1, quarter_turn}};
+        const auto framed = curved.gauge_transform(local_frames);
         require(canonical_connection_state(curved) == canonical_connection_state(framed),
                 "joint state identity depends on local fiber frames");
-        FiberBundleConnection relabeled(
-            BaseGraph({10, 11, 12}, {{10, 11}, {11, 12}, {12, 10}}), square);
+        FiberBundleConnection relabeled(BaseGraph({10, 11, 12}, {{10, 11}, {11, 12}, {12, 10}}),
+                                        square);
         relabeled.set_transport(12, 10, quarter_turn);
         require(canonical_connection_state(curved) == canonical_connection_state(relabeled),
                 "joint state identity depends on base labels");
@@ -121,8 +122,8 @@ int main() {
         variable.set_fiber(0, triangle_fiber);
         variable.set_fiber(1, square);
         variable.set_fiber(2, path_fiber);
-        variable.set_partial_transport(
-            0, 1, PartialFiberMap(3, 4, {Vertex{0}, Vertex{1}, std::nullopt}));
+        variable.set_partial_transport(0, 1,
+                                       PartialFiberMap(3, 4, {Vertex{0}, Vertex{1}, std::nullopt}));
         variable.set_partial_transport(
             1, 2, PartialFiberMap(4, 3, {Vertex{0}, Vertex{1}, Vertex{2}, std::nullopt}));
         require(variable.lift({0, 1, 2}, 0) == std::optional<Vertex>{0},
@@ -134,17 +135,113 @@ int main() {
         const AutomorphismTables tables(group);
         const auto dynamics = search_local_gauge_dynamics(tables);
         require(!dynamics.empty(), "no gauge-equivariant reversible dynamics found");
-        const auto identity_rule = std::find_if(dynamics.begin(), dynamics.end(), [&](const auto& rule) {
-            for (uint16_t value = 0; value < tables.order(); ++value) {
-                if (rule.image[value] != value) return false;
-            }
-            return true;
-        });
+        const auto identity_rule =
+            std::find_if(dynamics.begin(), dynamics.end(), [&](const auto& rule) {
+                for (uint16_t value = 0; value < tables.order(); ++value) {
+                    if (rule.image[value] != value) return false;
+                }
+                return true;
+            });
         require(identity_rule != dynamics.end(), "dynamics census omitted the identity update");
-        require(std::any_of(dynamics.begin(), dynamics.end(), [&](const auto& rule) {
-                    return rule.fixed_elements < tables.order();
-                }),
+        require(std::any_of(dynamics.begin(), dynamics.end(),
+                            [&](const auto& rule) { return rule.fixed_elements < tables.order(); }),
                 "dynamics census found no nontrivial reversible update");
+
+        const auto quarter_index = tables.index_of(quarter_turn);
+        const auto changing_rule = std::find_if(
+            dynamics.begin(), dynamics.end(),
+            [&](const auto& rule) { return rule.image[quarter_index] != quarter_index; });
+        require(changing_rule != dynamics.end(),
+                "dynamics census cannot change quarter-turn curvature");
+        const std::vector<Vertex> cell_loop{0, 1, 2, 0};
+        const auto updated = apply_holonomy_dynamics(curved, cell_loop, *changing_rule);
+        require(
+            updated.holonomy(cell_loop) == tables.elements()[changing_rule->image[quarter_index]],
+            "cell update did not realize the selected equivariant dynamics");
+        const auto updated_framed = apply_holonomy_dynamics(framed, cell_loop, *changing_rule);
+        const auto framed_updated = updated.gauge_transform(local_frames);
+        for (const auto [from, to] : triangle.edges()) {
+            require(
+                updated_framed.edge_transport(from, to) == framed_updated.edge_transport(from, to),
+                "cell holonomy update does not commute with a local frame change");
+        }
+        auto invalid_dynamics = *changing_rule;
+        invalid_dynamics.image[quarter_index] = invalid_dynamics.image.front();
+        bool rejected_invalid_dynamics = false;
+        try {
+            (void)apply_holonomy_dynamics(curved, cell_loop, invalid_dynamics);
+        } catch (const std::invalid_argument&) {
+            rejected_invalid_dynamics = true;
+        }
+        require(rejected_invalid_dynamics, "cell evolution accepted an invalid raw dynamics table");
+
+        // Unary D4 maps above cannot leave a conjugacy class. The minimal
+        // curvature-moving primitive is instead the reversible two-cell
+        // Hurwitz action, which preserves the cells' ordered total holonomy.
+        const BaseGraph two_cells({0, 1, 2, 3}, {{0, 1}, {1, 2}, {2, 0}, {1, 3}, {3, 0}});
+        const std::vector<Vertex> first_cell{0, 1, 2, 0};
+        const std::vector<Vertex> second_cell{0, 1, 3, 0};
+        FiberBundleConnection localized(two_cells, square);
+        localized.set_transport(2, 0, quarter_turn);
+        const auto exchanged = apply_hurwitz_cell_exchange(localized, first_cell, second_cell);
+        require(exchanged.holonomy(first_cell) == Permutation::identity(4) &&
+                    exchanged.holonomy(second_cell) == quarter_turn,
+                "Hurwitz exchange did not transport curvature between cells");
+        const auto restored = apply_hurwitz_cell_exchange(exchanged, first_cell, second_cell,
+                                                          HurwitzDirection::Inverse);
+        for (const auto [from, to] : two_cells.edges()) {
+            require(restored.edge_transport(from, to) == localized.edge_transport(from, to),
+                    "inverse Hurwitz exchange did not restore the connection");
+        }
+        const std::map<Vertex, Permutation> two_cell_frames{
+            {0, reflection}, {1, quarter_turn}, {2, reflection}};
+        const auto exchanged_after_frame = apply_hurwitz_cell_exchange(
+            localized.gauge_transform(two_cell_frames), first_cell, second_cell);
+        const auto framed_after_exchange = exchanged.gauge_transform(two_cell_frames);
+        for (const auto [from, to] : two_cells.edges()) {
+            require(exchanged_after_frame.edge_transport(from, to) ==
+                        framed_after_exchange.edge_transport(from, to),
+                    "Hurwitz exchange does not commute with local frame changes");
+        }
+        const auto localized_total =
+            Permutation::compose(localized.holonomy(first_cell), localized.holonomy(second_cell));
+        const auto exchanged_total =
+            Permutation::compose(exchanged.holonomy(first_cell), exchanged.holonomy(second_cell));
+        require(localized_total == exchanged_total,
+                "Hurwitz exchange did not conserve total holonomy");
+
+        const OrientedCellComplex cell_complex(two_cells, {first_cell, {1, 3, 0, 1}});
+        const OrientedCellComplex rotated_cell_complex(two_cells, {{3, 0, 1, 3}, {1, 2, 0, 1}});
+        require(canonical_cell_connection_state(cell_complex, localized) ==
+                    canonical_cell_connection_state(rotated_cell_complex, localized),
+                "cell identity depends on face basepoint or face ordering");
+        require(canonical_cell_connection_state(cell_complex, localized) ==
+                    canonical_cell_connection_state(cell_complex,
+                                                    localized.gauge_transform(two_cell_frames)),
+                "cell-aware product identity depends on local fiber frames");
+        const BaseGraph relabeled_two_cells({10, 11, 12, 13},
+                                            {{10, 11}, {11, 12}, {12, 10}, {11, 13}, {13, 10}});
+        const OrientedCellComplex relabeled_cell_complex(relabeled_two_cells,
+                                                         {{10, 11, 12, 10}, {11, 13, 10, 11}});
+        FiberBundleConnection relabeled_localized(relabeled_two_cells, square);
+        relabeled_localized.set_transport(12, 10, quarter_turn);
+        require(canonical_cell_connection_state(cell_complex, localized) ==
+                    canonical_cell_connection_state(relabeled_cell_complex, relabeled_localized),
+                "cell-aware product identity depends on base labels");
+        const OrientedCellComplex one_face(two_cells, {first_cell});
+        require(canonical_cell_connection_state(cell_complex, localized) !=
+                    canonical_cell_connection_state(one_face, localized),
+                "product identity discarded explicit two-cell incidence");
+        const auto subdivided_cells = cell_complex.subdivide_edge(0, 1, 4);
+        const auto subdivided_localized = localized.subdivide_edge_representative(0, 1, 4);
+        require(std::all_of(subdivided_cells.faces().begin(), subdivided_cells.faces().end(),
+                            [](const auto& face) {
+                                return std::find(face.begin(), face.end(), 4) != face.end();
+                            }),
+                "shared-edge subdivision did not update every incident face boundary");
+        require(canonical_cell_connection_state(subdivided_cells, subdivided_localized) !=
+                    canonical_cell_connection_state(cell_complex, localized),
+                "cell-aware identity collapsed a genuine subdivision");
 
         // #5: score curvature changes against causal edges. Event 1 is reached
         // from declared source 0; event 2 changes independently and is exposed.
@@ -157,12 +254,10 @@ int main() {
         const auto reflected_sector = curvature_sector(reflected, loops);
         require(flat_sector != curved_sector && curved_sector != reflected_sector,
                 "curvature sectors collapsed before causal analysis");
-        const auto report = analyze_causal_curvature(
-            {{0, flat_sector, curved_sector},
-             {1, curved_sector, reflected_sector},
-             {2, flat_sector, reflected_sector}},
-            {{0, 1}},
-            {0});
+        const auto report = analyze_causal_curvature({{0, flat_sector, curved_sector},
+                                                      {1, curved_sector, reflected_sector},
+                                                      {2, flat_sector, reflected_sector}},
+                                                     {{0, 1}}, {0});
         require(report.changed_events == 3 && report.source_events == 1,
                 "causal curvature event counts are wrong");
         require(report.causally_reached_changes == 1 && report.off_causal_changes == 1,
@@ -177,9 +272,10 @@ int main() {
             group, Permutation::identity(square.vertex_count()));
         const auto spectrum = orbit.schmidt_spectrum();
         require(spectrum.size() == group.size(), "subdivision Schmidt rank is wrong");
-        require(std::all_of(spectrum.begin(), spectrum.end(), [&](const auto value) {
-                    return std::abs(value - 1.0 / std::sqrt(8.0)) < 1e-12;
-                }),
+        require(std::all_of(spectrum.begin(), spectrum.end(),
+                            [&](const auto value) {
+                                return std::abs(value - 1.0 / std::sqrt(8.0)) < 1e-12;
+                            }),
                 "subdivision Schmidt spectrum is not flat");
         require(std::abs(orbit.best_rank_discarded_norm(4) - 0.5) < 1e-12,
                 "rank-four discarded norm is wrong");
@@ -188,15 +284,19 @@ int main() {
         // exactly once (1 + 2 + 4 + 11 = 18), with finite derived observables.
         const auto census = enumerate_fiber_census(4);
         require(census.size() == 18, "small-fiber census has the wrong graph count");
-        require(std::any_of(census.begin(), census.end(), [](const auto& entry) {
-                    return entry.vertices == 4 && entry.automorphism_order == 8 &&
-                           entry.nonabelian && entry.reversible_equivariant_dynamics == 8;
-                }),
+        require(std::any_of(census.begin(), census.end(),
+                            [](const auto& entry) {
+                                return entry.vertices == 4 && entry.automorphism_order == 8 &&
+                                       entry.nonabelian &&
+                                       entry.reversible_equivariant_dynamics == 8;
+                            }),
                 "small-fiber census omitted the D4 case");
-        require(std::all_of(census.begin(), census.end(), [](const auto& entry) {
-                    return entry.subdivision_physical_children == 1 &&
-                           entry.exact_subdivision_schmidt_rank == entry.automorphism_order;
-                }),
+        require(std::all_of(census.begin(), census.end(),
+                            [](const auto& entry) {
+                                return entry.subdivision_physical_children == 1 &&
+                                       entry.exact_subdivision_schmidt_rank ==
+                                           entry.automorphism_order;
+                            }),
                 "census rewrite or compression invariant is inconsistent");
 
         // The optimized two-stage state canonicalizer must remain identical to
@@ -219,7 +319,8 @@ int main() {
                 }
                 require(canonical_connection_state(candidate) ==
                             slow_canonical_connection_state(candidate),
-                        "optimized state canonicalization differs from exhaustive definition");
+                        "optimized state canonicalization differs from exhaustive "
+                        "definition");
             }
         }
 
