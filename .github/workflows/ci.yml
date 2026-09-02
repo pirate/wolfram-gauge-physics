@@ -27,9 +27,15 @@ jobs:
         run: |
           ./build/wgphysics_census --output out/fiber-census.json
           diff -u data/fiber-census-n4.json out/fiber-census.json
+          ./build/wgphysics_product_census --output out/rule-fiber-census.json
+          diff -u data/rule-fiber-census-subdivision.json out/rule-fiber-census.json
       - name: Multiway smoke test
-        run: ./build/wgphysics_evolve --steps 2 --output out/smoke.json
+        run: |
+          ./build/wgphysics_evolve --steps 2 --output out/smoke.json
+          ./build/wgphysics_product_evolve --steps 2 --output out/product-smoke.json
       - name: Validate JSON output
         run: |
           python3 -m json.tool out/smoke.json > /dev/null
+          python3 -m json.tool out/product-smoke.json > /dev/null
           python3 -m json.tool out/fiber-census.json > /dev/null
+          python3 -m json.tool out/rule-fiber-census.json > /dev/null

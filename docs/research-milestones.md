@@ -23,9 +23,10 @@ uses that identity while registering children. For a square fiber, eight raw fac
 edge subdivision become exactly one physical child, while a different holonomy sector remains a
 different state.
 
-This is a complete exact prototype for the subdivision rule. It is not yet embedded in the official
-engine's internal arena, match keys, event identities, or CUDA storage. That integration should use
-the same CPU signature as its differential oracle.
+The product runner now propagates this state through every supported raw event emitted by the
+official engine and performs the joint quotient afterward. It is not yet embedded in the engine's
+internal arena, match keys, or CUDA storage. The unquotiented run remains the exact oracle until the
+engine's own canonical identity includes connection data.
 
 ## 3. Non-isomorphic fibers and partial lifts
 
@@ -58,9 +59,10 @@ sources. It reports reached changes, off-causal changes, maximum causal depth, a
 fraction. The test fixture deliberately contains one propagated and one off-causal change, proving
 that the diagnostic exposes rather than hides the latter.
 
-Automatic attachment of connection sectors to every event emitted by the official rewriting engine
-is the next integration step. Propagation-speed convergence and foliation comparisons require that
-event-level coupling first.
+Connection sectors are now attached automatically to actual engine subdivision events, and the
+engine's causal edges feed this analyzer. Propagation-speed convergence and foliation comparisons
+require a nontrivial derived update law; transport-preserving subdivision is intentionally a
+zero-change control.
 
 ## 6. Compression starts with an exact obstruction
 
@@ -99,5 +101,6 @@ contains the known `1 + 2 + 4 + 11 = 18` classes. Each row records:
 - exact subdivision Schmidt rank and half-rank discarded norm.
 
 The null dynamics entries for order-24 groups are an explicit computation bound, not zero results.
-The next dataset should cross fibers with small rewrite rules and record causal propagation and
-localization rather than merely fiber-intrinsic quantities.
+A companion dataset now crosses every entry and conjugacy sector with the real depth-two subdivision
+closure. The next dataset should add other explicitly defined rule morphisms and record nontrivial
+causal propagation and localization.

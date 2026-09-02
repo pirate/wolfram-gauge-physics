@@ -2,6 +2,9 @@
 
 #include <cmath>
 #include <iostream>
+#include <limits>
+#include <map>
+#include <numeric>
 #include <optional>
 #include <set>
 #include <stdexcept>
@@ -11,6 +14,51 @@ namespace {
 
 void require(bool condition, const char* message) {
     if (!condition) throw std::runtime_error(message);
+}
+
+std::vector<wgphysics::infragauge::Vertex> slow_canonical_connection_state(
+    const wgphysics::infragauge::FiberBundleConnection& connection) {
+    using namespace wgphysics::infragauge;
+    using wgphysics::research::canonical_graph_code;
+    const std::vector<Vertex> old_vertices(
+        connection.base().vertices().begin(), connection.base().vertices().end());
+    std::vector<Vertex> labels(old_vertices.size());
+    std::iota(labels.begin(), labels.end(), 0);
+    std::vector<Vertex> best;
+    bool first = true;
+    do {
+        std::map<Vertex, Vertex> relabel;
+        for (std::size_t index = 0; index < old_vertices.size(); ++index) {
+            relabel.emplace(old_vertices[index], labels[index]);
+        }
+        std::vector<Edge> edges;
+        for (const auto [u, v] : connection.base().edges()) {
+            edges.emplace_back(relabel.at(u), relabel.at(v));
+        }
+        std::vector<Vertex> vertices(old_vertices.size());
+        std::iota(vertices.begin(), vertices.end(), 0);
+        FiberBundleConnection relabeled(BaseGraph(vertices, edges), connection.fiber());
+        for (const auto [u, v] : connection.base().edges()) {
+            relabeled.set_transport(relabel.at(u), relabel.at(v), connection.edge_transport(u, v));
+        }
+        std::vector<Vertex> candidate{static_cast<Vertex>(vertices.size())};
+        const auto fiber_code = canonical_graph_code(connection.fiber());
+        candidate.insert(candidate.end(), fiber_code.begin(), fiber_code.end());
+        candidate.push_back(std::numeric_limits<Vertex>::max());
+        for (Vertex u = 0; u < vertices.size(); ++u) {
+            for (Vertex v = u + 1; v < vertices.size(); ++v) {
+                candidate.push_back(relabeled.base().has_edge(u, v) ? 1U : 0U);
+            }
+        }
+        candidate.push_back(std::numeric_limits<Vertex>::max());
+        const auto gauge = relabeled.gauge_invariant_signature();
+        candidate.insert(candidate.end(), gauge.begin(), gauge.end());
+        if (first || candidate < best) {
+            best = std::move(candidate);
+            first = false;
+        }
+    } while (std::next_permutation(labels.begin(), labels.end()));
+    return best;
 }
 
 }  // namespace
@@ -150,6 +198,30 @@ int main() {
                            entry.exact_subdivision_schmidt_rank == entry.automorphism_order;
                 }),
                 "census rewrite or compression invariant is inconsistent");
+
+        // The optimized two-stage state canonicalizer must remain identical to
+        // the original exhaustive definition. Check every connection over every
+        // unlabeled base graph through four vertices for the two-element group.
+        const FiberGraph two_points(2, {});
+        const Permutation swap({1, 0});
+        for (const auto& base_entry : census) {
+            const auto graph = fiber_from_canonical_code(base_entry.graph_code);
+            std::vector<Vertex> vertices(graph.vertex_count());
+            std::iota(vertices.begin(), vertices.end(), 0);
+            const std::vector<Edge> edges(graph.edges().begin(), graph.edges().end());
+            const auto assignment_count = std::uint64_t{1} << edges.size();
+            for (std::uint64_t assignment = 0; assignment < assignment_count; ++assignment) {
+                FiberBundleConnection candidate(BaseGraph(vertices, edges), two_points);
+                for (std::size_t edge = 0; edge < edges.size(); ++edge) {
+                    if ((assignment >> edge) & 1U) {
+                        candidate.set_transport(edges[edge].first, edges[edge].second, swap);
+                    }
+                }
+                require(canonical_connection_state(candidate) ==
+                            slow_canonical_connection_state(candidate),
+                        "optimized state canonicalization differs from exhaustive definition");
+            }
+        }
 
         std::cout << "Research milestones 1-5: PASS\n"
                   << "inferred fiber classes: " << inferred.size() << '\n'

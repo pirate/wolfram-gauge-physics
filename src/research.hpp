@@ -44,6 +44,46 @@ inline std::vector<Vertex> canonical_graph_code(const FiberGraph& graph) {
     return best;
 }
 
+inline FiberGraph fiber_from_canonical_code(const std::vector<Vertex>& code) {
+    if (code.empty()) throw std::invalid_argument("fiber graph code is empty");
+    const auto count = code.front();
+    if (code.size() != 1 + static_cast<std::size_t>(count) * (count - 1) / 2) {
+        throw std::invalid_argument("fiber graph code has the wrong length");
+    }
+    std::vector<Edge> edges;
+    std::size_t position = 1;
+    for (Vertex u = 0; u < count; ++u) {
+        for (Vertex v = u + 1; v < count; ++v) {
+            if (code[position] > 1) throw std::invalid_argument("fiber graph code is not binary");
+            if (code[position++]) edges.emplace_back(u, v);
+        }
+    }
+    return FiberGraph(count, std::move(edges));
+}
+
+inline std::vector<Permutation> conjugacy_representatives(
+    const std::vector<Permutation>& group) {
+    if (group.empty()) throw std::invalid_argument("group cannot be empty");
+    std::map<std::vector<Vertex>, Permutation> representatives;
+    for (const auto& value : group) {
+        std::vector<Vertex> canonical;
+        bool first = true;
+        for (const auto& frame : group) {
+            const auto conjugated = Permutation::compose(
+                frame, Permutation::compose(value, frame.inverse()));
+            if (first || conjugated.image() < canonical) {
+                canonical = conjugated.image();
+                first = false;
+            }
+        }
+        representatives.try_emplace(std::move(canonical), value);
+    }
+    std::vector<Permutation> result;
+    result.reserve(representatives.size());
+    for (const auto& [_, value] : representatives) result.push_back(value);
+    return result;
+}
+
 struct InferredFiberClass {
     FiberGraph representative;
     std::vector<Vertex> centers;
@@ -102,12 +142,42 @@ inline std::vector<Vertex> canonical_connection_state(
         connection.base().vertices().begin(), connection.base().vertices().end());
     std::vector<Vertex> new_labels(old_vertices.size());
     std::iota(new_labels.begin(), new_labels.end(), 0);
-    std::vector<Vertex> best;
-    bool first = true;
+
+    // Lexicographic minimization factors exactly: first retain only labelings
+    // with the least bare-base adjacency code, then minimize the connection
+    // quotient over ties. This avoids reconstructing a connection for all n!
+    // labelings. On an n-cycle only its 2n canonical dihedral labelings survive.
+    std::vector<Vertex> best_base_code;
+    std::vector<std::vector<Vertex>> canonical_labelings;
+    bool first_base = true;
     do {
+        std::vector<Vertex> old_at_new(old_vertices.size());
+        for (std::size_t i = 0; i < old_vertices.size(); ++i) {
+            old_at_new[new_labels[i]] = old_vertices[i];
+        }
+        std::vector<Vertex> base_code;
+        for (Vertex u = 0; u < old_vertices.size(); ++u) {
+            for (Vertex v = u + 1; v < old_vertices.size(); ++v) {
+                base_code.push_back(
+                    connection.base().has_edge(old_at_new[u], old_at_new[v]) ? 1U : 0U);
+            }
+        }
+        if (first_base || base_code < best_base_code) {
+            best_base_code = std::move(base_code);
+            canonical_labelings.clear();
+            canonical_labelings.push_back(new_labels);
+            first_base = false;
+        } else if (base_code == best_base_code) {
+            canonical_labelings.push_back(new_labels);
+        }
+    } while (std::next_permutation(new_labels.begin(), new_labels.end()));
+
+    std::vector<Vertex> best_gauge_code;
+    bool first_gauge = true;
+    for (const auto& labeling : canonical_labelings) {
         std::map<Vertex, Vertex> relabel;
         for (std::size_t i = 0; i < old_vertices.size(); ++i) {
-            relabel.emplace(old_vertices[i], new_labels[i]);
+            relabel.emplace(old_vertices[i], labeling[i]);
         }
         std::vector<Edge> relabeled_edges;
         for (const auto [u, v] : connection.base().edges()) {
@@ -121,26 +191,21 @@ inline std::vector<Vertex> canonical_connection_state(
             relabeled.set_transport(
                 relabel.at(u), relabel.at(v), connection.edge_transport(u, v));
         }
-
-        std::vector<Vertex> candidate;
-        const auto fiber_code = canonical_graph_code(connection.fiber());
-        candidate.push_back(static_cast<Vertex>(old_vertices.size()));
-        candidate.insert(candidate.end(), fiber_code.begin(), fiber_code.end());
-        candidate.push_back(std::numeric_limits<Vertex>::max());
-        for (Vertex u = 0; u < vertices.size(); ++u) {
-            for (Vertex v = u + 1; v < vertices.size(); ++v) {
-                candidate.push_back(relabeled.base().has_edge(u, v) ? 1U : 0U);
-            }
-        }
-        candidate.push_back(std::numeric_limits<Vertex>::max());
         const auto gauge_code = relabeled.gauge_invariant_signature();
-        candidate.insert(candidate.end(), gauge_code.begin(), gauge_code.end());
-        if (first || candidate < best) {
-            best = std::move(candidate);
-            first = false;
+        if (first_gauge || gauge_code < best_gauge_code) {
+            best_gauge_code = gauge_code;
+            first_gauge = false;
         }
-    } while (std::next_permutation(new_labels.begin(), new_labels.end()));
-    return best;
+    }
+
+    std::vector<Vertex> result{static_cast<Vertex>(old_vertices.size())};
+    const auto fiber_code = canonical_graph_code(connection.fiber());
+    result.insert(result.end(), fiber_code.begin(), fiber_code.end());
+    result.push_back(std::numeric_limits<Vertex>::max());
+    result.insert(result.end(), best_base_code.begin(), best_base_code.end());
+    result.push_back(std::numeric_limits<Vertex>::max());
+    result.insert(result.end(), best_gauge_code.begin(), best_gauge_code.end());
+    return result;
 }
 
 struct GaugeRewriteEvent {
@@ -371,20 +436,7 @@ inline std::vector<FiberCensusEntry> enumerate_fiber_census(
                 }
             }
         }
-        std::set<std::vector<Vertex>> conjugacy_classes;
-        for (const auto& value : automorphisms) {
-            std::vector<Vertex> canonical;
-            bool first = true;
-            for (const auto& frame : automorphisms) {
-                const auto conjugated = Permutation::compose(
-                    frame, Permutation::compose(value, frame.inverse()));
-                if (first || conjugated.image() < canonical) {
-                    canonical = conjugated.image();
-                    first = false;
-                }
-            }
-            conjugacy_classes.insert(std::move(canonical));
-        }
+        const auto conjugacy_classes = conjugacy_representatives(automorphisms);
         std::optional<std::size_t> dynamics;
         if (automorphisms.size() <= maximum_dynamics_order) {
             dynamics = search_local_gauge_dynamics(AutomorphismTables(automorphisms)).size();

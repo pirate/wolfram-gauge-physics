@@ -31,6 +31,13 @@ discard half the norm. The execution path now constructs one gauge-fixed physica
 materializing the eight frame copies, and a reproducible dataset covers all 18 unlabeled simple
 fiber graphs through four vertices.
 
+The current version also runs a genuine product evolution over the official engine's immutable raw
+events. At subdivision depth two, 16 raw states and 15 events collapse to three joint physical
+states; every event receives a connection sector, the six engine causal edges are retained, and the
+nontrivial starting holonomy is preserved. The code deliberately rejects unsupported event
+morphologies instead of inventing a transport rule. A rule-by-fiber dataset repeats this closure for
+all 18 fibers and every conjugacy sector.
+
 The repeated group operations compile to small integer lookup tables. A differential MLX/Metal
 probe on an M1 Max reached about 3.15 billion local-frame transforms/s and 24.1 billion group
 multiplications/s for length-eight paths, though this is deliberately reported only as a kernel

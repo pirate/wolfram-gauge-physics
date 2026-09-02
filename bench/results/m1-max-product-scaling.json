@@ -1,0 +1,62 @@
+{
+  "date": "2026-09-02",
+  "platform": "macOS-26.4.1-arm64-arm-64bit-Mach-O",
+  "rule": "{x,y}->{x,w},{w,y}",
+  "initial_base": "triangle",
+  "fiber": "C4",
+  "derived_group_order": 8,
+  "repetitions": 3,
+  "scope": "engine evolution plus exact CPU product propagation and canonicalization",
+  "measurements": [
+    {
+      "steps": 0,
+      "raw_engine_states": 1,
+      "physical_product_states": 1,
+      "events": 0,
+      "causal_edges": 0,
+      "curvature_changes": 0,
+      "minimum_seconds": 0.004042000000481494,
+      "median_seconds": 0.004711667002993636
+    },
+    {
+      "steps": 1,
+      "raw_engine_states": 4,
+      "physical_product_states": 2,
+      "events": 3,
+      "causal_edges": 0,
+      "curvature_changes": 0,
+      "minimum_seconds": 0.004652542003896087,
+      "median_seconds": 0.004788417005329393
+    },
+    {
+      "steps": 2,
+      "raw_engine_states": 16,
+      "physical_product_states": 3,
+      "events": 15,
+      "causal_edges": 6,
+      "curvature_changes": 0,
+      "minimum_seconds": 0.006340291991364211,
+      "median_seconds": 0.007087958001648076
+    },
+    {
+      "steps": 3,
+      "raw_engine_states": 76,
+      "physical_product_states": 4,
+      "events": 75,
+      "causal_edges": 48,
+      "curvature_changes": 0,
+      "minimum_seconds": 0.030284459004178643,
+      "median_seconds": 0.031037166991154663
+    },
+    {
+      "steps": 4,
+      "raw_engine_states": 436,
+      "physical_product_states": 5,
+      "events": 435,
+      "causal_edges": 336,
+      "curvature_changes": 0,
+      "minimum_seconds": 0.8418284999934258,
+      "median_seconds": 0.8523987919907086
+    }
+  ]
+}

@@ -90,4 +90,30 @@ if(WGPHYSICS_BUILD_REWRITE_HARNESS)
     "${hypergraph_rewriting_engine_BINARY_DIR}/generated"
   )
   target_compile_options(wgphysics_evolve PRIVATE -Wall -Wextra -Wpedantic)
+
+  add_executable(wgphysics_product_evolve src/product_main.cpp)
+  target_link_libraries(wgphysics_product_evolve PRIVATE hypergraph wgphysics)
+  target_include_directories(wgphysics_product_evolve PRIVATE
+    "${hypergraph_rewriting_engine_SOURCE_DIR}/common/include"
+    "${hypergraph_rewriting_engine_BINARY_DIR}/generated"
+  )
+  target_compile_options(wgphysics_product_evolve PRIVATE -Wall -Wextra -Wpedantic)
+
+  add_executable(product_evolution_test tests/product_evolution.cpp)
+  target_link_libraries(product_evolution_test PRIVATE hypergraph wgphysics)
+  target_include_directories(product_evolution_test PRIVATE
+    "${hypergraph_rewriting_engine_SOURCE_DIR}/common/include"
+    "${hypergraph_rewriting_engine_BINARY_DIR}/generated"
+  )
+  target_compile_options(product_evolution_test PRIVATE -Wall -Wextra -Wpedantic)
+  add_test(NAME product_evolution COMMAND product_evolution_test)
+  set_tests_properties(product_evolution PROPERTIES LABELS wgphysics)
+
+  add_executable(wgphysics_product_census src/product_census.cpp)
+  target_link_libraries(wgphysics_product_census PRIVATE hypergraph wgphysics)
+  target_include_directories(wgphysics_product_census PRIVATE
+    "${hypergraph_rewriting_engine_SOURCE_DIR}/common/include"
+    "${hypergraph_rewriting_engine_BINARY_DIR}/generated"
+  )
+  target_compile_options(wgphysics_product_census PRIVATE -Wall -Wextra -Wpedantic)
 endif()

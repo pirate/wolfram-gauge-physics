@@ -42,6 +42,9 @@ adds rewrite-compatible gauge primitives that are currently missing between thos
 | Dynamics census | Reversible maps preserving identity, inversion, and conjugation | Eight exact candidates for `Aut(C4)` |
 | Causal curvature | Loop sectors compared with causal event reachability | Reports propagated and off-causal changes separately |
 | Compression diagnostic | Exact Schmidt spectrum and discarded-norm bound | The `D4` subdivision orbit is rank eight and flat-spectrum |
+| Engine × gauge product | Connection sectors propagated through actual raw engine events | 16 raw states and 15 events become three physical depth sectors |
+| Automatic causal sectors | Before/after holonomy attached to every supported engine event | Six real causal edges and zero subdivision curvature violations |
+| Rule × fiber census | Every order-four fiber crossed with the subdivision closure | 18 fibers, every conjugacy sector, exact orbit-norm checks |
 
 The implementation is generic over finite fiber graphs. It does **not** declare `U(1)`, `SU(2)`,
 or another Lie group as its microscopic starting point. Different fibers derive different finite
@@ -88,6 +91,13 @@ Generate the deterministic small-fiber census:
 
 ```bash
 ./build/wgphysics_census --output out/fiber-census.json
+./build/wgphysics_product_census --output out/rule-fiber-census.json
+```
+
+Run the exact engine × gauge product evolution:
+
+```bash
+./build/wgphysics_product_evolve --steps 2 --output out/product-evolution.json
 ```
 
 ## Meaningful extensions relative to the inspected upstream state
@@ -146,12 +156,14 @@ their automorphism groups. A wheel exposes a square link with order-eight symmet
 Wolfram-model result is to compare this prescription with local rule automorphisms, branchlike
 paths, and repeated neighborhoods in the multiway causal graph.
 
-### 2. Put connection state inside multiway evolution — exact subdivision prototype implemented
+### 2. Put connection state inside multiway evolution — real event product implemented
 
 Small uniform-fiber states now have a joint identity under arbitrary base relabeling and local frame
-changes. Gauge-aware subdivision evolution registers eight raw `D4` factorizations as one physical
-child. The next step is embedding this identity in the official engine's arena, match keys, event
-identity, causal relations, and CPU/GPU differential tests.
+changes. The product runner carries connections through every raw state and actual consumed/produced
+edge event from the official engine. At depth two, 16 raw states and 15 events quotient to three
+physical product states. Unsupported morphologies fail closed. The next step is embedding the joint
+identity in the official engine's arena and match keys so exact quotient exploration can happen
+without first expanding raw provenance.
 
 ### 3. Generalize the bundle — partial non-isomorphic lifts implemented
 
@@ -167,12 +179,13 @@ has eight such maps. They remain candidates: reject them unless coupled evolutio
 propagating curvature disturbances, stable localized sectors, reproducible scattering, and bound
 composites without microscopic particle names or potentials.
 
-### 5. Connect gauge propagation to causal propagation — analyzer implemented
+### 5. Connect gauge propagation to causal propagation — automatic event attachment implemented
 
-An exact analyzer now measures changed holonomy sectors reachable from declared disturbances along
-causal event edges, maximum causal depth, off-causal changes, and causal alignment. Automatic
-event-sector attachment, propagation-speed convergence under refinement, and comparison of
-gauge-equivalent observables across foliations remain next.
+The product runner now attaches exact before/after holonomy sectors to every supported real engine
+event and imports the engine's causal edges automatically. An analyzer measures changes reachable
+from declared disturbances, maximum causal depth, off-causal changes, and causal alignment.
+Transport-preserving subdivision is a zero-change control. A derived nontrivial update law,
+propagation-speed convergence, and foliation comparisons remain next.
 
 ### 6. Compress amplitudes without silently pruning physics — first obstruction measured
 
@@ -189,14 +202,33 @@ materializes `|Aut(F)|` copies before deduplication. Dense multiplication, inver
 buffers are exposed as the device ABI. The next step is to fuse match, affected-cycle update,
 canonical signature, dedup, and queue insertion in the rewriting engine's persistent CUDA kernel.
 
-### 8. Publish a rule-and-fiber census — first exact dataset published
+### 8. Publish a rule-and-fiber census — first product closure published
 
 The committed dataset covers all 18 unlabeled simple graph fibers with one through four vertices.
 It records automorphism-group order and commutativity, triangle curvature-sector count, admissible
 local-dynamics count when the exhaustive search is bounded, subdivision orbit reduction, exact
-Schmidt rank, and half-rank discarded norm. The next census should cross these fibers with small
-hypergraph rules and add causal propagation, effective dimension, persistence, and computational
-cost—including negative results.
+Schmidt rank, and half-rank discarded norm. A second dataset now crosses all 18 fibers and every
+initial conjugacy sector with the real subdivision-engine closure, recording raw and physical state
+counts, actual events and causal edges, curvature violations, and orbit-norm verification. The next
+census should add nontrivial rule morphisms, effective dimension, persistence, and localization.
+
+## Exact product-evolution result
+
+The official engine is run with full raw provenance because quotienting the bare base first can
+erase matches distinguished by an attached connection. The product layer reconstructs each
+supported subdivision from immutable consumed/produced edge IDs, propagates its connection, and then
+applies the joint base-isomorphism/local-gauge quotient.
+
+For a `C4` fiber over an initial triangle at depth four:
+
+- 436 raw states become **five physical product states**;
+- all 435 actual events receive exact connection sectors;
+- all 336 engine causal edges are retained;
+- curvature changes remain zero, as required for transport-preserving subdivision;
+- median end-to-end CPU time was **0.852 s** over three M1 Max repetitions.
+
+See [Exact engine × gauge product evolution](docs/product-evolution.md) and the
+[raw scaling result](bench/results/m1-max-product-scaling.json).
 
 ## Questions for the Wolfram community
 
@@ -218,14 +250,20 @@ cost—including negative results.
 - [`src/research.hpp`](src/research.hpp) — inferred link fibers, gauge-aware evolution identity,
   partial lifts, dynamics census, causal-curvature analysis, and finite research diagnostics.
 - [`src/main.cpp`](src/main.cpp) — exact multiway rewrite export harness.
+- [`src/product_evolution.hpp`](src/product_evolution.hpp) — strict engine-event morphisms, joint
+  product identity, automatic curvature sectors, causal attachment, and rule-by-fiber census.
 - [`tests/infragauge.cpp`](tests/infragauge.cpp) — finite differential/invariance tests.
 - [`docs/infragauge-foundations.md`](docs/infragauge-foundations.md) — mathematical construction.
 - [`docs/gpu-execution.md`](docs/gpu-execution.md) — persistent-kernel integration plan.
+- [`docs/product-evolution.md`](docs/product-evolution.md) — product-state semantics, supported
+  morphism, exactness boundary, causal integration, and measured scaling.
 - [`docs/STATE_OF_THE_ART.md`](docs/STATE_OF_THE_ART.md) — related work and contribution boundary.
 - [`docs/research-milestones.md`](docs/research-milestones.md) — exact definitions, evidence, and
   remaining limitations for milestones 1–8.
 - [`data/fiber-census-n4.json`](data/fiber-census-n4.json) — deterministic census of every unlabeled
   simple fiber graph through four vertices.
+- [`data/rule-fiber-census-subdivision.json`](data/rule-fiber-census-subdivision.json) — all 18
+  fibers and curvature sectors crossed with the real depth-two subdivision closure.
 - [`FORUM_POST.md`](FORUM_POST.md) — concise draft for a Wolfram Community introduction.
 
 ## Build without the rewrite-engine dependency

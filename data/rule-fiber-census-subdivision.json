@@ -1,0 +1,28 @@
+{
+  "schema":1,
+  "rule":"{x,y}->{x,w},{w,y}",
+  "initial_base":"triangle",
+  "steps":2,
+  "engine_state_semantics":"full raw provenance",
+  "product_identity":"base isomorphism plus local gauge quotient",
+  "entries":[
+    {"fiber_graph_code":[1],"automorphism_order":1,"initial_curvature_sectors":1,"raw_engine_states_per_sector":16,"physical_product_states_across_sectors":3,"engine_events_across_sectors":15,"causal_edges_across_sectors":6,"curvature_violations":0,"gauge_orbit_norm_verified":true},
+    {"fiber_graph_code":[2,0],"automorphism_order":2,"initial_curvature_sectors":2,"raw_engine_states_per_sector":16,"physical_product_states_across_sectors":6,"engine_events_across_sectors":30,"causal_edges_across_sectors":12,"curvature_violations":0,"gauge_orbit_norm_verified":true},
+    {"fiber_graph_code":[2,1],"automorphism_order":2,"initial_curvature_sectors":2,"raw_engine_states_per_sector":16,"physical_product_states_across_sectors":6,"engine_events_across_sectors":30,"causal_edges_across_sectors":12,"curvature_violations":0,"gauge_orbit_norm_verified":true},
+    {"fiber_graph_code":[3,0,0,0],"automorphism_order":6,"initial_curvature_sectors":3,"raw_engine_states_per_sector":16,"physical_product_states_across_sectors":9,"engine_events_across_sectors":45,"causal_edges_across_sectors":18,"curvature_violations":0,"gauge_orbit_norm_verified":true},
+    {"fiber_graph_code":[3,0,0,1],"automorphism_order":2,"initial_curvature_sectors":2,"raw_engine_states_per_sector":16,"physical_product_states_across_sectors":6,"engine_events_across_sectors":30,"causal_edges_across_sectors":12,"curvature_violations":0,"gauge_orbit_norm_verified":true},
+    {"fiber_graph_code":[3,0,1,1],"automorphism_order":2,"initial_curvature_sectors":2,"raw_engine_states_per_sector":16,"physical_product_states_across_sectors":6,"engine_events_across_sectors":30,"causal_edges_across_sectors":12,"curvature_violations":0,"gauge_orbit_norm_verified":true},
+    {"fiber_graph_code":[3,1,1,1],"automorphism_order":6,"initial_curvature_sectors":3,"raw_engine_states_per_sector":16,"physical_product_states_across_sectors":9,"engine_events_across_sectors":45,"causal_edges_across_sectors":18,"curvature_violations":0,"gauge_orbit_norm_verified":true},
+    {"fiber_graph_code":[4,0,0,0,0,0,0],"automorphism_order":24,"initial_curvature_sectors":5,"raw_engine_states_per_sector":16,"physical_product_states_across_sectors":15,"engine_events_across_sectors":75,"causal_edges_across_sectors":30,"curvature_violations":0,"gauge_orbit_norm_verified":true},
+    {"fiber_graph_code":[4,0,0,0,0,0,1],"automorphism_order":4,"initial_curvature_sectors":4,"raw_engine_states_per_sector":16,"physical_product_states_across_sectors":12,"engine_events_across_sectors":60,"causal_edges_across_sectors":24,"curvature_violations":0,"gauge_orbit_norm_verified":true},
+    {"fiber_graph_code":[4,0,0,0,0,1,1],"automorphism_order":2,"initial_curvature_sectors":2,"raw_engine_states_per_sector":16,"physical_product_states_across_sectors":6,"engine_events_across_sectors":30,"causal_edges_across_sectors":12,"curvature_violations":0,"gauge_orbit_norm_verified":true},
+    {"fiber_graph_code":[4,0,0,0,1,1,1],"automorphism_order":6,"initial_curvature_sectors":3,"raw_engine_states_per_sector":16,"physical_product_states_across_sectors":9,"engine_events_across_sectors":45,"causal_edges_across_sectors":18,"curvature_violations":0,"gauge_orbit_norm_verified":true},
+    {"fiber_graph_code":[4,0,0,1,0,1,1],"automorphism_order":6,"initial_curvature_sectors":3,"raw_engine_states_per_sector":16,"physical_product_states_across_sectors":9,"engine_events_across_sectors":45,"causal_edges_across_sectors":18,"curvature_violations":0,"gauge_orbit_norm_verified":true},
+    {"fiber_graph_code":[4,0,0,1,1,0,0],"automorphism_order":8,"initial_curvature_sectors":5,"raw_engine_states_per_sector":16,"physical_product_states_across_sectors":15,"engine_events_across_sectors":75,"causal_edges_across_sectors":30,"curvature_violations":0,"gauge_orbit_norm_verified":true},
+    {"fiber_graph_code":[4,0,0,1,1,0,1],"automorphism_order":2,"initial_curvature_sectors":2,"raw_engine_states_per_sector":16,"physical_product_states_across_sectors":6,"engine_events_across_sectors":30,"causal_edges_across_sectors":12,"curvature_violations":0,"gauge_orbit_norm_verified":true},
+    {"fiber_graph_code":[4,0,0,1,1,1,1],"automorphism_order":2,"initial_curvature_sectors":2,"raw_engine_states_per_sector":16,"physical_product_states_across_sectors":6,"engine_events_across_sectors":30,"causal_edges_across_sectors":12,"curvature_violations":0,"gauge_orbit_norm_verified":true},
+    {"fiber_graph_code":[4,0,1,1,1,1,0],"automorphism_order":8,"initial_curvature_sectors":5,"raw_engine_states_per_sector":16,"physical_product_states_across_sectors":15,"engine_events_across_sectors":75,"causal_edges_across_sectors":30,"curvature_violations":0,"gauge_orbit_norm_verified":true},
+    {"fiber_graph_code":[4,0,1,1,1,1,1],"automorphism_order":4,"initial_curvature_sectors":4,"raw_engine_states_per_sector":16,"physical_product_states_across_sectors":12,"engine_events_across_sectors":60,"causal_edges_across_sectors":24,"curvature_violations":0,"gauge_orbit_norm_verified":true},
+    {"fiber_graph_code":[4,1,1,1,1,1,1],"automorphism_order":24,"initial_curvature_sectors":5,"raw_engine_states_per_sector":16,"physical_product_states_across_sectors":15,"engine_events_across_sectors":75,"causal_edges_across_sectors":30,"curvature_violations":0,"gauge_orbit_norm_verified":true}
+  ]
+}

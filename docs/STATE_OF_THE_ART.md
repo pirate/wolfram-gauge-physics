@@ -29,8 +29,9 @@ Project among its goals.
 
 Relative to inspected commit `edd9bdca46b7838d6b3e940e8ae8cde90b60ef2c`, this repository adds
 an exact fiber-automorphism group, explicit local-frame action on connections, a spanning-forest
-gauge quotient, rewrite transport factorization, quantum amplitudes over rewrite gauge orbits, and
-a compact device representation.
+gauge quotient, rewrite transport factorization, quantum amplitudes over rewrite gauge orbits, a
+compact device representation, and an exact connection-aware product evolution over real engine
+event provenance.
 
 ### HypergraphRewritingEngine
 
@@ -39,8 +40,10 @@ provides exact canonicalization, multiway/causal/branchial evolution, quotient e
 incremental matching, and a persistent CUDA backend. This repository uses pinned commit
 `03fe60ddf338983060b6bb4b23e8b4b5d7ae7337` as its base-space evolution engine.
 
-The current prototype has not yet integrated connection sectors into that engine's internal state,
-event identity, or CUDA storage. The integration design is in `gpu-execution.md`.
+The product runner now attaches connection sectors to every raw state and supported subdivision
+event from that engine, then applies a joint base/gauge quotient. Connection data is not yet part of
+the engine's internal match key, canonical state, event identity, or CUDA storage. The runner must
+therefore retain full raw provenance for exactness. The integration design is in `gpu-execution.md`.
 
 ### Infrageometry projects
 
@@ -70,11 +73,11 @@ rewrite evolution, with strict treatment of gauge copies.
 | Fiber | Total graph, projection, fiber predicates | Exact `Aut(F)` derivation, compact tables, and exact open-link inference | Compare rule, link, and multiway-derived fibers |
 | Connection | Connection subgraph and horizontal lifts | Explicit transport maps, local-frame action, non-isomorphic fibers, and partial lifts | Twists, hypergraph fibers, dynamic fiber type |
 | Curvature | Holonomy matrices and flatness | Conjugacy observables and exact gauge signature | Dynamical curvature action from rewrites |
-| Rewriting | Exact bare-hypergraph multiway evolution | Gauge-compatible edge subdivision and joint physical state identity | Embed identity into upstream arena and arbitrary rules |
+| Rewriting | Exact bare-hypergraph multiway evolution | Strict event-provenance subdivision and joint physical state identity | Embed identity into upstream arena and add proven morphisms |
 | Quantum | Multiway structure; separate community work | Normalized fresh-fiber orbit isometry and exact Schmidt bound | Multi-event complex amplitudes and interference |
 | Performance | Persistent CUDA rewrite engine | `uint16` group tables, physical-only subdivision, and verified Metal probe | End-to-end fiber-aware CUDA integration |
 | Physics | Conceptual gauge emergence program | Finite equivariant dynamics census and causal-curvature metric | Continuum limit, matter, forces, phenomenology |
-| Reproducibility | Public demonstrations and technical documents | Deterministic 18-fiber census with explicit computation bounds | Rule-by-fiber propagation census |
+| Reproducibility | Public demonstrations and technical documents | Deterministic 18-fiber and subdivision-rule product censuses | Multi-rule propagation and localization census |
 
 ## Claim discipline
 
