@@ -1,8 +1,22 @@
-# Wolfram Gauge Physics
+# Wolfram Physics Engine Exploration:<br/>Gauge Theory & the Standard Model
 
 [![CI](https://github.com/pirate/wolfram-gauge-physics/actions/workflows/ci.yml/badge.svg)](https://github.com/pirate/wolfram-gauge-physics/actions/workflows/ci.yml)
 
-Experimental combinatorial gauge and fiber dynamics for Wolfram-model hypergraph rewriting.
+Steven Wolfram embarked on the great challenge of discretizing the standard model into a properly computable simulation. Instead of simulating physics top-down by encoding the known equations from the standard model, navier stokes, relativity, etc. into a particle engine, he went the other direction and just a bottom-up graph-based system for modeling propagation of arbitrary information between causal edges (not even necessarily local ones!). Interestingly natural analogs for space and time arise in the evolution of the graph over time, you can slice across the hypergraph of all possible next-step graphs to get different possibilities within the future lightcone, and the number of hypergraph nodes that describe a given quantum state map to probabilistic certainty of outcomes. the same way (Amplitude)^2 of the wavefunction does in normal physics models. These emergent properties of the graph and others are surprising because the graph is a lossy, discretized approximation of a nearly infininitely complex reality, and yet the same rules of space and time and the speed of light fall out of these simple rules applied in a loop to a graph. (just like the game of life)
+
+<table><tr>
+<td>
+<a href="https://www.youtube.com/watch?v=yAJTctpzp5w"><img src="https://github.com/user-attachments/assets/3695f717-4d87-499e-8d38-3770bdf57508"/><br/><small><code>Stephen Wolfram: Can space and time emerge from simple rules?</code></small></a>
+</td>
+<td>
+<a href="https://www.wolframcloud.com/obj/wolframphysics/Tools/hands-on-introduction-to-the-wolfram-physics-project.nb"><img src="https://github.com/user-attachments/assets/b5bffd92-8464-4061-9711-52046b77b5be"/><br/><small><code>Hands-On Introduction to the Wolfram Physics Project
+</code></small></a>
+</td>
+</tr></table>
+
+This repo aims to progress the state of the art when it comes to modeling the actual laws of our reality in Wolframs hypergraph system.
+
+(goal: see how much of gauge theory and QED, pops out as a result of some minimal rules + simulation time. not expecting to be able to model anything QCD-ish or sub-proton scale just yet, focusing more on getting a simple molecule or two atom system working without hardcoding *any* of the known laws of physics beyond some basic constants and transforms)
 
 This repository asks a deliberately bottom-up question:
 
