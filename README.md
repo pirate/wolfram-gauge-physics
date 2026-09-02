@@ -2,9 +2,9 @@
 
 [![CI](https://github.com/pirate/wolfram-gauge-physics/actions/workflows/ci.yml/badge.svg)](https://github.com/pirate/wolfram-gauge-physics/actions/workflows/ci.yml)
 
-When Stephen Wolfram created the Wolfram Physics Engine, he embarked on the great challenge of discretizing the standard model into a properly computable simulation. But instead of simulating physics top-down (by encoding the known equations from the standard model, navier stokes, relativity, etc. into a voxel engine) he went the other direction and just a bottom-up graph-based system for modeling propagation of arbitrary information between causal edges (not even necessarily local ones!).
+Stephen Wolfram launched the Wolfram Physics Project around a radical question: could familiar physics emerge from extremely simple computational rules, rather than being programmed into a simulation as the known equations of relativity, quantum mechanics, or the Standard Model? In the Wolfram model, a possible spatial state is represented by a hypergraph, local rules repeatedly replace small pieces of that graph, and a causal graph records which update events depend on earlier events. Following every possible order of updates produces a multiway graph of alternative histories; slices through that structure produce branchial graphs, which the project relates to quantum states and entanglement.
 
-Interestingly even without any of the laws of physics or 3d primitives put in by hand, natural analogs for space and time arise in the evolution of the graph over time. You can slice across the hypergraph of all possible next-step graphs to get different probabilistic possibilities within the future lightcone, and the number of hypergraph nodes that describe a given quantum state map to probabilistic certainty of outcomes, the same way (Amplitude)^2 of the wavefunction does in normal physics models. These emergent properties of the graph and others are surprising because the graph is a lossy, discretized, imperfect approximation of a nearly infininitely hi-res reality, and yet the same rules of space and time and the speed of light fall out of these simple rules applied in a loop to a graph. (just like the game of life has surprisingly complex emergent behavior from a few simple rules applied in a loop to a graph of cells)
+For suitable rules and under additional assumptions—especially locality, causal invariance, and an appropriate large-scale limit—the project argues that structures resembling continuous space, relativistic causal cones, and aspects of quantum mechanics can emerge. These are proposed mathematical correspondences, not yet a demonstrated model of our universe, and quantum probability is not simply the number of nodes in a hypergraph: Wolfram associates amplitude magnitude with path multiplicity in multiway evolution and phase with position in branchial space. The intuition is a little like Conway's Game of Life, except there is no fixed grid—the network of relationships that may become space is itself continually rewritten. This repository investigates whether gauge structure and field-like dynamics can be built at that microscopic level, with the long-term goal of testing for QED-like behavior and simple bound systems without inserting continuum fields or forces by hand; it does not yet derive QED, particles, physical constants, or molecules.
 
 <table><tr>
 <td>
@@ -15,10 +15,6 @@ Interestingly even without any of the laws of physics or 3d primitives put in by
 </code></small></a>
 </td>
 </tr></table>
-
-This repo aims to progress the state of the art when it comes to modeling the actual laws of our reality in Wolframs hypergraph system.
-
-(goal: see how much of gauge theory and QED, pops out as a result of some minimal rules + simulation time. not expecting to be able to model anything QCD-ish or sub-proton scale just yet, focusing more on getting a simple molecule or two atom system working without hardcoding *any* of the known laws of physics beyond some basic constants and transforms)
 
 This repository asks a deliberately bottom-up question:
 
