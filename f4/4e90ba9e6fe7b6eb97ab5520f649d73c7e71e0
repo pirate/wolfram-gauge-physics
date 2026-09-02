@@ -1,0 +1,64 @@
+docs/STATE_OF_THE_ART.md
+  s_33c6c7a35bd0ca::t_4a8455cbee331b 32-34,43-46,76,80
+src/product_main.cpp
+  s_33c6c7a35bd0ca::t_238ce507b89bb6 8,13-26,63-64,67-85,102-107,109
+  s_33c6c7a35bd0ca::t_0e0389676d6974 1-7,9-12,27-62,65-66,86-94,98-101,108,110-118
+  s_33c6c7a35bd0ca::t_8a97849dc84537 95-97
+README.md
+  s_33c6c7a35bd0ca::t_8804a28f0045e4 45-47,94-100,159,162-166,182,184-188,205,210-231,253-254,258-259,265-266
+tests/product_evolution.cpp
+  s_33c6c7a35bd0ca::t_0e0389676d6974 1-15,17,19-31,34-55,61,63,73-83,124-135
+  s_33c6c7a35bd0ca::t_72703f986e2ca2 32-33
+  s_33c6c7a35bd0ca::t_8a97849dc84537 56-60,62,105-123
+  s_33c6c7a35bd0ca::t_6a84d1200a7d68 64-72
+  s_33c6c7a35bd0ca::t_4a8455cbee331b 16,18,84-104
+CMakeLists.txt
+  s_33c6c7a35bd0ca::t_6a84d1200a7d68 111-118
+  s_33c6c7a35bd0ca::t_0e0389676d6974 93-110
+src/research.hpp
+  s_33c6c7a35bd0ca::t_2a2550e71fc4fc 145-152,154-177,180,195-197,199-208
+  s_33c6c7a35bd0ca::t_49c8bf11280ad4 47-86,439
+tests/research.cpp
+  s_33c6c7a35bd0ca::t_f88ec1166230ca 5-7,19-63,202-224
+  s_33c6c7a35bd0ca::t_14cb40996ebf3f 225
+.github/workflows/ci.yml
+  s_33c6c7a35bd0ca::t_0e0389676d6974 33-35,39
+  s_33c6c7a35bd0ca::t_6a84d1200a7d68 30-31,41
+docs/research-milestones.md
+  s_33c6c7a35bd0ca::t_8804a28f0045e4 26-29,62-65,104-106
+bench/product_evolution_scaling.py
+  s_33c6c7a35bd0ca::t_e890567e4921fc 1-74
+bench/results/m1-max-product-scaling.json
+  s_33c6c7a35bd0ca::t_310d91cba70aaa 1-62
+src/product_evolution.hpp
+  s_33c6c7a35bd0ca::t_0e0389676d6974 1-7,9-21,23-35,38-147,152-161,163-207,210-220,223-243,293
+  s_33c6c7a35bd0ca::t_6a84d1200a7d68 244-292
+  s_33c6c7a35bd0ca::t_8a97849dc84537 8,36-37,148-151,208-209,221-222
+  s_33c6c7a35bd0ca::t_c8c5cb89aaf9a9 22
+  s_33c6c7a35bd0ca::t_72703f986e2ca2 162
+docs/product-evolution.md
+  s_33c6c7a35bd0ca::t_8804a28f0045e4 1-76
+FORUM_POST.md
+  s_33c6c7a35bd0ca::t_8804a28f0045e4 34-40
+src/product_census.cpp
+  s_33c6c7a35bd0ca::t_6a84d1200a7d68 1-72,75-86
+  s_33c6c7a35bd0ca::t_238ce507b89bb6 73-74
+data/rule-fiber-census-subdivision.json
+  s_33c6c7a35bd0ca::t_6b678cbbe19277 1-28
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.0",
+  "base_commit_sha": "f44e90ba9e6fe7b6eb97ab5520f649d73c7e71e0",
+  "prompts": {},
+  "sessions": {
+    "s_33c6c7a35bd0ca": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a061ab-263d-7860-b882-4955b6e0b240",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "Nick Sweeting <git@sweeting.me>"
+    }
+  }
+}
