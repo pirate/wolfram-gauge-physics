@@ -1,0 +1,19 @@
+README.md
+  s_33c6c7a35bd0ca::t_facc657950b54c 5,7
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.0",
+  "base_commit_sha": "744185aabbda7ea3787f7cc0e93d3d76f655436d",
+  "prompts": {},
+  "sessions": {
+    "s_33c6c7a35bd0ca": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a061ab-263d-7860-b882-4955b6e0b240",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "Nick Sweeting <git@sweeting.me>"
+    }
+  }
+}
