@@ -132,6 +132,12 @@ raw labelings that the exact graph-isomorphism quotient recognizes as the same c
   projections. Its bounded views support small-state inspection; million-node streaming and
   reliable continuum-dimension detection remain future work.
 
+- **Multi-cell dynamics with explanatory controls.** An exact compiled cell-chain runner agrees
+  with the full transported-link implementation and records update dependencies. An 80-run census
+  executes 2.83 million updates across four sizes. Its spreading patterns expose a conserved
+  generated subgroup and an exact streaming-sublattice reduction, ruling out a naive particle
+  interpretation of these controls. See the [experiments, derivations, and measured profiles](docs/chain-experiments.md).
+
 - **GPU-ready exact algebra and measured compression limits.** Group operations are compiled into
   dense integer multiplication, inverse, and action tables. On an Apple M1 Max, the Metal
   microbenchmark processed one million frame transformations in 0.318 ms and one million

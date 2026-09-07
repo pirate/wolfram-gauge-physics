@@ -52,6 +52,16 @@ target_compile_options(gauge_interactions_test PRIVATE -Wall -Wextra -Wpedantic)
 add_test(NAME gauge_interactions COMMAND gauge_interactions_test)
 set_tests_properties(gauge_interactions PROPERTIES LABELS wgphysics)
 
+add_executable(cell_chain_test tests/cell_chain.cpp)
+target_link_libraries(cell_chain_test PRIVATE wgphysics)
+target_compile_options(cell_chain_test PRIVATE -Wall -Wextra -Wpedantic)
+add_test(NAME cell_chain COMMAND cell_chain_test)
+set_tests_properties(cell_chain PROPERTIES LABELS wgphysics)
+
+add_executable(wgphysics_chain_experiments src/chain_experiments.cpp)
+target_link_libraries(wgphysics_chain_experiments PRIVATE wgphysics)
+target_compile_options(wgphysics_chain_experiments PRIVATE -Wall -Wextra -Wpedantic)
+
 add_executable(wgphysics_pair_census src/pair_census.cpp)
 target_link_libraries(wgphysics_pair_census PRIVATE wgphysics)
 target_compile_options(wgphysics_pair_census PRIVATE -Wall -Wextra -Wpedantic)

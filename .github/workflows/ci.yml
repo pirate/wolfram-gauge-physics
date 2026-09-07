@@ -40,6 +40,8 @@ jobs:
           diff -u data/d4-cell-dynamics-census.json out/d4-cell-dynamics-census.json
           ./build/wgphysics_pair_census --output out/pair-interactions.json
           diff -u data/d4-pair-interactions.json out/pair-interactions.json
+          ./build/wgphysics_chain_experiments --output out/chain-experiments.json
+          diff -u data/d4-chain-experiments.json out/chain-experiments.json
       - name: Multiway smoke test
         run: |
           ./build/wgphysics_evolve --steps 2 --output out/smoke.json
