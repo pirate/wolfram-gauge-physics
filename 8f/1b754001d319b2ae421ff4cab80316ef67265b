@@ -1,0 +1,46 @@
+tools/bank_equilibrium.py
+  s_33c6c7a35bd0ca::t_a4b911a0c74d3b 216-245,303,355-358,361-389,406-407,437-438
+  s_33c6c7a35bd0ca::t_87c0448b5e13ae 275-276,297-298,424-432,435-436,486
+  s_33c6c7a35bd0ca::t_7164e6a5cad9cc 1-7,9-11,15-177,246-274,277-296,299-300,304-318,448-454,461-476,483-485,487-492
+  s_33c6c7a35bd0ca::t_eae35f967247a7 12-14,178-215,301-302,319-354,390-405,408-423,433-434,439-447,455-460,477-482
+  s_33c6c7a35bd0ca::t_269e49916a212f 359-360
+  s_33c6c7a35bd0ca::t_71be3487e51979 8
+docs/reachable-gauge-equilibrium.md
+  s_33c6c7a35bd0ca::t_0ca26ec4b7a0f3 131-139,154-168
+  s_33c6c7a35bd0ca::t_71be3487e51979 1-130,140-153,169-225
+tools/plot_bank_equilibrium.py
+  s_33c6c7a35bd0ca::t_d34b0eff4abd6e 1-64
+.github/workflows/ci.yml
+  s_33c6c7a35bd0ca::t_d34b0eff4abd6e 91-95
+tests/bank_equilibrium.py
+  s_33c6c7a35bd0ca::t_d34b0eff4abd6e 42-54,90
+  s_33c6c7a35bd0ca::t_9575a88a18c2e4 1-12,14-41,55-89,91-128,194-197
+  s_33c6c7a35bd0ca::t_269e49916a212f 13,129-193
+README.md
+  s_33c6c7a35bd0ca::t_daf3fba1258452 217-218,220-226,259-262,264
+  s_33c6c7a35bd0ca::t_5824f27dfbf7b0 219
+docs/STATE_OF_THE_ART.md
+  s_33c6c7a35bd0ca::t_daf3fba1258452 126-134
+docs/nonabelian-channel-banks.md
+  s_33c6c7a35bd0ca::t_daf3fba1258452 178-182
+data/d4-bank-equilibrium-replication.json
+  s_33c6c7a35bd0ca::t_b0705e61ffc012 1
+data/d4-bank-equilibrium.json
+  s_33c6c7a35bd0ca::t_220fd85ca1f477 1
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.2",
+  "base_commit_sha": "8f1b754001d319b2ae421ff4cab80316ef67265b",
+  "prompts": {},
+  "sessions": {
+    "s_33c6c7a35bd0ca": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a061ab-263d-7860-b882-4955b6e0b240",
+        "model": "gpt-6-astra"
+      },
+      "human_author": "Nick Sweeting <git@sweeting.me>"
+    }
+  }
+}
