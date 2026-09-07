@@ -1,0 +1,56 @@
+docs/STATE_OF_THE_ART.md
+  s_33c6c7a35bd0ca::t_6e09be5fb6a6ce 118-125
+tests/mixed_bank.cpp
+  s_33c6c7a35bd0ca::t_dc46c253146a25 28-30,83-90
+  s_33c6c7a35bd0ca::t_b6f683accc8849 1-27,31-82,91-93
+tools/run_channel_banks.py
+  s_33c6c7a35bd0ca::t_6d4d7d9ef00eb4 13,85,96-103,105-106,117,174-176
+  s_33c6c7a35bd0ca::t_7e36e0ed594857 1-12,14-84,86-95,104,107-116,118-173,177-184
+CMakeLists.txt
+  s_33c6c7a35bd0ca::t_b6f683accc8849 79-84
+  s_33c6c7a35bd0ca::t_7e36e0ed594857 123-126
+tests/channel_banks.py
+  s_33c6c7a35bd0ca::t_b6f683accc8849 1-48,50-63,71-98
+  s_33c6c7a35bd0ca::t_6d4d7d9ef00eb4 49,64-70
+docs/nonabelian-channel-banks.md
+  s_33c6c7a35bd0ca::t_0cdf56580f028f 22
+  s_33c6c7a35bd0ca::t_dc46c253146a25 1-21,23-197
+tools/triple_channels.py
+  s_33c6c7a35bd0ca::t_b6f683accc8849 38-39,143-155
+  s_33c6c7a35bd0ca::t_ba99a9216b0f7c 128-142,193-194
+  s_33c6c7a35bd0ca::t_757125adb976ac 1-11,13-37,40-100,170-175,178-188,195-198
+  s_33c6c7a35bd0ca::t_586466d6e187b0 12,101-127,162-169,176-177,189-192
+  s_33c6c7a35bd0ca::t_6d4d7d9ef00eb4 156-161
+src/mesh_dynamics.hpp
+  s_33c6c7a35bd0ca::t_b0cf09292297bb 22,27-31,37,41-48,52-61,88-90,93-94,97,100-101,104,111
+  s_33c6c7a35bd0ca::t_27a30bd04f8f10 119,137-141,143,148,153-154,225,269
+.github/workflows/ci.yml
+  s_33c6c7a35bd0ca::t_6e09be5fb6a6ce 84-90
+README.md
+  s_33c6c7a35bd0ca::t_6e09be5fb6a6ce 212,248-250
+  s_33c6c7a35bd0ca::t_dc46c253146a25 208-211,213-216
+src/mixed_bank_experiments.cpp
+  s_33c6c7a35bd0ca::t_7e36e0ed594857 1-101
+data/d4-channel-banks-replication.json
+  s_33c6c7a35bd0ca::t_f1605ed7043be4 1
+data/d4-channel-banks.json
+  s_33c6c7a35bd0ca::t_a75d1144d77ba4 1
+data/d4-triple-channels.json
+  s_33c6c7a35bd0ca::t_d4a21b09f1fb6f 1-640267
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.2",
+  "base_commit_sha": "ddb59ac3882a736f74054a3af225315ce670c7ba",
+  "prompts": {},
+  "sessions": {
+    "s_33c6c7a35bd0ca": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a061ab-263d-7860-b882-4955b6e0b240",
+        "model": "gpt-6-astra"
+      },
+      "human_author": "Nick Sweeting <git@sweeting.me>"
+    }
+  }
+}
