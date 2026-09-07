@@ -1,0 +1,68 @@
+src/equivariant_pair_search.hpp
+  s_33c6c7a35bd0ca::t_00a58cdf77d501 1-88,132
+  s_33c6c7a35bd0ca::t_08e6f83d4bcdc4 89-98
+  s_33c6c7a35bd0ca::t_7f5dc4081016ae 99-131
+src/cell_chain.hpp
+  s_33c6c7a35bd0ca::t_08e6f83d4bcdc4 3,43-52
+  s_33c6c7a35bd0ca::t_76a810a5aa728f 93-94
+src/gauge_interactions.hpp
+  s_33c6c7a35bd0ca::t_08e6f83d4bcdc4 87-89,91,98,117-122
+  s_ffefb637465167::t_c6333adf6a3289 123-124
+tools/plot_braid_collisions.py
+  s_33c6c7a35bd0ca::t_4ac98ca3705b7b 1-31
+src/involution_braid_search.cpp
+  s_33c6c7a35bd0ca::t_b68a8b5df80251 1-24,27-49,81-87,90-93,95-101,111-115
+  s_33c6c7a35bd0ca::t_a731378d930bfd 25-26,77,104-106
+  s_33c6c7a35bd0ca::t_85d52914ca3c6e 50-76,78-80,88-89,94,102-103,107-110
+src/involution_census.cpp
+  s_33c6c7a35bd0ca::t_d8f1ccbf59ceb8 1-83
+CMakeLists.txt
+  s_33c6c7a35bd0ca::t_b68a8b5df80251 71-74
+  s_33c6c7a35bd0ca::t_d8f1ccbf59ceb8 61-70
+docs/equivariant-rule-search.md
+  s_33c6c7a35bd0ca::t_4ac98ca3705b7b 1-130
+.github/workflows/ci.yml
+  s_33c6c7a35bd0ca::t_76a810a5aa728f 45-50
+tests/equivariant_pair_search.cpp
+  s_33c6c7a35bd0ca::t_85d52914ca3c6e 19-25,36-38
+  s_33c6c7a35bd0ca::t_d8f1ccbf59ceb8 1-18,26-35,39-66
+tools/screen_braid_rules.py
+  s_33c6c7a35bd0ca::t_a731378d930bfd 111-112,133,135-136,156
+  s_33c6c7a35bd0ca::t_aa7cca80c6f433 110,113-132,134,137-142,155
+  s_33c6c7a35bd0ca::t_d0a05d755479bf 78-83,143-148
+  s_33c6c7a35bd0ca::t_118b5739f0ddbd 1-77,84-109,149-154,157-160
+docs/infragauge-foundations.md
+  s_33c6c7a35bd0ca::t_4ac98ca3705b7b 4-7,21-23,36-39
+README.md
+  s_33c6c7a35bd0ca::t_4ac98ca3705b7b 141-147
+data/d4-braid-rule-screen.json
+  s_33c6c7a35bd0ca::t_e92f15b5b1e063 1-29148
+data/d4-involution-braid-search.json
+  s_33c6c7a35bd0ca::t_f6a7b70336ffec 1-18227
+data/d4-pair-involutions.json
+  s_33c6c7a35bd0ca::t_550a432c5d5df6 1-31
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.2",
+  "base_commit_sha": "37f156655e24b9c221de69ee89b611d498adc68e",
+  "prompts": {},
+  "sessions": {
+    "s_33c6c7a35bd0ca": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a061ab-263d-7860-b882-4955b6e0b240",
+        "model": "gpt-6-astra"
+      },
+      "human_author": "Nick Sweeting <git@sweeting.me>"
+    },
+    "s_ffefb637465167": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a07a32-a857-7453-a522-512c1140b8a1",
+        "model": "gpt-6-astra"
+      },
+      "human_author": "Nick Sweeting <git@sweeting.me>"
+    }
+  }
+}
