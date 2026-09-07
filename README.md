@@ -205,6 +205,15 @@ raw labelings that the exact graph-isomorphism quotient recognizes as the same c
   Larger sparse runs retain both rare reactions and null results. This diagnoses a catalytic
   constraint, not molecular binding. See the [link replays, component proof, and rate benchmark](docs/three-face-encounters.md).
 
+- **Compatible noncommuting reaction channels and an exact statistical reduction.** A positivity
+  audit identifies 144 converting triple laws in three 48-rule charge families. Mixed-arity
+  support lets those laws coexist with one-step shared-edge transport, removing the additive
+  sublattice locks. Independent raw-link replay checks 252 controlled runs and 311 conversions.
+  Uniform family sampling yields an exact classical face-class process, with a grand-canonical stationary
+  occupation relation $\rho_a\rho_b/(\rho_h\rho_1)=2$ from internal class degeneracies—not
+  a prescribed reaction constant or a molecular result. See the [charge cones, observer limit,
+  and equilibrium assumptions](docs/nonabelian-channel-banks.md).
+
 - **GPU-ready exact algebra and measured compression limits.** Group operations are compiled into
   dense integer multiplication, inverse, and action tables. On an Apple M1 Max, the Metal
   microbenchmark processed one million frame transformations in 0.318 ms and one million
@@ -236,6 +245,9 @@ raw labelings that the exact graph-isomorphism quotient recognizes as the same c
    counts expose catalytic dilution. Compare activation requirements and kinetic restrictions
    across the rule census, and test localization and overlapping schedules before assigning physical meaning;
    extend primitive searches without inserting a target energy or force law.
+   The compatible noncommuting banks now supply a closed classical conversion/transport
+   reference. Test its stationary predictions with component and mixing controls, and keep
+   microscopic loop information distinct from what survives uniform rule averaging.
    geometry- and fiber-changing constructions remain separate milestones.
 
 3. **Generalize the microscopic bundle.** Compare fibers inferred from vertex links, rule

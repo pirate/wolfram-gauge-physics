@@ -76,6 +76,12 @@ target_compile_options(three_face_test PRIVATE -Wall -Wextra -Wpedantic)
 add_test(NAME three_face COMMAND three_face_test)
 set_tests_properties(three_face PROPERTIES LABELS wgphysics)
 
+add_executable(mixed_bank_test tests/mixed_bank.cpp)
+target_link_libraries(mixed_bank_test PRIVATE wgphysics)
+target_compile_options(mixed_bank_test PRIVATE -Wall -Wextra -Wpedantic)
+add_test(NAME mixed_bank COMMAND mixed_bank_test)
+set_tests_properties(mixed_bank PROPERTIES LABELS wgphysics)
+
 add_executable(equivariant_pair_search_test tests/equivariant_pair_search.cpp)
 target_link_libraries(equivariant_pair_search_test PRIVATE wgphysics)
 target_compile_options(equivariant_pair_search_test PRIVATE -Wall -Wextra -Wpedantic)
@@ -113,6 +119,10 @@ target_compile_options(wgphysics_three_face_experiments PRIVATE -Wall -Wextra -W
 add_executable(wgphysics_three_face_replay src/three_face_replay.cpp)
 target_link_libraries(wgphysics_three_face_replay PRIVATE wgphysics)
 target_compile_options(wgphysics_three_face_replay PRIVATE -Wall -Wextra -Wpedantic)
+
+add_executable(wgphysics_mixed_bank_experiments src/mixed_bank_experiments.cpp)
+target_link_libraries(wgphysics_mixed_bank_experiments PRIVATE wgphysics)
+target_compile_options(wgphysics_mixed_bank_experiments PRIVATE -Wall -Wextra -Wpedantic)
 
 add_executable(wgphysics_chain_experiments src/chain_experiments.cpp)
 target_link_libraries(wgphysics_chain_experiments PRIVATE wgphysics)

@@ -81,6 +81,13 @@ jobs:
           python3 tests/three_face_reachability.py
           python3 tools/three_face_reachability.py --side 3 --exhaustive --random-trials 8 --sweeps 1000 --output out/reachability-3.json
           diff -u data/d4-three-face-reachability-3.json out/reachability-3.json
+      - name: Positive noncommuting channel banks and mixed-arity link dynamics
+        run: |
+          python3 tools/triple_channels.py --output out/triple-channels.json
+          diff -u data/d4-triple-channels.json out/triple-channels.json
+          python3 tests/channel_banks.py
+          python3 tools/run_channel_banks.py --output out/channel-banks.json
+          diff -u data/d4-channel-banks.json out/channel-banks.json
       - name: Multiway smoke test
         run: |
           ./build/wgphysics_evolve --steps 2 --output out/smoke.json

@@ -115,6 +115,14 @@ dynamics and symmetric-update stationary measures are established ideas.
 
 ## Contribution matrix
 
+The [compatible noncommuting channel banks](nonabelian-channel-banks.md) classify positivity
+and activation across all 945 minimal triple laws, identify 144 converting laws in three
+48-rule charge families, and implement them with mixed-arity link updates and rule-aware
+provenance. The uniform-bank face observer closes to an exact classical conversion/transport
+process. Degeneracy-weighted detailed balance supplies a stationary occupation benchmark;
+252 full-link runs retain both conversions and null controls. This is an explicit microscopic
+derivation and validation, not a discovery of chemical equilibrium or a quantum gauge theory.
+
 | Layer | Public upstream capability | Implemented here | Still open |
 |---|---|---|---|
 | Fiber | Total graph, projection, fiber predicates | Exact `Aut(F)` derivation, compact tables, and exact open-link inference | Compare rule, link, and multiway-derived fibers |

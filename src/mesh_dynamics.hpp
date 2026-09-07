@@ -19,26 +19,46 @@ public:
         std::vector<std::size_t> reads, writes, affected_faces;
         Lift lift=Lift::ExclusiveClosingLinks;
         std::vector<Path> fan;
+        std::size_t rule{};
     };
     struct Event {
         std::size_t patch, depth;
         std::vector<std::size_t> parents;
+        std::size_t rule{};
+    };
+    struct Rule {
+        std::size_t arity;
+        std::vector<std::size_t> forward,inverse;
     };
 
     MeshDynamics(const OrientedCellComplex& complex, const FiberBundleConnection& connection,
                  const PairTable& table)
         : MeshDynamics(complex,connection) {
-        validate_pair_table(group_,table); install_table(table,2);
+        register_rule(table);
     }
     MeshDynamics(const OrientedCellComplex& complex,const FiberBundleConnection& connection,const TripleTable& table)
         : MeshDynamics(complex,connection) {
-        validate_triple_table(group_,table); install_table(table.entries,3);
+        register_rule(table);
+    }
+
+    std::size_t register_rule(const PairTable& table) {
+        validate_pair_table(group_,table); return install_table(table,2);
+    }
+    std::size_t register_rule(const TripleTable& table) {
+        validate_triple_table(group_,table); return install_table(table.entries,3);
     }
 
 private:
-    void install_table(const std::vector<std::size_t>& table,std::size_t arity) {
-        arity_=arity; forward_=table; inverse_.resize(table.size());
-        for(std::size_t i=0;i<table.size();++i) inverse_[table[i]]=i;
+    std::size_t install_table(const std::vector<std::size_t>& table,std::size_t arity) {
+        for(std::size_t i=0;i<rules_.size();++i)
+            if(rules_[i].arity==arity && rules_[i].forward==table) return i;
+        Rule rule{arity,table,std::vector<std::size_t>(table.size())};
+        for(std::size_t i=0;i<table.size();++i) rule.inverse[table[i]]=i;
+        rules_.push_back(std::move(rule)); return rules_.size()-1;
+    }
+    void require_arity(std::size_t rule,std::size_t arity) const {
+        if(rule>=rules_.size() || rules_[rule].arity!=arity)
+            throw std::invalid_argument("patch and registered rule arity disagree");
     }
     MeshDynamics(const OrientedCellComplex& complex,const FiberBundleConnection& connection)
         : complex_(complex), fiber_(connection.fiber()), group_(connection.local_gauge_group()) {
@@ -65,29 +85,30 @@ private:
     }
 
 public:
-    std::size_t add_patch(const CellPairPatch& specification) {
-        if(arity_!=2) throw std::invalid_argument("pair patch requires a pair table");
-        return append_patch(specification,interaction_support(complex_.base(),specification),Lift::ExclusiveClosingLinks);
+    std::size_t add_patch(const CellPairPatch& specification,std::size_t rule=0) {
+        require_arity(rule,2);
+        return append_patch(specification,interaction_support(complex_.base(),specification),Lift::ExclusiveClosingLinks,rule);
     }
 
-    std::size_t add_patch(const SharedEdgePatch& specification) {
-        if(arity_!=2) throw std::invalid_argument("shared-edge patch requires a pair table");
+    std::size_t add_patch(const SharedEdgePatch& specification,std::size_t rule=0) {
+        require_arity(rule,2);
         const auto support=shared_edge_support(complex_,specification);
         return append_patch({specification.first_loop,specification.second_loop,{specification.first_loop.front()}},
-                            support,Lift::SharedEdge);
+                            support,Lift::SharedEdge,rule);
     }
 
-    std::size_t add_patch(const ThreeFacePatch& specification) {
-        if(arity_!=3) throw std::invalid_argument("three-face patch requires a triple table");
+    std::size_t add_patch(const ThreeFacePatch& specification,std::size_t rule=0) {
+        require_arity(rule,3);
         const auto support=three_face_support(complex_,specification);
         Patch patch{}; patch.lift=Lift::ThreeFace;
+        patch.rule=rule;
         for(const auto& face : specification.faces) patch.fan.push_back(compile_path(face));
         attach_support(patch,support);
         patches_.push_back(std::move(patch)); return patches_.size()-1;
     }
 
 private:
-    std::size_t append_patch(const CellPairPatch& specification,const InteractionSupport& support,Lift lift) {
+    std::size_t append_patch(const CellPairPatch& specification,const InteractionSupport& support,Lift lift,std::size_t rule) {
         // Validate actual faces, not arbitrarily chosen cycles of the one-skeleton.
         for (const auto* loop : {&specification.first_loop,&specification.second_loop}) {
             const auto canonical=canonical_oriented_face(*loop);
@@ -95,7 +116,7 @@ private:
                 throw std::invalid_argument("update loop is not an oriented mesh face");
         }
         Patch patch{specification,compile_path(specification.first_loop),
-                    compile_path(specification.second_loop),compile_path(specification.connector),{},{},{},lift,{}};
+                    compile_path(specification.second_loop),compile_path(specification.connector),{},{},{},lift,{},rule};
         attach_support(patch,support);
         patches_.push_back(std::move(patch));
         return patches_.size()-1;
@@ -113,17 +134,24 @@ private:
 
 public:
     void update(std::size_t id, HurwitzDirection direction=HurwitzDirection::Forward, bool record=false) {
+        update_with_rule(id,patches_.at(id).rule,direction,record);
+    }
+
+    void update_with_rule(std::size_t id,std::size_t rule_id,
+                          HurwitzDirection direction=HurwitzDirection::Forward,bool record=false) {
         const auto& p=patches_.at(id);
+        require_arity(rule_id,p.lift==Lift::ThreeFace ? 3 : 2);
         if (record && unrecorded_) throw std::logic_error("cannot append provenance after unrecorded events");
         if (record) {
             std::set<std::size_t> parents;
             for (const auto edge : p.reads) if (last_writer_[edge]) parents.insert(*last_writer_[edge]);
-            Event event{id,0,{parents.begin(),parents.end()}};
+            Event event{id,0,{parents.begin(),parents.end()},rule_id};
             for (const auto parent : parents) event.depth=std::max(event.depth,events_[parent].depth+1);
             for (const auto edge : p.writes) last_writer_[edge]=events_.size();
             events_.push_back(std::move(event));
         } else unrecorded_=true;
-        const auto& table=direction==HurwitzDirection::Forward ? forward_ : inverse_;
+        const auto& rule=rules_[rule_id];
+        const auto& table=direction==HurwitzDirection::Forward ? rule.forward : rule.inverse;
         if(p.lift==Lift::ThreeFace) {
             const auto target=decode_triple(table[encode_triple(triple_values(id),group_.order())],group_.order());
             auto spoke=link_value(p.fan[0][0]);
@@ -194,6 +222,7 @@ public:
     const auto& values() const { return values_; }
     const auto& face_values() const { return face_values_; }
     const auto& patches() const { return patches_; }
+    const auto& rules() const { return rules_; }
     const auto& events() const { return events_; }
     const auto& incidence() const { return incidence_; }
     std::pair<uint16_t,uint16_t> based_pair(std::size_t id) const {
@@ -237,8 +266,7 @@ private:
     OrientedCellComplex complex_;
     FiberGraph fiber_;
     AutomorphismTables group_;
-    PairTable forward_,inverse_;
-    std::size_t arity_{};
+    std::vector<Rule> rules_;
     uint16_t identity_{};
     std::vector<Edge> edges_;
     std::map<Edge,std::size_t> edge_ids_;
