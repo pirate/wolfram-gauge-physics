@@ -1,0 +1,41 @@
+tools/plot_chain_experiments.py
+  s_33c6c7a35bd0ca::t_a6f3e85300b8b2 1-42
+tests/cell_chain.cpp
+  s_33c6c7a35bd0ca::t_a198e49b646de4 1-34,36-44,46-49,71-98,116,118-119
+  s_33c6c7a35bd0ca::t_96a56b4df0c1f3 50-70,104
+  s_33c6c7a35bd0ca::t_d48d2163044f51 35,45,99-103,105-115,117
+CMakeLists.txt
+  s_33c6c7a35bd0ca::t_06c5edb8116983 61-64
+  s_33c6c7a35bd0ca::t_a198e49b646de4 55-60
+src/cell_chain.hpp
+  s_33c6c7a35bd0ca::t_a198e49b646de4 1-82,101-116
+  s_33c6c7a35bd0ca::t_d48d2163044f51 83-100
+src/chain_experiments.cpp
+  s_33c6c7a35bd0ca::t_06c5edb8116983 1-43,45-89,94-100
+  s_33c6c7a35bd0ca::t_d48d2163044f51 44,90-93
+README.md
+  s_33c6c7a35bd0ca::t_4ce3c29126fd66 135-140
+.github/workflows/ci.yml
+  s_33c6c7a35bd0ca::t_4ce3c29126fd66 43-44
+docs/chain-experiments.md
+  s_33c6c7a35bd0ca::t_e5c3e178bec362 20-22
+  s_33c6c7a35bd0ca::t_4ce3c29126fd66 1-19,23-122
+data/d4-chain-experiments.json
+  s_33c6c7a35bd0ca::t_7560b1bca13e24 1-82
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.2",
+  "base_commit_sha": "b7a2f5f9fe02d42161095b051dd6b8cf549286b8",
+  "prompts": {},
+  "sessions": {
+    "s_33c6c7a35bd0ca": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a061ab-263d-7860-b882-4955b6e0b240",
+        "model": "gpt-6-astra"
+      },
+      "human_author": "Nick Sweeting <git@sweeting.me>"
+    }
+  }
+}
