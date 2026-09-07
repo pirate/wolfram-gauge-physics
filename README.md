@@ -242,6 +242,16 @@ raw labelings that the exact graph-isomorphism quotient recognizes as the same c
 
 ![Measured graph-native mode localization and its failure to define a conserved particle count](docs/images/mode-localization.png)
 
+- **Classical holonomy memory from actual defect transport.** Moving a defect around a
+  noncommuting defect with twelve existing link updates returns every curvature class to its
+  original face but flips a gauge-invariant central relation and changes $\operatorname{tr}L^{14}$.
+  A second circuit restores the gauge orbit; commuting and empty-interior controls do not
+  change it. Forty-eight checked path detours differ only by local frames. The derived pure-winding
+  orbit formula also exposes the square fiber's limitation: these pure actions commute.
+  See the [raw-link braid experiment, proof, and next-fiber criterion](docs/transport-braid-memory.md).
+
+![Actual closed transport and gauge-invariant memory](docs/images/transport-braid.png)
+
 - **GPU-ready exact algebra and measured compression limits.** Group operations are compiled into
   dense integer multiplication, inverse, and action tables. On an Apple M1 Max, the Metal
   microbenchmark processed one million frame transformations in 0.318 ms and one million
@@ -290,7 +300,10 @@ raw labelings that the exact graph-isomorphism quotient recognizes as the same c
 3. **Generalize the microscopic bundle.** Compare fibers inferred from vertex links, rule
    automorphisms, repeated causal neighborhoods, and branchlike equivalence classes; then extend
    the implementation to twisted bundles, directed or ribbon fibers, hypergraph fibers, higher
-   connections, and dynamically changing fiber types.
+   connections, and dynamically changing fiber types. The closed-transport audit supplies a
+   concrete first comparison: the square fiber has commuting pure-winding actions, while a
+   triangle-adjacency-derived group has noncommuting actions on holonomy gauge orbits. Realize
+   the latter on actual links before treating the algebraic candidate as simulated behavior.
 
 4. **Turn the GPU representation into an end-to-end evolution kernel.** Fuse matching,
    affected-cycle updates, canonical signatures, deduplication, and queue insertion in a persistent

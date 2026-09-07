@@ -116,6 +116,8 @@ jobs:
           out/spectral-venv/bin/python tools/mode_localization.py --sides 6 --large-sides --evolution-side 6 --attempts 2000 --stride 1000 --trials 1 --output out/mode-localization-smoke.json
           out/spectral-venv/bin/python tools/spectral_transition.py --output out/spectral-transition.json
           out/spectral-venv/bin/python tools/spectral_transition.py --verify-with-flint data/d4-spectral-transition.json
+          out/spectral-venv/bin/python tests/transport_braid.py
+          out/spectral-venv/bin/python tools/transport_braid.py --output out/transport-braid.json
       - name: Multiway engine smoke test
         run: |
           ./build/wgphysics_evolve --steps 2 --output out/smoke.json
