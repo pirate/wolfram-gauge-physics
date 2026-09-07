@@ -1,0 +1,54 @@
+src/mesh_dynamics.hpp
+  s_33c6c7a35bd0ca::t_bfcf31530de2ff 4,12,19,56-66,74,86,103-112
+tests/shared_edge.py
+  s_33c6c7a35bd0ca::t_2a3cfc35f5b212 1-81
+README.md
+  s_33c6c7a35bd0ca::t_cdbeef61e39f54 170,179-188,214-217
+docs/STATE_OF_THE_ART.md
+  s_33c6c7a35bd0ca::t_cdbeef61e39f54 93-99
+tools/plot_shared_edge.py
+  s_33c6c7a35bd0ca::t_2a3cfc35f5b212 1-38,42,44-47,49-55
+  s_33c6c7a35bd0ca::t_d79aa0192183c2 39-41,43,48
+docs/shared-edge-transport.md
+  s_33c6c7a35bd0ca::t_cdbeef61e39f54 1-171
+docs/face-energy-obstruction.md
+  s_33c6c7a35bd0ca::t_cdbeef61e39f54 13-17,132-134
+src/shared_edge.hpp
+  s_33c6c7a35bd0ca::t_bfcf31530de2ff 1-94
+tools/run_shared_edge.py
+  s_33c6c7a35bd0ca::t_71fe1c9c09ce70 1-46,103-108,110-118,120-138,145-154,163-166,169-197,199-207,209-232,234-236,238-279
+  s_33c6c7a35bd0ca::t_28ee7013e05f5a 47-102,109,119,139-144,155-162,167-168,198,233,237
+  s_33c6c7a35bd0ca::t_2a3cfc35f5b212 208
+CMakeLists.txt
+  s_33c6c7a35bd0ca::t_49b660f1cddcfe 67-72
+.github/workflows/ci.yml
+  s_33c6c7a35bd0ca::t_2a3cfc35f5b212 63-64
+  s_33c6c7a35bd0ca::t_e1f2e727f2b16b 65-66
+src/mesh_experiments.cpp
+  s_33c6c7a35bd0ca::t_71fe1c9c09ce70 218-225,256-257,266
+  s_33c6c7a35bd0ca::t_ea46cac1186766 20,25,38-41,48-50,53-55,71-75,137,140-146,160-166,171,175-176,186-187,206,237-238
+tests/shared_edge.cpp
+  s_33c6c7a35bd0ca::t_2a3cfc35f5b212 58
+  s_33c6c7a35bd0ca::t_49b660f1cddcfe 1-57,59-93,106-108
+  s_33c6c7a35bd0ca::t_d79aa0192183c2 94-105
+data/d4-shared-edge-replication.json
+  s_33c6c7a35bd0ca::t_8c85d90e2d1d40 1-334641
+data/d4-shared-edge.json
+  s_33c6c7a35bd0ca::t_54ee76e2804322 1-266911
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.2",
+  "base_commit_sha": "8b0a62075e444b9a8d7a18f917d93dbd9720136e",
+  "prompts": {},
+  "sessions": {
+    "s_33c6c7a35bd0ca": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a061ab-263d-7860-b882-4955b6e0b240",
+        "model": "gpt-6-astra"
+      },
+      "human_author": "Nick Sweeting <git@sweeting.me>"
+    }
+  }
+}
