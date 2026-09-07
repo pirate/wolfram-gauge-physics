@@ -88,6 +88,11 @@ jobs:
           python3 tests/channel_banks.py
           python3 tools/run_channel_banks.py --output out/channel-banks.json
           diff -u data/d4-channel-banks.json out/channel-banks.json
+      - name: Reachable nonabelian equilibrium and raw-link residence statistics
+        run: |
+          python3 tests/bank_equilibrium.py
+          python3 tools/bank_equilibrium.py --trials 4 --component data/d4-bank-equilibrium.json --output out/bank-equilibrium.json
+          diff -u data/d4-bank-equilibrium.json out/bank-equilibrium.json
       - name: Multiway smoke test
         run: |
           ./build/wgphysics_evolve --steps 2 --output out/smoke.json

@@ -214,6 +214,16 @@ raw labelings that the exact graph-isomorphism quotient recognizes as the same c
   a prescribed reaction constant or a molecular result. See the [charge cones, observer limit,
   and equilibrium assumptions](docs/nonabelian-channel-banks.md).
 
+- **Link-realizable equilibrium predictions and a binding restriction.** Complete search reaches
+  all 468,180 class states in one small noncommuting charge sector. Exact counting predicts
+  $(\Pr(N_h=k))_{k=0}^{2}=(182,56,3)/241$ and a conversion frequency $440/86037$ per attempted
+  update; independently replayed raw-link runs test both. The equilibrium class distribution
+  has no distance preference beyond graph geometry, and positive state-independent reweighting
+  of the same reversible generators cannot change it. This identifies a concrete obstacle to
+  equilibrium class binding, not a molecule. See the [component proof, measurements, and scope](docs/reachable-gauge-equilibrium.md).
+
+![Raw-link relaxation and conversion frequencies versus exact finite-sector predictions](docs/images/bank-equilibrium.png)
+
 - **GPU-ready exact algebra and measured compression limits.** Group operations are compiled into
   dense integer multiplication, inverse, and action tables. On an Apple M1 Max, the Metal
   microbenchmark processed one million frame transformations in 0.318 ms and one million
@@ -246,9 +256,12 @@ raw labelings that the exact graph-isomorphism quotient recognizes as the same c
    across the rule census, and test localization and overlapping schedules before assigning physical meaning;
    extend primitive searches without inserting a target energy or force law.
    The compatible noncommuting banks now supply a closed classical conversion/transport
-   reference. Test its stationary predictions with component and mixing controls, and keep
+   reference. One small sector now has an exhaustive component proof and measured canonical
+   statistics; its spatial exchangeability rules out equilibrium class binding even under
+   positive constant schedule reweighting. Test larger sectors, transient localization, and
+   extended loop correlations while keeping
    microscopic loop information distinct from what survives uniform rule averaging.
-   geometry- and fiber-changing constructions remain separate milestones.
+   Geometry- and fiber-changing constructions remain separate milestones.
 
 3. **Generalize the microscopic bundle.** Compare fibers inferred from vertex links, rule
    automorphisms, repeated causal neighborhoods, and branchlike equivalence classes; then extend

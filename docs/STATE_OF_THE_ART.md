@@ -123,6 +123,15 @@ process. Degeneracy-weighted detailed balance supplies a stationary occupation b
 252 full-link runs retain both conversions and null controls. This is an explicit microscopic
 derivation and validation, not a discovery of chemical equilibrium or a quantum gauge theory.
 
+The [reachable canonical benchmark](reachable-gauge-equilibrium.md) closes the realizability
+gap for one 18-face noncommuting sector: all 468,180 formal class states are reachable from
+an actual link seed. Exact finite-charge probabilities and conversion frequencies are
+compared with independently replayed raw-link residence measurements, including null controls
+and independent-run uncertainty. Spatial exchangeability supplies an equilibrium class-binding
+restriction; a raw-permutation argument extends it to positive, state-independent reweighting
+of the same supported generators. This is a scoped diagnostic against false molecular claims,
+not a general no-go theorem for finite-group gauge matter or evolving geometry.
+
 | Layer | Public upstream capability | Implemented here | Still open |
 |---|---|---|---|
 | Fiber | Total graph, projection, fiber predicates | Exact `Aut(F)` derivation, compact tables, and exact open-link inference | Compare rule, link, and multiway-derived fibers |

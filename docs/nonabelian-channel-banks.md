@@ -175,8 +175,11 @@ checking the current raw holonomies; their link-identity property follows from t
 - The positive weight bounds support throughout. No persistent localized bound state,
   binding energy, force law, continuum limit, or quantum interference is demonstrated.
 
-The next physics-facing test is the derived stationary/reaction-diffusion benchmark with
-finite-size, component, and mixing controls. For gauge-dependent observables beyond this
+The [reachable-equilibrium follow-up](reachable-gauge-equilibrium.md) now proves connectivity
+of one small fixed-charge sector, derives its finite canonical occupation and conversion-rate
+predictions, and tests them in independent raw-link trajectories. It also proves a scoped
+equilibrium class-binding restriction, including under positive constant schedule reweighting.
+Large-size components and quantitative mixing bounds remain open. For observables beyond this
 closed class process, the uniform averaging assumption is itself an information ceiling.
 Changing the quantum or geometrical state construction remains separate work, not something
 that more classical sampling can establish.
