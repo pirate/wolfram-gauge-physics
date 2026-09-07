@@ -1,0 +1,60 @@
+bench/loop_observer.cpp
+  s_33c6c7a35bd0ca::t_3daf25d9b43f39 1,3-43,45,47-67,69,71-85
+  s_33c6c7a35bd0ca::t_9fe392ca76d9d3 2,44,46,68,70
+tools/d4_loop_observer.py
+  s_33c6c7a35bd0ca::t_5e5e19fa4ac9b4 277,294-307,312-315
+  s_33c6c7a35bd0ca::t_94188a94f8637a 1-9,11-102,104-132,135-229,320-329,331-338
+  s_33c6c7a35bd0ca::t_3e09c4d4c41f57 241
+  s_33c6c7a35bd0ca::t_072d0a153ab273 10,103,133-134,230-240,242-276,278-293,308-311,316-319,330
+src/loop_observer.cpp
+  s_33c6c7a35bd0ca::t_63f1b3b94dd3cb 1-54
+CMakeLists.txt
+  s_33c6c7a35bd0ca::t_3daf25d9b43f39 34-37
+  s_33c6c7a35bd0ca::t_63f1b3b94dd3cb 30-33
+README.md
+  s_33c6c7a35bd0ca::t_25763028598db0 238,241
+  s_33c6c7a35bd0ca::t_89e05069761218 227-234,239-240,273-276
+.github/workflows/ci.yml
+  s_33c6c7a35bd0ca::t_ae8192b282b60f 103-105
+  s_33c6c7a35bd0ca::t_9fe392ca76d9d3 97-102,106-107
+  s_33c6c7a35bd0ca::t_1a5a9505d366d5 96
+docs/STATE_OF_THE_ART.md
+  s_33c6c7a35bd0ca::t_89e05069761218 135-144
+tests/d4_loop_observer.py
+  s_33c6c7a35bd0ca::t_5e5e19fa4ac9b4 1-87,101-133
+  s_33c6c7a35bd0ca::t_9261614692ed48 88-100
+tools/run_loop_bench.py
+  s_33c6c7a35bd0ca::t_9fe392ca76d9d3 1-34
+src/d4_loop_observer.hpp
+  s_33c6c7a35bd0ca::t_63f1b3b94dd3cb 1-161
+tools/fiber_mode_probe.py
+  s_33c6c7a35bd0ca::t_424c322f96302f 1-16,21-59,62-156
+  s_33c6c7a35bd0ca::t_ae8192b282b60f 17-20,60-61
+tests/fiber_mode_probe.py
+  s_33c6c7a35bd0ca::t_ae8192b282b60f 1-90
+docs/complete-loop-observer.md
+  s_33c6c7a35bd0ca::t_89e05069761218 1-47,53-221
+  s_33c6c7a35bd0ca::t_25763028598db0 48-52
+bench/results/m1-max-loop-observer.json
+  s_33c6c7a35bd0ca::t_2265cddf4479c3 1-104
+data/d4-fiber-mode-probe.json
+  s_33c6c7a35bd0ca::t_a6d17e7b57dea1 1-936
+data/d4-loop-observer.json
+  s_33c6c7a35bd0ca::t_1e2555696b3b62 1-813
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.2",
+  "base_commit_sha": "dc60917f86ea86ec5afdc67e8ee13f2cfee74746",
+  "prompts": {},
+  "sessions": {
+    "s_33c6c7a35bd0ca": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a061ab-263d-7860-b882-4955b6e0b240",
+        "model": "gpt-6-astra"
+      },
+      "human_author": "Nick Sweeting <git@sweeting.me>"
+    }
+  }
+}
