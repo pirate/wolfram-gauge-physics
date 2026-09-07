@@ -1,0 +1,65 @@
+tools/plot_mode_localization.py
+  s_33c6c7a35bd0ca::t_0969798aa0e54a 1-87
+README.md
+  s_33c6c7a35bd0ca::t_1bdec8cbb7c5a9 237
+  s_33c6c7a35bd0ca::t_02515f757b6530 235-236,238-244,285-286
+.github/workflows/ci.yml
+  s_33c6c7a35bd0ca::t_1bdec8cbb7c5a9 107-112,114-117
+  s_33c6c7a35bd0ca::t_9844cfba330933 113,118
+tools/spectral_transition.py
+  s_33c6c7a35bd0ca::t_0e671be7d379a4 1-69,128-173,176-194,196,200-208
+  s_33c6c7a35bd0ca::t_9844cfba330933 102-127,195,197-199
+  s_33c6c7a35bd0ca::t_ee1248e8fb7dfe 70-101,174-175
+tests/mode_localization.py
+  s_33c6c7a35bd0ca::t_ee1248e8fb7dfe 4,20-21,146-166
+  s_33c6c7a35bd0ca::t_9b981f468f8a46 25-40
+  s_33c6c7a35bd0ca::t_7ea73c43defd46 1,3,5-7,9-16,18-19,22-24,41-145,167-177,188-206
+  s_33c6c7a35bd0ca::t_61466f5e37a638 2,8,17,178-187
+tools/compact_mode_certificate.py
+  s_33c6c7a35bd0ca::t_8aadb44ee14e70 1-50,52-81,83-115
+  s_33c6c7a35bd0ca::t_9b981f468f8a46 51,82
+tools/run_shared_edge.py
+  s_33c6c7a35bd0ca::t_27538090f96482 15,22-25,27
+src/mixed_bank_experiments.cpp
+  s_33c6c7a35bd0ca::t_3cd82b1fbdad63 19
+docs/localized-fiber-modes.md
+  s_33c6c7a35bd0ca::t_9844cfba330933 171-172,189-190
+  s_33c6c7a35bd0ca::t_1bdec8cbb7c5a9 4-5,40-46
+  s_33c6c7a35bd0ca::t_02515f757b6530 1-3,6-39,47-170,173-188,191-201
+tools/mode_localization.py
+  s_33c6c7a35bd0ca::t_3cd82b1fbdad63 1-43,46,49-162,164,166,175-183,186-189,193-221,239-296,299-347,351-361
+  s_33c6c7a35bd0ca::t_d5edcc79eb038d 44-45,47-48,163,165,167-174,184-185,190-192,222-238,297-298
+  s_33c6c7a35bd0ca::t_9844cfba330933 348-350
+data/d4-compact-mode-certificate.json
+  s_33c6c7a35bd0ca::t_0d4270e6c2379a 1
+data/d4-localization-density-audit.json
+  s_33c6c7a35bd0ca::t_d375bac1692689 1
+data/d4-mode-localization.json
+  s_12fb0f3f0c5b9f::t_b3d63400ef9767 1
+data/d4-spectral-transition.json
+  s_33c6c7a35bd0ca::t_00abb3aa8c5c9c 1
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.2",
+  "base_commit_sha": "5e4db4eb9bb0a07d7494c6766b4af3a7761767b1",
+  "prompts": {},
+  "sessions": {
+    "s_12fb0f3f0c5b9f": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0636c-5413-73b3-a023-06c86eedf368",
+        "model": "gpt-6-astra"
+      },
+      "human_author": "Nick Sweeting <git@sweeting.me>"
+    },
+    "s_33c6c7a35bd0ca": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a061ab-263d-7860-b882-4955b6e0b240",
+        "model": "gpt-6-astra"
+      },
+      "human_author": "Nick Sweeting <git@sweeting.me>"
+    }
+  }
+}
