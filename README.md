@@ -28,8 +28,8 @@ adds the gauge-aware rewrite machinery needed between those two layers.
 
 > [!IMPORTANT]
 > This is experimental mathematical software, not a demonstrated derivation of the Standard
-> Model, electromagnetism, particles, or continuum spacetime. Every result below is an exact
-> statement about an implemented finite combinatorial model.
+> Model, electromagnetism, particles, or continuum spacetime. Algebraic results concern finite
+> combinatorial models; sampled geometry estimates and visual projections are diagnostics.
 
 ## Quick start
 
@@ -55,6 +55,10 @@ To run a Wolfram-model rule with exact state canonicalization and export its evo
   --steps 3 \
   --output out/evolution.json
 ```
+
+Open the simulation debugger with `python3 -m http.server 8765 --bind 127.0.0.1`, then visit
+[localhost:8765/viewer/](http://localhost:8765/viewer/). See the [debugger guide](docs/debugger.md)
+for its selections, view budgets, and projection limits.
 
 # Progress So Far
 
@@ -112,7 +116,21 @@ raw labelings that the exact graph-isomorphism quotient recognizes as the same c
 - **Causal curvature accounting.** Every supported engine event receives exact before-and-after
   holonomy sectors and the engine's causal dependencies. The analyzer distinguishes changes inside
   the causal future of a disturbance from off-causal changes; transport-preserving subdivision is
-  verified as a zero-change control.
+  verified as a zero-change control. These are event dependencies; spatial locality and quantum
+  entanglement require separate tests.
+
+- **Interactions across local fiber frames.** Two-cell updates now compare holonomies through
+  explicit connector transport and expose their link read/write supports. Alongside Hurwitz
+  transport, the established braid map $(A,B)\mapsto(ABA,A^{-1})$ changes individual curvature
+  sectors while preserving $AB$. The square-fiber census resolves 64 pairs into 28 gauge orbits;
+  tests check inverses, local gauge covariance, and braid identities on transported connections.
+  See [pair interactions and their mathematical limits](docs/pair-interactions.md).
+
+- **Intrinsic geometry probes and a simulation debugger.** Graph-distance ball growth and lazy
+  diffusion estimate $d_H(r)$ and $d_s(t)$ independently of display coordinates. The debugger
+  connects selected hypergraphs, event dependencies, branchial slices, and graph-distance 3-D
+  projections. Its bounded views support small-state inspection; million-node streaming and
+  reliable continuum-dimension detection remain future work.
 
 - **GPU-ready exact algebra and measured compression limits.** Group operations are compiled into
   dense integer multiplication, inverse, and action tables. On an Apple M1 Max, the Metal
@@ -157,15 +175,16 @@ raw labelings that the exact graph-isomorphism quotient recognizes as the same c
    foliation independence, effective dimension, localized persistent excitations, loop scaling,
    center sectors, and eventually QED-like long-range behavior. Molecular or atomic claims should
    wait until the model produces calibrated charges, masses, couplings, and stable bound states.
+   See the [measurement and admission criteria](docs/phenomenon-detection.md).
 
 7. **Expand the public benchmark census.** Add nontrivial rule morphisms, larger and asymmetric
    fibers, more curvature sectors, scaling curves, and independently reproducible reference cases
    that can be compared across Wolfram Language, C++, CPU, and GPU implementations.
 
-8. **Turn the static graph renderer into an interactive playground.** Render spatial hypergraphs,
-   multiway branches, causal edges, fibers, transport labels, and holonomy sectors in one inspectable
-   interface; export deterministic screenshots and small animations so conceptual and performance
-   changes are easy to review in forum posts.
+8. **Scale the debugger's data access.** Add indexed snapshot queries and multiscale summaries,
+   gauge-sector overlays, and bounded neighborhood retrieval so large simulations can be inspected
+   without loading their full history into the browser. Track projection distortion separately
+   from intrinsic dimension and keep causal and branchial relations identifiable.
 
 9. **Validate the construction with the Wolfram community.** Resolve which microscopic fiber
    object and gauge quotient best match the intended semantics of

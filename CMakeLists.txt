@@ -40,6 +40,22 @@ target_compile_options(research_test PRIVATE -Wall -Wextra -Wpedantic)
 add_test(NAME research COMMAND research_test)
 set_tests_properties(research PROPERTIES LABELS wgphysics)
 
+add_executable(observables_test tests/observables.cpp)
+target_link_libraries(observables_test PRIVATE wgphysics)
+target_compile_options(observables_test PRIVATE -Wall -Wextra -Wpedantic)
+add_test(NAME observables COMMAND observables_test)
+set_tests_properties(observables PROPERTIES LABELS wgphysics)
+
+add_executable(gauge_interactions_test tests/gauge_interactions.cpp)
+target_link_libraries(gauge_interactions_test PRIVATE wgphysics)
+target_compile_options(gauge_interactions_test PRIVATE -Wall -Wextra -Wpedantic)
+add_test(NAME gauge_interactions COMMAND gauge_interactions_test)
+set_tests_properties(gauge_interactions PROPERTIES LABELS wgphysics)
+
+add_executable(wgphysics_pair_census src/pair_census.cpp)
+target_link_libraries(wgphysics_pair_census PRIVATE wgphysics)
+target_compile_options(wgphysics_pair_census PRIVATE -Wall -Wextra -Wpedantic)
+
 if(WGPHYSICS_BUILD_REWRITE_HARNESS)
   include(FetchContent)
   if(POLICY CMP0169)
@@ -88,7 +104,7 @@ if(WGPHYSICS_BUILD_REWRITE_HARNESS)
   endif()
 
   add_executable(wgphysics_evolve src/main.cpp)
-  target_link_libraries(wgphysics_evolve PRIVATE hypergraph)
+  target_link_libraries(wgphysics_evolve PRIVATE hypergraph wgphysics)
   target_include_directories(wgphysics_evolve PRIVATE
     "${hypergraph_rewriting_engine_SOURCE_DIR}/common/include"
     "${hypergraph_rewriting_engine_BINARY_DIR}/generated"

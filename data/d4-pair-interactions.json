@@ -1,0 +1,10 @@
+{
+  "schema":1,
+  "fiber":"C4",
+  "group_order":8,
+  "quotient":"ordered holonomy pairs under simultaneous Aut(F) conjugation",
+  "rules":[
+    {"name":"hurwitz","raw_pairs":64,"physical_pairs":28,"changed_sector_multisets":0,"braid_triples":512,"braid_relation_failures":0,"quotient_cycle_counts_by_length":{"1":8,"2":10}},
+    {"name":"boundary_shear","raw_pairs":64,"physical_pairs":28,"changed_sector_multisets":4,"braid_triples":512,"braid_relation_failures":0,"quotient_cycle_counts_by_length":{"1":8,"2":8,"4":1}}
+  ]
+}

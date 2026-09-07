@@ -1,0 +1,16 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gauge physics debugger</title>
+<style>
+:root{color-scheme:dark;font:14px system-ui;background:#09101d;color:#e6edf7}*{box-sizing:border-box}body{margin:0}
+header,nav{display:flex;gap:12px;align-items:center;flex-wrap:wrap;padding:14px 20px;border-bottom:1px solid #263750}h1{font-size:17px;margin:0 auto 0 0}
+button,select,input{font:inherit}button,select{background:#142237;color:inherit;border:1px solid #3b506d;border-radius:5px;padding:7px;cursor:pointer}button[aria-selected=true]{background:#265779;border-color:#72cdff}label{font-size:12px;color:#a4b6ce}input[type=range]{vertical-align:middle;width:140px}
+#file{width:200px}main{display:grid;grid-template-columns:minmax(0,1fr) 310px}#viewport{position:relative;height:calc(100vh - 145px);min-height:480px}canvas{width:100%;height:100%;display:block;touch-action:none}aside{border-left:1px solid #263750;padding:20px;font-size:12px;line-height:1.55}h2{font-size:13px;color:#9bc9ef;margin:0 0 10px}dl{display:grid;grid-template-columns:1fr auto;gap:7px}dd{margin:0}#notice{color:#d5bb83;border-left:2px solid #d5bb83;padding-left:12px}#status{position:absolute;left:20px;bottom:14px;color:#92abc9;font-size:12px;max-width:90%}#selection{overflow-wrap:anywhere;white-space:pre-wrap}
+@media(max-width:850px){main{grid-template-columns:1fr}aside{border-left:0}#viewport{height:65vh}}
+</style>
+<header><h1>Gauge physics debugger</h1><label>Evolution JSON <input id="file" type="file" accept=".json"></label><label>Rewrite depth <span id="step-label">0</span> <input id="step" type="range" min="0" max="0" value="0"></label><label>State <select id="state"></select></label><button id="play">Play lineage</button></header>
+<nav role="tablist" aria-label="Debugger views"><button role="tab" data-view="hypergraph" aria-selected="true">Hypergraph</button><button role="tab" data-view="causal" aria-selected="false">Causal history</button><button role="tab" data-view="branchial" aria-selected="false">Branchial slice</button><button role="tab" data-view="projection" aria-selected="false">Euclidean projection</button><label>Vertex <select id="vertex"></select></label><label>Local radius <select id="radius"><option>1</option><option selected>2</option><option>3</option><option value="99">Component</option></select></label></nav>
+<main><div id="viewport"><canvas id="canvas" aria-label="Interactive simulation graph"></canvas><div id="status">Loading simulation…</div></div><aside><h2 id="view-title">Hypergraph</h2><p id="description"></p><h2>Selection</h2><div id="selection">Select a vertex, event, or branch.</div><h2>Measured state</h2><dl id="metrics"></dl><p id="notice"></p><h2>Display budget</h2><p id="budget"></p><p>Blue: vertices / states. Purple diamonds: hyperedges. Gold: selection or causal ancestry. Green: newly added hyperedges. Red dashed: removed hyperedges.</p></aside></main>
+<script type="module" src="./debugger.mjs"></script>
+</html>

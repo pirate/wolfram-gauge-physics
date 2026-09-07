@@ -60,6 +60,11 @@ actually read and write.
 
 ## Claim boundary
 
+The next implemented extension is [transported pair interactions](pair-interactions.md): cells
+can have different basepoints connected by explicit parallel transport. The new comparison also
+proves that Hurwitz moves conserve the multiset of conjugacy sectors and introduces a second
+established braid map that can change that inventory while preserving the ordered pair product.
+
 The Hurwitz move is a mathematically natural, nontrivial transport primitive, not yet a selected law
 of nature. A physical candidate still has to survive multiway causal alignment, orientation and
 foliation tests, larger fiber/rule censuses, localization, scattering, and continuum-limit studies.

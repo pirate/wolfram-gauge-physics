@@ -1,0 +1,899 @@
+{
+  "schema": 1,
+  "semantics": "target-free novelty sweep over intrinsic graph phenotypes",
+  "rule_family": {
+    "lhs": "0,1;0,2",
+    "rhs": "connected simple graphs on variables 0,1,2,3 with fresh variable 3",
+    "initial": "1,2;1,3"
+  },
+  "configuration": {
+    "steps": 3,
+    "probe_radius": 8,
+    "diffusion_steps": 16,
+    "probe_sources": 64,
+    "timeout_seconds": 15.0,
+    "candidate_rules": 38,
+    "diverse_rules_requested": 8
+  },
+  "selection": {
+    "method": "greedy max-min distance after per-observable standardization",
+    "seed": "phenotype medoid",
+    "target_geometry": null
+  },
+  "candidates": [
+    {
+      "rule": "0,1;0,2->0,1;0,2;0,3",
+      "status": "ok",
+      "counts": {
+        "raw_states": 21,
+        "canonical_states": 4,
+        "events": 20,
+        "causal_edges": 3,
+        "branchial_edges": 70
+      },
+      "phenotype": {
+        "growth_ratio": 2.0,
+        "mean_degree": 1.666667,
+        "volume_dimension": 1.169925001,
+        "spectral_dimension": 0.4134918319285714,
+        "inhomogeneity": 0.559016994,
+        "canonical_compression": 0.8095238095238095,
+        "branching": 6.666666666666667,
+        "causal_density": 0.15
+      },
+      "selected_for_diversity": true,
+      "novelty_distance_at_selection": 8.364332170641891
+    },
+    {
+      "rule": "0,1;0,2->0,1;0,2;1,3",
+      "status": "ok",
+      "counts": {
+        "raw_states": 11,
+        "canonical_states": 7,
+        "events": 10,
+        "causal_edges": 7,
+        "branchial_edges": 5
+      },
+      "phenotype": {
+        "growth_ratio": 2.0,
+        "mean_degree": 1.6666669999999997,
+        "volume_dimension": 0.5797260811666667,
+        "spectral_dimension": 0.6411093236666666,
+        "inhomogeneity": 0.3245316976666667,
+        "canonical_compression": 0.36363636363636365,
+        "branching": 1.6666666666666667,
+        "causal_density": 0.7
+      },
+      "selected_for_diversity": false,
+      "novelty_distance_at_selection": null
+    },
+    {
+      "rule": "0,1;0,2->0,1;0,2;2,3",
+      "status": "ok",
+      "counts": {
+        "raw_states": 11,
+        "canonical_states": 7,
+        "events": 10,
+        "causal_edges": 7,
+        "branchial_edges": 5
+      },
+      "phenotype": {
+        "growth_ratio": 2.0,
+        "mean_degree": 1.6666669999999997,
+        "volume_dimension": 0.5797260811666667,
+        "spectral_dimension": 0.6411093236666666,
+        "inhomogeneity": 0.3245316976666667,
+        "canonical_compression": 0.36363636363636365,
+        "branching": 1.6666666666666667,
+        "causal_density": 0.7
+      },
+      "selected_for_diversity": false,
+      "novelty_distance_at_selection": null
+    },
+    {
+      "rule": "0,1;0,2->0,1;0,3;1,2",
+      "status": "ok",
+      "counts": {
+        "raw_states": 11,
+        "canonical_states": 8,
+        "events": 10,
+        "causal_edges": 8,
+        "branchial_edges": 5
+      },
+      "phenotype": {
+        "growth_ratio": 2.0,
+        "mean_degree": 1.666667,
+        "volume_dimension": 0.548952536625,
+        "spectral_dimension": 0.6397597463392857,
+        "inhomogeneity": 0.29442980950000003,
+        "canonical_compression": 0.2727272727272727,
+        "branching": 1.4285714285714286,
+        "causal_density": 0.8
+      },
+      "selected_for_diversity": false,
+      "novelty_distance_at_selection": null
+    },
+    {
+      "rule": "0,1;0,2->0,1;0,3;2,3",
+      "status": "ok",
+      "counts": {
+        "raw_states": 9,
+        "canonical_states": 6,
+        "events": 8,
+        "causal_edges": 5,
+        "branchial_edges": 4
+      },
+      "phenotype": {
+        "growth_ratio": 2.0,
+        "mean_degree": 1.666667,
+        "volume_dimension": 0.456631903,
+        "spectral_dimension": 0.6357110143571428,
+        "inhomogeneity": 0.204124145,
+        "canonical_compression": 0.33333333333333337,
+        "branching": 1.6,
+        "causal_density": 0.625
+      },
+      "selected_for_diversity": false,
+      "novelty_distance_at_selection": null
+    },
+    {
+      "rule": "0,1;0,2->0,1;1,2;1,3",
+      "status": "ok",
+      "counts": {
+        "raw_states": 7,
+        "canonical_states": 4,
+        "events": 6,
+        "causal_edges": 2,
+        "branchial_edges": 3
+      },
+      "phenotype": {
+        "growth_ratio": 2.0,
+        "mean_degree": 1.666667,
+        "volume_dimension": 0.5406540806666666,
+        "spectral_dimension": 0.6266558209285714,
+        "inhomogeneity": 0.279508497,
+        "canonical_compression": 0.4285714285714286,
+        "branching": 2.0,
+        "causal_density": 0.3333333333333333
+      },
+      "selected_for_diversity": false,
+      "novelty_distance_at_selection": null
+    },
+    {
+      "rule": "0,1;0,2->0,1;1,2;2,3",
+      "status": "ok",
+      "counts": {
+        "raw_states": 3,
+        "canonical_states": 2,
+        "events": 2,
+        "causal_edges": 0,
+        "branchial_edges": 1
+      },
+      "phenotype": {
+        "growth_ratio": 1.3333333333333333,
+        "mean_degree": 1.5,
+        "volume_dimension": 0.4073778815,
+        "spectral_dimension": 0.38209530635714284,
+        "inhomogeneity": 0.2,
+        "canonical_compression": 0.33333333333333337,
+        "branching": 2.0,
+        "causal_density": 0.0
+      },
+      "selected_for_diversity": true,
+      "novelty_distance_at_selection": 2.9149282096913764
+    },
+    {
+      "rule": "0,1;0,2->0,1;1,3;2,3",
+      "status": "ok",
+      "counts": {
+        "raw_states": 3,
+        "canonical_states": 2,
+        "events": 2,
+        "causal_edges": 0,
+        "branchial_edges": 1
+      },
+      "phenotype": {
+        "growth_ratio": 1.3333333333333333,
+        "mean_degree": 1.5,
+        "volume_dimension": 0.4073778815,
+        "spectral_dimension": 0.38209530635714284,
+        "inhomogeneity": 0.2,
+        "canonical_compression": 0.33333333333333337,
+        "branching": 2.0,
+        "causal_density": 0.0
+      },
+      "selected_for_diversity": false,
+      "novelty_distance_at_selection": null
+    },
+    {
+      "rule": "0,1;0,2->0,2;0,3;1,2",
+      "status": "ok",
+      "counts": {
+        "raw_states": 9,
+        "canonical_states": 8,
+        "events": 8,
+        "causal_edges": 6,
+        "branchial_edges": 4
+      },
+      "phenotype": {
+        "growth_ratio": 2.0,
+        "mean_degree": 1.666667,
+        "volume_dimension": 0.548952536625,
+        "spectral_dimension": 0.6397597463392857,
+        "inhomogeneity": 0.29442980950000003,
+        "canonical_compression": 0.11111111111111116,
+        "branching": 1.1428571428571428,
+        "causal_density": 0.75
+      },
+      "selected_for_diversity": false,
+      "novelty_distance_at_selection": null
+    },
+    {
+      "rule": "0,1;0,2->0,2;0,3;1,3",
+      "status": "ok",
+      "counts": {
+        "raw_states": 9,
+        "canonical_states": 6,
+        "events": 8,
+        "causal_edges": 5,
+        "branchial_edges": 4
+      },
+      "phenotype": {
+        "growth_ratio": 2.0,
+        "mean_degree": 1.666667,
+        "volume_dimension": 0.456631903,
+        "spectral_dimension": 0.6357110143571428,
+        "inhomogeneity": 0.204124145,
+        "canonical_compression": 0.33333333333333337,
+        "branching": 1.6,
+        "causal_density": 0.625
+      },
+      "selected_for_diversity": false,
+      "novelty_distance_at_selection": null
+    },
+    {
+      "rule": "0,1;0,2->0,2;1,2;1,3",
+      "status": "ok",
+      "counts": {
+        "raw_states": 9,
+        "canonical_states": 8,
+        "events": 8,
+        "causal_edges": 6,
+        "branchial_edges": 4
+      },
+      "phenotype": {
+        "growth_ratio": 2.0,
+        "mean_degree": 1.666667,
+        "volume_dimension": 0.60436342125,
+        "spectral_dimension": 0.6306972381607143,
+        "inhomogeneity": 0.347043298,
+        "canonical_compression": 0.11111111111111116,
+        "branching": 1.1428571428571428,
+        "causal_density": 0.75
+      },
+      "selected_for_diversity": false,
+      "novelty_distance_at_selection": null
+    },
+    {
+      "rule": "0,1;0,2->0,2;1,2;2,3",
+      "status": "ok",
+      "counts": {
+        "raw_states": 3,
+        "canonical_states": 2,
+        "events": 2,
+        "causal_edges": 0,
+        "branchial_edges": 1
+      },
+      "phenotype": {
+        "growth_ratio": 1.3333333333333333,
+        "mean_degree": 1.5,
+        "volume_dimension": 0.678071905,
+        "spectral_dimension": 0.2418901380714286,
+        "inhomogeneity": 0.346410162,
+        "canonical_compression": 0.33333333333333337,
+        "branching": 2.0,
+        "causal_density": 0.0
+      },
+      "selected_for_diversity": true,
+      "novelty_distance_at_selection": 4.769407101185002
+    },
+    {
+      "rule": "0,1;0,2->0,2;1,3;2,3",
+      "status": "ok",
+      "counts": {
+        "raw_states": 3,
+        "canonical_states": 2,
+        "events": 2,
+        "causal_edges": 0,
+        "branchial_edges": 1
+      },
+      "phenotype": {
+        "growth_ratio": 1.3333333333333333,
+        "mean_degree": 1.5,
+        "volume_dimension": 0.4073778815,
+        "spectral_dimension": 0.38209530635714284,
+        "inhomogeneity": 0.2,
+        "canonical_compression": 0.33333333333333337,
+        "branching": 2.0,
+        "causal_density": 0.0
+      },
+      "selected_for_diversity": false,
+      "novelty_distance_at_selection": null
+    },
+    {
+      "rule": "0,1;0,2->0,3;1,2;1,3",
+      "status": "ok",
+      "counts": {
+        "raw_states": 9,
+        "canonical_states": 7,
+        "events": 8,
+        "causal_edges": 5,
+        "branchial_edges": 4
+      },
+      "phenotype": {
+        "growth_ratio": 2.0,
+        "mean_degree": 1.6666669999999997,
+        "volume_dimension": 0.5058449016666667,
+        "spectral_dimension": 0.6531926679047619,
+        "inhomogeneity": 0.25438037966666666,
+        "canonical_compression": 0.2222222222222222,
+        "branching": 1.3333333333333333,
+        "causal_density": 0.625
+      },
+      "selected_for_diversity": false,
+      "novelty_distance_at_selection": null
+    },
+    {
+      "rule": "0,1;0,2->0,3;1,2;2,3",
+      "status": "ok",
+      "counts": {
+        "raw_states": 3,
+        "canonical_states": 2,
+        "events": 2,
+        "causal_edges": 0,
+        "branchial_edges": 1
+      },
+      "phenotype": {
+        "growth_ratio": 1.3333333333333333,
+        "mean_degree": 1.5,
+        "volume_dimension": 0.4073778815,
+        "spectral_dimension": 0.38209530635714284,
+        "inhomogeneity": 0.2,
+        "canonical_compression": 0.33333333333333337,
+        "branching": 2.0,
+        "causal_density": 0.0
+      },
+      "selected_for_diversity": false,
+      "novelty_distance_at_selection": null
+    },
+    {
+      "rule": "0,1;0,2->0,3;1,3;2,3",
+      "status": "ok",
+      "counts": {
+        "raw_states": 3,
+        "canonical_states": 2,
+        "events": 2,
+        "causal_edges": 0,
+        "branchial_edges": 1
+      },
+      "phenotype": {
+        "growth_ratio": 1.3333333333333333,
+        "mean_degree": 1.5,
+        "volume_dimension": 0.678071905,
+        "spectral_dimension": 0.2418901380714286,
+        "inhomogeneity": 0.346410162,
+        "canonical_compression": 0.33333333333333337,
+        "branching": 2.0,
+        "causal_density": 0.0
+      },
+      "selected_for_diversity": false,
+      "novelty_distance_at_selection": null
+    },
+    {
+      "rule": "0,1;0,2->0,1;0,2;0,3;1,2",
+      "status": "ok",
+      "counts": {
+        "raw_states": 73,
+        "canonical_states": 29,
+        "events": 72,
+        "causal_edges": 87,
+        "branchial_edges": 288
+      },
+      "phenotype": {
+        "growth_ratio": 2.0,
+        "mean_degree": 2.4545455,
+        "volume_dimension": 0.7651677976590908,
+        "spectral_dimension": 0.463282054012987,
+        "inhomogeneity": 0.38634655186363637,
+        "canonical_compression": 0.6027397260273972,
+        "branching": 2.5714285714285716,
+        "causal_density": 1.2083333333333333
+      },
+      "selected_for_diversity": true,
+      "novelty_distance_at_selection": 2.401084137996696
+    },
+    {
+      "rule": "0,1;0,2->0,1;0,2;0,3;1,3",
+      "status": "ok",
+      "counts": {
+        "raw_states": 47,
+        "canonical_states": 12,
+        "events": 46,
+        "causal_edges": 82,
+        "branchial_edges": 179
+      },
+      "phenotype": {
+        "growth_ratio": 2.0,
+        "mean_degree": 2.666667,
+        "volume_dimension": 0.6639229866428572,
+        "spectral_dimension": 0.4723119035306122,
+        "inhomogeneity": 0.3334987067142857,
+        "canonical_compression": 0.7446808510638299,
+        "branching": 4.181818181818182,
+        "causal_density": 1.7826086956521738
+      },
+      "selected_for_diversity": true,
+      "novelty_distance_at_selection": 4.42994414222583
+    },
+    {
+      "rule": "0,1;0,2->0,1;0,2;0,3;2,3",
+      "status": "ok",
+      "counts": {
+        "raw_states": 47,
+        "canonical_states": 12,
+        "events": 46,
+        "causal_edges": 82,
+        "branchial_edges": 179
+      },
+      "phenotype": {
+        "growth_ratio": 2.0,
+        "mean_degree": 2.666667,
+        "volume_dimension": 0.6639229866428572,
+        "spectral_dimension": 0.4723119035306122,
+        "inhomogeneity": 0.3334987067142857,
+        "canonical_compression": 0.7446808510638299,
+        "branching": 4.181818181818182,
+        "causal_density": 1.7826086956521738
+      },
+      "selected_for_diversity": false,
+      "novelty_distance_at_selection": null
+    },
+    {
+      "rule": "0,1;0,2->0,1;0,2;1,2;1,3",
+      "status": "ok",
+      "counts": {
+        "raw_states": 39,
+        "canonical_states": 21,
+        "events": 38,
+        "causal_edges": 31,
+        "branchial_edges": 67
+      },
+      "phenotype": {
+        "growth_ratio": 2.0,
+        "mean_degree": 2.3555554666666665,
+        "volume_dimension": 0.5744841672333333,
+        "spectral_dimension": 0.5133277915904763,
+        "inhomogeneity": 0.34702705780000004,
+        "canonical_compression": 0.46153846153846156,
+        "branching": 1.9,
+        "causal_density": 0.8157894736842105
+      },
+      "selected_for_diversity": false,
+      "novelty_distance_at_selection": null
+    },
+    {
+      "rule": "0,1;0,2->0,1;0,2;1,2;2,3",
+      "status": "ok",
+      "counts": {
+        "raw_states": 17,
+        "canonical_states": 10,
+        "events": 16,
+        "causal_edges": 13,
+        "branchial_edges": 8
+      },
+      "phenotype": {
+        "growth_ratio": 2.0,
+        "mean_degree": 2.1666665000000003,
+        "volume_dimension": 0.7294732291666667,
+        "spectral_dimension": 0.5101320792261905,
+        "inhomogeneity": 0.39242082916666665,
+        "canonical_compression": 0.4117647058823529,
+        "branching": 1.7777777777777777,
+        "causal_density": 0.8125
+      },
+      "selected_for_diversity": false,
+      "novelty_distance_at_selection": null
+    },
+    {
+      "rule": "0,1;0,2->0,1;0,2;1,3;2,3",
+      "status": "ok",
+      "counts": {
+        "raw_states": 11,
+        "canonical_states": 5,
+        "events": 10,
+        "causal_edges": 4,
+        "branchial_edges": 5
+      },
+      "phenotype": {
+        "growth_ratio": 2.0,
+        "mean_degree": 2.666667,
+        "volume_dimension": 0.54749699575,
+        "spectral_dimension": 0.4413102565,
+        "inhomogeneity": 0.192847304,
+        "canonical_compression": 0.5454545454545454,
+        "branching": 2.5,
+        "causal_density": 0.4
+      },
+      "selected_for_diversity": true,
+      "novelty_distance_at_selection": 2.875455641282917
+    },
+    {
+      "rule": "0,1;0,2->0,1;0,3;1,2;1,3",
+      "status": "ok",
+      "counts": {
+        "raw_states": 39,
+        "canonical_states": 29,
+        "events": 38,
+        "causal_edges": 38,
+        "branchial_edges": 67
+      },
+      "phenotype": {
+        "growth_ratio": 2.0,
+        "mean_degree": 2.3913043043478264,
+        "volume_dimension": 0.5817411535289855,
+        "spectral_dimension": 0.5279770358012422,
+        "inhomogeneity": 0.2913478973478261,
+        "canonical_compression": 0.2564102564102564,
+        "branching": 1.3571428571428572,
+        "causal_density": 1.0
+      },
+      "selected_for_diversity": true,
+      "novelty_distance_at_selection": 0.0
+    },
+    {
+      "rule": "0,1;0,2->0,1;0,3;1,2;2,3",
+      "status": "ok",
+      "counts": {
+        "raw_states": 13,
+        "canonical_states": 12,
+        "events": 12,
+        "causal_edges": 14,
+        "branchial_edges": 6
+      },
+      "phenotype": {
+        "growth_ratio": 2.0,
+        "mean_degree": 2.5833335,
+        "volume_dimension": 0.4956592049375,
+        "spectral_dimension": 0.5146075115892856,
+        "inhomogeneity": 0.16913600975,
+        "canonical_compression": 0.07692307692307687,
+        "branching": 1.0909090909090908,
+        "causal_density": 1.1666666666666667
+      },
+      "selected_for_diversity": false,
+      "novelty_distance_at_selection": null
+    },
+    {
+      "rule": "0,1;0,2->0,1;0,3;1,3;2,3",
+      "status": "ok",
+      "counts": {
+        "raw_states": 13,
+        "canonical_states": 10,
+        "events": 12,
+        "causal_edges": 12,
+        "branchial_edges": 6
+      },
+      "phenotype": {
+        "growth_ratio": 2.0,
+        "mean_degree": 2.666667,
+        "volume_dimension": 0.4543467058333333,
+        "spectral_dimension": 0.5050971844523809,
+        "inhomogeneity": 0.2783634955,
+        "canonical_compression": 0.23076923076923073,
+        "branching": 1.3333333333333333,
+        "causal_density": 1.0
+      },
+      "selected_for_diversity": false,
+      "novelty_distance_at_selection": null
+    },
+    {
+      "rule": "0,1;0,2->0,1;1,2;1,3;2,3",
+      "status": "ok",
+      "counts": {
+        "raw_states": 15,
+        "canonical_states": 11,
+        "events": 14,
+        "causal_edges": 14,
+        "branchial_edges": 19
+      },
+      "phenotype": {
+        "growth_ratio": 2.0,
+        "mean_degree": 2.1428570000000002,
+        "volume_dimension": 0.47032534069047616,
+        "spectral_dimension": 0.6096256314081633,
+        "inhomogeneity": 0.2529568288571428,
+        "canonical_compression": 0.2666666666666667,
+        "branching": 1.4,
+        "causal_density": 1.0
+      },
+      "selected_for_diversity": false,
+      "novelty_distance_at_selection": null
+    },
+    {
+      "rule": "0,1;0,2->0,2;0,3;1,2;1,3",
+      "status": "ok",
+      "counts": {
+        "raw_states": 13,
+        "canonical_states": 9,
+        "events": 12,
+        "causal_edges": 7,
+        "branchial_edges": 6
+      },
+      "phenotype": {
+        "growth_ratio": 2.0,
+        "mean_degree": 2.555555666666667,
+        "volume_dimension": 0.5264247661666667,
+        "spectral_dimension": 0.5221288258095238,
+        "inhomogeneity": 0.18265972333333336,
+        "canonical_compression": 0.3076923076923077,
+        "branching": 1.5,
+        "causal_density": 0.5833333333333334
+      },
+      "selected_for_diversity": false,
+      "novelty_distance_at_selection": null
+    },
+    {
+      "rule": "0,1;0,2->0,2;0,3;1,2;2,3",
+      "status": "ok",
+      "counts": {
+        "raw_states": 13,
+        "canonical_states": 11,
+        "events": 12,
+        "causal_edges": 12,
+        "branchial_edges": 6
+      },
+      "phenotype": {
+        "growth_ratio": 2.0,
+        "mean_degree": 2.190476142857143,
+        "volume_dimension": 0.6219964567380952,
+        "spectral_dimension": 0.5468004045408164,
+        "inhomogeneity": 0.3192839865714286,
+        "canonical_compression": 0.15384615384615385,
+        "branching": 1.2,
+        "causal_density": 1.0
+      },
+      "selected_for_diversity": false,
+      "novelty_distance_at_selection": null
+    },
+    {
+      "rule": "0,1;0,2->0,2;0,3;1,3;2,3",
+      "status": "ok",
+      "counts": {
+        "raw_states": 13,
+        "canonical_states": 10,
+        "events": 12,
+        "causal_edges": 12,
+        "branchial_edges": 6
+      },
+      "phenotype": {
+        "growth_ratio": 2.0,
+        "mean_degree": 2.666667,
+        "volume_dimension": 0.4543467058333333,
+        "spectral_dimension": 0.5050971844523809,
+        "inhomogeneity": 0.2783634955,
+        "canonical_compression": 0.23076923076923073,
+        "branching": 1.3333333333333333,
+        "causal_density": 1.0
+      },
+      "selected_for_diversity": false,
+      "novelty_distance_at_selection": null
+    },
+    {
+      "rule": "0,1;0,2->0,2;1,2;1,3;2,3",
+      "status": "ok",
+      "counts": {
+        "raw_states": 15,
+        "canonical_states": 11,
+        "events": 14,
+        "causal_edges": 14,
+        "branchial_edges": 19
+      },
+      "phenotype": {
+        "growth_ratio": 2.0,
+        "mean_degree": 2.1428570000000002,
+        "volume_dimension": 0.6569680140714286,
+        "spectral_dimension": 0.5392187081122449,
+        "inhomogeneity": 0.3624912972857143,
+        "canonical_compression": 0.2666666666666667,
+        "branching": 1.4,
+        "causal_density": 1.0
+      },
+      "selected_for_diversity": false,
+      "novelty_distance_at_selection": null
+    },
+    {
+      "rule": "0,1;0,2->0,3;1,2;1,3;2,3",
+      "status": "ok",
+      "counts": {
+        "raw_states": 15,
+        "canonical_states": 11,
+        "events": 14,
+        "causal_edges": 14,
+        "branchial_edges": 19
+      },
+      "phenotype": {
+        "growth_ratio": 2.0,
+        "mean_degree": 2.285714,
+        "volume_dimension": 0.4655228660714286,
+        "spectral_dimension": 0.5551889084489796,
+        "inhomogeneity": 0.3092144095714286,
+        "canonical_compression": 0.2666666666666667,
+        "branching": 1.4,
+        "causal_density": 1.0
+      },
+      "selected_for_diversity": false,
+      "novelty_distance_at_selection": null
+    },
+    {
+      "rule": "0,1;0,2->0,1;0,2;0,3;1,2;1,3",
+      "status": "ok",
+      "counts": {
+        "raw_states": 81,
+        "canonical_states": 43,
+        "events": 80,
+        "causal_edges": 75,
+        "branchial_edges": 268
+      },
+      "phenotype": {
+        "growth_ratio": 2.0,
+        "mean_degree": 3.3693692702702704,
+        "volume_dimension": 0.4482078186486486,
+        "spectral_dimension": 0.4144580155135135,
+        "inhomogeneity": 0.25273308083783785,
+        "canonical_compression": 0.4691358024691358,
+        "branching": 1.9047619047619047,
+        "causal_density": 0.9375
+      },
+      "selected_for_diversity": false,
+      "novelty_distance_at_selection": null
+    },
+    {
+      "rule": "0,1;0,2->0,1;0,2;0,3;1,2;2,3",
+      "status": "ok",
+      "counts": {
+        "raw_states": 97,
+        "canonical_states": 64,
+        "events": 96,
+        "causal_edges": 123,
+        "branchial_edges": 348
+      },
+      "phenotype": {
+        "growth_ratio": 2.0,
+        "mean_degree": 3.2976189107142857,
+        "volume_dimension": 0.4758949970178571,
+        "spectral_dimension": 0.4174452665982143,
+        "inhomogeneity": 0.2606470189107143,
+        "canonical_compression": 0.3402061855670103,
+        "branching": 1.5238095238095237,
+        "causal_density": 1.28125
+      },
+      "selected_for_diversity": false,
+      "novelty_distance_at_selection": null
+    },
+    {
+      "rule": "0,1;0,2->0,1;0,2;0,3;1,3;2,3",
+      "status": "ok",
+      "counts": {
+        "raw_states": 39,
+        "canonical_states": 14,
+        "events": 38,
+        "causal_edges": 20,
+        "branchial_edges": 127
+      },
+      "phenotype": {
+        "growth_ratio": 2.0,
+        "mean_degree": 3.6666669999999995,
+        "volume_dimension": 0.362570079,
+        "spectral_dimension": 0.39763857005,
+        "inhomogeneity": 0.1819786887,
+        "canonical_compression": 0.641025641025641,
+        "branching": 2.923076923076923,
+        "causal_density": 0.5263157894736842
+      },
+      "selected_for_diversity": false,
+      "novelty_distance_at_selection": null
+    },
+    {
+      "rule": "0,1;0,2->0,1;0,2;1,2;1,3;2,3",
+      "status": "ok",
+      "counts": {
+        "raw_states": 55,
+        "canonical_states": 25,
+        "events": 54,
+        "causal_edges": 43,
+        "branchial_edges": 111
+      },
+      "phenotype": {
+        "growth_ratio": 2.0,
+        "mean_degree": 3.0,
+        "volume_dimension": 0.49181659418421053,
+        "spectral_dimension": 0.45324017362781954,
+        "inhomogeneity": 0.27135847736842106,
+        "canonical_compression": 0.5454545454545454,
+        "branching": 2.25,
+        "causal_density": 0.7962962962962963
+      },
+      "selected_for_diversity": false,
+      "novelty_distance_at_selection": null
+    },
+    {
+      "rule": "0,1;0,2->0,1;0,3;1,2;1,3;2,3",
+      "status": "ok",
+      "counts": {
+        "raw_states": 49,
+        "canonical_states": 36,
+        "events": 48,
+        "causal_edges": 54,
+        "branchial_edges": 96
+      },
+      "phenotype": {
+        "growth_ratio": 2.0,
+        "mean_degree": 3.1333332,
+        "volume_dimension": 0.5124488804499999,
+        "spectral_dimension": 0.45268255559047615,
+        "inhomogeneity": 0.21272376529999998,
+        "canonical_compression": 0.26530612244897955,
+        "branching": 1.3714285714285714,
+        "causal_density": 1.125
+      },
+      "selected_for_diversity": false,
+      "novelty_distance_at_selection": null
+    },
+    {
+      "rule": "0,1;0,2->0,2;0,3;1,2;1,3;2,3",
+      "status": "ok",
+      "counts": {
+        "raw_states": 25,
+        "canonical_states": 18,
+        "events": 24,
+        "causal_edges": 22,
+        "branchial_edges": 24
+      },
+      "phenotype": {
+        "growth_ratio": 2.0,
+        "mean_degree": 3.0714285,
+        "volume_dimension": 0.5038115256785715,
+        "spectral_dimension": 0.4619379941479592,
+        "inhomogeneity": 0.24075333335714286,
+        "canonical_compression": 0.28,
+        "branching": 1.411764705882353,
+        "causal_density": 0.9166666666666666
+      },
+      "selected_for_diversity": false,
+      "novelty_distance_at_selection": null
+    },
+    {
+      "rule": "0,1;0,2->0,1;0,2;0,3;1,2;1,3;2,3",
+      "status": "ok",
+      "counts": {
+        "raw_states": 177,
+        "canonical_states": 90,
+        "events": 176,
+        "causal_edges": 175,
+        "branchial_edges": 592
+      },
+      "phenotype": {
+        "growth_ratio": 2.0,
+        "mean_degree": 4.0541666124999995,
+        "volume_dimension": 0.2482254410875,
+        "spectral_dimension": 0.375933883425,
+        "inhomogeneity": 0.1661049389625,
+        "canonical_compression": 0.4915254237288136,
+        "branching": 1.9775280898876404,
+        "causal_density": 0.9943181818181818
+      },
+      "selected_for_diversity": true,
+      "novelty_distance_at_selection": 4.222334440964432
+    }
+  ]
+}

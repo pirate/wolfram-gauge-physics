@@ -2,6 +2,8 @@
 #include <hypergraph/parallel_evolution.hpp>
 #include <hypergraph/pattern.hpp>
 
+#include "observables.hpp"
+
 #include <algorithm>
 #include <cmath>
 #include <cstdint>
@@ -11,6 +13,7 @@
 #include <iostream>
 #include <map>
 #include <numeric>
+#include <optional>
 #include <queue>
 #include <set>
 #include <sstream>
@@ -33,6 +36,9 @@ struct Config {
     std::string output = "out/evolution.json";
     uint32_t steps = 3;
     uint32_t threads = 1;
+    uint32_t probe_radius = 8;
+    uint32_t diffusion_steps = 16;
+    uint32_t probe_sources = 64;
 };
 
 std::vector<std::string> split(const std::string& text, char delimiter) {
@@ -186,6 +192,52 @@ std::map<uint64_t, uint32_t> local_fingerprints(const Snapshot& state) {
     return histogram;
 }
 
+wgphysics::infragauge::BaseGraph projected_base_graph(const Snapshot& state) {
+    using wgphysics::infragauge::BaseGraph;
+    using wgphysics::infragauge::Edge;
+    using wgphysics::infragauge::Vertex;
+    std::set<Edge> edges;
+    for (const auto& [vertex, neighbors] : state.adjacency) {
+        for (const auto neighbor : neighbors) {
+            if (vertex != neighbor) edges.insert(wgphysics::infragauge::canonical_edge(vertex, neighbor));
+        }
+    }
+    return BaseGraph(std::vector<Vertex>(state.vertices.begin(), state.vertices.end()),
+                     std::vector<Edge>(edges.begin(), edges.end()));
+}
+
+void json_doubles(std::ostream& out, const std::vector<double>& values) {
+    out << '[';
+    for (std::size_t index = 0; index < values.size(); ++index) {
+        if (index) out << ',';
+        out << std::setprecision(9) << values[index];
+    }
+    out << ']';
+}
+
+void json_optional_doubles(std::ostream& out,
+                           const std::vector<std::optional<double>>& values) {
+    out << '[';
+    for (std::size_t index = 0; index < values.size(); ++index) {
+        if (index) out << ',';
+        if (values[index]) out << std::setprecision(9) << *values[index];
+        else out << "null";
+    }
+    out << ']';
+}
+
+void json_plateau(std::ostream& out,
+                  const std::optional<wgphysics::observables::ScalePlateau>& plateau) {
+    if (!plateau) {
+        out << "null";
+        return;
+    }
+    out << "{\"first_scale\":" << plateau->first_scale
+        << ",\"last_scale\":" << plateau->last_scale
+        << ",\"mean\":" << std::setprecision(9) << plateau->mean
+        << ",\"relative_span\":" << plateau->relative_span << '}';
+}
+
 void json_edges(std::ostream& out, const EdgeList& edges) {
     out << '[';
     for (size_t i = 0; i < edges.size(); ++i) {
@@ -206,7 +258,8 @@ Config parse_args(int argc, char** argv) {
         const std::string arg = argv[i];
         if (arg == "--help") {
             std::cout << "wgphysics_evolve [--rule LHS->RHS] [--init EDGES] [--steps N] "
-                         "[--threads N] [--output FILE]\n\n"
+                         "[--threads N] [--output FILE] [--probe-radius N] "
+                         "[--diffusion-steps N] [--probe-sources N]\n\n"
                          "Edges use comma-separated vertices and semicolon-separated hyperedges.\n"
                          "Example: --rule '0,1;0,2->0,2;0,3;1,3;2,3' --init '1,2;1,3'\n";
             std::exit(0);
@@ -218,9 +271,13 @@ Config parse_args(int argc, char** argv) {
         else if (arg == "--steps") config.steps = std::stoul(value);
         else if (arg == "--threads") config.threads = std::stoul(value);
         else if (arg == "--output") config.output = value;
+        else if (arg == "--probe-radius") config.probe_radius = std::stoul(value);
+        else if (arg == "--diffusion-steps") config.diffusion_steps = std::stoul(value);
+        else if (arg == "--probe-sources") config.probe_sources = std::stoul(value);
         else throw std::invalid_argument("unknown argument: " + arg);
     }
     if (config.threads == 0) throw std::invalid_argument("threads must be positive");
+    if (config.probe_sources == 0) throw std::invalid_argument("probe sources must be positive");
     return config;
 }
 
@@ -232,7 +289,7 @@ void write_result(const Config& config, const Hypergraph& graph, std::ostream& o
         const auto& state = graph.get_state(id);
         canonical_states.insert(state.canonical_id == INVALID_ID ? id : state.canonical_id);
     }
-    out << "{\n  \"schema\":1,\n  \"semantics\":\"unlabeled ordered hypergraph rewriting\",\n";
+    out << "{\n  \"schema\":2,\n  \"semantics\":\"unlabeled ordered hypergraph rewriting with intrinsic probes\",\n";
     out << "  \"rule\":\"" << config.rule << "\",\n  \"initial_state\":\"" << config.init << "\",\n";
     out << "  \"steps\":" << config.steps << ",\n";
     out << "  \"counts\":{\"raw_states\":" << graph.num_published_states()
@@ -245,6 +302,9 @@ void write_result(const Config& config, const Hypergraph& graph, std::ostream& o
         if (!first_state) out << ",\n";
         first_state = false;
         const auto fingerprints = local_fingerprints(state);
+        const auto intrinsic = wgphysics::observables::probe_intrinsic_geometry(
+            projected_base_graph(state),
+            {config.probe_radius, config.diffusion_steps, config.probe_sources});
         double mean_degree = 0.0;
         for (const auto vertex : state.vertices) mean_degree += state.adjacency.at(vertex).size();
         if (!state.vertices.empty()) mean_degree /= state.vertices.size();
@@ -265,6 +325,24 @@ void write_result(const Config& config, const Hypergraph& graph, std::ostream& o
             key << std::hex << hash;
             out << '\"' << key.str() << "\":" << count;
         }
+        out << "},\"intrinsic_geometry\":{\"projection\":\"hypergraph_2_section\""
+            << ",\"sampled_sources\":" << intrinsic.sampled_sources
+            << ",\"mean_shell_volume\":";
+        json_doubles(out, intrinsic.mean_shell_volume);
+        out << ",\"mean_ball_volume\":";
+        json_doubles(out, intrinsic.mean_ball_volume);
+        out << ",\"ball_volume_cv\":";
+        json_doubles(out, intrinsic.ball_volume_coefficient_of_variation);
+        out << ",\"volume_dimension\":";
+        json_optional_doubles(out, intrinsic.volume_dimension);
+        out << ",\"lazy_return_probability\":";
+        json_doubles(out, intrinsic.lazy_return_probability);
+        out << ",\"spectral_dimension\":";
+        json_optional_doubles(out, intrinsic.spectral_dimension);
+        out << ",\"volume_dimension_plateau\":";
+        json_plateau(out, intrinsic.volume_dimension_plateau);
+        out << ",\"spectral_dimension_plateau\":";
+        json_plateau(out, intrinsic.spectral_dimension_plateau);
         out << "}}";
     }
     out << "\n  ],\n  \"events\":[";
