@@ -1,0 +1,61 @@
+CMakeLists.txt
+  s_33c6c7a35bd0ca::t_c664aaaa534752 61-66
+  s_33c6c7a35bd0ca::t_1a8169b342ba0b 85-88
+docs/emergent-diffusion.md
+  s_33c6c7a35bd0ca::t_8ed512c228f608 138-141
+tools/run_mesh_experiments.py
+  s_33c6c7a35bd0ca::t_099327b735195f 1-6,9-65,67,100-148
+  s_33c6c7a35bd0ca::t_50b7840d32b60a 7-8,66,68-99
+tests/shared_mesh.py
+  s_33c6c7a35bd0ca::t_868e88490b7955 1-92
+docs/braid-quotient-classification.md
+  s_33c6c7a35bd0ca::t_8ed512c228f608 1,8-11,80-81,90-95
+docs/shared-face-dynamics.md
+  s_33c6c7a35bd0ca::t_8ed512c228f608 1-168
+src/mesh_dynamics.hpp
+  s_33c6c7a35bd0ca::t_8f8c20847969c2 59
+  s_33c6c7a35bd0ca::t_d5e068d82e8dc7 1-58,60-104,108-242
+  s_33c6c7a35bd0ca::t_868e88490b7955 105-107
+src/mesh_experiments.cpp
+  s_33c6c7a35bd0ca::t_86a7e7e630f7fd 61-63
+  s_33c6c7a35bd0ca::t_5e5dd9c6c0a5cf 27-34,42,65-118
+  s_33c6c7a35bd0ca::t_50b7840d32b60a 143,147-148,195,217,226-228,231
+  s_33c6c7a35bd0ca::t_1a8169b342ba0b 1-26,35-41,43-60,64,119-142,144-146,149-194,196-216,218-225,229-230,232-237
+src/gauge_interactions.hpp
+  s_33c6c7a35bd0ca::t_8f8c20847969c2 49,66,87-89
+  s_33c6c7a35bd0ca::t_dacbd300b8d727 90-91
+tools/plot_shared_mesh.py
+  s_33c6c7a35bd0ca::t_86a7e7e630f7fd 1-74
+.github/workflows/ci.yml
+  s_33c6c7a35bd0ca::t_8ed512c228f608 59-62
+docs/pair-interactions.md
+  s_33c6c7a35bd0ca::t_e9e6c9ecec1df6 121-126
+docs/STATE_OF_THE_ART.md
+  s_33c6c7a35bd0ca::t_e9e6c9ecec1df6 30,41,69-82,93-94
+README.md
+  s_33c6c7a35bd0ca::t_8ed512c228f608 153-154,160-169,194-196
+tests/mesh_dynamics.cpp
+  s_33c6c7a35bd0ca::t_e9e6c9ecec1df6 24-25,27
+  s_33c6c7a35bd0ca::t_c664aaaa534752 1-23,28-92
+  s_33c6c7a35bd0ca::t_ddc82cd1518830 26
+data/d4-shared-mesh-replication.json
+  s_33c6c7a35bd0ca::t_911ea647e2f3a2 1-350352
+data/d4-shared-mesh.json
+  s_33c6c7a35bd0ca::t_085640e3fce7c4 1-196752
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.2",
+  "base_commit_sha": "95fc8521b68228b61cf062719e892ef02df48599",
+  "prompts": {},
+  "sessions": {
+    "s_33c6c7a35bd0ca": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a061ab-263d-7860-b882-4955b6e0b240",
+        "model": "gpt-6-astra"
+      },
+      "human_author": "Nick Sweeting <git@sweeting.me>"
+    }
+  }
+}
