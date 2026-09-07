@@ -202,6 +202,18 @@ create equilibrium attraction in this sector. To seek more physics, the open que
 are genuinely richer observables, differently constrained reachable components, and
 justified geometry/fiber/state constructions—not a hand-written attractive potential.
 
+The restriction also survives **adding charge-preserving reversible generators** on the
+same finite link-state space, provided all old generators remain available with positive,
+state-independent probabilities. To see this, every old raw component in the proven charge
+sector projects to the same canonical class distribution: strong lumpability lifts the
+connected coarse graph from any representative, not just our chosen seed. A new raw
+component is a union of old components. Its uniform measure is a size-weighted mixture of
+their uniform measures, whose projections are all identical. Therefore the projected
+equilibrium is still unchanged. This does not cover removing old transitions, changing
+the conserved sector, adding geometry/fiber degrees of freedom, or state-dependent clocks.
+It prevents treating more compatible reversible operators alone as an equilibrium-binding
+mechanism in this already connected class sector.
+
 ## Scope and reproduction
 
 This is a finite classical model with $D_4$ derived from the chosen square fiber, a supplied
