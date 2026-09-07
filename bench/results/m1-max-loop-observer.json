@@ -1,0 +1,104 @@
+{
+  "schema": 1,
+  "clock": "steady_clock milliseconds; CPU only",
+  "runs": [
+    {
+      "side": 16,
+      "vertices": 256,
+      "edges": 768,
+      "independent_loops": 513,
+      "forest_compile_ms": 0.127958,
+      "probe_ms": [
+        0.002834,
+        0.002625,
+        0.003458,
+        0.002459,
+        0.003459
+      ],
+      "legacy_ms": [
+        3.996,
+        3.26975,
+        2.97388
+      ],
+      "local_frame_check": true,
+      "representative_check": true,
+      "legacy_check": true,
+      "median_probe_ms": 0.002834,
+      "median_legacy_ms": 3.26975,
+      "warm_probe_speedup_over_legacy": 1153.757939308398
+    },
+    {
+      "side": 32,
+      "vertices": 1024,
+      "edges": 3072,
+      "independent_loops": 2049,
+      "forest_compile_ms": 0.479084,
+      "probe_ms": [
+        0.016167,
+        0.009791,
+        0.009375,
+        0.009166,
+        0.009125
+      ],
+      "legacy_ms": [
+        26.9665,
+        26.5354,
+        26.8892
+      ],
+      "local_frame_check": true,
+      "representative_check": true,
+      "legacy_check": true,
+      "median_probe_ms": 0.009375,
+      "median_legacy_ms": 26.8892,
+      "warm_probe_speedup_over_legacy": 2868.1813333333334
+    },
+    {
+      "side": 128,
+      "vertices": 16384,
+      "edges": 49152,
+      "independent_loops": 32769,
+      "forest_compile_ms": 7.49583,
+      "probe_ms": [
+        0.144709,
+        0.143792,
+        0.144208,
+        0.148875,
+        0.144
+      ],
+      "legacy_ms": [],
+      "local_frame_check": true,
+      "representative_check": true,
+      "legacy_check": null,
+      "median_probe_ms": 0.144208,
+      "median_legacy_ms": null,
+      "warm_probe_speedup_over_legacy": null
+    },
+    {
+      "side": 600,
+      "vertices": 360000,
+      "edges": 1080000,
+      "independent_loops": 720001,
+      "forest_compile_ms": 199.182,
+      "probe_ms": [
+        3.58371,
+        3.43383,
+        3.4925,
+        3.44362,
+        3.41754
+      ],
+      "legacy_ms": [],
+      "local_frame_check": true,
+      "representative_check": true,
+      "legacy_check": null,
+      "median_probe_ms": 3.44362,
+      "median_legacy_ms": null,
+      "warm_probe_speedup_over_legacy": null
+    }
+  ],
+  "machine": {
+    "system": "Darwin",
+    "architecture": "arm64",
+    "processor": "Apple M1 Max"
+  },
+  "scope": "Precompiled-topology CPU gauge observation, not graph construction, rewrite evolution, rendering, or GPU throughput. Timed probes include output allocations but exclude validation comparisons. Legacy comparisons use different canonical encodings and include repeated topology/path work; million-edge cases have frame and reconstruction checks, not an executed legacy comparison."
+}

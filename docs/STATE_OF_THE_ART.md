@@ -132,6 +132,16 @@ restriction; a raw-permutation argument extends it to positive, state-independen
 of the same supported generators. This is a scoped diagnostic against false molecular claims,
 not a general no-go theorem for finite-group gauge matter or evolving geometry.
 
+The [complete loop observer](complete-loop-observer.md) specializes the fixed-graph gauge
+quotient to the central extension derived from the square fiber, supplies a reconstructible
+linear-size set of two/three-loop relation probes, and cross-checks a linear-pass C++ observer
+against the general quotient. An actual two-branch conversion has identical face classes and
+exterior data but different gauge relations and exact lifted-graph spectral moments. Its
+two-component diagnostic space is derived from fiber adjacency, not installed as a physical
+Hamiltonian or matter dynamics. CPU measurements reach 1.08 million observed edges with
+explicit preprocessing and validation boundaries. This is finite algebra and observer tooling,
+not a general Wilson-loop completeness theorem or an emergent quantum theory.
+
 | Layer | Public upstream capability | Implemented here | Still open |
 |---|---|---|---|
 | Fiber | Total graph, projection, fiber predicates | Exact `Aut(F)` derivation, compact tables, and exact open-link inference | Compare rule, link, and multiway-derived fibers |

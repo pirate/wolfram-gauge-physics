@@ -224,11 +224,21 @@ raw labelings that the exact graph-isomorphism quotient recognizes as the same c
 
 ![Raw-link relaxation and conversion frequencies versus exact finite-sector predictions](docs/images/bank-equilibrium.png)
 
+- **Complete loop information and a graph-derived mode probe.** Derived central-extension
+  coordinates recover a square-fiber connection up to local frames; two- and three-loop
+  relation probes expose information that individual loop classes lose. Two actual conversions
+  have identical face classes and exterior links but different gauge-invariant relations and
+  different spectra of the lifted bundle graph. The two-component mode space is derived from
+  fiber adjacency and used only as a diagnostic—not an inserted Hamiltonian or quantum-matter
+  claim. See the [reconstruction proof, link witness, and exact spectral comparison](docs/complete-loop-observer.md).
+
 - **GPU-ready exact algebra and measured compression limits.** Group operations are compiled into
   dense integer multiplication, inverse, and action tables. On an Apple M1 Max, the Metal
   microbenchmark processed one million frame transformations in 0.318 ms and one million
-  length-eight paths in 0.333 ms, with every result matching the CPU oracle. Separately, the
-  elementary $D_4$ subdivision orbit has a flat rank-eight Schmidt spectrum, so truncating it to
+  length-eight paths in 0.333 ms, with every result matching the CPU oracle. The
+  complete fixed-topology gauge observer now processes 1.08 million edges in a median 3.44 ms
+  on the CPU after forest compilation; this is observation throughput, not evolution or rendering.
+  Separately, the elementary $D_4$ subdivision orbit has a flat rank-eight Schmidt spectrum, so truncating it to
   rank four necessarily discards half the norm—evidence that compression must report
   $\sum_{i>r}\sigma_i^2$, not hide it. Reproduction scripts and measurements are in
   [`bench/`](bench/).
@@ -260,7 +270,10 @@ raw labelings that the exact graph-isomorphism quotient recognizes as the same c
    statistics; its spatial exchangeability rules out equilibrium class binding even under
    positive constant schedule reweighting. Test larger sectors, transient localization, and
    extended loop correlations while keeping
-   microscopic loop information distinct from what survives uniform rule averaging.
+   microscopic loop information distinct from what survives uniform rule averaging. A complete
+   loop observer now detects hidden relative bits, and a fiber-adjacency-derived spectral probe
+   sees their effect on graph modes. Test mode localization, evolution, and persistence without
+   promoting the diagnostic Laplacian into an assumed physical Hamiltonian.
    Geometry- and fiber-changing constructions remain separate milestones.
 
 3. **Generalize the microscopic bundle.** Compare fibers inferred from vertex links, rule

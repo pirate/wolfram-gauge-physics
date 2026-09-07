@@ -93,7 +93,18 @@ jobs:
           python3 tests/bank_equilibrium.py
           python3 tools/bank_equilibrium.py --trials 4 --component data/d4-bank-equilibrium.json --output out/bank-equilibrium.json
           diff -u data/d4-bank-equilibrium.json out/bank-equilibrium.json
-      - name: Multiway smoke test
+      - name: Complete loop observer and independent gauge-quotient check
+        # The complete-loop probe is separately checked against the original
+        # gauge quotient; timing output is diagnostic, never a CI threshold.
+        run: |
+          python3 tests/d4_loop_observer.py
+          python3 tools/d4_loop_observer.py --output out/d4-loop-observer.json
+          diff -u data/d4-loop-observer.json out/d4-loop-observer.json
+          python3 tests/fiber_mode_probe.py
+          python3 tools/fiber_mode_probe.py --output out/fiber-mode-probe.json
+          diff -u data/d4-fiber-mode-probe.json out/fiber-mode-probe.json
+          ./build/wgphysics_loop_bench --smoke
+      - name: Multiway engine smoke test
         run: |
           ./build/wgphysics_evolve --steps 2 --output out/smoke.json
           ./build/wgphysics_product_evolve --steps 2 --output out/product-smoke.json

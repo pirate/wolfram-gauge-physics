@@ -1,0 +1,813 @@
+{
+  "schema": 1,
+  "generators": {
+    "r": 1,
+    "s": 2,
+    "z": 5
+  },
+  "coordinates": [
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      1,
+      0,
+      0
+    ],
+    [
+      0,
+      1,
+      0
+    ],
+    [
+      1,
+      1,
+      1
+    ],
+    [
+      1,
+      0,
+      1
+    ],
+    [
+      0,
+      0,
+      1
+    ],
+    [
+      1,
+      1,
+      0
+    ],
+    [
+      0,
+      1,
+      1
+    ]
+  ],
+  "multiplication": "(a,b,c)(d,f,h)=(a xor d,b xor f,c xor h xor (b and d))",
+  "frame_action": "(a,b,c) -> (a,b,c xor (u and b) xor (v and a))",
+  "census": [
+    {
+      "based_loops": 0,
+      "raw_tuples": 1,
+      "gauge_orbits": 1,
+      "orbit_counts_by_hidden_relation_bits": [
+        [
+          0,
+          1
+        ]
+      ],
+      "complete_against_all_simultaneous_conjugations": true,
+      "relation_reconstruction": true
+    },
+    {
+      "based_loops": 1,
+      "raw_tuples": 8,
+      "gauge_orbits": 5,
+      "orbit_counts_by_hidden_relation_bits": [
+        [
+          0,
+          5
+        ]
+      ],
+      "complete_against_all_simultaneous_conjugations": true,
+      "relation_reconstruction": true
+    },
+    {
+      "based_loops": 2,
+      "raw_tuples": 64,
+      "gauge_orbits": 28,
+      "orbit_counts_by_hidden_relation_bits": [
+        [
+          0,
+          22
+        ],
+        [
+          1,
+          6
+        ]
+      ],
+      "complete_against_all_simultaneous_conjugations": true,
+      "relation_reconstruction": true
+    },
+    {
+      "based_loops": 3,
+      "raw_tuples": 512,
+      "gauge_orbits": 176,
+      "orbit_counts_by_hidden_relation_bits": [
+        [
+          0,
+          80
+        ],
+        [
+          1,
+          84
+        ],
+        [
+          2,
+          12
+        ]
+      ],
+      "complete_against_all_simultaneous_conjugations": true,
+      "relation_reconstruction": true
+    },
+    {
+      "based_loops": 4,
+      "raw_tuples": 4096,
+      "gauge_orbits": 1216,
+      "orbit_counts_by_hidden_relation_bits": [
+        [
+          0,
+          256
+        ],
+        [
+          1,
+          528
+        ],
+        [
+          2,
+          408
+        ],
+        [
+          3,
+          24
+        ]
+      ],
+      "complete_against_all_simultaneous_conjugations": true,
+      "relation_reconstruction": true
+    }
+  ],
+  "conversion_witness": {
+    "side": 3,
+    "initial_links": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      2,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "fan_patch": 32,
+    "fan_faces": [
+      [
+        5,
+        3,
+        6,
+        5
+      ],
+      [
+        5,
+        6,
+        8,
+        5
+      ],
+      [
+        5,
+        8,
+        4,
+        5
+      ]
+    ],
+    "input_triple": [
+      1,
+      0,
+      2
+    ],
+    "exterior_walk": [
+      5,
+      3,
+      6,
+      8,
+      4,
+      5
+    ],
+    "exterior_holonomy": 6,
+    "branches": [
+      {
+        "rule": 33,
+        "census_rule_id": 364,
+        "schedule": [
+          1814
+        ],
+        "final_links": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          2,
+          0,
+          0,
+          1,
+          0,
+          0,
+          1,
+          6,
+          0,
+          0,
+          0
+        ],
+        "output_triple": [
+          2,
+          2,
+          6
+        ],
+        "face_classes": [
+          0,
+          0,
+          0,
+          1,
+          0,
+          2,
+          0,
+          0,
+          2,
+          0,
+          3,
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "local_loop_probe": {
+          "classes": [
+            2,
+            2,
+            3
+          ],
+          "relation_words": [
+            [
+              [
+                1,
+                1
+              ],
+              [
+                0,
+                -1
+              ]
+            ]
+          ],
+          "relation_bits": [
+            0
+          ],
+          "normalized": [
+            2,
+            2,
+            6
+          ],
+          "quotient_rank": 2,
+          "hidden_bits_beyond_individual_loop_classes": 1,
+          "coordinate_bits": 7
+        },
+        "compiled_raw_inverse": true,
+        "independent_link_replay": true
+      },
+      {
+        "rule": 34,
+        "census_rule_id": 366,
+        "schedule": [
+          1868
+        ],
+        "final_links": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          2,
+          0,
+          0,
+          1,
+          0,
+          0,
+          4,
+          6,
+          0,
+          0,
+          0
+        ],
+        "output_triple": [
+          2,
+          7,
+          3
+        ],
+        "face_classes": [
+          0,
+          0,
+          0,
+          1,
+          0,
+          2,
+          0,
+          0,
+          2,
+          0,
+          3,
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "local_loop_probe": {
+          "classes": [
+            2,
+            2,
+            3
+          ],
+          "relation_words": [
+            [
+              [
+                1,
+                1
+              ],
+              [
+                0,
+                -1
+              ]
+            ]
+          ],
+          "relation_bits": [
+            1
+          ],
+          "normalized": [
+            2,
+            7,
+            6
+          ],
+          "quotient_rank": 2,
+          "hidden_bits_beyond_individual_loop_classes": 1,
+          "coordinate_bits": 7
+        },
+        "compiled_raw_inverse": true,
+        "independent_link_replay": true
+      }
+    ],
+    "same_all_face_classes": true,
+    "same_exterior_links": true,
+    "not_gauge_equivalent": true,
+    "compiled_complete_observer": [
+      {
+        "based_loops": [
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            2,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "normalized": [
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            2,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "ranks": [
+          2
+        ],
+        "representative_links": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          2,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "legacy_quotient_agrees": true
+      },
+      {
+        "based_loops": [
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            2,
+            0,
+            0,
+            1,
+            0,
+            0,
+            1,
+            6,
+            0,
+            0,
+            0
+          ]
+        ],
+        "normalized": [
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            2,
+            0,
+            0,
+            1,
+            0,
+            0,
+            1,
+            6,
+            0,
+            0,
+            0
+          ]
+        ],
+        "ranks": [
+          2
+        ],
+        "representative_links": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          2,
+          0,
+          0,
+          1,
+          0,
+          0,
+          1,
+          6,
+          0,
+          0,
+          0
+        ],
+        "legacy_quotient_agrees": true
+      },
+      {
+        "based_loops": [
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            2,
+            0,
+            0,
+            1,
+            0,
+            0,
+            4,
+            6,
+            0,
+            0,
+            0
+          ]
+        ],
+        "normalized": [
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            2,
+            0,
+            0,
+            1,
+            0,
+            0,
+            4,
+            6,
+            0,
+            0,
+            0
+          ]
+        ],
+        "ranks": [
+          2
+        ],
+        "representative_links": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          2,
+          0,
+          0,
+          1,
+          0,
+          0,
+          4,
+          6,
+          0,
+          0,
+          0
+        ],
+        "legacy_quotient_agrees": true
+      }
+    ],
+    "specified_followup_rule": 33,
+    "specified_rule_responses": [
+      {
+        "final_links": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          2,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "face_classes": [
+          0,
+          0,
+          0,
+          1,
+          0,
+          2,
+          0,
+          0,
+          1,
+          0,
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "compiled_raw_inverse": true
+      },
+      {
+        "final_links": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          2,
+          0,
+          0,
+          1,
+          0,
+          0,
+          4,
+          6,
+          0,
+          0,
+          0
+        ],
+        "face_classes": [
+          0,
+          0,
+          0,
+          1,
+          0,
+          2,
+          0,
+          0,
+          2,
+          0,
+          3,
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "compiled_raw_inverse": true
+      }
+    ],
+    "uniform_next_class_counts": [
+      [
+        [
+          0,
+          1,
+          2
+        ],
+        2
+      ],
+      [
+        [
+          0,
+          2,
+          1
+        ],
+        2
+      ],
+      [
+        [
+          1,
+          0,
+          2
+        ],
+        2
+      ],
+      [
+        [
+          1,
+          2,
+          0
+        ],
+        2
+      ],
+      [
+        [
+          2,
+          0,
+          1
+        ],
+        2
+      ],
+      [
+        [
+          2,
+          1,
+          0
+        ],
+        2
+      ],
+      [
+        [
+          2,
+          2,
+          3
+        ],
+        36
+      ]
+    ],
+    "uniform_next_class_distribution_identical": true
+  },
+  "scope": "complete classical gauge observer on a fixed labeled graph; not graph-isomorphism canonicalization, quantum amplitudes, or a physical time/energy law"
+}

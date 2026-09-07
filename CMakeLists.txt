@@ -27,6 +27,14 @@ add_executable(wgphysics_census src/census.cpp)
 target_link_libraries(wgphysics_census PRIVATE wgphysics)
 target_compile_options(wgphysics_census PRIVATE -Wall -Wextra -Wpedantic)
 
+add_executable(wgphysics_loop_observer src/loop_observer.cpp)
+target_link_libraries(wgphysics_loop_observer PRIVATE wgphysics)
+target_compile_options(wgphysics_loop_observer PRIVATE -Wall -Wextra -Wpedantic)
+
+add_executable(wgphysics_loop_bench bench/loop_observer.cpp)
+target_link_libraries(wgphysics_loop_bench PRIVATE wgphysics)
+target_compile_options(wgphysics_loop_bench PRIVATE -Wall -Wextra -Wpedantic)
+
 enable_testing()
 add_executable(infragauge_test tests/infragauge.cpp)
 target_link_libraries(infragauge_test PRIVATE wgphysics)
