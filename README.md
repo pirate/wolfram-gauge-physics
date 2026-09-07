@@ -201,6 +201,7 @@ raw labelings that the exact graph-isomorphism quotient recognizes as the same c
   Complete small-mesh searches separate reactive and central-only states with identical additive
   charges. For an explicitly uniform random update ensemble, exact counting gives
   $\mathbb E[C_{\rm sweep}]=48/[m(m+1)]$ at total weight four, with $m$ faces per sublattice.
+  Exact frame-stabilizer preservation explains why this fusion needs a noncentral remnant.
   Larger sparse runs retain both rare reactions and null results. This diagnoses a catalytic
   constraint, not molecular binding. See the [link replays, component proof, and rate benchmark](docs/three-face-encounters.md).
 

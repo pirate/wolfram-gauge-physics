@@ -8,6 +8,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT/'tools'))
 from face_energy_obstruction import derive_fiber_group
+from triple_rule_search import algebra, assess, make_table
 from three_face_reachability import (AbelianFaceFactor, compiled_replay, generated_subgroup,
                                     link_pair, random_schedule, replay, search, sector_count,
                                     verify_local_factor)
@@ -34,6 +35,23 @@ class ReachabilityTests(unittest.TestCase):
         links[0] = 3
         with self.assertRaisesRegex(ValueError, 'outside'):
             self.factor.project(links)
+
+    def test_every_minimal_rule_preserves_exact_frame_stabilizers(self):
+        states, _, action, _ = algebra(self.g)
+        stabilizers = [tuple(frame for frame, row in enumerate(action) if row[x] == x)
+                       for x in range(len(states))]
+        for rule in self.census['minimal_rules']:
+            table = make_table(rule['transpositions'])
+            self.assertTrue(all(stabilizers[x] == stabilizers[y] for x, y in enumerate(table)))
+        # An isolated reflection-pair-to-central fusion loses the frame stabilizer.
+        self.assertEqual(stabilizers[12], (0, 1, 4, 5))  # (1,r,r')
+        self.assertEqual(stabilizers[5], tuple(range(8)))  # (1,1,z)
+        with self.assertRaisesRegex(ValueError, 'gauge covariance'):
+            # Include the orientation-reversed pair so covariance is isolated.
+            assess(self.g, make_table([(5, 12), (264, 320)]))
+        # The selected catalyst retains that stabilizer on both sides.
+        self.assertEqual(stabilizers[76], stabilizers[13])
+        self.assertEqual(stabilizers[76], (0, 1, 4, 5))
 
     def test_two_exhaustive_components_and_exact_stationary_counts(self):
         f = self.factor

@@ -79,6 +79,35 @@ values of one fixed fan. The first two events are transport; the last is the fir
 This is an existence and shortest-path result under arbitrary sequential scheduling, not the
 probability of a scattering event or a naturally selected clock.
 
+### Why this fusion channel needs a noncentral remnant
+
+The catalytic requirement has a more general symmetry explanation. For any injective
+$G$-equivariant map $F:X\to X$, elementary group-action theory gives
+
+$$\operatorname{Stab}_G(F(x))=\operatorname{Stab}_G(x).$$
+
+Indeed, $gx=x$ implies $gF(x)=F(gx)=F(x)$. Conversely, $gF(x)=F(x)$ implies
+$F(gx)=F(x)$, and injectivity implies $gx=x$. For simultaneous conjugation on tuples,
+
+$$\operatorname{Stab}_G(H_1,\ldots,H_k)=\bigcap_i C_G(H_i).$$
+
+In $D_4$, a tuple of central elements has stabilizer $D_4$, whereas a tuple containing $r$
+or $r'$ and otherwise elements of $K$ has stabilizer $K$. Thus no reversible equivariant
+tuple law can send $(1,r,r')$ to $(1,1,z)$: the two states have different stabilizers.
+The implemented channel instead sends $(r,r,r')$ to $(1,r,z)$, retaining the noncentral
+reflection and its stabilizer. Tests verify exact stabilizer equality on all 512 states
+of every one of the 945 minimal rules, and reject the proposed isolated fusion.
+
+For this fusion channel, adding flat inputs or increasing tuple arity does not resolve the
+obstruction: an all-central output would still have the wrong stabilizer. With the selected
+charges and no other species, the required noncentral remnant has weight at least one, so
+the local activation weight is at least three. This explains why simply searching for a
+faster weight-two version of **the same** fusion is not a viable next step.
+
+This is a standard equivariance consequence applied to the model, not a new theorem of
+group theory. It does not forbid other two-body interactions or bound states, and it does
+not establish the same restriction for quantum amplitudes or changing gauge actions.
+
 ## 3. An exact stationary prediction, with an explicit scheduling assumption
 
 Choose one of the $6m$ fan operators independently and uniformly at every attempt, retaining
@@ -147,8 +176,9 @@ the explicit derivation from this finite gauge-link rule, its complete small-sec
 classification, and independently replayable sparse encounters. Literature priority for the
 particular construction remains unestablished.
 
-The next rule comparison should measure activation requirements, additional kinetic sectors,
-and dilute encounter rates across the symmetry-derived census. Selecting a force law or
+The next rule comparison should measure activation requirements, stabilizer-compatible output
+channels, additional kinetic sectors, and dilute encounter rates across the symmetry-derived
+census. Selecting a force law or
 declaring a persistent label to be a particle would bypass the unresolved physics.
 
 ## Reproduce
