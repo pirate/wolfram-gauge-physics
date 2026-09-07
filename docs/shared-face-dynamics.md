@@ -144,6 +144,11 @@ not an upper bound on class-label entropy, because conjugacy classes have unequa
 Eight schedule trials and local histograms do not establish ergodicity or thermalization.
 We have not measured a temperature, conserved energy, stable bound state, or continuum limit.
 
+The [exact memory and invariant audit](observable-memory-and-invariants.md) now demonstrates
+coarse-observer memory, whole frozen sectors, and schedule-sensitive finite cycles. It also
+rejects twelve apparent neighboring-loop invariants from the smallest mesh. These checks
+strengthen the distinction between stationary histogram agreement and a physical thermal ensemble.
+
 The supplied two-dimensional triangulation is also not an emergent dimension. These results
 demonstrate multi-loop feedback and reversible coarse relaxation in this finite gauge model;
 they do not derive electromagnetism, quantum mechanics, gravity, or molecules.
@@ -161,7 +166,9 @@ python3 tools/run_mesh_experiments.py --reanalyze data/d4-shared-mesh.json --out
 uv run --with matplotlib python tools/plot_shared_mesh.py
 ```
 
-The immediate questions are whether multi-face or topological conservation laws survive,
+The [normal-subgroup theorem](face-energy-obstruction.md) now excludes nonconstant one-face
+energies for every nonidentity strict braid rule in this square-fiber family, not just the
+selected law. The immediate questions are whether larger-support or topological conservation laws survive,
 whether connected correlation functions relax, and how responses scale with mesh size,
 schedule, and microscopic seed. Localized persistent excitations need a detector that rejects
 transient fronts and stationary histogram noise. Geometry-changing rewrites remain a separate

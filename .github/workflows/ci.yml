@@ -60,6 +60,14 @@ jobs:
         run: |
           python3 tests/shared_mesh.py
           python3 tools/run_mesh_experiments.py --side 4 --layers 16 --trials 1 --output out/shared-mesh-smoke.json
+      - name: Exact observable memory and face-energy obstruction
+        run: |
+          python3 tests/observable_memory.py
+          python3 tests/face_energy.py
+          python3 tools/mesh_observable_audit.py --output out/mesh-observable-audit.json
+          diff -u data/d4-mesh-observable-audit.json out/mesh-observable-audit.json
+          python3 tools/face_energy_obstruction.py --output out/face-energy-obstruction.json
+          diff -u data/d4-face-energy-obstruction.json out/face-energy-obstruction.json
       - name: Multiway smoke test
         run: |
           ./build/wgphysics_evolve --steps 2 --output out/smoke.json

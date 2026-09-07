@@ -86,6 +86,10 @@ add_executable(wgphysics_mesh_experiments src/mesh_experiments.cpp)
 target_link_libraries(wgphysics_mesh_experiments PRIVATE wgphysics)
 target_compile_options(wgphysics_mesh_experiments PRIVATE -Wall -Wextra -Wpedantic)
 
+add_executable(wgphysics_mesh_orbits src/mesh_orbits.cpp)
+target_link_libraries(wgphysics_mesh_orbits PRIVATE wgphysics)
+target_compile_options(wgphysics_mesh_orbits PRIVATE -Wall -Wextra -Wpedantic)
+
 add_executable(wgphysics_chain_experiments src/chain_experiments.cpp)
 target_link_libraries(wgphysics_chain_experiments PRIVATE wgphysics)
 target_compile_options(wgphysics_chain_experiments PRIVATE -Wall -Wextra -Wpedantic)

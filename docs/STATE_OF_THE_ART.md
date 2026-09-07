@@ -80,6 +80,16 @@ full incident-face updates, and observes reversible coarse relaxation near an ex
 stationary uniform-link reference. This is a concrete improvement in the fidelity and
 testability of our gauge/fiber simulator, not evidence of a continuum gauge theory or matter.
 
+The [one-face energy obstruction](face-energy-obstruction.md) generalizes the selected-rule
+failure to a finite-group normal-subgroup criterion and excludes every nonconstant one-face
+energy for all 5,730 nonidentity strict rules in our square-fiber census. Surviving quotient
+observables in other controls are fixed locally, not transported. The accompanying
+[observable audit](observable-memory-and-invariants.md) measures exact coarse-memory errors,
+frozen sectors and schedule dependence, and eliminates a specified neighboring-loop density
+ansatz with larger-mesh counterexamples and a universal constant-function certificate.
+These are scoped mathematical results with executable checks; literature priority and a
+connection to physical energy remain unestablished.
+
 ## Contribution matrix
 
 | Layer | Public upstream capability | Implemented here | Still open |

@@ -139,6 +139,10 @@ public:
     const auto& patches() const { return patches_; }
     const auto& events() const { return events_; }
     const auto& incidence() const { return incidence_; }
+    std::pair<uint16_t,uint16_t> based_pair(std::size_t id) const {
+        const auto& p=patches_.at(id);
+        return {transport(p.first),conjugate(transport(p.connector),transport(p.second))};
+    }
     uint16_t sector(uint16_t value) const { return sectors_.at(value); }
     uint16_t identity() const { return identity_; }
 
