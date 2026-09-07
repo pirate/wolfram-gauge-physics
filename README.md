@@ -232,6 +232,16 @@ raw labelings that the exact graph-isomorphism quotient recognizes as the same c
   fiber adjacency and used only as a diagnostic—not an inserted Hamiltonian or quantum-matter
   claim. See the [reconstruction proof, link witness, and exact spectral comparison](docs/complete-loop-observer.md).
 
+- **Certified localized modes—and a precise limit on their persistence.** A compact integer
+  witness proves that two specified fiber-link defects support exactly two modes above the
+  flat band of the derived two-component sector on the infinite triangular lattice, with an exponential spatial
+  tail bound. Finite-size measurements resolve their separate densities through 36,864 base
+  vertices. But an independently replayed single-edge update removes the last above-band mode
+  in another state while preserving its curvature-class histogram: spatial localization is
+  not yet dynamical particle stability. See the [proof, curvature bound, and exact crossing](docs/localized-fiber-modes.md).
+
+![Measured graph-native mode localization and its failure to define a conserved particle count](docs/images/mode-localization.png)
+
 - **GPU-ready exact algebra and measured compression limits.** Group operations are compiled into
   dense integer multiplication, inverse, and action tables. On an Apple M1 Max, the Metal
   microbenchmark processed one million frame transformations in 0.318 ms and one million
@@ -272,7 +282,8 @@ raw labelings that the exact graph-isomorphism quotient recognizes as the same c
    extended loop correlations while keeping
    microscopic loop information distinct from what survives uniform rule averaging. A complete
    loop observer now detects hidden relative bits, and a fiber-adjacency-derived spectral probe
-   sees their effect on graph modes. Test mode localization, evolution, and persistence without
+   sees their effect on graph modes. Static localization now has an infinite-lattice certificate,
+   but one primitive update can remove above-band modes. Identify and test mechanisms for persistence without
    promoting the diagnostic Laplacian into an assumed physical Hamiltonian.
    Geometry- and fiber-changing constructions remain separate milestones.
 

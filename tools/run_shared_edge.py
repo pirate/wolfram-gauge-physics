@@ -12,17 +12,19 @@ from screen_braid_rules import nullspace
 
 def mesh_geometry(side):
     vertex = lambda x, y: (y % side)*side+x % side
-    edges, faces = set(), []
+    edges, faces, by_edge = set(), [], {}
     for y in range(side):
         for x in range(side):
             a, b, c, d = vertex(x, y), vertex(x+1, y), vertex(x+1, y+1), vertex(x, y+1)
             for face in ((a, b, c), (a, c, d)):
                 face = min(face[k:]+face[:k] for k in range(3))
                 faces.append(face+(face[0],))
-                edges.update(tuple(sorted(e)) for e in zip(faces[-1], faces[-1][1:]))
+                for e in zip(faces[-1], faces[-1][1:]):
+                    edge = tuple(sorted(e))
+                    edges.add(edge)
+                    by_edge.setdefault(edge, []).append(len(faces)-1)
     edges = sorted(edges)
-    incidence = [[f for f, face in enumerate(faces) if edge in
-                  [tuple(sorted(e)) for e in zip(face, face[1:])]] for edge in edges]
+    incidence = [by_edge[edge] for edge in edges]
     # Match the documented sorted-edge, face-insertion, two-root ordering.
     patches = []
     for edge, adjacent in zip(edges, incidence):

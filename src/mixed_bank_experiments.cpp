@@ -16,7 +16,7 @@ std::vector<std::size_t> histogram(const MeshDynamics& mesh) {
 int main() {
     try {
         std::size_t side,rule_count,condition_count,attempts,stride;
-        if(!(std::cin>>side>>rule_count>>condition_count>>attempts>>stride) || side<3 || side>24 ||
+        if(!(std::cin>>side>>rule_count>>condition_count>>attempts>>stride) || side<3 || side>48 ||
            !rule_count || rule_count>144 || !condition_count || condition_count>16 ||
            !attempts || attempts>1000000 || !stride || attempts%stride)
             throw std::invalid_argument("invalid bounded bank experiment dimensions");

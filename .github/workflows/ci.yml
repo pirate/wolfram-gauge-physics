@@ -104,6 +104,18 @@ jobs:
           python3 tools/fiber_mode_probe.py --output out/fiber-mode-probe.json
           diff -u data/d4-fiber-mode-probe.json out/fiber-mode-probe.json
           ./build/wgphysics_loop_bench --smoke
+      - name: Localized fiber modes and exact infinite-lattice witness
+        env:
+          OPENBLAS_NUM_THREADS: '1'
+          VECLIB_MAXIMUM_THREADS: '1'
+        run: |
+          python3 -m venv out/spectral-venv
+          out/spectral-venv/bin/pip install 'numpy>=2,<3' 'scipy>=1.14,<2' python-flint
+          out/spectral-venv/bin/python tests/mode_localization.py
+          out/spectral-venv/bin/python tools/compact_mode_certificate.py --verify data/d4-compact-mode-certificate.json
+          out/spectral-venv/bin/python tools/mode_localization.py --sides 6 --large-sides --evolution-side 6 --attempts 2000 --stride 1000 --trials 1 --output out/mode-localization-smoke.json
+          out/spectral-venv/bin/python tools/spectral_transition.py --output out/spectral-transition.json
+          out/spectral-venv/bin/python tools/spectral_transition.py --verify-with-flint data/d4-spectral-transition.json
       - name: Multiway engine smoke test
         run: |
           ./build/wgphysics_evolve --steps 2 --output out/smoke.json
