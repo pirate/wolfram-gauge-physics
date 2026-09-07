@@ -1,0 +1,95 @@
+src/three_face.hpp
+  s_33c6c7a35bd0ca::t_9aad9cc2d5b61b 1-88
+docs/shared-edge-transport.md
+  s_33c6c7a35bd0ca::t_b7e80c25908ce8 149-153
+src/three_face_replay.cpp
+  s_33c6c7a35bd0ca::t_6146dc0f71109a 1-50
+tools/plot_three_face.py
+  s_33c6c7a35bd0ca::t_1090ffdba12241 1-39,43-55
+  s_33c6c7a35bd0ca::t_b7e80c25908ce8 40-42
+tools/triple_rule_search.py
+  s_33c6c7a35bd0ca::t_aa6590e28db2dd 1-132
+tools/run_three_face.py
+  s_33c6c7a35bd0ca::t_1451d1f7dfa4ce 14
+  s_33c6c7a35bd0ca::t_a6b9d6e17cb48f 1-8,10,12-13,15-45,51-105,117-152,156-178,181-190,192-215,217-262
+  s_33c6c7a35bd0ca::t_2ee01e18969c53 9,11,46-50,106-116,153-155,179-180,191,216
+tests/three_face.py
+  s_33c6c7a35bd0ca::t_1090ffdba12241 1-105
+docs/three-face-feedback.md
+  s_33c6c7a35bd0ca::t_b7e80c25908ce8 1-141,143-183,189-222
+  s_33c6c7a35bd0ca::t_bf0e8d9d57377a 142
+  s_33c6c7a35bd0ca::t_0212b242477692 184-188
+tools/three_face_reachability.py
+  s_33c6c7a35bd0ca::t_6146dc0f71109a 10-11,17,34,207-219,221-223,226-228,234-242,244-249,263-304,309-310,316-318,321,333-336,339-346,348,356-357
+  s_33c6c7a35bd0ca::t_14e2a32982931f 253-254
+  s_33c6c7a35bd0ca::t_bf0e8d9d57377a 1-9,12-16,18-30,35-49,54-79,119,121,123-143,146-147,151-155,157-168,171-175,178,180-182,184-206,311-315,319-320,322-325,327,330-332,352-354,358-361
+  s_33c6c7a35bd0ca::t_8b7cdd1c56f49c 31-33,122
+  s_33c6c7a35bd0ca::t_f32a793152a9dd 50-53,80-118,120,144-145,148-150,156,169-170,176-177,179,183,305-308,328-329,337-338
+  s_33c6c7a35bd0ca::t_0212b242477692 220,224-225,229-233,243,250-252,255-262,326,347,349-351,355
+src/triple_rules.hpp
+  s_33c6c7a35bd0ca::t_9aad9cc2d5b61b 1-87
+src/three_face_experiments.cpp
+  s_33c6c7a35bd0ca::t_2f525551b3f33d 1-73,75,77,80,83-145,147-150
+  s_33c6c7a35bd0ca::t_a6b9d6e17cb48f 74,81
+  s_33c6c7a35bd0ca::t_1451d1f7dfa4ce 76,78-79,82,146
+docs/STATE_OF_THE_ART.md
+  s_33c6c7a35bd0ca::t_ebe865d40c4762 108-115
+  s_33c6c7a35bd0ca::t_b7e80c25908ce8 100-107
+src/mesh_dynamics.hpp
+  s_33c6c7a35bd0ca::t_2ee01e18969c53 135-148
+  s_33c6c7a35bd0ca::t_9aad9cc2d5b61b 5,13,21,30-44,67,69,74,80-88,98-104,127-133,201,204-208,241
+tests/three_face_reachability.py
+  s_33c6c7a35bd0ca::t_0212b242477692 104-105,110-111
+  s_33c6c7a35bd0ca::t_f32a793152a9dd 1-79,88,91,94-103,106-109,112-115
+  s_33c6c7a35bd0ca::t_744264464e8d98 80-87,89-90,92-93
+CMakeLists.txt
+  s_33c6c7a35bd0ca::t_aa6590e28db2dd 105-108
+  s_33c6c7a35bd0ca::t_2f525551b3f33d 109-112
+  s_33c6c7a35bd0ca::t_2ac182e13d008f 73-78
+  s_33c6c7a35bd0ca::t_6146dc0f71109a 113-116
+src/triple_census.cpp
+  s_33c6c7a35bd0ca::t_aa6590e28db2dd 1-22
+README.md
+  s_33c6c7a35bd0ca::t_b7e80c25908ce8 189-198,233,237
+  s_33c6c7a35bd0ca::t_0212b242477692 199-206,234-236
+.github/workflows/ci.yml
+  s_33c6c7a35bd0ca::t_0212b242477692 81-83
+  s_33c6c7a35bd0ca::t_1090ffdba12241 75-80
+docs/three-face-encounters.md
+  s_33c6c7a35bd0ca::t_0212b242477692 1-124,127-129,131-168
+  s_33c6c7a35bd0ca::t_ce87b51570c185 130
+  s_33c6c7a35bd0ca::t_14e2a32982931f 125-126
+tests/three_face.cpp
+  s_33c6c7a35bd0ca::t_2ac182e13d008f 1-102,110-112
+  s_33c6c7a35bd0ca::t_6146dc0f71109a 103-109
+data/d4-three-face-encounters-12.json
+  s_33c6c7a35bd0ca::t_0ffe035eba45e1 1-580028
+data/d4-three-face-encounters-24.json
+  s_33c6c7a35bd0ca::t_99006ddfb3cb66 1-314797
+data/d4-three-face-reachability-3.json
+  s_33c6c7a35bd0ca::t_29a30f803ad31c 1-398321
+data/d4-three-face-reachability-4.json
+  s_33c6c7a35bd0ca::t_1b68ccec76799d 1-469289
+data/d4-three-face-replication.json
+  s_33c6c7a35bd0ca::t_9b3e001dee0777 1-1094824
+data/d4-three-face.json
+  s_33c6c7a35bd0ca::t_5c1623787b36fb 1-921688
+data/d4-triple-rule-search.json
+  s_33c6c7a35bd0ca::t_fdee9c9e8e113f 1-236518
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.2",
+  "base_commit_sha": "43e90247a245ad903ea1fc16f85c48a8beb00b38",
+  "prompts": {},
+  "sessions": {
+    "s_33c6c7a35bd0ca": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a061ab-263d-7860-b882-4955b6e0b240",
+        "model": "gpt-6-astra"
+      },
+      "human_author": "Nick Sweeting <git@sweeting.me>"
+    }
+  }
+}
