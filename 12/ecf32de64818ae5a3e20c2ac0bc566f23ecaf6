@@ -1,0 +1,41 @@
+README.md
+  s_33c6c7a35bd0ca::t_0f9772c6702adb 245-254,303-306
+.github/workflows/ci.yml
+  s_33c6c7a35bd0ca::t_0f9772c6702adb 119-120
+tests/transport_braid.py
+  s_33c6c7a35bd0ca::t_4d401f726e78ec 129-130,143-146
+  s_33c6c7a35bd0ca::t_4b8fb3233adcc8 13,32-40,101-102
+  s_33c6c7a35bd0ca::t_e04041f8cbf618 1-12,14-31,41-100,103-128,131-142,147-150
+tools/plot_transport_braid.py
+  s_33c6c7a35bd0ca::t_03cb46586e7c21 1-67
+tools/transport_braid.py
+  s_33c6c7a35bd0ca::t_4d401f726e78ec 13,116,119-124,396
+  s_33c6c7a35bd0ca::t_6fdd79e980e926 240
+  s_33c6c7a35bd0ca::t_7d4555682ac745 4-5,7,11,17-38,41-80,117-118,125-138,395,408
+  s_33c6c7a35bd0ca::t_4b8fb3233adcc8 12,39-40,81-115,409
+  s_33c6c7a35bd0ca::t_d696bb88670d67 141-142,362-369,378-379,393
+  s_33c6c7a35bd0ca::t_e04041f8cbf618 394
+  s_33c6c7a35bd0ca::t_542e9d827f1cd5 1-3,6,8-10,14-16,139-140,143-153,229-239,241-360,385-390,398-407,410-420
+  s_33c6c7a35bd0ca::t_12ce8beb185b30 154-228,361,370-377,380-384,391-392,397
+docs/transport-braid-memory.md
+  s_33c6c7a35bd0ca::t_0f9772c6702adb 1-113,116-164,169-199
+  s_33c6c7a35bd0ca::t_4d401f726e78ec 114-115,165-168
+data/d4-transport-braid.json
+  s_33c6c7a35bd0ca::t_7ea39599973b17 1
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.2",
+  "base_commit_sha": "12ecf32de64818ae5a3e20c2ac0bc566f23ecaf6",
+  "prompts": {},
+  "sessions": {
+    "s_33c6c7a35bd0ca": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a061ab-263d-7860-b882-4955b6e0b240",
+        "model": "gpt-6-astra"
+      },
+      "human_author": "Nick Sweeting <git@sweeting.me>"
+    }
+  }
+}
