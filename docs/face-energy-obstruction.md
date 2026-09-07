@@ -10,6 +10,11 @@ energy, finite-group gauge theory, or the Wolfram Physics Project. In particular
 an assumption to change: the current operator writes links incident to four faces but chooses
 its action from only two face holonomies.
 
+**Constructive follow-up:** the [shared-edge primitive](shared-edge-transport.md) now realizes
+the same pair table by changing only the edge shared by the selected faces. It preserves all
+exterior links, has no affected spectator faces, and restores globally transported face charges.
+This is a different microscopic lift, outside the hypotheses below, not a contradiction.
+
 ## Assumptions and statement
 
 Let $G$ be any finite group. Let a conjugation-equivariant pair map
@@ -124,7 +129,9 @@ group-Laplacian electric operator; see
 [Mariani, Pradhan, and Ercolessi](https://arxiv.org/abs/2301.12224). Neither gauge symmetry nor
 reversibility selects such a Hamiltonian for our combinatorial model.
 
-Our next primitive search should let an update read its full affected neighborhood, enumerate
+The implemented shared-edge lift now reads its full affected neighborhood and restores those
+charges, but its charge projection remains autonomous exclusion dynamics. The next larger-star
+primitive search should read its full affected neighborhood, enumerate
 boundary-preserving gauge-covariant reversible moves, and **derive** their conservation laws.
 The search must not choose a familiar plaquette energy first and reject moves until it is
 conserved. Persistent excitations, response, and size/schedule controls follow only after a

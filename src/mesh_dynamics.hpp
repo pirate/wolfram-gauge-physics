@@ -1,6 +1,7 @@
 #pragma once
 
 #include "equivariant_pair_search.hpp"
+#include "shared_edge.hpp"
 
 namespace wgphysics::research {
 
@@ -8,12 +9,14 @@ namespace wgphysics::research {
 // incident-face accounting. Unlike CellChain, faces do not own exclusive links.
 class MeshDynamics {
 public:
+    enum class Lift { ExclusiveClosingLinks, SharedEdge };
     struct DirectedLink { std::size_t edge; bool reversed; };
     using Path = std::vector<DirectedLink>;
     struct Patch {
         CellPairPatch specification;
         Path first, second, connector;
         std::vector<std::size_t> reads, writes, affected_faces;
+        Lift lift=Lift::ExclusiveClosingLinks;
     };
     struct Event {
         std::size_t patch, depth;
@@ -50,15 +53,25 @@ public:
     }
 
     std::size_t add_patch(const CellPairPatch& specification) {
+        return append_patch(specification,interaction_support(complex_.base(),specification),Lift::ExclusiveClosingLinks);
+    }
+
+    std::size_t add_patch(const SharedEdgePatch& specification) {
+        const auto support=shared_edge_support(complex_,specification);
+        return append_patch({specification.first_loop,specification.second_loop,{specification.first_loop.front()}},
+                            support,Lift::SharedEdge);
+    }
+
+private:
+    std::size_t append_patch(const CellPairPatch& specification,const InteractionSupport& support,Lift lift) {
         // Validate actual faces, not arbitrarily chosen cycles of the one-skeleton.
         for (const auto* loop : {&specification.first_loop,&specification.second_loop}) {
             const auto canonical=canonical_oriented_face(*loop);
             if (std::find(complex_.faces().begin(),complex_.faces().end(),canonical)==complex_.faces().end())
                 throw std::invalid_argument("update loop is not an oriented mesh face");
         }
-        const auto support=interaction_support(complex_.base(),specification);
         Patch patch{specification,compile_path(specification.first_loop),
-                    compile_path(specification.second_loop),compile_path(specification.connector),{},{},{}};
+                    compile_path(specification.second_loop),compile_path(specification.connector),{},{},{},lift};
         for (const auto edge : support.reads) patch.reads.push_back(edge_ids_.at(edge));
         std::set<std::size_t> affected;
         for (const auto edge : support.writes) {
@@ -70,6 +83,7 @@ public:
         return patches_.size()-1;
     }
 
+public:
     void update(std::size_t id, HurwitzDirection direction=HurwitzDirection::Forward, bool record=false) {
         const auto& p=patches_.at(id);
         if (record && unrecorded_) throw std::logic_error("cannot append provenance after unrecorded events");
@@ -86,10 +100,16 @@ public:
         const auto& table=direction==HurwitzDirection::Forward ? forward_ : inverse_;
         const auto target=table[a*group_.order()+based_b];
         const uint16_t next_a=target/group_.order(), next_b=conjugate(group_.inverse(t),target%group_.order());
-        const auto first=p.first.back(),second=p.second.back();
-        const auto u=group_.multiply(group_.multiply(next_a,group_.inverse(a)),link_value(first));
-        const auto v=group_.multiply(group_.multiply(next_b,group_.inverse(b)),link_value(second));
-        set_link(first,u); set_link(second,v);
+        if(p.lift==Lift::SharedEdge) {
+            const auto shared=p.first.front();
+            // S' = S A^-1 X; independent oracle instead computes Q^-1 X.
+            set_link(shared,group_.multiply(link_value(shared),group_.multiply(group_.inverse(a),next_a)));
+        } else {
+            const auto first=p.first.back(),second=p.second.back();
+            const auto u=group_.multiply(group_.multiply(next_a,group_.inverse(a)),link_value(first));
+            const auto v=group_.multiply(group_.multiply(next_b,group_.inverse(b)),link_value(second));
+            set_link(first,u); set_link(second,v);
+        }
         for (const auto face : p.affected_faces) face_values_[face]=transport(faces_[face]);
     }
 

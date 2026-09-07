@@ -60,6 +60,10 @@ jobs:
         run: |
           python3 tests/shared_mesh.py
           python3 tools/run_mesh_experiments.py --side 4 --layers 16 --trials 1 --output out/shared-mesh-smoke.json
+          python3 tests/shared_edge.py
+          python3 tools/run_shared_edge.py --side 4 --layers 32 --trials 2 --full-replay --output out/shared-edge-smoke.json
+          python3 tools/run_shared_edge.py --full-replay --output out/shared-edge.json
+          diff -u data/d4-shared-edge.json out/shared-edge.json
       - name: Exact observable memory and face-energy obstruction
         run: |
           python3 tests/observable_memory.py

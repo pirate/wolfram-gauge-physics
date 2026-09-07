@@ -17,11 +17,12 @@ void verify_snapshot(const MeshDynamics& mesh) {
             throw std::logic_error("shared-face cache differs from complete recomputation");
 }
 
-void census(const FiberGraph& fiber,const AutomorphismTables& group,const PairTable& table) {
+void census(const FiberGraph& fiber,const AutomorphismTables& group,const PairTable& table,bool shared=false) {
     const OrientedCellComplex complex(BaseGraph({0,1,2,3,4,5},
         {{0,1},{0,2},{0,3},{0,4},{1,2},{1,4},{2,3},{2,5},{3,5}}),
         {{0,1,2,0},{0,2,3,0},{0,4,1,0},{2,5,3,2}});
     const CellPairPatch patch{{1,2,0,1},{3,0,2,3},{3,0,2,1}};
+    const SharedEdgePatch edge_patch{{0,2,3,0},{0,1,2,0}};
     const std::vector<Vertex> outer{0,4,1,2,5,3,0};
     const auto n=group.order();
     const auto make_connection=[&](uint16_t a,uint16_t b,uint16_t c,uint16_t d) {
@@ -34,19 +35,24 @@ void census(const FiberGraph& fiber,const AutomorphismTables& group,const PairTa
     };
     std::cout<<"\"local_census\":{\"columns\":[\"A\",\"B\",\"C\",\"D\",\"A_after\",\"B_after\",\"C_after\",\"D_after\"],"
                 "\"faces\":[[0,1,2,0],[0,2,3,0],[0,4,1,0],[2,5,3,2]],"
-                "\"patch\":{\"first\":[1,2,0,1],\"second\":[3,0,2,3],\"connector\":[3,0,2,1]},"
-                "\"outer_boundary\":[0,4,1,2,5,3,0],\"transitions\":[\n";
+                "\"patch\":";
+    if(shared) std::cout<<"{\"first\":[0,2,3,0],\"second\":[0,1,2,0],\"connector\":[0]}";
+    else std::cout<<"{\"first\":[1,2,0,1],\"second\":[3,0,2,3],\"connector\":[3,0,2,1]}";
+    std::cout<<",\"outer_boundary\":[0,4,1,2,5,3,0],\"transitions\":[\n";
     bool first=true;
     for (uint16_t a=0;a<n;++a) for (uint16_t b=0;b<n;++b)
         for (uint16_t c=0;c<n;++c) for (uint16_t d=0;d<n;++d) {
             const auto connection=make_connection(a,b,c,d);
             MeshDynamics mesh(complex,connection,table);
             if (mesh.face_values()!=std::vector<uint16_t>{a,b,c,d}) throw std::logic_error("census gauge parametrization failed");
-            mesh.add_patch(patch); mesh.update(0);
-            const auto oracle=realize_pair_interaction(connection,patch,[&](const auto& x,const auto& y) {
+            if(shared) mesh.add_patch(edge_patch); else mesh.add_patch(patch);
+            mesh.update(0);
+            const auto targets=[&](const auto& x,const auto& y) {
                 const auto result=table[group.index_of(x)*n+group.index_of(y)];
                 return std::pair{group.elements()[result/n],group.elements()[result%n]};
-            });
+            };
+            const auto oracle=shared ? realize_shared_edge_interaction(complex,connection,edge_patch,targets)
+                                     : realize_pair_interaction(connection,patch,targets);
             const auto actual=mesh.snapshot();
             for (const auto [u,v] : complex.base().edges())
                 if (actual.edge_transport(u,v)!=oracle.edge_transport(u,v)) throw std::logic_error("local link oracle disagrees");
@@ -62,6 +68,11 @@ void census(const FiberGraph& fiber,const AutomorphismTables& group,const PairTa
             for (const auto [u,v] : complex.base().edges())
                 if (reversed.edge_transport(u,v)!=connection.edge_transport(u,v)) throw std::logic_error("local inverse changed a link");
         }
+    if(shared) {
+        std::cout<<"]}";
+        std::cerr<<"4096 shared-edge states: target faces, unchanged spectators, boundary and inverse checks passed\n";
+        return;
+    }
     std::cout<<"],\"fixed_boundary_witness\":{";
     const auto r=group.index_of(Permutation({1,2,3,0}));
     const auto t=group.index_of(Permutation({0,3,2,1}));
@@ -123,9 +134,16 @@ int main(int argc,char** argv) {
     try {
         std::size_t side=12,layers=256,trials=8;
         uint64_t seed=819031;
+        bool shared=false;
         for (int i=1;i<argc;i+=2) {
             if (i+1>=argc) throw std::invalid_argument("missing option value");
-            const std::string key=argv[i]; const auto value=std::stoull(argv[i+1]);
+            const std::string key=argv[i];
+            if(key=="--lift") {
+                const std::string value=argv[i+1];
+                if(value!="shared-edge" && value!="exclusive-closing") throw std::invalid_argument("unknown mesh lift");
+                shared=value=="shared-edge"; continue;
+            }
+            const auto value=std::stoull(argv[i+1]);
             if (key=="--side") side=value;
             else if (key=="--layers") layers=value;
             else if (key=="--trials") trials=value;
@@ -139,16 +157,23 @@ int main(int argc,char** argv) {
         for (auto& value : table) if (!(std::cin>>value)) throw std::invalid_argument("missing pair table");
         validate_pair_table(group,table);
         const auto complex=triangulated_torus(side);
-        const auto specifications=triangular_mesh_patches(complex);
+        const auto specifications=shared ? std::vector<CellPairPatch>{} : triangular_mesh_patches(complex);
+        const auto edge_specifications=shared ? shared_edge_patches(complex) : std::vector<SharedEdgePatch>{};
+        const auto patch_count=specifications.size()+edge_specifications.size();
+        const auto add_patches=[&](MeshDynamics& mesh) {
+            for(const auto& p : specifications) mesh.add_patch(p);
+            for(const auto& p : edge_specifications) mesh.add_patch(p);
+        };
         const Permutation reflection({0,3,2,1}),rotation({1,2,3,0});
         std::cout<<"{\"schema\":1,\"side\":"<<side<<",\"layers\":"<<layers<<",\"trials\":"<<trials
                  <<",\"seed\":"<<seed<<",\"vertices\":"<<complex.base().vertices().size()
                  <<",\"edges\":"<<complex.base().edges().size()<<",\"faces\":"<<complex.faces().size()
-                 <<",\"patches\":"<<specifications.size()<<",\"seed_group_elements\":{\"reflection\":"
+                 <<",\"patches\":"<<patch_count<<",\"seed_group_elements\":{\"reflection\":"
                  <<group.index_of(reflection)<<",\"rotation\":"<<group.index_of(rotation)<<"},\"group_permutations\":[";
         for (std::size_t i=0;i<group.elements().size();++i) { if(i) std::cout<<','; array(std::cout,group.elements()[i].image()); }
         std::cout<<"],";
-        census(fiber,group,table);
+        if(shared) std::cout<<"\"lift\":\"shared-edge\",";
+        census(fiber,group,table,shared);
         std::cout<<",\"trajectory_columns\":[\"layer\",\"active_faces\",\"max_seed_dual_distance\",\"components\",\"largest_component\","
                     "\"sector0\",\"sector1\",\"sector2\",\"sector3\",\"sector4\",\"sector5\",\"sector6\",\"sector7\"],\"runs\":[\n";
         bool first_run=true;
@@ -158,8 +183,8 @@ int main(int argc,char** argv) {
             throw std::logic_error("pair seeds commute");
         for (std::size_t trial=0;trial<trials;++trial) {
             MeshDynamics topology(complex,FiberBundleConnection(complex.base(),fiber),table);
-            for (const auto& p : specifications) topology.add_patch(p);
-            std::vector<std::size_t> order(specifications.size()); std::iota(order.begin(),order.end(),0);
+            add_patches(topology);
+            std::vector<std::size_t> order(patch_count); std::iota(order.begin(),order.end(),0);
             std::mt19937_64 scheduler(seed+trial*100003);
             for (std::size_t i=order.size();i>1;--i) std::swap(order[i-1],order[scheduler()%i]);
             const auto schedule=topology.commuting_layers(order);
@@ -178,7 +203,7 @@ int main(int argc,char** argv) {
                     for (const auto [u,v] : complex.base().edges()) initial.set_transport(u,v,group.elements()[random()%group.order()]);
                 }
                 MeshDynamics mesh(complex,initial,table);
-                for (const auto& p : specifications) mesh.add_patch(p);
+                add_patches(mesh);
                 const auto initial_values=mesh.values();
                 const auto missing=std::numeric_limits<std::size_t>::max();
                 std::vector<std::size_t> distance(complex.faces().size(),missing),frontier;
@@ -190,7 +215,14 @@ int main(int argc,char** argv) {
                 if (!first_run) std::cout<<",\n"; first_run=false;
                 std::cout<<"{\"trial\":"<<trial<<",\"condition\":\""<<condition<<"\",\"schedule_layers\":"<<schedule.size()
                          <<",\"seed_edges\":[["<<center<<','<<center+1<<"],["<<other<<','<<(other+side)%(side*side)
-                         <<"]],\"trajectory\":[";
+                         <<"]]";
+                if(shared) {
+                    std::cout<<",\"initial_links\":"; array(std::cout,initial_values);
+                    std::cout<<",\"schedule\":[";
+                    for(std::size_t i=0;i<schedule.size();++i) { if(i) std::cout<<','; array(std::cout,schedule[i]); }
+                    std::cout<<']';
+                }
+                std::cout<<",\"trajectory\":[";
                 std::size_t updates=0;
                 std::vector<std::vector<std::size_t>> forward_histograms;
                 for (std::size_t tick=0;tick<=layers;++tick) {
@@ -202,7 +234,8 @@ int main(int argc,char** argv) {
                         ++histogram[mesh.sector(mesh.face_values()[f])];
                         if (mesh.face_values()[f]!=mesh.identity()) {
                             active[f]=true; ++count;
-                            if (distance[f]==missing || distance[f]>2*tick) throw std::logic_error("curvature escaped the local propagation bound");
+                            if (distance[f]==missing || distance[f]>(shared ? tick : 2*tick))
+                                throw std::logic_error("curvature escaped the local propagation bound");
                             radius=std::max(radius,distance[f]);
                         }
                     }
@@ -220,6 +253,8 @@ int main(int argc,char** argv) {
                     for(const auto value : histogram) std::cout<<','<<value;
                     std::cout<<']';
                 }
+                std::cout<<']';
+                if(shared) { std::cout<<",\"final_links\":"; array(std::cout,mesh.values()); }
                 for (std::size_t tick=layers;tick>0;--tick) {
                     const auto& layer=schedule[(tick-1)%schedule.size()];
                     for(auto it=layer.rbegin();it!=layer.rend();++it) mesh.update(*it,HurwitzDirection::Inverse);
@@ -228,7 +263,7 @@ int main(int argc,char** argv) {
                     if (histogram!=forward_histograms[tick-1]) throw std::logic_error("reverse echo differs at intermediate layer");
                 }
                 if (mesh.values()!=initial_values) throw std::logic_error("mesh experiment inverse replay failed");
-                std::cout<<"],\"updates\":"<<updates<<",\"exact_inverse_replay\":true,\"reverse_histogram_echo\":true}";
+                std::cout<<",\"updates\":"<<updates<<",\"exact_inverse_replay\":true,\"reverse_histogram_echo\":true}";
             }
             std::cerr<<"trial "<<trial<<": five mesh conditions, "<<schedule.size()<<" conflict-free schedule layers, inverse replay passed\n";
         }

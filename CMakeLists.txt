@@ -64,6 +64,12 @@ target_compile_options(mesh_dynamics_test PRIVATE -Wall -Wextra -Wpedantic)
 add_test(NAME mesh_dynamics COMMAND mesh_dynamics_test)
 set_tests_properties(mesh_dynamics PROPERTIES LABELS wgphysics)
 
+add_executable(shared_edge_test tests/shared_edge.cpp)
+target_link_libraries(shared_edge_test PRIVATE wgphysics)
+target_compile_options(shared_edge_test PRIVATE -Wall -Wextra -Wpedantic)
+add_test(NAME shared_edge COMMAND shared_edge_test)
+set_tests_properties(shared_edge PROPERTIES LABELS wgphysics)
+
 add_executable(equivariant_pair_search_test tests/equivariant_pair_search.cpp)
 target_link_libraries(equivariant_pair_search_test PRIVATE wgphysics)
 target_compile_options(equivariant_pair_search_test PRIVATE -Wall -Wextra -Wpedantic)

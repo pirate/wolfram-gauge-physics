@@ -90,6 +90,13 @@ ansatz with larger-mesh counterexamples and a universal constant-function certif
 These are scoped mathematical results with executable checks; literature priority and a
 connection to physical energy remain unestablished.
 
+The [shared-edge construction](shared-edge-transport.md) gives a constructive escape specific
+to a different link realization: the same pair table now preserves all exterior links, affects
+only its two input faces, and transports the derived additive charges globally. Its two-state
+class memory, bipartite parity, and 4.92 million independently replayed link updates are exact
+finite-model results. The autonomous exclusion factor remains an explicit limitation; this is
+not yet a microscopic derivation of interacting matter or physical energy.
+
 ## Contribution matrix
 
 | Layer | Public upstream capability | Implemented here | Still open |
