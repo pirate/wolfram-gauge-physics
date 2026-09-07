@@ -58,6 +58,20 @@ target_compile_options(cell_chain_test PRIVATE -Wall -Wextra -Wpedantic)
 add_test(NAME cell_chain COMMAND cell_chain_test)
 set_tests_properties(cell_chain PROPERTIES LABELS wgphysics)
 
+add_executable(equivariant_pair_search_test tests/equivariant_pair_search.cpp)
+target_link_libraries(equivariant_pair_search_test PRIVATE wgphysics)
+target_compile_options(equivariant_pair_search_test PRIVATE -Wall -Wextra -Wpedantic)
+add_test(NAME equivariant_pair_search COMMAND equivariant_pair_search_test)
+set_tests_properties(equivariant_pair_search PROPERTIES LABELS wgphysics)
+
+add_executable(wgphysics_involution_census src/involution_census.cpp)
+target_link_libraries(wgphysics_involution_census PRIVATE wgphysics)
+target_compile_options(wgphysics_involution_census PRIVATE -Wall -Wextra -Wpedantic)
+
+add_executable(wgphysics_involution_braid_search src/involution_braid_search.cpp)
+target_link_libraries(wgphysics_involution_braid_search PRIVATE wgphysics)
+target_compile_options(wgphysics_involution_braid_search PRIVATE -Wall -Wextra -Wpedantic)
+
 add_executable(wgphysics_chain_experiments src/chain_experiments.cpp)
 target_link_libraries(wgphysics_chain_experiments PRIVATE wgphysics)
 target_compile_options(wgphysics_chain_experiments PRIVATE -Wall -Wextra -Wpedantic)

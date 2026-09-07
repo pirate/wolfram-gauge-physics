@@ -1,9 +1,10 @@
 # Infrageometric gauge foundations
 
 This layer follows the finite combinatorial hierarchy implemented by the Wolfram Institute's
-experimental `InfraGaugeTheory` project, rather than naming a continuum gauge group at the
-microscopic level. The conceptual dependency is pinned for this audit to repository commit
-`edd9bdca46b7838d6b3e940e8ae8cde90b60ef2c` (paclet version 1.0.7). The implementation here is
+experimental [InfraGaugeTheory](https://github.com/WolframInstitute/InfraGaugeTheory) project,
+rather than naming a continuum gauge group at the microscopic level. The initial conceptual
+audit used [this source revision](https://github.com/WolframInstitute/InfraGaugeTheory/tree/edd9bdca46b7838d6b3e940e8ae8cde90b60ef2c)
+(paclet version 1.0.7). The implementation here is
 an independent C++ adaptation for the hypergraph rewrite engine; no Wolfram Language source is
 vendored.
 
@@ -17,8 +18,9 @@ vendored.
 6. Lifting a loop gives a fiber automorphism: holonomy, the discrete curvature observable.
 
 The current C++ representation specializes to isomorphic copies of a single microscopic fiber
-graph `F`. This is the complete-lift case of `InfraGaugeTheory`'s graph connections. General
-non-isomorphic and partial fibers can be added after rewrite behavior is stable.
+graph `F`. This is the complete-lift case of `InfraGaugeTheory`'s graph connections. The research
+layer also represents non-isomorphic fibers and partial lifts; the evolution kernels still
+specialize to homogeneous fibers.
 
 ## Gauge group is derived
 
@@ -31,8 +33,10 @@ changes under local frames `g_x, g_y` as
 
 `U_xy -> g_y U_xy g_x^-1`.
 
-Consequently loop holonomy changes only by conjugation at its basepoint. Its conjugacy class,
-represented initially by the permutation cycle signature, is gauge invariant. Different fiber
+Consequently loop holonomy changes only by conjugation at its basepoint. Its conjugacy class
+inside `Aut(F)` is gauge invariant. Permutation cycle type alone can merge distinct classes
+of this smaller group, so the current loop probe canonicalizes over the actual derived group.
+Different fiber
 graphs therefore produce different microscopic symmetry groups. Whether an effective continuous
 group appears after coarse-graining is a result to measure, not an input.
 

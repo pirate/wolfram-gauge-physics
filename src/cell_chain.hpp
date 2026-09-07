@@ -1,6 +1,6 @@
 #pragma once
 
-#include "gauge_interactions.hpp"
+#include "equivariant_pair_search.hpp"
 
 namespace wgphysics::research {
 
@@ -40,6 +40,16 @@ public:
     }
 
     const std::vector<uint16_t>& values() const { return values_; }
+
+    CellChain(const FiberGraph& fiber,std::vector<uint16_t> holonomies,
+              std::vector<uint16_t> connectors,const PairTable& rule)
+        : CellChain(fiber,std::move(holonomies),std::move(connectors),PairInteraction::Hurwitz) {
+        validate_pair_table(tables_,rule);
+        for (std::size_t i=0;i<rule.size();++i) {
+            forward_[i]={rule[i]/tables_.order(),rule[i]%tables_.order()};
+            inverse_[rule[i]]={i/tables_.order(),i%tables_.order()};
+        }
+    }
     const std::vector<Event>& events() const { return events_; }
     const AutomorphismTables& tables() const { return tables_; }
     uint16_t sector(uint16_t value) const { validate(value); return sectors_[value]; }
@@ -80,8 +90,8 @@ public:
         return result;
     }
 
-    // The generated subgroup at cell zero is invariant under these invertible
-    // group-word updates. Changing the root frame conjugates the subgroup.
+    // Word-rule evolution preserves this subgroup; general searched tables need
+    // not. Changing the root frame conjugates the subgroup.
     std::set<uint16_t> generated_subgroup() const {
         std::set<uint16_t> generators;
         auto transport=identity();

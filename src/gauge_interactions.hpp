@@ -84,16 +84,18 @@ inline InteractionSupport interaction_support(const FiberBundleConnection& conne
     return support;
 }
 
-inline FiberBundleConnection apply_pair_interaction(
+// Internal realization shared by algebraically specified and validated table rules.
+template <typename PairMap>
+inline FiberBundleConnection realize_pair_interaction(
     const FiberBundleConnection& connection, const CellPairPatch& patch,
-    PairInteraction rule, HurwitzDirection direction = HurwitzDirection::Forward) {
+    PairMap targets) {
     (void)interaction_support(connection, patch);
     const auto mul = Permutation::compose;
     const auto t = connection.parallel_transport(patch.connector);
     const auto a = connection.holonomy(patch.first_loop);
     const auto b = connection.holonomy(patch.second_loop);
     const auto based_b = mul(t, mul(b, t.inverse()));
-    const auto [target_a, target_based_b] = pair_targets(a, based_b, rule, direction);
+    const auto [target_a, target_based_b] = targets(a, based_b);
     const auto target_b = mul(t.inverse(), mul(target_based_b, t));
     FiberBundleConnection result = connection;
     const auto realize = [&](const std::vector<Vertex>& loop, const Permutation& before,
@@ -110,6 +112,14 @@ inline FiberBundleConnection apply_pair_interaction(
         mul(target_a, target_based_b) != mul(a, based_b))
         throw std::logic_error("pair interaction violated its exact postconditions");
     return result;
+}
+
+inline FiberBundleConnection apply_pair_interaction(
+    const FiberBundleConnection& connection, const CellPairPatch& patch,
+    PairInteraction rule, HurwitzDirection direction = HurwitzDirection::Forward) {
+    return realize_pair_interaction(connection,patch,[&](const auto& a,const auto& b) {
+        return pair_targets(a,b,rule,direction);
+    });
 }
 
 }  // namespace wgphysics::research

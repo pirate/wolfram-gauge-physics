@@ -42,6 +42,12 @@ jobs:
           diff -u data/d4-pair-interactions.json out/pair-interactions.json
           ./build/wgphysics_chain_experiments --output out/chain-experiments.json
           diff -u data/d4-chain-experiments.json out/chain-experiments.json
+          ./build/wgphysics_involution_census --output out/pair-involutions.json
+          diff -u data/d4-pair-involutions.json out/pair-involutions.json
+          ./build/wgphysics_involution_braid_search --output out/involution-braid-search.json
+          diff -u data/d4-involution-braid-search.json out/involution-braid-search.json
+          python3 tools/screen_braid_rules.py --output out/braid-rule-screen.json
+          diff -u data/d4-braid-rule-screen.json out/braid-rule-screen.json
       - name: Multiway smoke test
         run: |
           ./build/wgphysics_evolve --steps 2 --output out/smoke.json

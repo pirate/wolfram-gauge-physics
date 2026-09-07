@@ -138,6 +138,13 @@ raw labelings that the exact graph-isomorphism quotient recognizes as the same c
   generated subgroup and an exact streaming-sublattice reduction, ruling out a naive particle
   interpretation of these controls. See the [experiments, derivations, and measured profiles](docs/chain-experiments.md).
 
+- **An exhaustive finite interaction search and derived defect charges.** Symmetry-closed
+  involutions enumerate 1,769,472 square-fiber pair laws; 3,592 both grow generated subgroups
+  and satisfy the braid relation exactly. An independent screen of the fourteen simplest
+  such laws derives three additive gauge-sector charges and observes conserved-defect motion
+  and collisions. Spectator tests expose why gauge agreement on an isolated triple is too weak
+  for local schedule consistency. See the [scope, tables, and collision controls](docs/equivariant-rule-search.md).
+
 - **GPU-ready exact algebra and measured compression limits.** Group operations are compiled into
   dense integer multiplication, inverse, and action tables. On an Apple M1 Max, the Metal
   microbenchmark processed one million frame transformations in 0.318 ms and one million
