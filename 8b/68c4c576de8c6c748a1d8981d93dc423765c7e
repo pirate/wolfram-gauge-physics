@@ -1,0 +1,54 @@
+src/mesh_dynamics.hpp
+  s_33c6c7a35bd0ca::t_6e766e0e43ba7c 142-145
+src/mesh_orbits.cpp
+  s_33c6c7a35bd0ca::t_6e766e0e43ba7c 1-12,24-74,77-111,114-135
+  s_33c6c7a35bd0ca::t_4e2a01c1f38ca0 13-23,75-76,112-113
+tools/face_energy_obstruction.py
+  s_33c6c7a35bd0ca::t_d193ce341505be 1-98,100-129,133-175
+  s_33c6c7a35bd0ca::t_99ebdf47a94b1d 99,130-132
+CMakeLists.txt
+  s_33c6c7a35bd0ca::t_6e766e0e43ba7c 89-92
+tests/face_energy.py
+  s_33c6c7a35bd0ca::t_38644383ba7441 1-84
+docs/observable-memory-and-invariants.md
+  s_33c6c7a35bd0ca::t_802c9c88e43cc2 1-134
+.github/workflows/ci.yml
+  s_33c6c7a35bd0ca::t_38644383ba7441 63-70
+tools/mesh_observable_audit.py
+  s_33c6c7a35bd0ca::t_ef78b7861b90d4 30,32-46,114-118,120-121,209-216,269
+  s_33c6c7a35bd0ca::t_4e2a01c1f38ca0 1-16,124-125,130-208,217-249,259-262,267-268,270-275,279-300,302-304,306-314
+  s_33c6c7a35bd0ca::t_bbc69c130ace69 17-29,47-73,78-82,86,91-99,107,110-112,119,122-123,250-258,263-266,276-278,301
+  s_33c6c7a35bd0ca::t_99ebdf47a94b1d 31
+  s_33c6c7a35bd0ca::t_d193ce341505be 74-77,83-85,87-90,100-106,108-109,113,126-129
+  s_33c6c7a35bd0ca::t_af7566672a7e0e 305
+docs/STATE_OF_THE_ART.md
+  s_33c6c7a35bd0ca::t_802c9c88e43cc2 83-92
+docs/shared-face-dynamics.md
+  s_33c6c7a35bd0ca::t_802c9c88e43cc2 147-151,169-171
+README.md
+  s_33c6c7a35bd0ca::t_802c9c88e43cc2 170-178,204-207
+docs/face-energy-obstruction.md
+  s_33c6c7a35bd0ca::t_802c9c88e43cc2 1-147
+tests/observable_memory.py
+  s_33c6c7a35bd0ca::t_38644383ba7441 1-97
+data/d4-face-energy-obstruction.json
+  s_33c6c7a35bd0ca::t_45dcd9e28237b6 1-8236
+data/d4-mesh-observable-audit.json
+  s_33c6c7a35bd0ca::t_289381e35124e0 1-202378
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.2",
+  "base_commit_sha": "8b68c4c576de8c6c748a1d8981d93dc423765c7e",
+  "prompts": {},
+  "sessions": {
+    "s_33c6c7a35bd0ca": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a061ab-263d-7860-b882-4955b6e0b240",
+        "model": "gpt-6-astra"
+      },
+      "human_author": "Nick Sweeting <git@sweeting.me>"
+    }
+  }
+}
