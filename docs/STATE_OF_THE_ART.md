@@ -27,7 +27,7 @@ lifts, parallel transport, holonomy matrices, flatness, and horizontal leaves. I
 obtaining fibered graphs from hypergraph rewriting and gauge dynamics in the Wolfram Physics
 Project among its goals.
 
-Relative to inspected commit `edd9bdca46b7838d6b3e940e8ae8cde90b60ef2c`, this repository adds
+Relative to the [inspected InfraGaugeTheory revision](https://github.com/WolframInstitute/InfraGaugeTheory/tree/edd9bdca46b7838d6b3e940e8ae8cde90b60ef2c), this repository adds
 an exact fiber-automorphism group, explicit local-frame action on connections, a spanning-forest
 gauge quotient, rewrite transport factorization, quantum amplitudes over rewrite gauge orbits, a
 compact device representation, and an exact connection-aware product evolution over real engine
@@ -38,7 +38,7 @@ event provenance.
 [WolframInstitute/HypergraphRewritingEngine](https://github.com/WolframInstitute/HypergraphRewritingEngine)
 provides exact canonicalization, multiway/causal/branchial evolution, quotient exploration,
 incremental matching, and a persistent CUDA backend. This repository uses pinned commit
-`03fe60ddf338983060b6bb4b23e8b4b5d7ae7337` as its base-space evolution engine.
+[this engine revision](https://github.com/WolframInstitute/HypergraphRewritingEngine/tree/03fe60ddf338983060b6bb4b23e8b4b5d7ae7337) as its base-space evolution engine.
 
 The product runner now attaches connection sectors to every raw state and supported subdivision
 event from that engine, then applies a joint base/gauge quotient. Connection data is not yet part of
@@ -66,6 +66,20 @@ These works explore important discrete gauge constructions and physical interpre
 repository's narrower contribution is an executable bridge between combinatorial fibers and exact
 rewrite evolution, with strict treatment of gauge copies.
 
+## New finite-model results
+
+The [pair-gate classification](braid-quotient-classification.md) and
+[exact diffusion bridge](emergent-diffusion.md) identify known exclusion-process dynamics
+inside the independent-cell construction. These are finite classifications and validation,
+not a claim to have discovered diffusion or generalized permutation gates.
+
+The [shared-face follow-up](shared-face-dynamics.md) supplies a fixed-boundary counterexample
+to extending that closed sector description to an actual mesh. It derives the failure of all
+nontrivial rational one-face additive class charges for the selected local law, implements
+full incident-face updates, and observes reversible coarse relaxation near an exact
+stationary uniform-link reference. This is a concrete improvement in the fidelity and
+testability of our gauge/fiber simulator, not evidence of a continuum gauge theory or matter.
+
 ## Contribution matrix
 
 | Layer | Public upstream capability | Implemented here | Still open |
@@ -76,8 +90,8 @@ rewrite evolution, with strict treatment of gauge copies.
 | Rewriting | Exact bare-hypergraph multiway evolution | Strict event-provenance subdivision, explicit oriented faces, and joint physical state identity | Carry cell incidence in upstream arena and add proven morphisms |
 | Quantum | Multiway structure; separate community work | Normalized fresh-fiber orbit isometry and exact Schmidt bound | Multi-event complex amplitudes and interference |
 | Performance | Persistent CUDA rewrite engine | `uint16` group tables, physical-only subdivision, and verified Metal probe | End-to-end fiber-aware CUDA integration |
-| Physics | Conceptual gauge emergence program | Unary `D4` no-go census, reversible two-cell Hurwitz transport, and causal-curvature metric | Engine-integrated cell complex, continuum limit, matter, forces, phenomenology |
-| Reproducibility | Public demonstrations and technical documents | Deterministic 18-fiber, subdivision-product, and complete unary `D4` dynamics censuses | Multi-rule propagation and localization census |
+| Physics | Conceptual gauge emergence program | Exact independent-cell diffusion factor, shared-face multi-loop feedback, and reversible coarse relaxation | Derived conserved energy, correlation scaling, engine-integrated geometry changes, continuum limit, matter |
+| Reproducibility | Public demonstrations and technical documents | Finite fiber/rule censuses, complete pair classification, exhaustive shared-face patch oracle, and controlled mesh runs | Broader rules, independent replication, multi-face invariants and localization census |
 
 ## Claim discipline
 

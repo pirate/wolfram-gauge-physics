@@ -135,3 +135,7 @@ uv run --with matplotlib python tools/plot_diffusion.py
 The contribution is an independently checkable gauge-to-effective-dynamics bridge and its
 microscopic validation. It is not yet a derivation of a physical gauge field, a calibrated
 Hamiltonian, quantum amplitudes, three-dimensional space, or a bound state.
+
+The [shared-face follow-up](shared-face-dynamics.md) retains the same microscopic table but
+changes the incidence assumption. Neighboring faces then respond to written links, so the
+chain's autonomous charge description and conserved counts do not describe the full mesh.

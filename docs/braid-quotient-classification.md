@@ -1,11 +1,14 @@
-# An exact limit of the current square-fiber interaction family
+# An exact limit of square-fiber pair gates on independent cells
 
 Increasing rule-table complexity inside the current census does **not** let hidden fiber
 representatives feed back into one-cell conjugacy-sector dynamics. For all 5,731 strict braid
 solutions, the maximal additive class-charge description is an autonomous block-exchange
 process. This includes the identity and subgroup-preserving rules; no minimum-support filter
 is applied. It is a finite-model classification, not a no-go theorem for Wolfram models or
-gauge physics in general.
+gauge physics in general. In particular, it is **not** a closure theorem for all face
+observables after lifting the pair gate to shared links. The new
+[shared-face experiment](shared-face-dynamics.md) supplies an exact counterexample to that
+stronger interpretation using the same table, with full incident-face accounting.
 
 ## What was checked
 
@@ -74,8 +77,8 @@ from relative fiber representatives into the one-cell sectors in this family.
 ## What this changes about the research direction
 
 The [diffusion experiment](emergent-diffusion.md) is a real, exactly explained statistical
-transport phenomenon inside one of these factors. But millions more cells or a more complicated
-table from the same family cannot change its autonomous effective law.
+transport phenomenon inside one of these factors. But millions more **independent** cells or
+a more complicated table from the same family cannot change its autonomous effective law.
 
 This does **not** classify the full gauge-invariant state. Relative orientations, transported
 multi-loop products, and other multi-cell observables are not determined by single-loop
@@ -84,12 +87,12 @@ additional degrees of freedom, changing fibers, non-involutive maps, or multiway
 Closure survives arbitrary static connector choices because class functions are conjugation
 invariant. Merely randomizing those connectors cannot evade the obstruction.
 
-Next experiments should use a discriminating test rather than larger pictures: two states
-with the same recorded local sectors but different gauge-invariant multi-loop information;
-then determine whether an explicitly justified extension can turn that difference into a
-different local observable history. Coupling changing cell/face incidence must carry an
-explicit transport map and causal read/write dependencies. No continuum force, target
-molecular shape, or prescribed potential should supply the missing dynamics.
+The discriminating test is now implemented: two states with the same local sectors and
+identical exterior links have different neighboring-face responses on a shared-link patch.
+The selected pair still obeys its autonomous factor; unselected incident faces need not.
+The [mesh kernel and exact census](shared-face-dynamics.md) expose this distinction without
+adding a continuum force, target molecular shape, or prescribed potential. Geometry-changing
+rewrites still require explicit transport maps and causal read/write dependencies.
 
 ## Reproduce
 

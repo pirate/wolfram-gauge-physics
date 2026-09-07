@@ -58,6 +58,12 @@ target_compile_options(cell_chain_test PRIVATE -Wall -Wextra -Wpedantic)
 add_test(NAME cell_chain COMMAND cell_chain_test)
 set_tests_properties(cell_chain PROPERTIES LABELS wgphysics)
 
+add_executable(mesh_dynamics_test tests/mesh_dynamics.cpp)
+target_link_libraries(mesh_dynamics_test PRIVATE wgphysics)
+target_compile_options(mesh_dynamics_test PRIVATE -Wall -Wextra -Wpedantic)
+add_test(NAME mesh_dynamics COMMAND mesh_dynamics_test)
+set_tests_properties(mesh_dynamics PROPERTIES LABELS wgphysics)
+
 add_executable(equivariant_pair_search_test tests/equivariant_pair_search.cpp)
 target_link_libraries(equivariant_pair_search_test PRIVATE wgphysics)
 target_compile_options(equivariant_pair_search_test PRIVATE -Wall -Wextra -Wpedantic)
@@ -75,6 +81,10 @@ target_compile_options(wgphysics_involution_braid_search PRIVATE -Wall -Wextra -
 add_executable(wgphysics_diffusion src/diffusion.cpp)
 target_link_libraries(wgphysics_diffusion PRIVATE wgphysics)
 target_compile_options(wgphysics_diffusion PRIVATE -Wall -Wextra -Wpedantic)
+
+add_executable(wgphysics_mesh_experiments src/mesh_experiments.cpp)
+target_link_libraries(wgphysics_mesh_experiments PRIVATE wgphysics)
+target_compile_options(wgphysics_mesh_experiments PRIVATE -Wall -Wextra -Wpedantic)
 
 add_executable(wgphysics_chain_experiments src/chain_experiments.cpp)
 target_link_libraries(wgphysics_chain_experiments PRIVATE wgphysics)

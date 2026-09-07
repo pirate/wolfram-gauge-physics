@@ -46,7 +46,7 @@ struct CellPairPatch {
     std::vector<Vertex> connector;
 };
 
-inline InteractionSupport interaction_support(const FiberBundleConnection& connection,
+inline InteractionSupport interaction_support(const BaseGraph& base,
                                                const CellPairPatch& patch) {
     const auto validate_loop = [&](const std::vector<Vertex>& loop) {
         if (loop.size() < 4 || loop.front() != loop.back())
@@ -63,7 +63,7 @@ inline InteractionSupport interaction_support(const FiberBundleConnection& conne
     InteractionSupport support;
     const auto add_path = [&](const std::vector<Vertex>& path) {
         for (std::size_t i = 1; i < path.size(); ++i) {
-            if (!connection.base().has_edge(path[i - 1], path[i]))
+            if (!base.has_edge(path[i - 1], path[i]))
                 throw std::invalid_argument("interaction path leaves the base graph");
             support.reads.insert(infragauge::canonical_edge(path[i - 1], path[i]));
         }
@@ -82,6 +82,11 @@ inline InteractionSupport interaction_support(const FiberBundleConnection& conne
         throw std::invalid_argument("closing links must be exclusive and off the connector");
     support.writes = {first, second};
     return support;
+}
+
+inline InteractionSupport interaction_support(const FiberBundleConnection& connection,
+                                               const CellPairPatch& patch) {
+    return interaction_support(connection.base(),patch);
 }
 
 // Internal realization shared by algebraically specified and validated table rules.

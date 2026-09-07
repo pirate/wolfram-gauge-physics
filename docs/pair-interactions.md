@@ -118,8 +118,9 @@ bound patch extent and connector length in the graph, then measure propagation w
 schedule controls. Branchial relations concern alternative histories; an edge by itself does
 not establish entanglement or signaling.
 
-The next physics experiment is a multi-cell interaction run with full incident-face accounting,
-generated dependencies, and measured persistence/correlation of curvature sectors. Compare
-both candidates on the same graph ensemble and initial gauge orbits, including flat controls.
-The braid identities provide specific schedule equivalences to test; they do not imply general
-causal invariance, a continuum limit, or QED.
+The [shared-face mesh experiment](shared-face-dynamics.md) now implements full incident-face
+accounting, link-derived dependencies, flat controls, and exact reversal. It uses a table
+selected by the later finite-law census and shows that the independent-cell sector factor
+does not close over all mesh faces. Correlation, persistence, and multi-face invariant tests
+remain necessary. The braid identities provide specific schedule equivalences to test; they
+do not imply general causal invariance of shared-link updates, a continuum limit, or QED.
