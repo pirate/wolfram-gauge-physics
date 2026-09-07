@@ -1,0 +1,25 @@
+docs/three-face-encounters.md
+  s_33c6c7a35bd0ca::t_789642eb1ebaf3 82-110,179-181
+tests/three_face_reachability.py
+  s_33c6c7a35bd0ca::t_789642eb1ebaf3 11,39-49,52-54
+  s_33c6c7a35bd0ca::t_6ab474430ba237 50-51
+  s_33c6c7a35bd0ca::t_1541b834bdce3c 55
+README.md
+  s_33c6c7a35bd0ca::t_e6b550835cff9f 204
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.2",
+  "base_commit_sha": "dc0572aa2d077cc414020cebafea2174c9acf5c3",
+  "prompts": {},
+  "sessions": {
+    "s_33c6c7a35bd0ca": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a061ab-263d-7860-b882-4955b6e0b240",
+        "model": "gpt-6-astra"
+      },
+      "human_author": "Nick Sweeting <git@sweeting.me>"
+    }
+  }
+}
