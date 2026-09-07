@@ -72,6 +72,10 @@ add_executable(wgphysics_involution_braid_search src/involution_braid_search.cpp
 target_link_libraries(wgphysics_involution_braid_search PRIVATE wgphysics)
 target_compile_options(wgphysics_involution_braid_search PRIVATE -Wall -Wextra -Wpedantic)
 
+add_executable(wgphysics_diffusion src/diffusion.cpp)
+target_link_libraries(wgphysics_diffusion PRIVATE wgphysics)
+target_compile_options(wgphysics_diffusion PRIVATE -Wall -Wextra -Wpedantic)
+
 add_executable(wgphysics_chain_experiments src/chain_experiments.cpp)
 target_link_libraries(wgphysics_chain_experiments PRIVATE wgphysics)
 target_compile_options(wgphysics_chain_experiments PRIVATE -Wall -Wextra -Wpedantic)

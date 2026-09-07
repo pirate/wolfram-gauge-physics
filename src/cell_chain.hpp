@@ -18,7 +18,8 @@ public:
 
     CellChain(const FiberGraph& fiber, std::vector<uint16_t> holonomies,
               std::vector<uint16_t> connectors, PairInteraction rule)
-        : tables_(fiber.automorphisms()), values_(std::move(holonomies)),
+        : tables_(fiber.automorphisms()), identity_(tables_.index_of(Permutation::identity(tables_.fiber_size()))),
+          values_(std::move(holonomies)),
           connectors_(std::move(connectors)), last_writer_(values_.size()) {
         if (values_.empty() || connectors_.size()+1 != values_.size())
             throw std::invalid_argument("chain requires n cells and n-1 connectors");
@@ -54,17 +55,17 @@ public:
     const AutomorphismTables& tables() const { return tables_; }
     uint16_t sector(uint16_t value) const { validate(value); return sectors_[value]; }
     uint16_t identity() const {
-        return tables_.index_of(Permutation::identity(tables_.fiber_size()));
+        return identity_;
     }
 
     void update(std::size_t left, HurwitzDirection direction = HurwitzDirection::Forward,
                 bool record = true) {
         if (left+1 >= values_.size()) throw std::out_of_range("chain interaction is outside cells");
         const auto a=values_[left], b=values_[left+1], t=connectors_[left];
-        const auto based_b=conjugate(t,b);
+        const auto based_b=t==identity_ ? b : conjugate(t,b);
         const auto& table=direction == HurwitzDirection::Forward ? forward_ : inverse_;
         const auto [new_a,new_based_b]=table[a*tables_.order()+based_b];
-        const auto new_b=conjugate(tables_.inverse(t),new_based_b);
+        const auto new_b=t==identity_ ? new_based_b : conjugate(tables_.inverse(t),new_based_b);
         if (record) {
             if (unrecorded_) throw std::logic_error("cannot append provenance after unrecorded updates");
             Event event{left,{},0,{a,b},{new_a,new_b}};
@@ -116,6 +117,7 @@ private:
         return tables_.multiply(g,tables_.multiply(v,tables_.inverse(g)));
     }
     AutomorphismTables tables_;
+    uint16_t identity_;
     std::vector<uint16_t> values_,connectors_,sectors_;
     std::vector<std::optional<std::size_t>> last_writer_;
     std::vector<std::pair<uint16_t,uint16_t>> forward_,inverse_;

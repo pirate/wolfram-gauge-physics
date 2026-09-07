@@ -83,11 +83,13 @@ contact times, outgoing velocities, and any constant late displacement from thos
 
 ![Actual conserved-sector trajectories and isolated controls](images/derived-charge-collisions.png)
 
-These are the first observed particle-like transport/collision phenomena in this constrained
-finite family. Their site exclusion and reversible update tables may explain them as a lattice
-gas; that possibility is a control to analyze, not evidence of emergent spacetime or molecules.
-The present screen uses one separation and schedule for each two-defect condition. Larger
-separation/size ensembles, many-body backgrounds, and geometric coupling remain necessary.
+These were the first observed particle-like transport/collision phenomena in this constrained
+finite family. Subsequent exact factorization identifies their charge dynamics as a colored
+exclusion process. The [many-body diffusion experiment](emergent-diffusion.md) derives a
+finite-time tagged-particle distribution and checks it against microscopic ensembles. The
+[full braid-family classification](braid-quotient-classification.md) shows this is not merely
+an artifact of selecting the fourteen smallest tables. These results are not evidence of
+emergent spacetime or molecules; geometric coupling remains unbuilt.
 
 ## The surviving one-seed obstruction
 
@@ -124,7 +126,7 @@ diff -u data/d4-braid-rule-screen.json out/braid-rule-screen.json
 uv run --with matplotlib python tools/plot_braid_collisions.py
 ```
 
-The next discriminating work is to derive and test the effective defect-scattering description,
-including its failure cases, before coupling selected laws to changes in cells, connectors, and
-fibers. The goal remains an emergent physical theory; this finite-law census and its observed
-transport phenomena do not complete that goal.
+The effective defect description is now exactly classified. The next discriminating work is
+to test multi-loop observables and explicit changes in cells, connectors, and fibers against
+the autonomous-sector obstruction. The goal remains an emergent physical theory; this
+finite-law census and its observed transport phenomena do not complete that goal.
