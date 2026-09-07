@@ -146,11 +146,11 @@ nonabelian connection information cannot feed back into those projected charges.
 transported charges solves one problem, but does not by itself produce interacting matter,
 complex amplitudes, a physical energy scale, or a bound state.
 
-The next primitive search should include complete three-or-more-face neighborhoods, preserve
-their exterior transports, and derive invariants and observer closure together. The discriminating
-target is conserved transport **with feedback from relative loop data**, not another autonomous
-colored-particle factor. Ordinary gauge covariance and pair-level braid identities are not enough
-to select physical dynamics or guarantee consistency of overlapping mesh updates.
+The [three-face follow-up](three-face-feedback.md) now realizes conserved transport with feedback
+from relative loop data, using a complete fan and unchanged exterior transports. Its conditional
+conversions escape this autonomous charge factor, but neither that fact nor gauge covariance
+selects physical dynamics or guarantees consistency of overlapping mesh updates. Reachable
+scattering, localization, and the new model's sublattice constraints require further tests.
 
 ## Reproduce
 

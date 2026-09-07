@@ -70,6 +70,12 @@ target_compile_options(shared_edge_test PRIVATE -Wall -Wextra -Wpedantic)
 add_test(NAME shared_edge COMMAND shared_edge_test)
 set_tests_properties(shared_edge PROPERTIES LABELS wgphysics)
 
+add_executable(three_face_test tests/three_face.cpp)
+target_link_libraries(three_face_test PRIVATE wgphysics)
+target_compile_options(three_face_test PRIVATE -Wall -Wextra -Wpedantic)
+add_test(NAME three_face COMMAND three_face_test)
+set_tests_properties(three_face PROPERTIES LABELS wgphysics)
+
 add_executable(equivariant_pair_search_test tests/equivariant_pair_search.cpp)
 target_link_libraries(equivariant_pair_search_test PRIVATE wgphysics)
 target_compile_options(equivariant_pair_search_test PRIVATE -Wall -Wextra -Wpedantic)
@@ -95,6 +101,18 @@ target_compile_options(wgphysics_mesh_experiments PRIVATE -Wall -Wextra -Wpedant
 add_executable(wgphysics_mesh_orbits src/mesh_orbits.cpp)
 target_link_libraries(wgphysics_mesh_orbits PRIVATE wgphysics)
 target_compile_options(wgphysics_mesh_orbits PRIVATE -Wall -Wextra -Wpedantic)
+
+add_executable(wgphysics_triple_census src/triple_census.cpp)
+target_link_libraries(wgphysics_triple_census PRIVATE wgphysics)
+target_compile_options(wgphysics_triple_census PRIVATE -Wall -Wextra -Wpedantic)
+
+add_executable(wgphysics_three_face_experiments src/three_face_experiments.cpp)
+target_link_libraries(wgphysics_three_face_experiments PRIVATE wgphysics)
+target_compile_options(wgphysics_three_face_experiments PRIVATE -Wall -Wextra -Wpedantic)
+
+add_executable(wgphysics_three_face_replay src/three_face_replay.cpp)
+target_link_libraries(wgphysics_three_face_replay PRIVATE wgphysics)
+target_compile_options(wgphysics_three_face_replay PRIVATE -Wall -Wextra -Wpedantic)
 
 add_executable(wgphysics_chain_experiments src/chain_experiments.cpp)
 target_link_libraries(wgphysics_chain_experiments PRIVATE wgphysics)

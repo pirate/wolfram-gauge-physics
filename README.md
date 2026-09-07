@@ -186,6 +186,24 @@ raw labelings that the exact graph-isomorphism quotient recognizes as the same c
 
   ![Actual gauge-class states showing conserved defects and different curvature trails](docs/images/shared-edge-trails.png)
 
+- **Conserved transport with relative-loop feedback.** Independent searches agree on 945 minimal
+  three-face rules; 354 distinguish incoming states with identical face classes and boundary
+  transport through their outgoing conserved densities. A boundary-fixed two-spoke realization
+  reads every affected face. The selected rule derives $q(z)=2q(r)$ and supports a positive
+  conserved weight; 15.31 million independently replayed updates verify conditional curvature
+  conversion alongside transport-only controls. The model remains classical, schedule-dependent,
+  and constrained by dual sublattices. See the [proof, actual states, and negative controls](docs/three-face-feedback.md).
+
+  ![Same face classes and exterior links producing different conserved-density responses](docs/images/three-face-feedback.png)
+
+- **Sparse encounters and an exact kinetic-sector classification.** A subgroup reduction derived
+  from the link equations finds transport-generated encounters without changing the rule.
+  Complete small-mesh searches separate reactive and central-only states with identical additive
+  charges. For an explicitly uniform random update ensemble, exact counting gives
+  $\mathbb E[C_{\rm sweep}]=48/[m(m+1)]$ at total weight four, with $m$ faces per sublattice.
+  Larger sparse runs retain both rare reactions and null results. This diagnoses a catalytic
+  constraint, not molecular binding. See the [link replays, component proof, and rate benchmark](docs/three-face-encounters.md).
+
 - **GPU-ready exact algebra and measured compression limits.** Group operations are compiled into
   dense integer multiplication, inverse, and action tables. On an Apple M1 Max, the Metal
   microbenchmark processed one million frame transformations in 0.318 ms and one million
@@ -212,10 +230,11 @@ raw labelings that the exact graph-isomorphism quotient recognizes as the same c
    events should acquire causal dependencies from the face and link data they read and write.
    Shared-face accounting now exposes multi-loop feedback beyond the independent-cell
    obstruction, while the shared-edge lift restores transported charges but retains an
-   autonomous exclusion factor. Extend primitive rule searches to complete larger face stars,
-   seeking derived conservation laws with feedback from relative loop data rather than
-   inserting a target energy function or another autonomous particle model.
-   Test embedding and schedule dependence before interpreting response or localization;
+   autonomous exclusion factor. The three-face fan now combines conserved transport with
+   relative-loop feedback. Sparse encounters are now reachable, but exact sectors and rate
+   counts expose catalytic dilution. Compare activation requirements and kinetic restrictions
+   across the rule census, and test localization and overlapping schedules before assigning physical meaning;
+   extend primitive searches without inserting a target energy or force law.
    geometry- and fiber-changing constructions remain separate milestones.
 
 3. **Generalize the microscopic bundle.** Compare fibers inferred from vertex links, rule

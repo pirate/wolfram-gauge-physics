@@ -97,6 +97,22 @@ class memory, bipartite parity, and 4.92 million independently replayed link upd
 finite-model results. The autonomous exclusion factor remains an explicit limitation; this is
 not yet a microscopic derivation of interacting matter or physical energy.
 
+The [three-face fan construction](three-face-feedback.md) subsequently combines a derived positive
+conserved weight with nonautonomous charge transport: identical individual face classes and
+exterior links can have different conserved-density responses. Two independent searches agree
+on 945 minimal closures and 354 such feedback rules. A boundary-fixed lift and 15.31 million
+independently replayed updates verify conditional curvature conversion, with explicit sparse-seed
+failures and sublattice constraints. This is a scoped finite-model contribution, not a claim to
+have discovered gauge-invariant automata or derived a physical Hamiltonian, quantum theory, or matter.
+
+The [sparse-encounter analysis](three-face-encounters.md) derives an exact commuting-subgroup
+face factor from that link law, constructs transport-generated reactions, and exhausts two
+small charge sectors into reactive and central-only components. Combinatorial state and event
+counts give a stationary conversion-rate benchmark for explicitly uniform random scheduling.
+Larger sparse runs exhibit rare encounters and retained null results. These expose a catalytic
+kinetic restriction, not two-body binding or a derived physical clock; kinetically constrained
+dynamics and symmetric-update stationary measures are established ideas.
+
 ## Contribution matrix
 
 | Layer | Public upstream capability | Implemented here | Still open |

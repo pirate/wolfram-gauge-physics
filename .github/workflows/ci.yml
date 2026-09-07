@@ -72,6 +72,15 @@ jobs:
           diff -u data/d4-mesh-observable-audit.json out/mesh-observable-audit.json
           python3 tools/face_energy_obstruction.py --output out/face-energy-obstruction.json
           diff -u data/d4-face-energy-obstruction.json out/face-energy-obstruction.json
+      - name: Three-face conserved feedback and independent link replay
+        run: |
+          python3 tools/triple_rule_search.py --output out/triple-rule-search.json
+          diff -u data/d4-triple-rule-search.json out/triple-rule-search.json
+          python3 tests/three_face.py
+          python3 tools/run_three_face.py --side 4 --layers 32 --trials 2 --full-replay --output out/three-face-smoke.json
+          python3 tests/three_face_reachability.py
+          python3 tools/three_face_reachability.py --side 3 --exhaustive --random-trials 8 --sweeps 1000 --output out/reachability-3.json
+          diff -u data/d4-three-face-reachability-3.json out/reachability-3.json
       - name: Multiway smoke test
         run: |
           ./build/wgphysics_evolve --steps 2 --output out/smoke.json

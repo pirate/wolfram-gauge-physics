@@ -2,6 +2,7 @@
 
 #include "equivariant_pair_search.hpp"
 #include "shared_edge.hpp"
+#include "three_face.hpp"
 
 namespace wgphysics::research {
 
@@ -9,7 +10,7 @@ namespace wgphysics::research {
 // incident-face accounting. Unlike CellChain, faces do not own exclusive links.
 class MeshDynamics {
 public:
-    enum class Lift { ExclusiveClosingLinks, SharedEdge };
+    enum class Lift { ExclusiveClosingLinks, SharedEdge, ThreeFace };
     struct DirectedLink { std::size_t edge; bool reversed; };
     using Path = std::vector<DirectedLink>;
     struct Patch {
@@ -17,6 +18,7 @@ public:
         Path first, second, connector;
         std::vector<std::size_t> reads, writes, affected_faces;
         Lift lift=Lift::ExclusiveClosingLinks;
+        std::vector<Path> fan;
     };
     struct Event {
         std::size_t patch, depth;
@@ -25,14 +27,24 @@ public:
 
     MeshDynamics(const OrientedCellComplex& complex, const FiberBundleConnection& connection,
                  const PairTable& table)
-        : complex_(complex), fiber_(connection.fiber()), group_(connection.local_gauge_group()),
-          forward_(table) {
+        : MeshDynamics(complex,connection) {
+        validate_pair_table(group_,table); install_table(table,2);
+    }
+    MeshDynamics(const OrientedCellComplex& complex,const FiberBundleConnection& connection,const TripleTable& table)
+        : MeshDynamics(complex,connection) {
+        validate_triple_table(group_,table); install_table(table.entries,3);
+    }
+
+private:
+    void install_table(const std::vector<std::size_t>& table,std::size_t arity) {
+        arity_=arity; forward_=table; inverse_.resize(table.size());
+        for(std::size_t i=0;i<table.size();++i) inverse_[table[i]]=i;
+    }
+    MeshDynamics(const OrientedCellComplex& complex,const FiberBundleConnection& connection)
+        : complex_(complex), fiber_(connection.fiber()), group_(connection.local_gauge_group()) {
         if (complex.base().vertices()!=connection.base().vertices() ||
             complex.base().edges()!=connection.base().edges())
             throw std::invalid_argument("mesh and connection disagree");
-        validate_pair_table(group_,table);
-        inverse_.resize(table.size());
-        for (std::size_t i=0;i<table.size();++i) inverse_[table[i]]=i;
         identity_=group_.index_of(Permutation::identity(fiber_.vertex_count()));
         for (const auto edge : complex.base().edges()) {
             edge_ids_[edge]=edges_.size(); edges_.push_back(edge);
@@ -52,14 +64,26 @@ public:
         }
     }
 
+public:
     std::size_t add_patch(const CellPairPatch& specification) {
+        if(arity_!=2) throw std::invalid_argument("pair patch requires a pair table");
         return append_patch(specification,interaction_support(complex_.base(),specification),Lift::ExclusiveClosingLinks);
     }
 
     std::size_t add_patch(const SharedEdgePatch& specification) {
+        if(arity_!=2) throw std::invalid_argument("shared-edge patch requires a pair table");
         const auto support=shared_edge_support(complex_,specification);
         return append_patch({specification.first_loop,specification.second_loop,{specification.first_loop.front()}},
                             support,Lift::SharedEdge);
+    }
+
+    std::size_t add_patch(const ThreeFacePatch& specification) {
+        if(arity_!=3) throw std::invalid_argument("three-face patch requires a triple table");
+        const auto support=three_face_support(complex_,specification);
+        Patch patch{}; patch.lift=Lift::ThreeFace;
+        for(const auto& face : specification.faces) patch.fan.push_back(compile_path(face));
+        attach_support(patch,support);
+        patches_.push_back(std::move(patch)); return patches_.size()-1;
     }
 
 private:
@@ -71,7 +95,13 @@ private:
                 throw std::invalid_argument("update loop is not an oriented mesh face");
         }
         Patch patch{specification,compile_path(specification.first_loop),
-                    compile_path(specification.second_loop),compile_path(specification.connector),{},{},{},lift};
+                    compile_path(specification.second_loop),compile_path(specification.connector),{},{},{},lift,{}};
+        attach_support(patch,support);
+        patches_.push_back(std::move(patch));
+        return patches_.size()-1;
+    }
+
+    void attach_support(Patch& patch,const InteractionSupport& support) const {
         for (const auto edge : support.reads) patch.reads.push_back(edge_ids_.at(edge));
         std::set<std::size_t> affected;
         for (const auto edge : support.writes) {
@@ -79,8 +109,6 @@ private:
             affected.insert(incidence_[id].begin(),incidence_[id].end());
         }
         patch.affected_faces.assign(affected.begin(),affected.end());
-        patches_.push_back(std::move(patch));
-        return patches_.size()-1;
     }
 
 public:
@@ -95,20 +123,29 @@ public:
             for (const auto edge : p.writes) last_writer_[edge]=events_.size();
             events_.push_back(std::move(event));
         } else unrecorded_=true;
-        const auto a=transport(p.first),b=transport(p.second),t=transport(p.connector);
-        const auto based_b=conjugate(t,b);
         const auto& table=direction==HurwitzDirection::Forward ? forward_ : inverse_;
-        const auto target=table[a*group_.order()+based_b];
-        const uint16_t next_a=target/group_.order(), next_b=conjugate(group_.inverse(t),target%group_.order());
-        if(p.lift==Lift::SharedEdge) {
-            const auto shared=p.first.front();
-            // S' = S A^-1 X; independent oracle instead computes Q^-1 X.
-            set_link(shared,group_.multiply(link_value(shared),group_.multiply(group_.inverse(a),next_a)));
+        if(p.lift==Lift::ThreeFace) {
+            const auto target=decode_triple(table[encode_triple(triple_values(id),group_.order())],group_.order());
+            auto spoke=link_value(p.fan[0][0]);
+            for(std::size_t i=0;i<2;++i) {
+                spoke=group_.multiply(group_.multiply(link_value(p.fan[i][1]),spoke),group_.inverse(target[2-i]));
+                set_link(p.fan[i].back(),group_.inverse(spoke));
+            }
         } else {
-            const auto first=p.first.back(),second=p.second.back();
-            const auto u=group_.multiply(group_.multiply(next_a,group_.inverse(a)),link_value(first));
-            const auto v=group_.multiply(group_.multiply(next_b,group_.inverse(b)),link_value(second));
-            set_link(first,u); set_link(second,v);
+            const auto a=transport(p.first),b=transport(p.second),t=transport(p.connector);
+            const auto based_b=conjugate(t,b);
+            const auto target=table[a*group_.order()+based_b];
+            const uint16_t next_a=target/group_.order(), next_b=conjugate(group_.inverse(t),target%group_.order());
+            if(p.lift==Lift::SharedEdge) {
+                const auto shared=p.first.front();
+                // S' = S A^-1 X; independent oracle instead computes Q^-1 X.
+                set_link(shared,group_.multiply(link_value(shared),group_.multiply(group_.inverse(a),next_a)));
+            } else {
+                const auto first=p.first.back(),second=p.second.back();
+                const auto u=group_.multiply(group_.multiply(next_a,group_.inverse(a)),link_value(first));
+                const auto v=group_.multiply(group_.multiply(next_b,group_.inverse(b)),link_value(second));
+                set_link(first,u); set_link(second,v);
+            }
         }
         for (const auto face : p.affected_faces) face_values_[face]=transport(faces_[face]);
     }
@@ -161,7 +198,13 @@ public:
     const auto& incidence() const { return incidence_; }
     std::pair<uint16_t,uint16_t> based_pair(std::size_t id) const {
         const auto& p=patches_.at(id);
+        if(p.lift==Lift::ThreeFace) throw std::invalid_argument("three-face patch has no based pair");
         return {transport(p.first),conjugate(transport(p.connector),transport(p.second))};
+    }
+    Triple triple_values(std::size_t id) const {
+        const auto& p=patches_.at(id);
+        if(p.lift!=Lift::ThreeFace) throw std::invalid_argument("patch is not a three-face fan");
+        return {transport(p.fan[2]),transport(p.fan[1]),transport(p.fan[0])};
     }
     uint16_t sector(uint16_t value) const { return sectors_.at(value); }
     uint16_t identity() const { return identity_; }
@@ -195,6 +238,7 @@ private:
     FiberGraph fiber_;
     AutomorphismTables group_;
     PairTable forward_,inverse_;
+    std::size_t arity_{};
     uint16_t identity_{};
     std::vector<Edge> edges_;
     std::map<Edge,std::size_t> edge_ids_;
