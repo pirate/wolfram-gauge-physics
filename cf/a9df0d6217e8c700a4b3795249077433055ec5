@@ -1,0 +1,19 @@
+docs/reachable-gauge-equilibrium.md
+  s_33c6c7a35bd0ca::t_a54e29d80124b2 205-216
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.2",
+  "base_commit_sha": "cfa9df0d6217e8c700a4b3795249077433055ec5",
+  "prompts": {},
+  "sessions": {
+    "s_33c6c7a35bd0ca": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a061ab-263d-7860-b882-4955b6e0b240",
+        "model": "gpt-6-astra"
+      },
+      "human_author": "Nick Sweeting <git@sweeting.me>"
+    }
+  }
+}
