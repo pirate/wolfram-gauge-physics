@@ -275,11 +275,26 @@ raw labelings that the exact graph-isomorphism quotient recognizes as the same c
   encounter-boundary holonomy. C++ and Python enumerate all 11,232 rooted update choices:
   twelve enable a class-changing reaction in one state, none in the other. Unrouted runs
   independently reproduce reversible conversions and their negative controls. The same
-  derived charge bounds full-graph spectral capacity, $n_+(L_{\rm bundle}-12I)\le Q$. This is
+  derived charge bounds full-graph spectral capacity, $n_+(L_{\rm bundle}-12I)\le\lfloor Q/2\rfloor$. This is
   classical gauge feedback, not yet stable matter or physical energy. See the
   [rule derivation, raw-link readout, and evolution](docs/triangle-feedback.md).
 
 ![Actual gauge-dependent reaction and full-generator braid-memory readout](docs/images/triangle-feedback.png)
+
+- **Full-graph localization with an exact persistence obstruction.** Two specified noncommuting
+  triangle-fiber link defects support exactly two isolated modes above the **entire** infinite
+  flat bundle spectrum. Compact integer witnesses prove both eigenvalues exceed $12.05$;
+  a resolvent bound proves exponentially decaying tails. The equal-reflection control has
+  exactly one mode. The stronger bound
+  $n_+(L_{\rm bundle}-12I)\le\min(Q_\uparrow,Q_\downarrow)$ connects survival to the
+  charge split between the two triangle orientations: concentrating all charge on either
+  orientation forbids every above-band mode. Exact counts at all 860 changing events in a
+  recorded run and all twelve reactions across four runs show actual mode loss, with the
+  bound forcing every observed downward reaction crossing. These are localized graph modes
+  on supplied geometry, not stable particles, atomic energies, or an assumed wave law.
+  See the [integer certificates, full dynamics, and limitations](docs/triangle-modes.md).
+
+![Measured graph-mode profiles and exact orientation-resolved mode-loss audit](docs/images/triangle-modes.png)
 
 - **GPU-ready exact algebra and measured compression limits.** Group operations are compiled into
   dense integer multiplication, inverse, and action tables. On an Apple M1 Max, the Metal

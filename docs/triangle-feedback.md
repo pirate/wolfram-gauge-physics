@@ -172,19 +172,30 @@ $$n_-(S_f)=\operatorname{rank}(I-P_{H_f})=q(H_f)\in\{0,1,2\}.$$
 
 Exact integer congruence elimination checks this equality on all $6^3=216$ raw face
 connections. A separately assembled full 27-vertex bundle matrix checks the incidence
-identity entry by entry, with no floating-point decisions.
+identity entry by entry, with no floating-point decisions. There is a stronger decomposition:
+every edge occurs once, and every vertex three times, within either face orientation alone.
+Thus both orientations separately give
+
+$$12I-L_{\mathrm{bundle}}=\sum_{f\in\uparrow}\iota_f S_f\iota_f^T+\bigoplus_v J_3
+=\sum_{f\in\downarrow}\iota_f S_f\iota_f^T+\bigoplus_v J_3.$$
+
+Both identities are also checked entry by entry against the full integer graph matrix.
 
 Each embedded face form is nonnegative on a subspace of codimension $q(H_f)$. The
-intersection of these subspaces has codimension at most $Q$, and the $J_3$ term is
-nonnegative everywhere. Consequently
+intersection of these subspaces within either orientation has codimension at most that
+orientation's charge, and the $J_3$ term is nonnegative everywhere. Consequently
 
-$$\boxed{\quad n_+(L_{\mathrm{bundle}}-12I)\le Q=N_R+2N_C.\quad}$$
+$$\boxed{\quad n_+(L_{\mathrm{bundle}}-12I)\le\min(Q_\uparrow,Q_\downarrow)
+\le\lfloor Q/2\rfloor,\qquad Q=N_R+2N_C.\quad}$$
 
-The primitive dynamics therefore conserves an **upper bound** on the number of modes
-above the full flat reference band. It does not conserve the actual mode count, guarantee
-such modes exist, establish their persistence, or assign them physical frequencies.
+The primitive dynamics therefore conserves the total-charge **upper bound** on the number
+of modes above the full flat reference band. The orientation-resolved bound can change:
+putting all charge on one orientation forces the mode count to zero. Positive capacity
+does not guarantee modes exist or persist, and neither charge assigns physical frequencies.
 This connects a charge derived from the reaction rules to a spectral constraint on the
 actual bundle graph without declaring the graph Laplacian to be a Hamiltonian.
+The [full-band localization and evolution audit](triangle-modes.md) gives compact integer
+certificates for infinite-graph modes and exact mode counts showing this obstruction in action.
 
 ## Remaining physical gap
 

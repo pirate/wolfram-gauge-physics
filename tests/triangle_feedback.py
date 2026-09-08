@@ -62,6 +62,10 @@ class TriangleFeedbackTests(unittest.TestCase):
         self.assertEqual(json.loads(json.dumps(certificate)), self.bank['full_bundle_spectral_capacity'])
         self.assertEqual(len(certificate['face_connection_census']), 216)
         self.assertTrue(certificate['assembly_check']['exact_identity'])
+        self.assertTrue(certificate['assembly_check']['both_single_orientation_identities'])
+        face_charges = certificate['assembly_check']['face_negative_inertias']
+        self.assertEqual(certificate['assembly_check']['charges_by_face_orientation'],
+                         [sum(face_charges[c::2]) for c in range(2)])
         self.assertEqual(certificate['flat_full_bundle_upper_edge'], 12)
         for row in certificate['face_connection_census']:
             self.assertEqual(row['inertia']['negative'], e.charges[row['holonomy']])
@@ -79,8 +83,8 @@ class TriangleFeedbackTests(unittest.TestCase):
             signs = [1 if x > 0 else -1 for x in reversed(coefficients) if x]
             positive = sum(a != b for a, b in zip(signs, signs[1:]))
             self.assertEqual(inertia['positive'], positive)
-            charge = sum(e.charges[x] for x in e.geometry.holonomies(links))
-            self.assertLessEqual(positive, charge)
+            charges = [e.charges[x] for x in e.geometry.holonomies(links)]
+            self.assertLessEqual(positive, min(sum(charges[c::2]) for c in range(2)))
 
     def test_braid_memory_readout_and_full_compiled_generator_rates(self):
         e = FeedbackExperiment(12, self.bank)
