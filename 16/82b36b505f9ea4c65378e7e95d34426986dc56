@@ -1,0 +1,34 @@
+README.md
+  s_33c6c7a35bd0ca::t_623907c0fefd7f 264-267
+tests/unrouted_transport.py
+  s_33c6c7a35bd0ca::t_a0bfecdad9d2b8 11,90-100
+  s_33c6c7a35bd0ca::t_199a05d5be4d57 1-10,12-89,101-104
+docs/unrouted-transport.md
+  s_33c6c7a35bd0ca::t_623907c0fefd7f 1-133
+tools/unrouted_transport.py
+  s_33c6c7a35bd0ca::t_e42bfaa9dbe43d 1-56,58-100,137-148,151-186,189-212
+  s_33c6c7a35bd0ca::t_a0bfecdad9d2b8 101-136,187-188
+  s_33c6c7a35bd0ca::t_199a05d5be4d57 57,149-150
+.github/workflows/ci.yml
+  s_33c6c7a35bd0ca::t_623907c0fefd7f 130-132
+docs/noncommuting-fiber-transport.md
+  s_33c6c7a35bd0ca::t_623907c0fefd7f 192-194
+data/unrouted-transport.json
+  s_33c6c7a35bd0ca::t_78a9ce6fe51a96 1
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.2",
+  "base_commit_sha": "1682b36b505f9ea4c65378e7e95d34426986dc56",
+  "prompts": {},
+  "sessions": {
+    "s_33c6c7a35bd0ca": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a061ab-263d-7860-b882-4955b6e0b240",
+        "model": "gpt-6-astra"
+      },
+      "human_author": "Nick Sweeting <git@sweeting.me>"
+    }
+  }
+}
