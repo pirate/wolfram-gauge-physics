@@ -1,0 +1,51 @@
+.github/workflows/ci.yml
+  s_33c6c7a35bd0ca::t_80d996509cabf3 133-140
+tools/triangle_feedback.py
+  s_33c6c7a35bd0ca::t_ffb349bf4a377d 1-15,17-97,99-192,221-245,249,251-254,260-266,268,270,272-305
+  s_33c6c7a35bd0ca::t_6950b06e079804 193-220,255-259,269
+  s_33c6c7a35bd0ca::t_c5dac9e9caf59c 16,98
+  s_33c6c7a35bd0ca::t_bd124bb1f392c0 246-248,250,267,271
+tools/plot_triangle_feedback.py
+  s_33c6c7a35bd0ca::t_135e7fea2ac4eb 1-27,30-56,59-63
+  s_33c6c7a35bd0ca::t_80d996509cabf3 28-29,57-58
+src/cycle_fiber_cli.hpp
+  s_33c6c7a35bd0ca::t_ac964c076dbfa9 1-26
+src/mixed_bank_experiments.cpp
+  s_33c6c7a35bd0ca::t_ac964c076dbfa9 3,17,19,26-27,30,44,74-75
+docs/triangle-feedback.md
+  s_33c6c7a35bd0ca::t_7a0c523af01a32 150-188
+  s_33c6c7a35bd0ca::t_135e7fea2ac4eb 1-89,91-149,189-216
+  s_33c6c7a35bd0ca::t_80d996509cabf3 90
+tests/triangle_feedback.py
+  s_33c6c7a35bd0ca::t_061661a9bccd86 1-13,17-57,84-92,95-167
+  s_33c6c7a35bd0ca::t_bd124bb1f392c0 93-94
+  s_33c6c7a35bd0ca::t_c5dac9e9caf59c 14,58-67
+  s_33c6c7a35bd0ca::t_4b5afd7a1f63e5 15-16,68-83
+tools/triangle_spectral_capacity.py
+  s_33c6c7a35bd0ca::t_c5dac9e9caf59c 1-65
+src/triple_census.cpp
+  s_33c6c7a35bd0ca::t_ac964c076dbfa9 3,6,8
+docs/unrouted-transport.md
+  s_33c6c7a35bd0ca::t_80d996509cabf3 120-124
+README.md
+  s_33c6c7a35bd0ca::t_7a0c523af01a32 277-278,322-323
+  s_33c6c7a35bd0ca::t_80d996509cabf3 271-276,279-283,317,324-326
+data/triangle-feedback.json
+  s_33c6c7a35bd0ca::t_6c3ad36bb9877a 1
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.2",
+  "base_commit_sha": "6c271e27ffd4640b514d3b2667dadc71237472a1",
+  "prompts": {},
+  "sessions": {
+    "s_33c6c7a35bd0ca": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a061ab-263d-7860-b882-4955b6e0b240",
+        "model": "gpt-6-astra"
+      },
+      "human_author": "Nick Sweeting <git@sweeting.me>"
+    }
+  }
+}
