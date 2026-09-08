@@ -1,0 +1,47 @@
+tools/triangle_charge_response.py
+  s_33c6c7a35bd0ca::t_9cdd045c4a3625 93,208-217,231-235
+  s_33c6c7a35bd0ca::t_383387b0f95cac 191-196,199-202
+  s_33c6c7a35bd0ca::t_d98bbaec39d3ef 1-92,94-161,205-207,218-219,224-230,236-297,299-312
+  s_33c6c7a35bd0ca::t_9a85fcb54c360b 162-190,197-198,203-204,220-223,298
+tools/plot_triangle_charge_response.py
+  s_33c6c7a35bd0ca::t_5bf66705467d5a 13,41,61-62
+  s_33c6c7a35bd0ca::t_ef670ffb9d5583 1-12,14-40,42-60,63-73
+tools/triangle_response_memory.py
+  s_33c6c7a35bd0ca::t_a2703763401065 65-66,68-69,83,89-105,183-188,190-224,228-230
+  s_33c6c7a35bd0ca::t_86478de23d21ba 12,189,225-227
+  s_33c6c7a35bd0ca::t_e56541c6200e7d 18-64
+  s_33c6c7a35bd0ca::t_1b91c8adc955e9 1-11,13-17,67,70-82,84-88,106-182,231-243
+tests/triangle_charge_response.py
+  s_33c6c7a35bd0ca::t_86478de23d21ba 17,176-221
+  s_33c6c7a35bd0ca::t_7585828abf7614 1-16,18-175,222-225
+.github/workflows/ci.yml
+  s_33c6c7a35bd0ca::t_03fa8ace6d465c 173
+  s_33c6c7a35bd0ca::t_ef670ffb9d5583 174-178
+README.md
+  s_33c6c7a35bd0ca::t_03fa8ace6d465c 360
+  s_33c6c7a35bd0ca::t_ef670ffb9d5583 348-355,359,361-363,414
+  s_33c6c7a35bd0ca::t_ecb737f24b4b51 356-358,415-418
+docs/triangle-charge-response.md
+  s_33c6c7a35bd0ca::t_ecb737f24b4b51 7-8,182-183,202-237,260-264
+  s_33c6c7a35bd0ca::t_ef670ffb9d5583 1-6,9-181,184-201,238-259
+data/triangle-charge-response.json
+  s_33c6c7a35bd0ca::t_61b1163f31703c 1
+data/triangle-response-memory.json
+  s_33c6c7a35bd0ca::t_d402fec15a3478 1
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.2",
+  "base_commit_sha": "237bb6f47ac13662ed08c0a6c457788289aeb523",
+  "prompts": {},
+  "sessions": {
+    "s_33c6c7a35bd0ca": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a061ab-263d-7860-b882-4955b6e0b240",
+        "model": "gpt-6-astra"
+      },
+      "human_author": "Nick Sweeting <git@sweeting.me>"
+    }
+  }
+}
