@@ -202,6 +202,18 @@ jobs:
           VECLIB_MAXIMUM_THREADS: '1'
         run: |
           out/spectral-venv/bin/python tests/triangle_relational_memory.py
+      - name: Whole-charge conditional spatial memory and spectral bounds
+        env:
+          OPENBLAS_NUM_THREADS: '1'
+          VECLIB_MAXIMUM_THREADS: '1'
+        run: |
+          out/spectral-venv/bin/python tests/triangle_spatial_memory.py
+      - name: Complete local gauge memory and vacancy-gated rotation kinetics
+        env:
+          OPENBLAS_NUM_THREADS: '1'
+          VECLIB_MAXIMUM_THREADS: '1'
+        run: |
+          out/spectral-venv/bin/python tests/triangle_complete_memory.py
       - name: Multiway engine smoke test
         run: |
           ./build/wgphysics_evolve --steps 2 --output out/smoke.json

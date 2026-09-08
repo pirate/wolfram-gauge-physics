@@ -400,17 +400,22 @@ raw labelings that the exact graph-isomorphism quotient recognizes as the same c
   dynamics, not particle binding or a quantum scattering matrix. See the
   [selection proof, automatic response, and activation law](docs/triangle-elastic-scattering.md).
 
-- **Gauge-memory measurements with exact controls for false persistence.** Exact
-  patch spectra distinguish a frozen-component correlation plateau from a decaying
-  relational mode, even when charge autocorrelations agree at every time. Finite-torus
-  group counting supplies correctly centered relational observables without assuming
-  independent fiber labels. Across 96 independent paired initializations on three
-  mesh sizes, the elastic bank shortens early local alignment memory while charge
-  correlations persist longer. Spatially summed late-time memory remains statistically
-  unresolved; neither local decay nor a frozen plateau is treated as evidence about
-  binding. See the [exact spectra, reference counts, and measured correlations](docs/triangle-relational-memory.md).
+- **Complete local gauge-memory detection with exact persistence controls.** Exact
+  patch spectra distinguish frozen-component plateaus from genuine relaxation.
+  Whole-charge conditional counts then isolate all $49-27=22$ relational contrasts
+  of a three-loop gauge state without fitting or assuming independent fiber labels.
+  A basis-independent spatial detector retains every support orientation and can
+  detect moving zero-sum patterns. Across 128 paired comparisons, it finds transient
+  rotation-alignment memory missed by reflection-only probes, but no resolved stable
+  late-time signal. An exhaustive primitive check proves that changing a rotation
+  requires a vacancy, so a rotation-filled region must begin changing through its
+  boundary—a kinetic alternative to binding. Separate microscopic spectral bounds
+  identify slow charge relaxation and prevent diagnostic Fourier phases from being
+  mistaken for quantum waves. See the [exact patch spectra](docs/triangle-relational-memory.md),
+  [spatial charge controls](docs/triangle-spatial-memory.md), and
+  [complete local observer and vacancy gate](docs/triangle-complete-memory.md).
 
-![Exact and measured gauge-memory diagnostics](docs/images/triangle-relational-memory.png)
+![Actual complete local gauge-memory measurements](docs/images/triangle-complete-memory.png)
 
 - **GPU-ready exact algebra and measured compression limits.** Group operations are compiled into
   dense integer multiplication, inverse, and action tables. On an Apple M1 Max, the Metal
@@ -478,10 +483,13 @@ raw labelings that the exact graph-isomorphism quotient recognizes as the same c
    and unfreezes two local gauge states without changing collision-time face charges.
    Measure its unbiased long-time encounter, fluctuation, and persistence statistics
    against the original bank with matched clocks; do not infer binding from activation.
-   Exact conditional relational baselines and paired covariance measurements now
-   distinguish local memory loss from frozen-component plateaus. Resolve the remaining
-   spatially summed uncertainty and measure transported or spatially resolved patterns;
-   a moving zero-sum structure can evade both fixed-location and aggregate probes.
+   Exact conditional baselines and translation-resolved covariance measurements now
+   distinguish local memory loss, moving zero-sum patterns, and frozen-component
+   plateaus. The complete three-loop detector retains all 22 local relational contrasts
+   and exposes additional transient rotation memory. Test whether it survives actual
+   encounters, using event-resolved visitation and transported-loop histories against
+   the exact vacancy-gated boundary-activation control. Extend to multi-patch relationships
+   with explicit gluing; completeness of each separate local observer is not enough.
    A complete
    loop observer now detects hidden relative bits, and a fiber-adjacency-derived spectral probe
    sees their effect on graph modes. Static localization now has an infinite-lattice certificate,
