@@ -111,7 +111,7 @@ class FeedbackExperiment(FiberTransport):
         ids = {canonical(list(f[:3])): i for i, f in enumerate(self.geometry.faces)}
         self.fan_faces = [[ids[canonical(list(f[:3]))] for f in spec] for spec in self.factor.oracle.fan.specs]
 
-    def compiled_bank(self, inputs, schedule, stride):
+    def compiled_bank(self, inputs, schedule, stride, capture_links=False):
         side, n = self.geometry.side, self.geometry.group.n
         if not inputs or len(inputs) > 16 or not schedule or len(schedule) > 1000000 or stride <= 0 or len(schedule) % stride:
             raise ValueError('invalid bounded feedback run dimensions')
@@ -123,13 +123,20 @@ class FeedbackExperiment(FiberTransport):
         protocol = [side, len(self.tables)-1, len(inputs), len(schedule), stride]
         protocol += [x for table in self.tables for x in table]
         protocol += [x for links in inputs for x in links]+schedule
-        result = json.loads(subprocess.run(['build/wgphysics_mixed_bank_experiments', '--cycle', '3'],
+        command = ['build/wgphysics_mixed_bank_experiments', '--cycle', '3']
+        if capture_links:
+            command.append('--raw-events')
+        result = json.loads(subprocess.run(command,
                             input=' '.join(map(str, protocol))+'\n', text=True, capture_output=True,
                             check=True, timeout=120).stdout)
         if len(result['runs']) != 2*len(inputs):
             raise ValueError('unexpected compiled bank run count')
         for row, (condition, combined) in zip(result['runs'], itertools.product(range(len(inputs)), (False, True))):
             links = inputs[condition][:]
+            if capture_links:
+                if any(len(event) != 6 for event in row['events']):
+                    raise ValueError('compiled raw event snapshot is missing')
+                row['raw_event_links'] = [event.pop() for event in row['events']]
             if row['condition'] != condition or row['mode'] != ('combined' if combined else 'transport'):
                 raise ValueError('compiled bank condition or mode differs')
             events, history, conversions = [], [self.factor.oracle.histogram(links)], Counter()
@@ -154,6 +161,8 @@ class FeedbackExperiment(FiberTransport):
                         if sum(self.charges[x] for x in after) != charge:
                             raise ValueError('primitive feedback violated the derived additive charge')
                         events.append([tick, rule, patch, code, target])
+                        if capture_links and row['raw_event_links'][len(events)-1] != links:
+                            raise ValueError('compiled intermediate raw connection differs')
                         if rule:
                             conversions[tuple(sum(self.charges[x] == q for x in after)-sum(self.charges[x] == q for x in before) for q in (1, 2))] += 1
                 if tick % stride == 0:

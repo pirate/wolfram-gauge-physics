@@ -301,6 +301,21 @@ raw labelings that the exact graph-isomorphism quotient recognizes as the same c
 
 ![Measured graph-mode profiles and exact orientation-resolved mode-loss audit](docs/images/triangle-modes.png)
 
+- **Conserved currents with gauge-dependent fluctuations.** Every primitive supplies a
+  scalar-charge current across its actual written links, with exact continuity
+  $\Delta\mathbf q=B\mathbf j$. Exhausting all 216 local inputs shows that mean charge
+  drift depends only on the charge field, while noise retains relative-holonomy information.
+  Prepared braid-memory states have identical full charge fields, mean currents, and
+  encounter-boundary holonomy but different exact covariances. Autonomous runs then start
+  from the same uniform $q_f=1$ field: a single-reflection connection stays frozen, while
+  microscopic reflection disorder activates fluctuations and transport. Frozen and
+  reaction-disabled controls, two mesh sizes, and independently replayed currents check
+  the effect. Random scheduling and initial microscopic disorder are supplied; no separate
+  charge-noise term or wave law is inserted.
+  See the [current derivation, exact noise witness, and activation runs](docs/triangle-charge-current.md).
+
+![Actual homogeneous charge-field activation and exact gauge-dependent fluctuations](docs/images/triangle-charge-current.png)
+
 - **GPU-ready exact algebra and measured compression limits.** Group operations are compiled into
   dense integer multiplication, inverse, and action tables. On an Apple M1 Max, the Metal
   microbenchmark processed one million frame transformations in 0.318 ms and one million

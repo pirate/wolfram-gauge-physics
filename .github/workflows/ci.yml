@@ -146,6 +146,12 @@ jobs:
           out/spectral-venv/bin/python tools/triangle_modes.py --verify-only
           out/spectral-venv/bin/python tests/triangle_modes.py
           out/spectral-venv/bin/python tests/triangle_mode_rates.py
+      - name: Derived charge continuity, gauge noise, and homogeneous-field activation
+        env:
+          OPENBLAS_NUM_THREADS: '1'
+          VECLIB_MAXIMUM_THREADS: '1'
+        run: |
+          out/spectral-venv/bin/python tests/triangle_charge_current.py
       - name: Multiway engine smoke test
         run: |
           ./build/wgphysics_evolve --steps 2 --output out/smoke.json

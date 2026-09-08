@@ -16,7 +16,10 @@ std::vector<std::size_t> histogram(const MeshDynamics& mesh) {
 
 int main(int argc,char** argv) {
     try {
+        const bool raw_events=argc>1 && std::string_view(argv[argc-1])=="--raw-events";
+        if(raw_events) --argc;
         const auto fiber=cycle_fiber_from_arguments(argc,argv);
+        std::size_t emitted_link_values=0;
         std::size_t side,rule_count,condition_count,attempts,stride;
         if(!(std::cin>>side>>rule_count>>condition_count>>attempts>>stride) || side<3 || side>48 ||
            !rule_count || rule_count>144 || !condition_count || condition_count>16 ||
@@ -77,7 +80,16 @@ int main(int argc,char** argv) {
                     mesh.update_with_rule(p,rule_ids[rule]);
                     if(target!=code) {
                         if(!first_event) std::cout<<','; first_event=false;
-                        std::cout<<'['<<tick+1<<','<<rule<<','<<p%fans.size()<<','<<code<<','<<target<<']';
+                        std::cout<<'['<<tick+1<<','<<rule<<','<<p%fans.size()<<','<<code<<','<<target;
+                        if(raw_events) {
+                            // Stream bounded diagnostic snapshots without storing trajectories
+                            // in the engine. Default output remains byte-for-byte unchanged.
+                            if(mesh.values().size()>8000000-emitted_link_values)
+                                throw std::invalid_argument("raw event output exceeds eight million link values");
+                            emitted_link_values+=mesh.values().size();
+                            std::cout<<','; array(mesh.values());
+                        }
+                        std::cout<<']';
                     }
                 }
                 if((tick+1)%stride==0) history.push_back(histogram(mesh));
