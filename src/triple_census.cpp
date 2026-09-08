@@ -1,10 +1,11 @@
 #include <iostream>
 #include "triple_rules.hpp"
+#include "cycle_fiber_cli.hpp"
 
 using namespace wgphysics::research;
-int main() {
+int main(int argc,char** argv) {
     try {
-        const FiberGraph fiber(4,{{0,1},{1,2},{2,3},{3,0}});
+        const auto fiber=cycle_fiber_from_arguments(argc,argv);
         const AutomorphismTables group(fiber.automorphisms());
         const auto rules=search_triple_involutions(group);
         std::cout<<"{\"schema\":1,\"group_order\":"<<group.order()<<",\"minimal_rules\":[";

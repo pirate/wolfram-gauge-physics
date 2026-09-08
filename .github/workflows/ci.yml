@@ -130,6 +130,14 @@ jobs:
           out/spectral-venv/bin/python tests/unrouted_transport.py
           out/spectral-venv/bin/python tools/unrouted_transport.py --output out/unrouted-transport.json
           diff -u data/unrouted-transport.json out/unrouted-transport.json
+      - name: Triangle-fiber reaction feedback and raw braid-memory readout
+        env:
+          OPENBLAS_NUM_THREADS: '1'
+          VECLIB_MAXIMUM_THREADS: '1'
+        run: |
+          out/spectral-venv/bin/python tests/triangle_feedback.py
+          out/spectral-venv/bin/python tools/triangle_feedback.py --output out/triangle-feedback.json
+          diff -u data/triangle-feedback.json out/triangle-feedback.json
       - name: Multiway engine smoke test
         run: |
           ./build/wgphysics_evolve --steps 2 --output out/smoke.json

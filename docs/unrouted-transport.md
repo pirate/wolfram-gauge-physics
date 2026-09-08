@@ -117,6 +117,11 @@ in the primitive updates and must check whether its effects survive beyond suppl
 finite periodic fixtures. An imposed potential or an assumed quantum Hamiltonian would
 not establish that.
 
+The [triangle-fiber reaction bank](triangle-feedback.md) now supplies that next constructive
+test: its uniformly averaged class rates depend on hidden holonomy, and actual raw-link
+encounters read out previously generated braid memory. Stable binding and continuum
+physics remain separate, unproved requirements.
+
 ## Reproduce
 
 ```bash

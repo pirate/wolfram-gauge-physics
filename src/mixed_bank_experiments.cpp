@@ -1,5 +1,6 @@
 #include <iostream>
 #include "mesh_dynamics.hpp"
+#include "cycle_fiber_cli.hpp"
 
 using namespace wgphysics::research;
 template<class Values> void array(const Values& values) {
@@ -13,19 +14,20 @@ std::vector<std::size_t> histogram(const MeshDynamics& mesh) {
     return result;
 }
 
-int main() {
+int main(int argc,char** argv) {
     try {
+        const auto fiber=cycle_fiber_from_arguments(argc,argv);
         std::size_t side,rule_count,condition_count,attempts,stride;
         if(!(std::cin>>side>>rule_count>>condition_count>>attempts>>stride) || side<3 || side>48 ||
            !rule_count || rule_count>144 || !condition_count || condition_count>16 ||
            !attempts || attempts>1000000 || !stride || attempts%stride)
             throw std::invalid_argument("invalid bounded bank experiment dimensions");
-        const FiberGraph fiber(4,{{0,1},{1,2},{2,3},{3,0}});
         const AutomorphismTables group(fiber.automorphisms());
-        PairTable pair(64);
+        const auto n=group.order();
+        PairTable pair(n*n);
         for(auto& x : pair) if(!(std::cin>>x)) throw std::invalid_argument("missing pair table");
         validate_pair_table(group,pair);
-        std::vector<TripleTable> triples(rule_count,TripleTable{std::vector<std::size_t>(512)});
+        std::vector<TripleTable> triples(rule_count,TripleTable{std::vector<std::size_t>(n*n*n)});
         for(auto& rule : triples) {
             for(auto& x : rule.entries) if(!(std::cin>>x)) throw std::invalid_argument("missing triple table");
             validate_triple_table(group,rule);
@@ -39,7 +41,7 @@ int main() {
             FiberBundleConnection input(complex.base(),fiber);
             for(const auto [u,v] : complex.base().edges()) {
                 std::size_t a;
-                if(!(std::cin>>a) || a>=8) throw std::invalid_argument("invalid initial link");
+                if(!(std::cin>>a) || a>=n) throw std::invalid_argument("invalid initial link");
                 input.set_transport(u,v,group.elements()[a]);
             }
             inputs.push_back(std::move(input));
@@ -69,8 +71,8 @@ int main() {
                 const auto [rule,p]=decode(schedule[tick]);
                 if(combined || !rule) {
                     std::size_t code;
-                    if(rule) code=encode_triple(mesh.triple_values(p),8);
-                    else { const auto [a,b]=mesh.based_pair(p); code=a*8+b; }
+                    if(rule) code=encode_triple(mesh.triple_values(p),n);
+                    else { const auto [a,b]=mesh.based_pair(p); code=a*n+b; }
                     const auto target=mesh.rules()[rule_ids[rule]].forward[code];
                     mesh.update_with_rule(p,rule_ids[rule]);
                     if(target!=code) {

@@ -268,6 +268,19 @@ raw labelings that the exact graph-isomorphism quotient recognizes as the same c
 
 ![Measured triangle-fiber circuits and their four-state gauge response](docs/images/fiber-transport-order.png)
 
+- **Stored holonomy changes local reaction dynamics.** The triangle fiber's independently
+  enumerated 144 minimal three-face rules yield a twelve-rule reaction bank with derived
+  positive charge $Q=N_R+2N_C$. Bringing stored braid-memory states into the same encounter
+  gives different reaction rates despite identical face classes everywhere and the same
+  encounter-boundary holonomy. C++ and Python enumerate all 11,232 rooted update choices:
+  twelve enable a class-changing reaction in one state, none in the other. Unrouted runs
+  independently reproduce reversible conversions and their negative controls. The same
+  derived charge bounds full-graph spectral capacity, $n_+(L_{\rm bundle}-12I)\le Q$. This is
+  classical gauge feedback, not yet stable matter or physical energy. See the
+  [rule derivation, raw-link readout, and evolution](docs/triangle-feedback.md).
+
+![Actual gauge-dependent reaction and full-generator braid-memory readout](docs/images/triangle-feedback.png)
+
 - **GPU-ready exact algebra and measured compression limits.** Group operations are compiled into
   dense integer multiplication, inverse, and action tables. On an Apple M1 Max, the Metal
   microbenchmark processed one million frame transformations in 0.318 ms and one million
@@ -301,12 +314,16 @@ raw labelings that the exact graph-isomorphism quotient recognizes as the same c
    counts expose catalytic dilution. Compare activation requirements and kinetic restrictions
    across the rule census, and test localization and overlapping schedules before assigning physical meaning;
    extend primitive searches without inserting a target energy or force law.
-   The compatible noncommuting banks now supply a closed classical conversion/transport
+   The square-fiber compatible banks supply a closed classical conversion/transport
    reference. One small sector now has an exhaustive component proof and measured canonical
    statistics; its spatial exchangeability rules out equilibrium class binding even under
    positive constant schedule reweighting. Test larger sectors, transient localization, and
    extended loop correlations while keeping
-   microscopic loop information distinct from what survives uniform rule averaging. A complete
+   microscopic loop information distinct from what survives uniform rule averaging. The
+   triangle-fiber reaction bank now retains hidden-state feedback even under uniform averaging and
+   reads out stored braid memory through actual reaction rates. Test its encounter statistics,
+   persistence, and positional correlations without assuming this alone evades equilibrium
+   restrictions. A complete
    loop observer now detects hidden relative bits, and a fiber-adjacency-derived spectral probe
    sees their effect on graph modes. Static localization now has an infinite-lattice certificate,
    but one primitive update can remove above-band modes. Identify and test mechanisms for persistence without
