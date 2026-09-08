@@ -1,0 +1,42 @@
+tools/triangle_reference.py
+  s_33c6c7a35bd0ca::t_a76c1df8c07aa1 188-189,253-254
+  s_33c6c7a35bd0ca::t_97192ab13722c9 331-335,337-339,341-352,354-424,427-430,434-445
+  s_33c6c7a35bd0ca::t_9ecf136c4caad3 1-108,110-167,186-187,190-218,220-236,238-252,255-274,276-280,492-503,530-535
+  s_33c6c7a35bd0ca::t_03e8ad2ed144d1 425-426,431-433
+  s_33c6c7a35bd0ca::t_26500a2efb6f2c 336,340,353,520
+  s_33c6c7a35bd0ca::t_20a5e153378aaf 168-185,219,237,275
+  s_33c6c7a35bd0ca::t_b5f1c6c52bc2e1 109,281-330,446-491,504-519,521-529
+.github/workflows/ci.yml
+  s_33c6c7a35bd0ca::t_7f9af948c3ed0f 155-160
+README.md
+  s_33c6c7a35bd0ca::t_afcf9202ae3e0d 329-330
+  s_33c6c7a35bd0ca::t_fd61d645b15b8c 319-328,373-375
+docs/triangle-reference.md
+  s_33c6c7a35bd0ca::t_afcf9202ae3e0d 14-15,242
+  s_33c6c7a35bd0ca::t_fd61d645b15b8c 1-13,16-241,243-249
+tests/triangle_reference.py
+  s_33c6c7a35bd0ca::t_26500a2efb6f2c 10,114-145
+  s_33c6c7a35bd0ca::t_7f9af948c3ed0f 102
+  s_33c6c7a35bd0ca::t_a76c1df8c07aa1 1-9,11-101,103-113,146-149
+tools/plot_triangle_reference.py
+  s_33c6c7a35bd0ca::t_ef7a8fa4e35325 33
+  s_33c6c7a35bd0ca::t_afcf9202ae3e0d 1-32,34-56
+data/triangle-reference.json
+  s_33c6c7a35bd0ca::t_8f91c47fb6825f 1
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.2",
+  "base_commit_sha": "7b7287c369601afd7e797f782eef93245e142965",
+  "prompts": {},
+  "sessions": {
+    "s_33c6c7a35bd0ca": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a061ab-263d-7860-b882-4955b6e0b240",
+        "model": "gpt-6-astra"
+      },
+      "human_author": "Nick Sweeting <git@sweeting.me>"
+    }
+  }
+}
