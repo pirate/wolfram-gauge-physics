@@ -170,6 +170,12 @@ jobs:
           VECLIB_MAXIMUM_THREADS: '1'
         run: |
           out/spectral-venv/bin/python tests/triangle_event_clock.py
+      - name: Exact charge response, dilute correction, and multi-step gauge memory
+        env:
+          OPENBLAS_NUM_THREADS: '1'
+          VECLIB_MAXIMUM_THREADS: '1'
+        run: |
+          out/spectral-venv/bin/python tests/triangle_charge_response.py
       - name: Multiway engine smoke test
         run: |
           ./build/wgphysics_evolve --steps 2 --output out/smoke.json

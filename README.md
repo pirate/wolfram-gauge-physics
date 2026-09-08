@@ -345,6 +345,22 @@ raw labelings that the exact graph-isomorphism quotient recognizes as the same c
 
 ![Actual one-link activation and boundary-marked spreading measurements](docs/images/triangle-spreading.png)
 
+- **Derived transport equations with exact tests for missing gauge information.**
+  In the two-defect reflection sector, summing the primitive updates gives an exact
+  discrete heat equation for mean charge. Reactive sectors have a calculable two-step
+  correction to linear diffusion; its per-face squared residual scales as $F^{-3}$
+  at fixed four-charge content, from exact algebra rather than a fit. An independent
+  census of all 5,508 allowed charge fields on the smallest mesh checks the response
+  with correct connection weights. Two actual braid-memory preparations then show
+  identical full charge fields and initial drift but different mean charge after two
+  updates: relative-gauge activity must enter the effective description. Even adding
+  current activity flags is insufficient: another raw-connection pair agrees through
+  two-step mean response but separates after three updates. This is
+  classical transport and a concrete closure obstruction, not QED or molecular binding.
+  See the [response derivation and exact memory witnesses](docs/triangle-charge-response.md).
+
+![Exact transport response and the spatial effect of hidden gauge activity](docs/images/triangle-charge-response.png)
+
 - **GPU-ready exact algebra and measured compression limits.** Group operations are compiled into
   dense integer multiplication, inverse, and action tables. On an Apple M1 Max, the Metal
   microbenchmark processed one million frame transformations in 0.318 ms and one million
@@ -395,6 +411,11 @@ raw labelings that the exact graph-isomorphism quotient recognizes as the same c
    The first exact paired pre-boundary measurements and residence-time-preserving
    event sampler are now available; extend their distance range without confusing
    an advancing fluctuation with a persistent bound object.
+   Exact charge-response calculations now identify both a closed two-defect heat
+   equation and reactive nonclosure. Current based-fan activity also fails closure,
+   with an exact three-attempt mean-response witness. Test transported relative-loop
+   relations as additional observables before claiming a closed effective equation
+   or a continuum transport coefficient.
    A complete
    loop observer now detects hidden relative bits, and a fiber-adjacency-derived spectral probe
    sees their effect on graph modes. Static localization now has an infinite-lattice certificate,
