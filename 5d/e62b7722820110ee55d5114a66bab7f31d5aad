@@ -1,0 +1,45 @@
+tests/triangle_feedback.py
+  s_33c6c7a35bd0ca::t_2bec700bffd0d1 65-68,86-87
+tools/plot_triangle_modes.py
+  s_33c6c7a35bd0ca::t_ad2847f9cad5c7 1-58
+docs/triangle-feedback.md
+  s_33c6c7a35bd0ca::t_2bec700bffd0d1 175-182,185-186,188-189,191-194,197-198
+tests/triangle_modes.py
+  s_33c6c7a35bd0ca::t_2fc75f83fca635 1-148
+docs/triangle-modes.md
+  s_33c6c7a35bd0ca::t_ad2847f9cad5c7 1-205
+tools/triangle_spectral_capacity.py
+  s_33c6c7a35bd0ca::t_59d88e6b0007e3 45,47,53,59-60,63-64,69,71-74
+tools/triangle_modes.py
+  s_33c6c7a35bd0ca::t_59d88e6b0007e3 225-227,236,242,249-251,253,268-269,275
+  s_33c6c7a35bd0ca::t_dab88e276f592d 37-40,113-114,131-132
+  s_33c6c7a35bd0ca::t_27d6001058e0ea 1-36,41-112,115-130,133-206,209-224,228-235,237-241,243-248,252,254-267,270-274,276-317
+  s_33c6c7a35bd0ca::t_2fc75f83fca635 207-208
+.github/workflows/ci.yml
+  s_33c6c7a35bd0ca::t_2bec700bffd0d1 141-147
+README.md
+  s_33c6c7a35bd0ca::t_2bec700bffd0d1 278,284-297
+  s_33c6c7a35bd0ca::t_6839161b4917ff 298
+data/triangle-compact-modes.json
+  s_33c6c7a35bd0ca::t_60205fa87df326 1
+data/triangle-feedback.json
+  s_33c6c7a35bd0ca::t_1c0471ed3b157d 1
+data/triangle-modes.json
+  s_33c6c7a35bd0ca::t_6a86435be12623 1
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.2",
+  "base_commit_sha": "5de62b7722820110ee55d5114a66bab7f31d5aad",
+  "prompts": {},
+  "sessions": {
+    "s_33c6c7a35bd0ca": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a061ab-263d-7860-b882-4955b6e0b240",
+        "model": "gpt-6-astra"
+      },
+      "human_author": "Nick Sweeting <git@sweeting.me>"
+    }
+  }
+}
