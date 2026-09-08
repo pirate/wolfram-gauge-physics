@@ -293,6 +293,11 @@ raw labelings that the exact graph-isomorphism quotient recognizes as the same c
   bound forcing every observed downward reaction crossing. These are localized graph modes
   on supplied geometry, not stable particles, atomic energies, or an assumed wave law.
   See the [integer certificates, full dynamics, and limitations](docs/triangle-modes.md).
+  The [full-generator persistence audit](docs/triangle-mode-rates.md) strengthens this:
+  every changing vacancy move of charge $q$ destroys at least $q$ modes when the
+  $Q/2$ capacity is saturated. Exact one-step kernels also show that mode count,
+  orientation charges, and defect populations do not close the dynamics, even within
+  one reachable component.
 
 ![Measured graph-mode profiles and exact orientation-resolved mode-loss audit](docs/images/triangle-modes.png)
 

@@ -145,6 +145,7 @@ jobs:
         run: |
           out/spectral-venv/bin/python tools/triangle_modes.py --verify-only
           out/spectral-venv/bin/python tests/triangle_modes.py
+          out/spectral-venv/bin/python tests/triangle_mode_rates.py
       - name: Multiway engine smoke test
         run: |
           ./build/wgphysics_evolve --steps 2 --output out/smoke.json

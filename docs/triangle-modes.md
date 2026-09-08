@@ -186,6 +186,10 @@ particle number. It does not rule out metastable structures under other initial
 conditions or other derived rules. Establishing stable matter, calibrated interactions,
 physical time, and molecular behavior remains unfinished.
 
+The [full-generator follow-up](triangle-mode-rates.md) proves that *every* vacancy move
+from a capacity-saturated state forces mode loss, and computes exact conditional kernels
+instead of inferring a decay law from one history.
+
 ## Reproduce
 
 ```bash
