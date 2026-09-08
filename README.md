@@ -316,6 +316,18 @@ raw labelings that the exact graph-isomorphism quotient recognizes as the same c
 
 ![Actual homogeneous charge-field activation and exact gauge-dependent fluctuations](docs/images/triangle-charge-current.png)
 
+- **Exact connection statistics and microscopic freezing constraints.** Character counting
+  and independent integer group convolution agree on the number of actual connections at
+  fixed charge; an exact sampler reconstructs their raw links without burn-in. The reference
+  is stationary, not assumed to describe every trajectory. An exact local activity detector
+  proves that no state with $0<Q<F$ can be completely frozen on these connected meshes.
+  At $Q=F$, freezing is determined by based reflection patterns around each vertex:
+  even full noncommuting $S_3$ holonomy permits isolated frozen states. Thus total charge
+  and holonomy group alone do not identify a reachable component. See the
+  [counting formulas, sampler, and frozen-star criterion](docs/triangle-reference.md).
+
+![Actual reflection stars reveal activity hidden by identical charge fields](docs/images/triangle-reference.png)
+
 - **GPU-ready exact algebra and measured compression limits.** Group operations are compiled into
   dense integer multiplication, inverse, and action tables. On an Apple M1 Max, the Metal
   microbenchmark processed one million frame transformations in 0.318 ms and one million
@@ -358,7 +370,9 @@ raw labelings that the exact graph-isomorphism quotient recognizes as the same c
    triangle-fiber reaction bank now retains hidden-state feedback even under uniform averaging and
    reads out stored braid memory through actual reaction rates. Test its encounter statistics,
    persistence, and positional correlations without assuming this alone evades equilibrium
-   restrictions. A complete
+   restrictions. Exact reference sampling and a local frozen-state criterion now separate
+   stationary statistics from reachability; classify active components and measure relaxation
+   without assuming nonabelian holonomy guarantees mixing. A complete
    loop observer now detects hidden relative bits, and a fiber-adjacency-derived spectral probe
    sees their effect on graph modes. Static localization now has an infinite-lattice certificate,
    but one primitive update can remove above-band modes. Identify and test mechanisms for persistence without
