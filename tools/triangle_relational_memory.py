@@ -203,12 +203,14 @@ class RelationalObserver:
                 zip(self.spatial_sums(first), self.spatial_sums(later), first, self.variances)]
 
 
-def replay_samples(experiment, initial, schedule, ticks, observer):
+def replay_samples(experiment, initial, schedule, ticks, observer, event_callback=None):
     """All local event targets + final raw links checked against C++; observe fixed attempts.
 
     C++ performs a full inverse echo. No event-time sampling or trajectory-derived
     centering enters the correlation estimator. Expensive full spectator/frame
     tests are already exhaustive for the primitive laws, not repeated per attempt.
+    An optional callback receives (raw, tick, op, code, target) after each verified
+    changing event; it must observe, not mutate, the already-updated raw state.
     """
     if not ticks or ticks[0] != 0 or sorted(set(ticks)) != ticks or ticks[-1] != len(schedule):
         raise ValueError('sample ticks must be increasing, start at zero, and end at the schedule length')
@@ -224,6 +226,8 @@ def replay_samples(experiment, initial, schedule, ticks, observer):
             if event_index >= len(run['events']) or run['events'][event_index] != [tick, rule, patch, code, target]:
                 raise ValueError('sampled replay differs from C++ event targets')
             event_index += 1
+            if event_callback is not None:
+                event_callback(raw, tick, op, code, target)
         if tick in tick_set:
             if sum(experiment.p.charge(raw)) != sum(experiment.p.charge(initial)):
                 raise ValueError('sampled replay changed total charge')

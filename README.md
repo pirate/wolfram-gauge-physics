@@ -414,8 +414,14 @@ raw labelings that the exact graph-isomorphism quotient recognizes as the same c
   mistaken for quantum waves. See the [exact patch spectra](docs/triangle-relational-memory.md),
   [spatial charge controls](docs/triangle-spatial-memory.md), and
   [complete local observer and vacancy gate](docs/triangle-complete-memory.md).
+  An [exact first-encounter decomposition](docs/triangle-encounter-memory.md) now
+  separates untouched memory from change-and-return histories. Most measured
+  long-wavelength rotation memory comes from unvisited patches, while a smaller
+  local return excess survives actual reconfiguration temporarily. Uniform
+  relative-orientation counts give an independent integer estimator; this is
+  classical transient memory, not an encounter-resistant bound object.
 
-![Actual complete local gauge-memory measurements](docs/images/triangle-complete-memory.png)
+![Actual encounter-resolved gauge-memory measurements](docs/images/triangle-encounter-memory.png)
 
 - **GPU-ready exact algebra and measured compression limits.** Group operations are compiled into
   dense integer multiplication, inverse, and action tables. On an Apple M1 Max, the Metal
@@ -486,9 +492,10 @@ raw labelings that the exact graph-isomorphism quotient recognizes as the same c
    Exact conditional baselines and translation-resolved covariance measurements now
    distinguish local memory loss, moving zero-sum patterns, and frozen-component
    plateaus. The complete three-loop detector retains all 22 local relational contrasts
-   and exposes additional transient rotation memory. Test whether it survives actual
-   encounters, using event-resolved visitation and transported-loop histories against
-   the exact vacancy-gated boundary-activation control. Extend to multi-patch relationships
+   and exposes additional transient rotation memory. First-encounter accounting now
+   separates untouched persistence from a smaller local return excess after reconfiguration.
+   Distinguish transport out-and-back from reaction-created replacements using event-derived
+   lineage and explicit connector transport. Extend to multi-patch relationships
    with explicit gluing; completeness of each separate local observer is not enough.
    A complete
    loop observer now detects hidden relative bits, and a fiber-adjacency-derived spectral probe

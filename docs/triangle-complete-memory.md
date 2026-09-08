@@ -154,11 +154,12 @@ block is $-0.0016\pm0.0135$. This does not establish a new scaling law, particle
 or binding mechanism. It provides a more complete detector and a specific
 microscopic constraint for the next controlled experiment.
 
-Next: distinguish persistence of an unvisited rotation domain from relationships
-that survive actual encounters. That requires event-resolved visitation and
-transported-loop histories, with explicit connector paths and a baseline for
-boundary-limited kinetic memory. Changing the dynamics to force a desired result
-would not answer that question.
+The [first-encounter experiment](triangle-encounter-memory.md) now separates
+unvisited rotation domains from actual reconfiguration histories. It finds that
+untouched regions dominate the long-wavelength rotation signal, with a smaller
+transient local return excess. Transported-loop lineage, explicit connector paths,
+and the distinction between returning and reaction-created rotations remain open.
+Changing the dynamics to force a desired result would not answer that question.
 
 ## Reproduce
 

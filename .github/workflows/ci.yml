@@ -214,6 +214,12 @@ jobs:
           VECLIB_MAXIMUM_THREADS: '1'
         run: |
           out/spectral-venv/bin/python tests/triangle_complete_memory.py
+      - name: Encounter-resolved gauge memory and exact rotation return counts
+        env:
+          OPENBLAS_NUM_THREADS: '1'
+          VECLIB_MAXIMUM_THREADS: '1'
+        run: |
+          out/spectral-venv/bin/python tests/triangle_encounter_memory.py
       - name: Multiway engine smoke test
         run: |
           ./build/wgphysics_evolve --steps 2 --output out/smoke.json
