@@ -400,6 +400,18 @@ raw labelings that the exact graph-isomorphism quotient recognizes as the same c
   dynamics, not particle binding or a quantum scattering matrix. See the
   [selection proof, automatic response, and activation law](docs/triangle-elastic-scattering.md).
 
+- **Gauge-memory measurements with exact controls for false persistence.** Exact
+  patch spectra distinguish a frozen-component correlation plateau from a decaying
+  relational mode, even when charge autocorrelations agree at every time. Finite-torus
+  group counting supplies correctly centered relational observables without assuming
+  independent fiber labels. Across 96 independent paired initializations on three
+  mesh sizes, the elastic bank shortens early local alignment memory while charge
+  correlations persist longer. Spatially summed late-time memory remains statistically
+  unresolved; neither local decay nor a frozen plateau is treated as evidence about
+  binding. See the [exact spectra, reference counts, and measured correlations](docs/triangle-relational-memory.md).
+
+![Exact and measured gauge-memory diagnostics](docs/images/triangle-relational-memory.png)
+
 - **GPU-ready exact algebra and measured compression limits.** Group operations are compiled into
   dense integer multiplication, inverse, and action tables. On an Apple M1 Max, the Metal
   microbenchmark processed one million frame transformations in 0.318 ms and one million
@@ -466,6 +478,10 @@ raw labelings that the exact graph-isomorphism quotient recognizes as the same c
    and unfreezes two local gauge states without changing collision-time face charges.
    Measure its unbiased long-time encounter, fluctuation, and persistence statistics
    against the original bank with matched clocks; do not infer binding from activation.
+   Exact conditional relational baselines and paired covariance measurements now
+   distinguish local memory loss from frozen-component plateaus. Resolve the remaining
+   spatially summed uncertainty and measure transported or spatially resolved patterns;
+   a moving zero-sum structure can evade both fixed-location and aggregate probes.
    A complete
    loop observer now detects hidden relative bits, and a fiber-adjacency-derived spectral probe
    sees their effect on graph modes. Static localization now has an infinite-lattice certificate,

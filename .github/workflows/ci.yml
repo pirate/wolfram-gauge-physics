@@ -196,6 +196,12 @@ jobs:
           VECLIB_MAXIMUM_THREADS: '1'
         run: |
           out/spectral-venv/bin/python tests/triangle_elastic_scattering.py
+      - name: Exact relational memory spectra and paired stationary correlations
+        env:
+          OPENBLAS_NUM_THREADS: '1'
+          VECLIB_MAXIMUM_THREADS: '1'
+        run: |
+          out/spectral-venv/bin/python tests/triangle_relational_memory.py
       - name: Multiway engine smoke test
         run: |
           ./build/wgphysics_evolve --steps 2 --output out/smoke.json

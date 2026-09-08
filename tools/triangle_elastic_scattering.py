@@ -146,7 +146,8 @@ class ElasticExperiment:
         return self.e.factor.oracle.update(links, int(rule >= 3), patch,
                                           (self.inverses if reverse else self.tables)[rule])
 
-    def compiled(self, inputs, schedule, stride=1):
+    def compiled_output(self, inputs, schedule, stride=1, raw_events=True):
+        """Bounded C++ protocol; callers choose their independent replay scope."""
         if not inputs or len(inputs) > 16 or not schedule or len(schedule) > 1000000:
             raise ValueError('invalid bounded elastic run dimensions')
         if type(stride) is not int or stride <= 0 or len(schedule) % stride:
@@ -158,12 +159,19 @@ class ElasticExperiment:
         protocol = [self.e.geometry.side, len(self.tables)-3, len(inputs), len(schedule), stride, 3]
         protocol += [x for t in self.tables for x in t]
         protocol += [x for links in inputs for x in links]+schedule
+        command = ['build/wgphysics_mixed_bank_experiments', '--cycle', '3', '--pair-bank']
+        if raw_events:
+            command.append('--raw-events')
         result = json.loads(subprocess.run(
-            ['build/wgphysics_mixed_bank_experiments', '--cycle', '3', '--pair-bank', '--raw-events'],
+            command,
             input=' '.join(map(str, protocol))+'\n', text=True, capture_output=True,
             check=True, timeout=120).stdout)
         if len(result['runs']) != 2*len(inputs):
             raise ValueError('compiled elastic run count differs')
+        return result
+
+    def compiled(self, inputs, schedule, stride=1):
+        result = self.compiled_output(inputs, schedule, stride)
         for row, (condition, combined) in zip(result['runs'], itertools.product(range(len(inputs)), (False, True))):
             links, events = inputs[condition][:], []
             history = [self.e.factor.oracle.histogram(links)]
