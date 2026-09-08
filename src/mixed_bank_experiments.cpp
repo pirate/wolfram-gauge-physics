@@ -16,8 +16,14 @@ std::vector<std::size_t> histogram(const MeshDynamics& mesh) {
 
 int main(int argc,char** argv) {
     try {
-        const bool raw_events=argc>1 && std::string_view(argv[argc-1])=="--raw-events";
-        if(raw_events) --argc;
+        bool raw_events=false,pair_bank=false;
+        while(argc>1) {
+            const std::string_view flag(argv[argc-1]);
+            if(flag=="--raw-events" && !raw_events) raw_events=true;
+            else if(flag=="--pair-bank" && !pair_bank) pair_bank=true;
+            else break;
+            --argc;
+        }
         const auto fiber=cycle_fiber_from_arguments(argc,argv);
         std::size_t emitted_link_values=0;
         std::size_t side,rule_count,condition_count,attempts,stride;
@@ -27,9 +33,16 @@ int main(int argc,char** argv) {
             throw std::invalid_argument("invalid bounded bank experiment dimensions");
         const AutomorphismTables group(fiber.automorphisms());
         const auto n=group.order();
-        PairTable pair(n*n);
-        for(auto& x : pair) if(!(std::cin>>x)) throw std::invalid_argument("missing pair table");
-        validate_pair_table(group,pair);
+        // The optional protocol retains several independently invertible pair
+        // rules. Legacy input/output and its one-pair schedule stay unchanged.
+        std::size_t pair_count=1;
+        if(pair_bank && (!(std::cin>>pair_count) || !pair_count || pair_count>32))
+            throw std::invalid_argument("invalid bounded pair bank size");
+        std::vector<PairTable> pair_tables(pair_count,PairTable(n*n));
+        for(auto& pair : pair_tables) {
+            for(auto& x : pair) if(!(std::cin>>x)) throw std::invalid_argument("missing pair table");
+            validate_pair_table(group,pair);
+        }
         std::vector<TripleTable> triples(rule_count,TripleTable{std::vector<std::size_t>(n*n*n)});
         for(auto& rule : triples) {
             for(auto& x : rule.entries) if(!(std::cin>>x)) throw std::invalid_argument("missing triple table");
@@ -51,15 +64,16 @@ int main(int argc,char** argv) {
         }
         std::vector<std::size_t> schedule(attempts);
         for(auto& event : schedule)
-            if(!(std::cin>>event) || event>=(rule_count+1)*fans.size()) throw std::invalid_argument("invalid bank schedule");
+            if(!(std::cin>>event) || event>=(rule_count+pair_count)*fans.size()) throw std::invalid_argument("invalid bank schedule");
         std::string extra;
         if(std::cin>>extra) throw std::invalid_argument("trailing bank experiment input");
         std::cout<<"{\"runs\":["; bool first_run=true;
         for(std::size_t c=0;c<inputs.size();++c) for(const bool combined : {false,true}) {
-            MeshDynamics mesh(complex,inputs[c],pair);
+            MeshDynamics mesh(complex,inputs[c],pair_tables[0]);
             std::vector<std::size_t> rule_ids{0};
+            for(std::size_t i=1;i<pair_count;++i) rule_ids.push_back(mesh.register_rule(pair_tables[i]));
             for(const auto& rule : triples) rule_ids.push_back(mesh.register_rule(rule));
-            for(const auto& p : fans) mesh.add_patch(p,rule_ids[1]);
+            for(const auto& p : fans) mesh.add_patch(p,rule_ids[pair_count]);
             for(const auto& p : pairs) mesh.add_patch(p,0);
             const auto initial=mesh.values();
             std::vector<std::vector<std::size_t>> history{histogram(mesh)};
@@ -68,13 +82,13 @@ int main(int argc,char** argv) {
             bool first_event=true;
             const auto decode=[&](std::size_t encoded) {
                 const auto rule=encoded/fans.size(),p=encoded%fans.size();
-                return std::pair{rule,rule ? p : fans.size()+p};
+                return std::pair{rule,rule>=pair_count ? p : fans.size()+p};
             };
             for(std::size_t tick=0;tick<attempts;++tick) {
                 const auto [rule,p]=decode(schedule[tick]);
-                if(combined || !rule) {
+                if(combined || rule<pair_count) {
                     std::size_t code;
-                    if(rule) code=encode_triple(mesh.triple_values(p),n);
+                    if(rule>=pair_count) code=encode_triple(mesh.triple_values(p),n);
                     else { const auto [a,b]=mesh.based_pair(p); code=a*n+b; }
                     const auto target=mesh.rules()[rule_ids[rule]].forward[code];
                     mesh.update_with_rule(p,rule_ids[rule]);
@@ -103,7 +117,7 @@ int main(int argc,char** argv) {
                     throw std::logic_error("bank face cache differs from raw connection");
             for(std::size_t tick=attempts;tick>0;--tick) {
                 const auto [rule,p]=decode(schedule[tick-1]);
-                if(combined || !rule) mesh.update_with_rule(p,rule_ids[rule],HurwitzDirection::Inverse);
+                if(combined || rule<pair_count) mesh.update_with_rule(p,rule_ids[rule],HurwitzDirection::Inverse);
                 if((tick-1)%stride==0 && histogram(mesh)!=history[(tick-1)/stride])
                     throw std::logic_error("bank intermediate reverse histogram echo failed");
             }

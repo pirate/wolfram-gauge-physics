@@ -385,6 +385,21 @@ raw labelings that the exact graph-isomorphism quotient recognizes as the same c
   improvements, not new physical interactions. See the
   [derivation, ordering controls, and benchmark](docs/triangle-lazy-gauge.md).
 
+- **Minimal elastic collisions with an observable gauge-mediated response.** An
+  exhaustive search finds 192 charge-preserving equivariant pair bijections. The
+  two smallest non-involutive laws form an inverse pair: they change relative loop
+  alignment without changing any face charge. In a separately identified candidate
+  bank, these collisions release two frozen patch states and change whole-mesh mean
+  charge after three automatic attempts, compared with an identity-padded control
+  using exactly the same clock. All 1,176 entries of the local gauge kernel match
+  raw C++ evolution. Its isolated patch has identical mean charge under both banks
+  at every time, but different fluctuations—an exact warning against judging
+  activation from mean density alone. A whole-mesh argument also excludes absorbing
+  states in the candidate bank's full-$S_3$, $Q=F$ sector: freezing would require
+  reduction to a commuting two-element holonomy group. This is classical gauge-mediated reaction
+  dynamics, not particle binding or a quantum scattering matrix. See the
+  [selection proof, automatic response, and activation law](docs/triangle-elastic-scattering.md).
+
 - **GPU-ready exact algebra and measured compression limits.** Group operations are compiled into
   dense integer multiplication, inverse, and action tables. On an Apple M1 Max, the Metal
   microbenchmark processed one million frame transformations in 0.318 ms and one million
@@ -447,6 +462,10 @@ raw labelings that the exact graph-isomorphism quotient recognizes as the same c
    A complete whole-mesh tree-gauge adapter now preserves those global relations
    under the original updates; use it to test relational observables on longer
    encounters while keeping coordinate changes distinct from physical propagation.
+   A separately derived inverse-paired elastic bank now changes encounter response
+   and unfreezes two local gauge states without changing collision-time face charges.
+   Measure its unbiased long-time encounter, fluctuation, and persistence statistics
+   against the original bank with matched clocks; do not infer binding from activation.
    A complete
    loop observer now detects hidden relative bits, and a fiber-adjacency-derived spectral probe
    sees their effect on graph modes. Static localization now has an infinite-lattice certificate,

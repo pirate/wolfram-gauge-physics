@@ -188,6 +188,14 @@ jobs:
           VECLIB_MAXIMUM_THREADS: '1'
         run: |
           out/spectral-venv/bin/python tests/triangle_lazy_gauge.py
+      - name: Minimal inverse-paired collisions and exact gauge-mediated activation
+        # The elastic experiment is a separate bank. Its tests also exercise
+        # the legacy protocol and true (non-involutive) inverse dispatch.
+        env:
+          OPENBLAS_NUM_THREADS: '1'
+          VECLIB_MAXIMUM_THREADS: '1'
+        run: |
+          out/spectral-venv/bin/python tests/triangle_elastic_scattering.py
       - name: Multiway engine smoke test
         run: |
           ./build/wgphysics_evolve --steps 2 --output out/smoke.json
