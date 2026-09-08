@@ -1,0 +1,53 @@
+tests/triangle_complete_memory.py
+  s_33c6c7a35bd0ca::t_b69df377159e99 169
+  s_33c6c7a35bd0ca::t_c9b61c666f9ea9 15,146-162,170
+  s_33c6c7a35bd0ca::t_42cd4f46b43ce0 1-14,16-145,163-168,171-191
+docs/triangle-complete-memory.md
+  s_33c6c7a35bd0ca::t_abac5912059363 1-177
+tools/triangle_spatial_memory.py
+  s_33c6c7a35bd0ca::t_acc7c130a1f680 1-152,156-265
+  s_33c6c7a35bd0ca::t_774debdd81b8c1 153-155
+docs/triangle-spatial-memory.md
+  s_33c6c7a35bd0ca::t_d8fa91665db3b1 171-174
+  s_33c6c7a35bd0ca::t_59ca911d399b7f 158
+  s_33c6c7a35bd0ca::t_e1e380cf0cf661 1-157,159-170,175-191
+tools/plot_triangle_spatial_memory.py
+  s_33c6c7a35bd0ca::t_e1e380cf0cf661 1-52
+tests/triangle_spatial_memory.py
+  s_33c6c7a35bd0ca::t_c36d1559960006 1-179,220-246
+  s_33c6c7a35bd0ca::t_e1aa9221381af4 180-219
+README.md
+  s_33c6c7a35bd0ca::t_59ca911d399b7f 403-416
+  s_33c6c7a35bd0ca::t_abac5912059363 417-418
+  s_33c6c7a35bd0ca::t_d8fa91665db3b1 486-492
+.github/workflows/ci.yml
+  s_33c6c7a35bd0ca::t_e1aa9221381af4 205-210
+  s_33c6c7a35bd0ca::t_abac5912059363 211-216
+tools/triangle_complete_memory.py
+  s_33c6c7a35bd0ca::t_2aa462f0812654 1-13,15-25,55-83,94-184,187-255,257-281
+  s_33c6c7a35bd0ca::t_b8423dbab8e01a 14,84-93,185-186
+  s_33c6c7a35bd0ca::t_c9b61c666f9ea9 26-54,256
+tools/plot_triangle_complete_memory.py
+  s_33c6c7a35bd0ca::t_abac5912059363 1-38,41-58
+  s_33c6c7a35bd0ca::t_59ca911d399b7f 39-40
+data/triangle-complete-memory.json
+  s_33c6c7a35bd0ca::t_f07285d683bccc 1-93790
+data/triangle-spatial-memory.json
+  s_33c6c7a35bd0ca::t_0a928feb2932f9 1-94323
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.2",
+  "base_commit_sha": "aa24d19b63de4e6eb5ea0c3486f81df69f2d8f49",
+  "prompts": {},
+  "sessions": {
+    "s_33c6c7a35bd0ca": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a061ab-263d-7860-b882-4955b6e0b240",
+        "model": "gpt-6-astra"
+      },
+      "human_author": "Nick Sweeting <git@sweeting.me>"
+    }
+  }
+}
