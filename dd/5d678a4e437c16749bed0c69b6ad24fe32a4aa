@@ -1,0 +1,44 @@
+tests/triangle_elastic_scattering.py
+  s_33c6c7a35bd0ca::t_d54b66e4295567 1-14,16,18-70,72-77,80-82,112-200,212-234
+  s_33c6c7a35bd0ca::t_5f14b114fc0166 17,78-79,91-94
+  s_33c6c7a35bd0ca::t_6217e00cc2af45 201-211
+  s_33c6c7a35bd0ca::t_fc62f84b958ce0 15,71,83-90,95-111
+src/mixed_bank_experiments.cpp
+  s_33c6c7a35bd0ca::t_b86c8f8a7d02e4 19-26,36-45,67,72,74,76,85,89,91,120
+tools/triangle_elastic_scattering.py
+  s_33c6c7a35bd0ca::t_7503295eec66b2 102-113,119
+  s_33c6c7a35bd0ca::t_c102b1c2db5a84 19,407-447,449-463,507
+  s_33c6c7a35bd0ca::t_6217e00cc2af45 378-394,400-404
+  s_33c6c7a35bd0ca::t_bac86d15abe40d 1-17,20-97,114-117,120-125,128-133,135,142-255,464-473,475,496,500-503,509-523
+  s_33c6c7a35bd0ca::t_fc62f84b958ce0 126-127,134,136-141,289,322,448
+  s_33c6c7a35bd0ca::t_5f14b114fc0166 476-495,497-498
+  s_33c6c7a35bd0ca::t_56936526946c62 98-101,118,256-288,290-310,504-505,508
+  s_33c6c7a35bd0ca::t_3529fb71b013da 18,311-321,323-377,395-399,405-406,474,499,506
+docs/triangle-elastic-scattering.md
+  s_33c6c7a35bd0ca::t_dfa6454f1d3bb7 175-235,255-256
+  s_33c6c7a35bd0ca::t_8d97af8343674c 1-174,236-254,257-264
+README.md
+  s_33c6c7a35bd0ca::t_8d97af8343674c 388-396,400-402,465-468
+  s_33c6c7a35bd0ca::t_dfa6454f1d3bb7 397-399
+.github/workflows/ci.yml
+  s_33c6c7a35bd0ca::t_8d97af8343674c 192-198
+  s_33c6c7a35bd0ca::t_a89898a28bcc43 191
+data/triangle-elastic-scattering.json
+  s_33c6c7a35bd0ca::t_220902abe54942 1-18145
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.2",
+  "base_commit_sha": "dd5d678a4e437c16749bed0c69b6ad24fe32a4aa",
+  "prompts": {},
+  "sessions": {
+    "s_33c6c7a35bd0ca": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a061ab-263d-7860-b882-4955b6e0b240",
+        "model": "gpt-6-astra"
+      },
+      "human_author": "Nick Sweeting <git@sweeting.me>"
+    }
+  }
+}
