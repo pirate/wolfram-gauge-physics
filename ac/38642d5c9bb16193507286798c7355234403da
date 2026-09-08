@@ -1,0 +1,61 @@
+docs/noncommuting-fiber-transport.md
+  s_33c6c7a35bd0ca::t_3a7656d372138a 1-191
+tests/fiber_transport.py
+  s_33c6c7a35bd0ca::t_975590ff935c46 1-16,19-147,190-215
+  s_33c6c7a35bd0ca::t_303e36f7d3ea50 17-18,148-189
+src/fiber_transport.cpp
+  s_33c6c7a35bd0ca::t_b3a45fa3a1a3cb 24
+  s_33c6c7a35bd0ca::t_e660a16761c1cb 1-23,25-84
+tools/d4_loop_observer.py
+  s_33c6c7a35bd0ca::t_6f370c00c38637 127,159,176-179,194,211-218
+  s_33c6c7a35bd0ca::t_647ee1c124f50f 180-184
+  s_33c6c7a35bd0ca::t_05374ce7b09421 219-220
+docs/transport-braid-memory.md
+  s_33c6c7a35bd0ca::t_2e4992b05c5675 170,181-187
+tools/transport_braid.py
+  s_33c6c7a35bd0ca::t_c0b45b7dba0b3a 122-123
+  s_33c6c7a35bd0ca::t_647ee1c124f50f 140-141,154,177,186,264,275,293-316
+  s_33c6c7a35bd0ca::t_5a4a2abe882191 25,32
+  s_33c6c7a35bd0ca::t_3c58a52fcd21d8 142
+  s_33c6c7a35bd0ca::t_6f370c00c38637 164
+  s_33c6c7a35bd0ca::t_0e38e3413cff12 317
+tools/fiber_mode_probe.py
+  s_33c6c7a35bd0ca::t_3c58a52fcd21d8 76,80,83-84
+.github/workflows/ci.yml
+  s_33c6c7a35bd0ca::t_303e36f7d3ea50 121,123-129
+  s_33c6c7a35bd0ca::t_8173c4e043482e 122
+tools/plot_fiber_transport.py
+  s_33c6c7a35bd0ca::t_131c4fa72d6345 20-21,43
+  s_33c6c7a35bd0ca::t_3a7656d372138a 1-19,22-42,44-84
+tools/fiber_transport.py
+  s_33c6c7a35bd0ca::t_c0b45b7dba0b3a 6,246-255,261-262,308-367,392-397,399
+  s_33c6c7a35bd0ca::t_5a4a2abe882191 14,17-84,256,263,265-307
+  s_33c6c7a35bd0ca::t_3c58a52fcd21d8 1-5,7-13,15-16,85-142,144-219,221-224,227-245,257-260,264,400-407,409-413,416,418-426
+  s_33c6c7a35bd0ca::t_8ea4fa3ae224f2 225-226,368-391,398
+  s_33c6c7a35bd0ca::t_975590ff935c46 220
+  s_33c6c7a35bd0ca::t_647ee1c124f50f 143,408,414-415,417
+CMakeLists.txt
+  s_33c6c7a35bd0ca::t_e660a16761c1cb 135-138
+README.md
+  s_33c6c7a35bd0ca::t_2e4992b05c5675 255-266,317-321
+tools/run_channel_banks.py
+  s_33c6c7a35bd0ca::t_e660a16761c1cb 33,43,54
+data/fiber-transport-order.json
+  s_33c6c7a35bd0ca::t_31c5ad23d1efa6 1
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.2",
+  "base_commit_sha": "ac38642d5c9bb16193507286798c7355234403da",
+  "prompts": {},
+  "sessions": {
+    "s_33c6c7a35bd0ca": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a061ab-263d-7860-b882-4955b6e0b240",
+        "model": "gpt-6-astra"
+      },
+      "human_author": "Nick Sweeting <git@sweeting.me>"
+    }
+  }
+}
