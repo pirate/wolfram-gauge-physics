@@ -1,0 +1,41 @@
+docs/triangle-relational-memory.md
+  s_33c6c7a35bd0ca::t_46ec0daba2bc16 1-196
+tools/plot_triangle_relational_memory.py
+  s_33c6c7a35bd0ca::t_5ee46d0d05dc4f 1-58
+README.md
+  s_33c6c7a35bd0ca::t_46ec0daba2bc16 403-414,481-484
+tools/triangle_elastic_scattering.py
+  s_33c6c7a35bd0ca::t_eede0df709b13f 149-150,162-164,166,171-174
+tools/triangle_relational_memory.py
+  s_33c6c7a35bd0ca::t_3f42adc18cb860 216-217
+  s_33c6c7a35bd0ca::t_306202fedb6f5c 155-159,165,169,173-186,189,239,251-255,261-265,277,290,298-299
+  s_33c6c7a35bd0ca::t_eede0df709b13f 1-154,160-164,166-168,170-172,204-215,218-238,240-250,260,270-272,274-276,278-289,291-297,300-304
+  s_33c6c7a35bd0ca::t_459c685d9ac0aa 187-188,190-203,256-259,266-269,273
+tests/triangle_relational_memory.py
+  s_33c6c7a35bd0ca::t_459c685d9ac0aa 134-136,189-194,203
+  s_33c6c7a35bd0ca::t_3f42adc18cb860 160-180
+  s_33c6c7a35bd0ca::t_bce60ad314476e 1-64,69-73,75,77,79-92,94-133,137-159,181-188,195-202,204-208
+  s_33c6c7a35bd0ca::t_34f521a6bc6bd0 74,76,78,93
+  s_33c6c7a35bd0ca::t_eec93c401ae093 65-68
+.github/workflows/ci.yml
+  s_33c6c7a35bd0ca::t_46ec0daba2bc16 200-204
+  s_33c6c7a35bd0ca::t_eec93c401ae093 199
+data/triangle-relational-memory.json
+  s_33c6c7a35bd0ca::t_598ca3ebe6f92c 1-78852
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.2",
+  "base_commit_sha": "e680df1374d17e4ec7f33a3f764d7cbe5af7fcab",
+  "prompts": {},
+  "sessions": {
+    "s_33c6c7a35bd0ca": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a061ab-263d-7860-b882-4955b6e0b240",
+        "model": "gpt-6-astra"
+      },
+      "human_author": "Nick Sweeting <git@sweeting.me>"
+    }
+  }
+}
