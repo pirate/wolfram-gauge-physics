@@ -374,6 +374,17 @@ raw labelings that the exact graph-isomorphism quotient recognizes as the same c
 
 ![Actual patch overlap and alignment-dependent mean charge](docs/images/triangle-patch-observer.png)
 
+- **Whole-mesh evolution with complete loop information retained.** An incremental
+  tree-gauge adapter now runs the original primitive bank while preserving every
+  independent loop, including global torus handles. Lazy nonabelian subtree-frame
+  updates avoid rebuilding the gauge coordinates after each event: the update path
+  uses at most five frame queries and two interval corrections. Every rooted loop
+  matches independent C++ histories on four mesh sizes. At the largest measured
+  size, this is 2.7 times faster than eager gauge restoration, but raw-link evolution
+  remains 14 times faster in the Python comparison. These are coordinate-maintenance
+  improvements, not new physical interactions. See the
+  [derivation, ordering controls, and benchmark](docs/triangle-lazy-gauge.md).
+
 - **GPU-ready exact algebra and measured compression limits.** Group operations are compiled into
   dense integer multiplication, inverse, and action tables. On an Apple M1 Max, the Metal
   microbenchmark processed one million frame transformations in 0.318 ms and one million
@@ -433,6 +444,9 @@ raw labelings that the exact graph-isomorphism quotient recognizes as the same c
    patch kernel. Extend it to consistent overlapping covers with explicit boundary
    context; independently canonicalized patches must not discard their relative
    alignment when new encounters form.
+   A complete whole-mesh tree-gauge adapter now preserves those global relations
+   under the original updates; use it to test relational observables on longer
+   encounters while keeping coordinate changes distinct from physical propagation.
    A complete
    loop observer now detects hidden relative bits, and a fiber-adjacency-derived spectral probe
    sees their effect on graph modes. Static localization now has an infinite-lattice certificate,
