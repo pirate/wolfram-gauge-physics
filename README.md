@@ -361,6 +361,19 @@ raw labelings that the exact graph-isomorphism quotient recognizes as the same c
 
 ![Exact transport response and the spatial effect of hidden gauge activity](docs/images/triangle-charge-response.png)
 
+- **Gauge-complete patch dynamics with exact overlap information.** Short holonomy
+  products distinguish all 49 gauge states of a three-loop patch, with linear-size
+  reconstructible coordinates for larger tuples. Two separately complete patches
+  still lose their relative alignment: 845 compatible patch-state pairs correspond
+  to 1,393 states of their union. A double-coset gluing label retains exactly that
+  missing information, including connector transport between different basepoints.
+  All 61,292 transitions of the resulting boundary-contained kernel match C++ raw-link
+  updates. Identical separate patch states can develop different mean charge after
+  three controlled updates. This is a lossless local gauge reduction, not yet a
+  whole-mesh or quantum model. See the [gluing construction and exact kernel](docs/triangle-patch-observer.md).
+
+![Actual patch overlap and alignment-dependent mean charge](docs/images/triangle-patch-observer.png)
+
 - **GPU-ready exact algebra and measured compression limits.** Group operations are compiled into
   dense integer multiplication, inverse, and action tables. On an Apple M1 Max, the Metal
   microbenchmark processed one million frame transformations in 0.318 ms and one million
@@ -416,6 +429,10 @@ raw labelings that the exact graph-isomorphism quotient recognizes as the same c
    with an exact three-attempt mean-response witness. Test transported relative-loop
    relations as additional observables before claiming a closed effective equation
    or a continuum transport coefficient.
+   Short-word coordinates and double-coset gluing now give an exact boundary-contained
+   patch kernel. Extend it to consistent overlapping covers with explicit boundary
+   context; independently canonicalized patches must not discard their relative
+   alignment when new encounters form.
    A complete
    loop observer now detects hidden relative bits, and a fiber-adjacency-derived spectral probe
    sees their effect on graph modes. Static localization now has an infinite-lattice certificate,
