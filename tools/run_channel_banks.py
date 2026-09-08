@@ -30,7 +30,7 @@ class MixedOracle:
         paths = self.fan.patches[patch][::-1] if rule else self.pairs[patch]
         result = 0
         for path in paths:
-            result = 8*result+self.fan.transport(links, path)
+            result = self.group.n*result+self.fan.transport(links, path)
         return result
 
     def update(self, links, rule, patch, table):
@@ -40,7 +40,7 @@ class MixedOracle:
         a, b = self.pairs[patch]
         code = self.code(links, 0, patch)
         target = table[code]
-        x, y = divmod(target, 8)
+        x, y = divmod(target, g.n)
         q = self.fan.transport(links, a[1:])
         new = g.mul[g.inv[q]][x]
         edge, reverse = a[0]
@@ -51,7 +51,7 @@ class MixedOracle:
 
     def histogram(self, links):
         sectors = self.fan.sectors(links)
-        return [sectors.count(a) for a in range(8)]
+        return [sectors.count(a) for a in range(self.group.n)]
 
 
 def seeds(oracle, side):

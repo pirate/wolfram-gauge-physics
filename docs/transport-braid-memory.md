@@ -167,7 +167,7 @@ characteristic polynomials. Its first changed trace power is likewise fourteen, 
 same difference of $-25,200$ after one circuit and restoration after two. The spectral
 memory is therefore present in the actual graph, not only in a selected mode projection.
 
-## 6. A concrete next-fiber criterion, not a claimed new simulation
+## 6. A next-fiber criterion, now realized in a separate experiment
 
 The square-fiber limitation is not a reason simply to use more vertices. Enumerating
 automorphisms of a **triangle** derives a six-element group, $\operatorname{Aut}(C_3)\cong S_3$.
@@ -178,9 +178,13 @@ For the exported triangle-group indices, take $(1,1,2,2)$ and pure generators on
 $(0,1)$ and $(0,2)$, using zero-based positions. Applying them in opposite orders produces
 $(5,1,5,2)$ and $(1,2,5,2)$, which have the same individual classes and identity ordered
 product but are not simultaneously conjugate. All automorphisms and words are derived
-and saved. **This is an algebraic candidate only**: the mixed-bank engine and raw transport
-experiments in this document still use the square fiber. Porting the raw boundary-fixed
-transport to this derived fiber is the next test, not a result we have already obtained.
+and saved. This scan is algebraic; the raw experiments in this document use the square
+fiber. The subsequent [triangle-fiber transport experiment](noncommuting-fiber-transport.md)
+now realizes noncommuting circuits on actual links using the same boundary-fixed vacancy
+rule. It checks every edge of the reachable four-state component against a fixed based-loop
+Hurwitz action and derives its $A_4$ response from projective coordinates over $\mathbb F_3$.
+The generalization is a generic transport runner, not a port of the square-specific
+class-converting mixed bank or a claim of quantum braid amplitudes.
 
 ## Reproduce
 

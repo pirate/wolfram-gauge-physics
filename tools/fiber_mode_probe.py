@@ -73,14 +73,15 @@ def connection_laplacian(vertices, edges, links, matrices):
 
 def lifted_graph_laplacian(vertices, edges, links, group, fiber_edges):
     ids = {v: i for i, v in enumerate(vertices)}
+    size = len(group.elements[0])
     lifted = set()
     for v in range(len(vertices)):
         for a, b in fiber_edges:
-            lifted.add(tuple(sorted((4*v+a, 4*v+b))))
+            lifted.add(tuple(sorted((size*v+a, size*v+b))))
     for (u, v), x in zip(edges, links):
         for a, b in enumerate(group.elements[x]):
-            lifted.add(tuple(sorted((4*ids[u]+a, 4*ids[v]+b))))
-    result = [[0]*(4*len(vertices)) for _ in range(4*len(vertices))]
+            lifted.add(tuple(sorted((size*ids[u]+a, size*ids[v]+b))))
+    result = [[0]*(size*len(vertices)) for _ in range(size*len(vertices))]
     for a, b in lifted:
         result[a][a] += 1
         result[b][b] += 1

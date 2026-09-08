@@ -124,7 +124,7 @@ class CentralExtension:
         return self.normalized(raw)[0]
 
 
-class LoopForest:
+class ConnectionForest:
     def __init__(self, vertices, edges, group):
         self.vertices = tuple(sorted(vertices))
         self.edges = tuple(tuple(e) for e in edges)
@@ -133,7 +133,6 @@ class LoopForest:
         vertex_set = set(self.vertices)
         if any(u >= v or u not in vertex_set or v not in vertex_set for u, v in self.edges):
             raise ValueError('expected canonical edges with known distinct vertices')
-        self.extension = CentralExtension(group)
         self.g = group
         adjacency = {v: [] for v in self.vertices}
         for i, (u, v) in enumerate(self.edges):
@@ -157,7 +156,7 @@ class LoopForest:
             self.components.append({'root': root, 'queue': queue, 'parents': parents, 'chords': chords})
 
     def based_loops(self, links):
-        if len(links) != len(self.edges) or any(x not in self.extension.bits for x in links):
+        if len(links) != len(self.edges) or any(not isinstance(x, int) or not 0 <= x < self.g.n for x in links):
             raise ValueError('invalid raw link vector')
         result = []
         for component in self.components:
@@ -174,7 +173,15 @@ class LoopForest:
         return result
 
     def signature(self, links):
-        return tuple(self.extension.normalized(values)[0] for values in self.based_loops(links))
+        return tuple(min(tuple(row[x] for x in values) for row in self.g.conj)
+                     for values in self.based_loops(links))
+
+    def legacy_signature(self, links):
+        result = []
+        for values in self.based_loops(links):
+            flattened = min(tuple(v for x in values for v in self.g.elements[row[x]]) for row in self.g.conj)
+            result.extend((len(values), *flattened))
+        return result
 
     def representative(self, signature):
         if len(signature) != len(self.components):
@@ -184,7 +191,7 @@ class LoopForest:
             if len(values) != len(component['chords']):
                 raise ValueError('signature has wrong cycle rank')
             for edge, x in zip(component['chords'], values):
-                if x not in self.extension.bits:
+                if not isinstance(x, int) or not 0 <= x < self.g.n:
                     raise ValueError('invalid loop group value')
                 links[edge] = x
         return links
@@ -199,6 +206,16 @@ class LoopForest:
             return values[::-1]
         u, v = self.edges[spec['chords'][chord]]
         return path(u)+[v]+path(v)[-2::-1]
+
+
+class LoopForest(ConnectionForest):
+    """Square-fiber specialization retaining its fast central-coordinate normal form."""
+    def __init__(self, vertices, edges, group):
+        super().__init__(vertices, edges, group)
+        self.extension = CentralExtension(group)
+
+    def signature(self, links):
+        return tuple(self.extension.normalized(values)[0] for values in self.based_loops(links))
 
 
 def local_census(extension, maximum_loops=4):

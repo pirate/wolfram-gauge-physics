@@ -252,6 +252,18 @@ raw labelings that the exact graph-isomorphism quotient recognizes as the same c
 
 ![Actual closed transport and gauge-invariant memory](docs/images/transport-braid.png)
 
+- **Noncommuting transport from a triangle fiber, with an exact algebraic explanation.**
+  Deriving $\operatorname{Aut}(C_3)=S_3$ from adjacency and using the same local vacancy rule
+  makes two closed circuits order-dependent on actual links. Their four reachable complete
+  gauge states realize $\operatorname{PSL}(2,\mathbb F_3)\cong A_4$: every measured action
+  matches a fixed Hurwitz word, and all 27 neutral four-reflection tuples validate the
+  projective-coordinate derivation. Opposite circuit orders preserve every face class but
+  change the full bundle-graph spectrum; square-fiber and commuting-seed controls do not.
+  This is controlled classical holonomy response, not quantum statistics or autonomous matter.
+  See the [raw-link realization, finite-field proof, and controls](docs/noncommuting-fiber-transport.md).
+
+![Measured triangle-fiber circuits and their four-state gauge response](docs/images/fiber-transport-order.png)
+
 - **GPU-ready exact algebra and measured compression limits.** Group operations are compiled into
   dense integer multiplication, inverse, and action tables. On an Apple M1 Max, the Metal
   microbenchmark processed one million frame transformations in 0.318 ms and one million
@@ -302,8 +314,11 @@ raw labelings that the exact graph-isomorphism quotient recognizes as the same c
    the implementation to twisted bundles, directed or ribbon fibers, hypergraph fibers, higher
    connections, and dynamically changing fiber types. The closed-transport audit supplies a
    concrete first comparison: the square fiber has commuting pure-winding actions, while a
-   triangle-adjacency-derived group has noncommuting actions on holonomy gauge orbits. Realize
-   the latter on actual links before treating the algebraic candidate as simulated behavior.
+   triangle-adjacency-derived group now realizes a noncommuting four-state action on actual
+   links, with an exact projective-coordinate explanation. Extend this beyond controlled
+   circuits to autonomous encounters, other fiber-derived groups, and changing geometry;
+   test which relational observables remain sufficient rather than assuming four loops
+   classify arbitrary connections.
 
 4. **Turn the GPU representation into an end-to-end evolution kernel.** Fuse matching,
    affected-cycle updates, canonical signatures, deduplication, and queue insertion in a persistent

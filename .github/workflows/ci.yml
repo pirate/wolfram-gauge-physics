@@ -118,6 +118,15 @@ jobs:
           out/spectral-venv/bin/python tools/spectral_transition.py --verify-with-flint data/d4-spectral-transition.json
           out/spectral-venv/bin/python tests/transport_braid.py
           out/spectral-venv/bin/python tools/transport_braid.py --output out/transport-braid.json
+      - name: Derived-fiber transport and exact projective braid action
+        # This dataset contains exact values only, unlike the D4 mode estimates.
+        env:
+          OPENBLAS_NUM_THREADS: '1'
+          VECLIB_MAXIMUM_THREADS: '1'
+        run: |
+          out/spectral-venv/bin/python tests/fiber_transport.py
+          out/spectral-venv/bin/python tools/fiber_transport.py --output out/fiber-transport.json
+          diff -u data/fiber-transport-order.json out/fiber-transport.json
       - name: Multiway engine smoke test
         run: |
           ./build/wgphysics_evolve --steps 2 --output out/smoke.json

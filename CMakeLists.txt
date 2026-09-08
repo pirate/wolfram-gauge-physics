@@ -132,6 +132,10 @@ add_executable(wgphysics_mixed_bank_experiments src/mixed_bank_experiments.cpp)
 target_link_libraries(wgphysics_mixed_bank_experiments PRIVATE wgphysics)
 target_compile_options(wgphysics_mixed_bank_experiments PRIVATE -Wall -Wextra -Wpedantic)
 
+add_executable(wgphysics_fiber_transport src/fiber_transport.cpp)
+target_link_libraries(wgphysics_fiber_transport PRIVATE wgphysics)
+target_compile_options(wgphysics_fiber_transport PRIVATE -Wall -Wextra -Wpedantic)
+
 add_executable(wgphysics_chain_experiments src/chain_experiments.cpp)
 target_link_libraries(wgphysics_chain_experiments PRIVATE wgphysics)
 target_compile_options(wgphysics_chain_experiments PRIVATE -Wall -Wextra -Wpedantic)

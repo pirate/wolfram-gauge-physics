@@ -22,14 +22,14 @@ def hurwitz(group, values, index, inverse=False):
     return tuple(output)
 
 
-def pure_word(group, values, i, j):
+def pure_word(group, values, i, j, inverse=False):
     """Execute adjacent Hurwitz moves, not the simplified central-bit formula."""
     if not 0 <= i < j < len(values):
         raise ValueError('invalid pure-braid pair')
     preparation = list(range(j-1, i, -1))
     for k in preparation:
         values = hurwitz(group, values, k)
-    values = hurwitz(group, hurwitz(group, values, i), i)
+    values = hurwitz(group, hurwitz(group, values, i, inverse=inverse), i, inverse=inverse)
     for k in reversed(preparation):
         values = hurwitz(group, values, k, inverse=True)
     return tuple(values)
@@ -119,7 +119,8 @@ def spectral_word_witness(geometry, states, full_bundle=False):
     def matrix(links):
         if full_bundle:
             return lifted_graph_laplacian(list(range(geometry.size)), geometry.edges, links,
-                                          geometry.group, representation(geometry.group)['fiber_edges'])
+                                          geometry.group, geometry.fiber_edges if hasattr(geometry, 'fiber_edges')
+                                          else representation(geometry.group)['fiber_edges'])
         return geometry.operator(links).toarray().astype(int).tolist()
     coefficients = [list(reversed(list(fmpz_mat(matrix(s['links'])).charpoly()))) for s in states]
     first = next((i for i, (a, b) in enumerate(zip(coefficients[0], coefficients[1])) if a != b), None)
@@ -136,12 +137,9 @@ def spectral_word_witness(geometry, states, full_bundle=False):
             'characteristic_polynomial_sha256_by_lap': [hashlib.sha256(','.join(map(str, c)).encode()).hexdigest() for c in coefficients]}
 
 
-class TransportExperiment:
-    def __init__(self, side=12):
-        if not 10 <= side <= 24:
-            raise ValueError('transport audit supports sides 10 through 24')
-        self.geometry = ModeGeometry(side)
-        self.factor = BankFactor(side, json.loads(Path('data/d4-triple-channels.json').read_text()))
+class FixedMeshTransport:
+    """Group-independent geometric paths and explicit frame witnesses on a connected mesh."""
+    def compile_dual_topology(self):
         self.adjacency = [set() for _ in self.geometry.faces]
         self.patch = {}
         for p, (u, v) in enumerate(self.factor.pairs):
@@ -149,12 +147,11 @@ class TransportExperiment:
             self.adjacency[v].add(u)
             self.patch.setdefault((u, v), p)
             self.patch.setdefault((v, u), p)
-        self.forest = LoopForest(range(self.geometry.size), self.geometry.edges, self.geometry.group)
 
     def tree_transports(self, links):
         g = self.geometry.group
         spec = self.forest.components[0]
-        transports = {spec['root']: 0}
+        transports = {spec['root']: g.identity}
         for v in spec['queue'][1:]:
             u, edge, reverse = spec['parents'][v]
             value = g.inv[links[edge]] if reverse else links[edge]
@@ -164,7 +161,7 @@ class TransportExperiment:
     def frame_witness(self, before, after):
         g = self.geometry.group
         a, b = self.tree_transports(before), self.tree_transports(after)
-        for root_frame in range(8):
+        for root_frame in range(g.n):
             frames = [g.mul[b[v]][g.mul[root_frame][g.inv[a[v]]]] for v in range(self.geometry.size)]
             transformed = [g.mul[frames[v]][g.mul[x][g.inv[frames[u]]]]
                            for (u, v), x in zip(self.geometry.edges, before)]
@@ -177,7 +174,7 @@ class TransportExperiment:
         transports = self.tree_transports(links)
         values = []
         for face, path in zip(self.geometry.faces, self.geometry.paths):
-            h = 0
+            h = g.identity
             for edge, reverse in path:
                 value = g.inv[links[edge]] if reverse else links[edge]
                 h = g.mul[value][h]
@@ -185,24 +182,8 @@ class TransportExperiment:
             values.append(g.mul[g.inv[t]][g.mul[h][t]])
         return values
 
-    def loop_relations(self, states):
-        g = self.geometry.group
-        based = [self.based_faces(s['links']) for s in states]
-        pairs = []
-        occupied = [i for i, c in enumerate(states[0]['face_classes']) if c]
-        for k, i in enumerate(occupied):
-            for j in occupied[k+1:]:
-                if states[0]['face_classes'][i] != states[0]['face_classes'][j]:
-                    continue
-                values = [g.mul[row[i]][g.inv[row[j]]] for row in based]
-                if any(x not in (0, self.forest.extension.z) for x in values):
-                    raise ValueError('same-class reflection relation is not central')
-                pairs.append({'faces': [i, j], 'word': 'H_i H_j^-1 at the fixed spanning-tree root',
-                              'central_holonomy_by_lap': values})
-        return pairs
-
     def empty_hexagon_detours(self, links, walk):
-        occupied = {i for i, c in enumerate(self.geometry.sectors(links)) if c}
+        occupied = {i for i, c in enumerate(self.geometry.sectors(links)) if c != self.geometry.group.identity}
         candidates = []
         for k, (u, v) in enumerate(zip(walk, walk[1:])):
             shared = set(self.geometry.faces[u][:3]) & set(self.geometry.faces[v][:3])
@@ -280,7 +261,7 @@ class TransportExperiment:
 
     def step(self, links, u, v, events):
         before = self.geometry.sectors(links)
-        if not before[u] or before[v]:
+        if before[u] == self.geometry.group.identity or before[v] != self.geometry.group.identity:
             raise ValueError('transport requires one nonflat source and an empty target')
         patch = self.patch[u, v]
         code, target = self.factor.oracle.update(links, 0, patch, self.factor.tables[0])
@@ -291,7 +272,7 @@ class TransportExperiment:
         events.append([len(events)+1, 0, patch, code, target])
 
     def move(self, links, origin, target, events):
-        occupied = {i for i, c in enumerate(self.geometry.sectors(links)) if c and i != origin}
+        occupied = {i for i, c in enumerate(self.geometry.sectors(links)) if c != self.geometry.group.identity and i != origin}
         parents, queue = {origin: None}, deque([origin])
         while queue and target not in parents:
             u = queue.popleft()
@@ -308,6 +289,31 @@ class TransportExperiment:
         for u, v in zip(path, path[1:]):
             self.step(links, u, v, events)
         return path
+
+class TransportExperiment(FixedMeshTransport):
+    def __init__(self, side=12):
+        if not 10 <= side <= 24:
+            raise ValueError('transport audit supports sides 10 through 24')
+        self.geometry = ModeGeometry(side)
+        self.factor = BankFactor(side, json.loads(Path('data/d4-triple-channels.json').read_text()))
+        self.compile_dual_topology()
+        self.forest = LoopForest(range(self.geometry.size), self.geometry.edges, self.geometry.group)
+
+    def loop_relations(self, states):
+        g = self.geometry.group
+        based = [self.based_faces(s['links']) for s in states]
+        pairs = []
+        occupied = [i for i, c in enumerate(states[0]['face_classes']) if c]
+        for k, i in enumerate(occupied):
+            for j in occupied[k+1:]:
+                if states[0]['face_classes'][i] != states[0]['face_classes'][j]:
+                    continue
+                values = [g.mul[row[i]][g.inv[row[j]]] for row in based]
+                if any(x not in (0, self.forest.extension.z) for x in values):
+                    raise ValueError('same-class reflection relation is not central')
+                pairs.append({'faces': [i, j], 'word': 'H_i H_j^-1 at the fixed spanning-tree root',
+                              'central_holonomy_by_lap': values})
+        return pairs
 
     def prepare(self, commuting=False, empty=False):
         links = self.geometry.seed(reflection_only=commuting)
