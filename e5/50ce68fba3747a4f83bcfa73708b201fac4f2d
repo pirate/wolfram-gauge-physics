@@ -1,0 +1,37 @@
+tests/triangle_lazy_gauge.py
+  s_33c6c7a35bd0ca::t_8d99aa83509c11 81,178-179
+  s_33c6c7a35bd0ca::t_7b223c89ce67b6 18,22-35,38-47,102,127-128
+  s_33c6c7a35bd0ca::t_a12e89fda90580 1-17,19-21,36-37,48-80,82-101,103-126,129-177,180-188
+tools/triangle_lazy_gauge.py
+  s_33c6c7a35bd0ca::t_8d99aa83509c11 70-82,84,177-183,186-189
+  s_33c6c7a35bd0ca::t_43ec07ea12df0f 31,54,112,114-117
+  s_33c6c7a35bd0ca::t_6a640f056928d6 1-30,32-53,55-69,83,85-111,113,118-176,184-185,190-245
+README.md
+  s_33c6c7a35bd0ca::t_63ad789c7ec826 377-387,447-449
+.github/workflows/ci.yml
+  s_33c6c7a35bd0ca::t_63ad789c7ec826 185-190
+docs/triangle-lazy-gauge.md
+  s_33c6c7a35bd0ca::t_63ad789c7ec826 1-147
+tools/bench_triangle_lazy_gauge.py
+  s_33c6c7a35bd0ca::t_1970eed5dbd735 1-78
+data/triangle-lazy-gauge-benchmark.json
+  s_33c6c7a35bd0ca::t_97cc19f80e9f7b 1
+data/triangle-lazy-gauge.json
+  s_33c6c7a35bd0ca::t_4d7fc20828d34d 1
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.2",
+  "base_commit_sha": "e550ce68fba3747a4f83bcfa73708b201fac4f2d",
+  "prompts": {},
+  "sessions": {
+    "s_33c6c7a35bd0ca": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a061ab-263d-7860-b882-4955b6e0b240",
+        "model": "gpt-6-astra"
+      },
+      "human_author": "Nick Sweeting <git@sweeting.me>"
+    }
+  }
+}
