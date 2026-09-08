@@ -1,0 +1,39 @@
+README.md
+  s_33c6c7a35bd0ca::t_5535f498ad6bea 364-376,432-435
+tools/plot_triangle_patch_observer.py
+  s_33c6c7a35bd0ca::t_5535f498ad6bea 1-50
+docs/triangle-patch-observer.md
+  s_33c6c7a35bd0ca::t_5535f498ad6bea 1-212
+tools/triangle_patch_observer.py
+  s_33c6c7a35bd0ca::t_286b1b5478da7a 130-131,266,306-307,324-325
+  s_33c6c7a35bd0ca::t_175915cbcf6446 70,82,148-150,176-178,180,190-224
+  s_33c6c7a35bd0ca::t_2f09f7a6736ec3 1-9,11-16,22-40,90-94,98-105,107-129,132-134,138,144-147,160,163-164,166-175,179,225-226,234-256,259-261,280-284,287-289,291,294-300,302,305,308-312,314,355-367
+  s_33c6c7a35bd0ca::t_01a855b0884779 10,17-21,41-69,71-81,83-89,95-97,106,135-137,139-143,161-162,165
+  s_33c6c7a35bd0ca::t_8e99dd36d39719 303-304
+  s_33c6c7a35bd0ca::t_f2144b810fe1c7 151-159,181-189
+  s_33c6c7a35bd0ca::t_f20cd69ddd45e5 262-265,267-279,301,313,315-316,318-323,326-354
+  s_33c6c7a35bd0ca::t_1f773c56c5a3c3 227-233,257-258,285-286,290,292-293,317
+tests/triangle_patch_observer.py
+  s_33c6c7a35bd0ca::t_4712e82377af87 102,104-108,110-126
+  s_33c6c7a35bd0ca::t_766908a4ada6b5 1-101,103,109,127-198
+.github/workflows/ci.yml
+  s_33c6c7a35bd0ca::t_5535f498ad6bea 179-184
+data/triangle-patch-observer.json
+  s_33c6c7a35bd0ca::t_9eff6c59cb38d9 1
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.2",
+  "base_commit_sha": "4350e1881da459711c947c2e2170ee586ffd59f5",
+  "prompts": {},
+  "sessions": {
+    "s_33c6c7a35bd0ca": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a061ab-263d-7860-b882-4955b6e0b240",
+        "model": "gpt-6-astra"
+      },
+      "human_author": "Nick Sweeting <git@sweeting.me>"
+    }
+  }
+}
