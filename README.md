@@ -328,6 +328,19 @@ raw labelings that the exact graph-isomorphism quotient recognizes as the same c
 
 ![Actual reflection stars reveal activity hidden by identical charge fields](docs/images/triangle-reference.png)
 
+- **Locally seeded nonabelian activity spreads through actual connections.** A single
+  changed link leaves the entire initial charge field unchanged but activates the
+  existing reaction/transport bank. Across 36 controlled runs on 72-, 288-, and
+  1,152-face meshes, every face eventually changes charge; untouched and
+  reaction-disabled controls stay fixed. Every changing event has checked read/write
+  ancestry back to the seed, and a common local gauge transformation preserves the
+  measured response. First-passage maps and periodic-seam warnings distinguish
+  spreading from finite-box saturation. This is externally seeded classical activity,
+  not a localized particle or an established propagation law. See the
+  [exact initial fluctuation rate, coupled controls, and spreading audit](docs/triangle-spreading.md).
+
+![Actual one-link activation and boundary-marked spreading measurements](docs/images/triangle-spreading.png)
+
 - **GPU-ready exact algebra and measured compression limits.** Group operations are compiled into
   dense integer multiplication, inverse, and action tables. On an Apple M1 Max, the Metal
   microbenchmark processed one million frame transformations in 0.318 ms and one million
@@ -372,7 +385,10 @@ raw labelings that the exact graph-isomorphism quotient recognizes as the same c
    persistence, and positional correlations without assuming this alone evades equilibrium
    restrictions. Exact reference sampling and a local frozen-state criterion now separate
    stationary statistics from reachability; classify active components and measure relaxation
-   without assuming nonabelian holonomy guarantees mixing. A complete
+   without assuming nonabelian holonomy guarantees mixing. Single-link activation now
+   spreads across three finite mesh sizes; measure independent pre-seam first-passage
+   statistics and test persistent relational structures inside that active region.
+   A complete
    loop observer now detects hidden relative bits, and a fiber-adjacency-derived spectral probe
    sees their effect on graph modes. Static localization now has an infinite-lattice certificate,
    but one primitive update can remove above-band modes. Identify and test mechanisms for persistence without
