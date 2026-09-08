@@ -189,3 +189,6 @@ The next physical gap is not a prettier braid picture: it is whether unconstrain
 evolution creates useful, persistent relational structure and couples it to localization
 or other graph-native observables. Imposing these circuits as autonomous rules, assigning
 complex amplitudes by hand, or calling spectral memory a bound particle would not close it.
+The [unrouted recurrence detector](unrouted-transport.md) now finds gauge-changing tagged
+returns under a state-independent scheduler, accounts for torus winding in its controls,
+and identifies the remaining absence of positional back-reaction in the vacancy rule.

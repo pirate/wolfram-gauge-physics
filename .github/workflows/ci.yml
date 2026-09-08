@@ -127,6 +127,9 @@ jobs:
           out/spectral-venv/bin/python tests/fiber_transport.py
           out/spectral-venv/bin/python tools/fiber_transport.py --output out/fiber-transport.json
           diff -u data/fiber-transport-order.json out/fiber-transport.json
+          out/spectral-venv/bin/python tests/unrouted_transport.py
+          out/spectral-venv/bin/python tools/unrouted_transport.py --output out/unrouted-transport.json
+          diff -u data/unrouted-transport.json out/unrouted-transport.json
       - name: Multiway engine smoke test
         run: |
           ./build/wgphysics_evolve --steps 2 --output out/smoke.json

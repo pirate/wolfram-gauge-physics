@@ -261,6 +261,10 @@ raw labelings that the exact graph-isomorphism quotient recognizes as the same c
   change the full bundle-graph spectrum; square-fiber and commuting-seed controls do not.
   This is controlled classical holonomy response, not quantum statistics or autonomous matter.
   See the [raw-link realization, finite-field proof, and controls](docs/noncommuting-fiber-transport.md).
+  An [unrouted recurrence detector](docs/unrouted-transport.md) also finds gauge memory under
+  state-independent local scheduling, with an exact torus-winding explanation of its
+  commuting controls and explicit bounded-negative runs. The vacancy rule still has no
+  hidden-state feedback into defect motion.
 
 ![Measured triangle-fiber circuits and their four-state gauge response](docs/images/fiber-transport-order.png)
 
