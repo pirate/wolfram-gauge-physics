@@ -338,6 +338,10 @@ raw labelings that the exact graph-isomorphism quotient recognizes as the same c
   spreading from finite-box saturation. This is externally seeded classical activity,
   not a localized particle or an established propagation law. See the
   [exact initial fluctuation rate, coupled controls, and spreading audit](docs/triangle-spreading.md).
+  An [exact discrete event clock and local active-set cache](docs/triangle-event-clock.md)
+  now support 32 independent seeds paired across two mesh sizes. Their translated
+  microscopic prefixes agree exactly before the smaller boundary cutoff; censored
+  first-passage trials remain explicitly counted instead of biasing the reported means.
 
 ![Actual one-link activation and boundary-marked spreading measurements](docs/images/triangle-spreading.png)
 
@@ -388,6 +392,9 @@ raw labelings that the exact graph-isomorphism quotient recognizes as the same c
    without assuming nonabelian holonomy guarantees mixing. Single-link activation now
    spreads across three finite mesh sizes; measure independent pre-seam first-passage
    statistics and test persistent relational structures inside that active region.
+   The first exact paired pre-boundary measurements and residence-time-preserving
+   event sampler are now available; extend their distance range without confusing
+   an advancing fluctuation with a persistent bound object.
    A complete
    loop observer now detects hidden relative bits, and a fiber-adjacency-derived spectral probe
    sees their effect on graph modes. Static localization now has an infinite-lattice certificate,
