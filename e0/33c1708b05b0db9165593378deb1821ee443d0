@@ -1,0 +1,35 @@
+docs/triangle-spreading.md
+  s_33c6c7a35bd0ca::t_bf9b460d5975dc 1-190
+tools/triangle_spreading.py
+  s_33c6c7a35bd0ca::t_e37f23789e4621 12,59-60,103,116-117,158,168,195-205,225-226,232,238-239
+  s_33c6c7a35bd0ca::t_d8feb047da17d1 1-11,13-58,61-102,104-115,118-157,159-167,169-194,206-224,227-231,233-237,240-266
+tools/plot_triangle_spreading.py
+  s_33c6c7a35bd0ca::t_8ded06cd751cb9 1-68
+.github/workflows/ci.yml
+  s_33c6c7a35bd0ca::t_bf9b460d5975dc 161-166
+tests/triangle_spreading.py
+  s_33c6c7a35bd0ca::t_5b77c0715d588f 129-149
+  s_33c6c7a35bd0ca::t_18b995fe247833 27,70
+  s_33c6c7a35bd0ca::t_c8ef61238da431 1-26,28-69,71-128,150-162
+README.md
+  s_33c6c7a35bd0ca::t_18b995fe247833 388-391
+  s_33c6c7a35bd0ca::t_bf9b460d5975dc 331-343
+data/triangle-spreading.json
+  s_33c6c7a35bd0ca::t_71917ba1ce3ef7 1
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.2",
+  "base_commit_sha": "e033c1708b05b0db9165593378deb1821ee443d0",
+  "prompts": {},
+  "sessions": {
+    "s_33c6c7a35bd0ca": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a061ab-263d-7860-b882-4955b6e0b240",
+        "model": "gpt-6-astra"
+      },
+      "human_author": "Nick Sweeting <git@sweeting.me>"
+    }
+  }
+}
