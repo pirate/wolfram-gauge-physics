@@ -1,0 +1,37 @@
+.github/workflows/ci.yml
+  s_33c6c7a35bd0ca::t_166c7deafc6efe 148
+README.md
+  s_33c6c7a35bd0ca::t_166c7deafc6efe 296-300
+docs/triangle-modes.md
+  s_33c6c7a35bd0ca::t_166c7deafc6efe 189-192
+tools/triangle_mode_rates.py
+  s_33c6c7a35bd0ca::t_f7edcad2af435d 17,20-45,71,90-95,124,200-201,212-214,236
+  s_33c6c7a35bd0ca::t_644a98b63f14d1 153,164-166,168,172-174,176,193
+  s_33c6c7a35bd0ca::t_46abfefe74ce73 12,148-152,154-163,167,169-171,175,177-192,194-196,237-238
+  s_33c6c7a35bd0ca::t_18ab2b2b3174a8 1-11,13-16,18-19,46-70,72-89,96-123,125-131,134-137,140-147,197-199,202-211,215-235,239-252
+  s_33c6c7a35bd0ca::t_62bbfbd1257197 132-133,138-139
+docs/triangle-mode-rates.md
+  s_33c6c7a35bd0ca::t_166c7deafc6efe 1-93,119-143
+  s_33c6c7a35bd0ca::t_644a98b63f14d1 94-118
+tests/triangle_mode_rates.py
+  s_33c6c7a35bd0ca::t_166c7deafc6efe 1-81,104-106
+  s_33c6c7a35bd0ca::t_644a98b63f14d1 82-103
+data/triangle-mode-rates.json
+  s_33c6c7a35bd0ca::t_bc7b5871380bfe 1
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.2",
+  "base_commit_sha": "b8584ea4b75f3a961ba30802d172ef0e8464a761",
+  "prompts": {},
+  "sessions": {
+    "s_33c6c7a35bd0ca": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a061ab-263d-7860-b882-4955b6e0b240",
+        "model": "gpt-6-astra"
+      },
+      "human_author": "Nick Sweeting <git@sweeting.me>"
+    }
+  }
+}
