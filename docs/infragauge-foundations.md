@@ -1,4 +1,11 @@
-# Infrageometric gauge foundations
+# Finite-fiber construction and its assumptions
+
+This is a supplied-fiber laboratory, not a derivation of internal fibers
+from a bare hypergraph rewrite rule. The base, fiber adjacency, and
+connection data are inputs. Computing their symmetries determines what
+follows from those inputs; it does not explain why nature would select them.
+The missing rewrite-derived construction is the first question in the
+[research direction](research-direction.md).
 
 This layer follows the finite combinatorial hierarchy implemented by the Wolfram Institute's
 experimental [InfraGaugeTheory](https://github.com/WolframInstitute/InfraGaugeTheory) project,
@@ -8,9 +15,9 @@ audit used [this source revision](https://github.com/WolframInstitute/InfraGauge
 an independent C++ adaptation for the hypergraph rewrite engine; no Wolfram Language source is
 vendored.
 
-## Primitive hierarchy
+## Hierarchy within the supplied-fiber model
 
-1. A base graph `B` represents one discrete spatial state.
+1. A base graph `B` is the supplied discrete base, not yet physical space.
 2. A finite graph `F_x` lies over every base vertex `x`; together these form the total space `E`.
 3. Projection `pi: E -> B` says which total-space vertices belong to each fiber.
 4. A connection supplies unique horizontal lifts over base edges.
@@ -22,7 +29,7 @@ graph `F`. This is the complete-lift case of `InfraGaugeTheory`'s graph connecti
 layer also represents non-isomorphic fibers and partial lifts; the evolution kernels still
 specialize to homogeneous fibers.
 
-## Gauge group is derived
+## Calculate the symmetry group of the chosen fiber
 
 The allowed change of local fiber frame is not supplied by a string such as `U(1)`. It is
 
@@ -52,8 +59,10 @@ the old transport is factored through the fresh fiber:
 
 There is one factorization for every element of `Aut(F)`, but all factorizations form one orbit
 under changes of frame at `w`. They must therefore not be counted as different physical multiway
-branches. The quantum rewrite is the normalized state over this orbit. Distinct boundary
-holonomies remain orthogonal.
+branches. A separate amplitude construction assigns a normalized state over
+this orbit. Distinct boundary holonomies remain orthogonal in that chosen
+state space. This is a kinematic isometry, not a derived quantum evolution
+law or a derivation of probabilities for distinct rewrite histories.
 
 ## Steps beyond the upstream building blocks
 
@@ -63,7 +72,7 @@ The first implemented extensions are:
 - gauge transformations of entire connections and conjugacy-class observables;
 - a rewrite extension that preserves boundary parallel transport;
 - proof that fresh-fiber connection factorizations form a single gauge orbit;
-- a normalized quantum amplitude over that orbit;
+- a normalized amplitude construction over that orbit;
 - orthogonality of distinct boundary-holonomy sectors.
 
 An additional exact quotient removes local frame redundancy before general graph
@@ -78,7 +87,9 @@ tables. The derivation of a fiber's automorphisms remains an exact CPU-side setu
 repeated evolution operations become small integer lookups suitable for device constant or shared
 memory.
 
-This still defines kinematics, curvature sectors, and rewrite amplitudes—not matter or a force
-law. The next physical search layer must construct local update operators from total-space graph
-structure and causal rewrite data, then test which fiber families have propagating curvature
-defects and stable localized sectors.
+This defines kinematics, loop invariants, and a possible amplitude
+representation—not matter or a force law. Its role in the research
+program is to provide exact reference constructions against which to
+compare candidate fibers and transport obtained from actual rewrites.
+Choosing local operators on these fibers is a separate modeling step,
+not a completed connection to Wolfram's underlying rewrite proposal.

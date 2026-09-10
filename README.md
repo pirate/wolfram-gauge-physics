@@ -15,867 +15,524 @@ For suitable rules and under additional assumptions—especially locality, causa
 </td>
 </tr></table>
 
-This repository asks a deliberately bottom-up question:
+## The questions we are trying to answer
 
-> Can gauge structure be computed from discrete fibers and rewrite symmetries before naming a
-> continuum group, particle, force, lattice, or molecular geometry?
+This project starts from the interview above. The goal is to take one of
+Wolfram's unfinished ideas, turn it into a precise computational question,
+and find an answer—or a specific reason it fails.
 
-It connects the fiber and connection hierarchy explored by Wolfram Institute's
-[InfraGaugeTheory](https://github.com/WolframInstitute/InfraGaugeTheory) to exact multiway
-evolution from the
-[HypergraphRewritingEngine](https://github.com/WolframInstitute/HypergraphRewritingEngine), then
-adds the gauge-aware rewrite machinery needed between those two layers.
+Three questions organize the work:
 
-> [!IMPORTANT]
-> This is experimental mathematical software, not a demonstrated derivation of the Standard
-> Model, electromagnetism, particles, or continuum spacetime. Algebraic results concern finite
-> combinatorial models; sampled geometry estimates and visual projections are diagnostics.
+- **How does the network become space?** Can local rewrites produce a
+  stable large-scale dimension, and what happens when that dimension
+  varies? Wolfram discusses [dimension fluctuations at 1:11:17](https://www.youtube.com/watch?v=yAJTctpzp5w&t=4277s).
+- **Where would fields and charge come from?** Can choices within the
+  rewriting process give rise to internal degrees of freedom and their
+  interactions? He explicitly leaves [electric charge unresolved at 1:07:07](https://www.youtube.com/watch?v=yAJTctpzp5w&t=4027s).
+- **What could persist as a particle?** Can a recognizable structure
+  survive while its underlying network changes, move relative to its
+  surroundings, and interact with another such structure? He identifies
+  the missing [particle model at 1:25:38](https://www.youtube.com/watch?v=yAJTctpzp5w&t=5138s).
 
-# Progress So Far
+Molecules are a later target, not the assumed interpretation of a graph
+pattern. None of these three questions has been solved here. The
+calculations below provide starting tools and some restrictions on
+candidate answers.
 
-## 1. Why a graph, if the goal is spacetime?
+## 1. Start with relationships, not a stage to put particles on
 
-An ordinary simulation starts with space: a grid, a distance scale, and
-fields whose values live on that grid. This project asks whether some of
-that structure can instead be a result. Start with relationships; ask
-whether distance, dimension, and physical behavior emerge when many
-relationships act together.
+In an ordinary simulation, space is already there. Objects have positions
+and fields have values at those positions. In the proposal discussed in
+the interview, the network is what might eventually look like space.
+There is no separate stage underneath it.
 
-A base node is an abstract element, not a cubic voxel, a particle, or one
-value of an electromagnetic field. It has no built-in width or position.
-What it has is connections. Erase the coordinates from a drawing and those
-connections remain. They are the starting data from which a notion of
-"nearby" might be built. The neural-network analogy is closer than the
-voxel analogy in this limited sense: a node participates in a larger
-structure, rather than standing for one known physical quantity. But these
-nodes are not trained neurons, and there is no learned decoder into physics.
-
-A *hypergraph* lets a relationship involve more than two nodes. A *rewrite*
-is a small replacement rule: wherever this pattern of relationships
-occurs, replace it with that pattern. For example, replacing a direct link
-with two links through a new node changes the network's distance structure.
-The point is not to move a dot across a pre-existing stage. The proposed
-stage itself can change.
-
-In Python-like notation, a tiny example is:
+A node is an identifiable abstract element. It is not a voxel, an atom,
+or a sample of a known field. A hyperedge records a relationship between
+two or more elements. A rewrite replaces a small pattern of relationships
+with another, possibly creating new elements.
 
 ```python
-space = [(0, 1)]                    # a list of relationships between node IDs
-rewritten_space = [(0, 2), (2, 1)]  # insert a fresh node, 2, between 0 and 1
+before = [(0, 1), (0, 2)]
+after  = [(0, 2), (0, 3), (1, 3), (2, 3)]
 ```
 
-Here a *label* is just a name. `2` identifies a node; it does not mean
-two meters, twice the field strength, or a third coordinate. Each tuple
-lists related nodes, not a point's coordinates. Using strings as names
-would leave the mathematics unchanged.
+This example replaces two relationships with four, using a fresh node.
+The integers are IDs, like dictionary keys—not positions or measured
+values. The tuples list related IDs, not coordinates. Strings could name
+the same nodes without changing the structure.
 
-Why might that resemble 3D space? In a regular three-dimensional region,
-doubling a radius encloses roughly eight times as much volume. A network
-can be tested for a corresponding growth in the number of nodes reached
-within a given number of hops. That would be one clue, not a complete
-derivation of Euclidean geometry. A picture with three coordinates proves
-neither this scaling nor a physical length scale.
+It illustrates what a rewrite is; it is not established as a rule that
+produces matter.
 
-For time, record which rewrites require the results of earlier rewrites.
-This supplies an order of events, not yet seconds on a clock. The current
-hypergraph describes a candidate spatial state; its evolving causal
-structure is part of the proposed route to spacetime.
+![One local rewrite, with consumed relationships in amber and produced relationships in cyan](docs/images/readme-rewrite-primitives.svg)
+
+*The same rule used by the runnable example below. Node 3 is new.
+Dot positions help draw the connections; they are not measured positions
+in space. Even the unchanged endpoint pair (0,2) is a new edge occurrence
+after this rule consumes and reproduces it.*
+
+<details>
+<summary>Details: the state, the rule, and what has units</summary>
+
+A state is conceptually a `list[tuple[int, ...]]`. Repeated relationships
+can be distinct occurrences, so the engine also retains their identities.
+A rule contains two patterns: the relationships to consume and those to
+produce. Repeated names within a pattern identify the same node; fresh
+names on the output side introduce new nodes.
+
+Node IDs, adjacency, pattern matching, and event counts are discrete,
+exact data. There is no required floating-point precision at this layer.
+The count of nodes is not a length in meters; the count of rewrites is
+not elapsed time in seconds.
+
+Relabeling a graph changes its written representation, not its
+connectivity. Canonicalization detects that equivalence. It must preserve
+whatever additional data an experiment has actually put in the state;
+two bare graphs can be identical while their attached data differs.
+
+The rewrite engine is the Wolfram Institute's
+[HypergraphRewritingEngine](https://github.com/WolframInstitute/HypergraphRewritingEngine).
 
 ![Four successive states from the hypergraph rewriting engine](docs/images/rewrite-history.png)
 
-*Read from top left to bottom right. Each arrow is one rewrite; the vertex
-positions are a drawing layout, not measured positions in space.*
+*An actual engine history, read top left to bottom right. Each arrow is
+one rewrite; the layouts are not physical coordinates.*
 
-The repository studies two layers separately: the examples above rewrite
-the base network; the larger gauge experiments below keep a triangular
-mesh fixed while studying its internal dynamics. That mesh is a supplied
-laboratory, not an already-derived model of 3D space.
+Our [engine–gauge integration](docs/product-evolution.md) is more limited:
+its supported base change is transport-preserving edge subdivision,
+not arbitrary coupled geometry-and-field evolution.
+
+</details>
+
+## 2. Keep track of what happened—and what else could have happened
+
+A rewrite can use a relationship made by an earlier rewrite. That gives
+a dependency: the producer must happen before the consumer. Collect those
+dependencies and you have a causal graph.
+
+There may also be several places where the rule can apply. Following
+each possibility produces a multiway graph. Histories branch when there
+are alternatives and merge when they reach equivalent states.
+
+These are different records. A causal edge connects dependent **events**.
+A multiway edge connects a **state** to a possible next state.
+
+![Two independent subdivisions can happen in either order; a later event depends on both](docs/images/readme-history-vs-causality.svg)
+
+*A fully specified small example. Above: A and B can happen in either
+order and reach the same network. Below: C needs a relationship made by
+each, so its causal graph has two prerequisites. The colors track events,
+not fields. Node names are retained here; ignoring names can identify the
+two intermediate graphs as equivalent too. This illustrates the distinction,
+not quantum interference.*
+
+Why retain the alternatives? Wolfram's proposal makes their structure
+part of the physics question. Selecting one random history may be useful
+for some measurements, but it does not reproduce the whole multiway
+system or establish quantum probabilities.
 
 <details>
-<summary>Details: rewrite histories, equivalent states, and dimension</summary>
+<summary>Details: event dependencies, branching, and quantum claims</summary>
 
-Events retain the identities of their consumed and produced hyperedges.
-This supplies dependencies between events rather than inferring causality
-from proximity in a drawing. Exact graph canonicalization identifies
-different vertex labelings of the same state.
+An event record identifies consumed and produced hyperedge occurrences.
+A dependency follows from actual production and consumption; added
+interaction layers must also account for their read and write supports.
 
-**Data and units.** A node ID is an `int`; a hyperedge is a
-`tuple[int, ...]`; a spatial state is a `list` of those tuples, with
-additional event records. The varying tuple lengths make this a ragged
-list, not a dense matrix of field values. IDs have no physical units.
-Graph distance counts link hops. A rewrite count is an integer; the
-stochastic experiments also use a chosen continuous model-time clock.
-Neither has yet been calibrated to meters or seconds.
+A path can be stored as a `tuple[int, ...]` of event IDs. Storing
+`(A, B)` instead of `(B, A)` records order; the rewrite rule determines
+whether both orders are possible and whether their results agree.
+Order dependence is something to examine, not an extra microscopic
+substance.
 
-![Alternative histories with equivalent graph labelings marked](docs/images/multiway-evolution.png)
+The engine exports finite multiway and causal structures. A branchial
+view compares alternatives across a selected slice. Its adjacency is
+not by itself an entanglement measure. Nor do path counts alone provide
+complex amplitudes, interference, or the Born rule.
 
-The example has 13 raw states and 10 canonical graph states. This is a
-graph-isomorphism quotient; it is distinct from the gauge quotient below.
+![An actual exported multiway example](docs/images/multiway-evolution.png)
 
-Wolfram's own visual introduction puts the multiway history and its
-branchial slices alongside each other:
+This export has 13 raw states and 10 graph-isomorphism classes. Detecting
+equivalent node labelings is not a proof that all update orders have
+equivalent causal histories.
 
-[![Wolfram Physics Project documentation showing a layered multiway graph](docs/images/wolfram-official-multiway.png)](https://www.wolframphysics.org/technical-introduction/the-updating-process-in-our-models/branchial-graphs-and-multiway-causal-graphs/)
+Causal invariance is a stronger question than whether two finite
+histories end at the same graph. A bounded computation can find a
+counterexample or establish a bounded result; a general conclusion
+requires an argument covering the unexamined histories.
 
-*Screenshot of the official Wolfram Physics Project site. The small blue
-diagrams are graph states; the horizontal lines select slices of their
-multiway history. This is an upstream example, not an output of this
-repository or a screenshot of our debugger.*
+[![Wolfram's own visual introduction to multiway and branchial graphs](docs/images/wolfram-official-multiway.png)](https://www.wolframphysics.org/technical-introduction/the-updating-process-in-our-models/branchial-graphs-and-multiway-causal-graphs/)
 
-Intrinsic geometry probes use graph-ball volume and random-walk return
-probability, looking for scaling ranges of the form
+*Screenshot of Wolfram's technical introduction. The small blue diagrams
+are graph states; horizontal lines mark slices through their history.
+This is an upstream illustration, not our simulation result.*
+
+See [event-preserving integration](docs/product-evolution.md) and
+[causality, locality, and correlation](docs/phenomenon-detection.md#dependency-spatial-locality-and-quantum-correlation).
+
+</details>
+
+## 3. Measure whether something like space appears
+
+Stand at a node and count how many other nodes are reachable within one
+hop, two hops, three hops, and so on. In a region resembling ordinary
+three-dimensional space, doubling a sufficiently large radius should
+enclose roughly eight times as many nodes.
+
+That gives a way to ask about dimension without first drawing the graph
+in 3D. Repeat the measurement at different locations and times: does the
+same dimension persist, or does the growth pattern change?
+
+This is a direct route into the interview's dimension question. The
+current probes can make these measurements, but the small rule survey
+does not establish a three-dimensional regime or physical dimension
+fluctuations.
+
+```mermaid
+flowchart LR
+    N["Rewritten network"] --> B["Count nodes within r hops"]
+    N --> W["Measure random-walk returns"]
+    B --> C["Compare locations, scales, and later states"]
+    W --> C
+    C --> Q["Does a stable geometric regime appear?"]
+```
+
+<details>
+<summary>Mathematics: dimension measurements and their limits</summary>
+
+Let `ball_counts` be a `list[int]`: entry `r` counts nodes within
+graph distance `r` of a selected source. A local scaling estimate is
 
 ```math
-|B(v,r)|\propto r^{d_H},
-\qquad
+d_H(r)=\frac{d\log |B(v,r)|}{d\log r}.
+```
+
+An independent probe follows an auxiliary random walk and estimates its
+return probability. A power-law regime would have
+
+```math
 p_t(v,v)\propto t^{-d_s/2}.
 ```
 
-The quantities <span>d<sub>H</sub></span> and <span>d<sub>s</sub></span> are dimension estimates, not the number of
-coordinates chosen by a renderer. Finite size and scale dependence matter.
-Rewrite depth is an execution index, not derived proper time. Causal
-dependencies alone establish neither spatial locality nor entanglement.
+The estimated dimensions and probabilities are `float` values.
+The walk's time counts probe steps; it is not the time of the rewrites.
+Different dimension notions need not agree on a general graph.
 
-See [engine–gauge evolution](docs/product-evolution.md),
-[geometry and phenomenon detection](docs/phenomenon-detection.md), and
-[debugger interpretation](docs/debugger.md).
+The current probes use the undirected simple 2-section of a hypergraph:
+nodes sharing a hyperedge are connected. This measurement choice forgets
+edge ordering and multiplicity. Small graphs, boundaries, the projection,
+and source sampling can all affect the estimate.
 
-</details>
+A useful result needs a scaling window that survives larger graphs,
+different source choices, and continued evolution. Fluctuations must be
+distinguished from estimator noise. Curvature requires additional
+geometric information; a changing dimension estimate is not automatically
+a gravitational wave.
 
-## 2. What is a fiber, and why attach one to a node?
-
-A location and what can happen internally at that location are different
-things. A compass gives a useful analogy: moving the compass changes
-where it is; turning its needle changes its orientation without moving
-it. The whole set of possible needle orientations is an example of an
-internal space. One particular needle direction is a choice within that
-space, not the space itself.
-
-A *fiber* is the internal space attached to one base location. Here it is
-a small graph. In the example below, each base node has a triangle fiber
-with three internal vertices. Those three vertices are not three more
-locations in ordinary space, and the triangle is not a little object
-sitting above the node. The drawing separates the two layers so we can
-see which structure belongs to which location.
-
-![Three base nodes, each with its own three-vertex internal fiber graph](docs/images/readme-what-is-a-fiber.svg)
-
-*Read from the bottom up. A, B, and C belong to the base network. Each
-entire triangle belongs to one of those nodes. Its numbered vertices
-describe internal possibilities, not extra spatial coordinates.*
-
-```python
-fiber_vertices = [0, 1, 2]               # three names, not three spatial axes
-fiber_edges = [(0, 1), (1, 2), (2, 0)]  # the triangle's internal connections
-transport = [1, 2, 0]                    # 0 maps to 1; 1 to 2; 2 to 0
-```
-
-`transport` is a permutation: a `list[int]` with one destination for each
-fiber vertex. It is not a vector of three measured field strengths. The
-same internal label can occur at different base nodes; “slot 0 at A” and
-“slot 0 at B” are different members of the full structure.
-
-Why add this layer? Relationships between locations alone do not tell us
-how to compare internal structure at different locations. A connection
-provides that comparison: each base link carries a map matching the two
-fibers. In these experiments, those link maps are dynamical data; there
-is not also a physical compass needle or electron assigned to each node.
-
-The fiber constrains the possible maps. A triangle can be rotated or
-reflected while keeping its edges intact. Its allowed rearrangements form
-its *symmetry group*. We calculate that group from the chosen fiber
-rather than begin by declaring an electromagnetic gauge group.
-
-Now follow the matching maps around a closed base loop. You can return to
-the same location with the internal labels rearranged, just as successive
-turns can change an orientation. That net rearrangement is *holonomy*.
-It makes a loop's transport mismatch something we can calculate.
-
-![A labeled triangle fiber transported from A to B to C and back to A](docs/images/readme-fiber-holonomy.svg)
-
-*Follow the cyan marker. The last panel repeats location A, not a fourth
-base vertex. The chosen link maps return the marker to a different slot
-in the same fiber. This is a specified connection example, not a measured
-trajectory.*
-
-<details>
-<summary>Mathematics: fibers, connections, and loop holonomy</summary>
-
-For a homogeneous fiber <span>F</span>, the allowed local frame changes form
-
-```math
-G_F=\mathrm{Aut}(F).
-```
-
-For example, <span>Aut(C<sub>3</sub>) = S<sub>3</sub></span> and
-<span>Aut(C<sub>4</sub>) = D<sub>4</sub></span>, where <span>D<sub>4</sub></span> has eight elements. The
-evolution kernels use isomorphic fibers; a separate construction represents
-non-isomorphic fibers and partial lifts.
-
-An oriented base edge carries an isomorphism
-<span>U<sub>xy</sub>: F<sub>x</sub> → F<sub>y</sub></span>, with <span>U<sub>yx</sub> = U<sub>xy</sub><sup>−1</sup></span>. For a path
-<span>γ = (x<sub>0</sub>, …, x<sub>k</sub>)</span>,
-
-```math
-U_\gamma=U_{x_{k-1}x_k}\cdots U_{x_0x_1}.
-```
-
-A closed path gives a fiber automorphism. Identity holonomy is flat on
-that loop; nonidentity holonomy records a transport mismatch. This is a
-discrete connection observable, not yet a continuum field strength.
-
-For cycle fibers, every automorphism has the exact form
-
-```math
-U(v)=sv+a\pmod n,\qquad s\in\{-1,1\},\quad a\in\mathbb Z_n.
-```
-
-This represents <span>Aut(C<sub>n</sub>) = D<sub>n</sub></span> without expanding every
-fiber vertex. It does not replace the finite group with <span>U(1)</span>.
-
-**Data shape.** For a fiber with `n` vertices, a permutation has `n`
-integer entries. A whole connection is conceptually a
-`dict[tuple[int, int], list[int]]`: each oriented base link maps to one
-permutation. A permutation could be written as an `n`-by-`n` matrix of
-zeros and ones, but that is another representation, not additional data.
-For uniform fibers, every location uses the same fiber definition.
-
-The cycle family also has an exact compact representation:
-`(sign, shift)`, a `tuple[int, int]` acting as
-`new_label = (sign * old_label + shift) % n`, with `sign` equal to `1`
-or `-1`. There is no floating-point angle in that representation.
-The cycle's `n` vertices are not `n` spatial dimensions.
-
-See [fiber and connection foundations](docs/infragauge-foundations.md)
-and [cycle-fiber rules](docs/cycle-relational-dynamics.md).
+See [measurement definitions and limitations](docs/phenomenon-detection.md).
+The existing [38-rule, three-step survey](data/novelty-sweep-v1.json)
+selects diverse graph statistics, not a target shape. It is a starting
+survey, not an exhaustive rule search or a continuum-limit result.
 
 </details>
 
-## 3. Separate a change of labels from a change of state
+## 4. Ask where internal structure would come from
 
-Each fiber can use its own labels. Relabeling them changes the written link
-maps but must not change the answer to an experiment. This freedom is
-called *gauge freedom*.
+In the interview, the starting data are relationships and rewrites.
+There is no instruction to attach a triangle to every node.
 
-A real update changes the connection, the base network, or both. To define
-a local interaction, the model changes internal links while preserving
-transport around the chosen region's boundary. Neighboring faces share
-links, so their loop states cannot be updated independently.
+The gauge-theory lead is more specific in Wolfram's
+[technical introduction](https://www.wolframphysics.org/technical-introduction/potential-relation-to-physics/local-gauge-invariance/):
+different local rewrite choices may serve as equivalent descriptions,
+while a choice made here affects which choices remain possible later.
+The proposal connects this structure to gauge freedom and field
+propagation. That connection is something to construct and test.
 
-```mermaid
-flowchart TB
-    U["Connection on a region"] -->|"Relabel local fibers"| G["Same gauge state"]
-    U -->|"Change internal links; fix boundary transport"| N["Potentially different gauge state"]
-    N --> O["Recompute every affected loop from the shared links"]
-```
+A **fiber** is the collection of detailed states or descriptions that
+lie over one location in a chosen description. To derive one here, we
+would first need to specify what that description retains and which
+underlying distinctions it groups together.
+
+![Two different detailed graphs give the same answer to one coarse connectivity question](docs/images/readme-fiber-projection.svg)
+
+*An intentionally simple projection: keep the two endpoints and whether
+they are connected, but hide the route between them. A chain and a loop
+then look alike to that observer. They can still evolve differently.
+This explains a fiber as a set of alternatives; it does not derive a
+physical observer, a graph connection, or gauge equivalence.*
+
+[InfraGaugeTheory](https://github.com/WolframInstitute/InfraGaugeTheory)
+provides a language for graph fibers, projections, connections, and
+transport. Its stated goals include natural clustering into fibers and
+obtaining fibered graphs from hypergraph rewriting. Those are directly
+relevant open construction problems.
+
+### What the triangle experiments do—and do not—supply
+
+Our existing finite-gauge studies work in the opposite direction:
+**choose a fiber, calculate its symmetries, then study specified
+interactions.** This is a controlled laboratory for candidate structures.
+It has not derived the fiber or its dynamics from the bare rewrite system.
+
+Why three vertices? A triangle is the smallest simple graph whose
+symmetries can act differently when applied in different orders. It is
+small enough to enumerate exactly. That is a practical reason for a
+test case, not a reason that nature must use it.
+
+A five-node ring is another possible choice. So is a fifty-node ring.
+The connections matter as well as the count: ring-preserving maps are
+rotations and reflections, not arbitrary permutations. Current
+cycle-reaction results assume odd ring size; an even ring introduces
+additional algebraic cases. Adding internal vertices is not automatically
+increasing spatial resolution.
 
 <details>
-<summary>Mathematics: gauge equivalence and boundary-preserving updates</summary>
+<summary>Mathematics: supplied fibers versus a rewrite-derived construction</summary>
 
-Independent frame changes act as
+For a projection from detailed states or graph elements to a retained
+description, a fiber is a preimage:
+
+```math
+F_x=p^{-1}(x).
+```
+
+This definition alone supplies neither an internal adjacency nor a
+connection, symmetry group, or evolution law. Those structures need
+separate derivations. In particular, physically distinct alternatives
+must not be discarded merely because a selected observer fails to
+distinguish them.
+
+In the current homogeneous graph-fiber experiments, the internal
+adjacency is supplied. Its automorphisms are then calculated exactly:
+
+```math
+G=\mathrm{Aut}(F).
+```
+
+![A specified triangle fiber over each of three base nodes](docs/images/readme-what-is-a-fiber.svg)
+
+*Each upper triangle is a separately supplied internal graph. Dashed
+lines say which base node it belongs to; they are not extra spatial
+connections. Unlike the preceding projection example, this construction
+supplies the fiber's internal adjacency from the start.*
+
+For a cycle with `n >= 3` vertices, each map has the form
+
+```math
+U(v)=sv+a\pmod n,
+\qquad s\in\{-1,1\},\quad a\in\mathbb Z_n.
+```
+
+There are `2*n` such maps. A map can be represented as a
+`list[int]` of length `n`, or exactly as a `(sign, shift)` tuple
+for this cycle family. It does not require an `n`-by-`n` floating-point
+matrix or an angle tolerance.
+
+The triangle allows all six permutations of its three vertices.
+A link carries one allowed map. Following links composes maps; following
+a closed loop gives its holonomy—the net internal transformation on
+return to the starting point.
+
+![A specified closed transport path through triangle fibers](docs/images/readme-fiber-holonomy.svg)
+
+*This chosen connection returns to the same base node with the internal
+labels rotated. It explains the measurement; it is not a particle orbit
+or evidence that the connection emerged from rewrites.*
+
+Changing local fiber labels transforms link maps as
 
 ```math
 U_{xy}\mapsto g_yU_{xy}g_x^{-1}.
 ```
 
-A loop based at <span>x</span> transforms by conjugation,
-<span>H → g<sub>x</sub>Hg<sub>x</sub><sup>−1</sup></span>. A spanning forest sets tree transports to
-identity; the remaining chord holonomies are compared under simultaneous
-conjugation. This removes redundant frames without discarding relative
-loop information.
+The corresponding loop map changes by conjugation. Measurements that
+ignore this arbitrary frame choice are gauge invariant within the
+specified model.
 
-For edge subdivision, boundary transport is preserved by
+A rewrite-derived construction must explain why its alternatives admit
+these kinds of maps—or show that a different mathematical structure is
+needed. It must also distinguish a change of description from a change
+that affects later invariant measurements.
 
-```math
-U_{xy}=U_{wy}U_{xw}.
-```
-
-All <span>|G<sub>F</sub>|</span> choices of the fresh frame at <span>w</span> belong to one gauge orbit.
-A separate amplitude construction assigns normalized weight
-<span>1/√|G<sub>F</sub>|</span> across those representatives. That construction is not
-a derivation of quantum probabilities for the stochastic experiments.
-
-On a fixed mesh, a basic reversible pair map is the Hurwitz move
-
-```math
-H(A,B)=(ABA^{-1},A),\qquad H(A,B)_1H(A,B)_2=AB.
-```
-
-The based loop maps are lifted to actual shared links. Boundary transport
-is fixed, and every face affected by a written link is accounted for.
-Reversibility and gauge covariance constrain the rule search; they do
-not select a unique law of nature.
-
-**Data being changed.** An interaction reads a small set of link maps
-from the connection and replaces some of those maps. Its input and output
-have the same shape. It composes and inverts permutations; it does not
-add decimal-valued forces to a velocity vector. A loop holonomy has the
-same type as one link map: composing permutations gives a permutation.
-
-See [shared-edge transport](docs/shared-edge-transport.md),
-[three-face updates](docs/three-face-feedback.md), and
-[local rule search](docs/equivariant-rule-search.md).
+See [finite-fiber assumptions and construction](docs/infragauge-foundations.md)
+and the [research questions and acceptance criteria](docs/research-direction.md).
 
 </details>
 
-## 4. Find what the updates conserve
+## 5. Look for something that survives the changing network
 
-For an odd cycle fiber, a face loop can do nothing, reflect the fiber, or
-rotate it by a nonzero amount. Call these three types E, R, and Z.
+Wolfram suggests that particles might be persistent structures in the
+network, rather than objects placed on it. The useful question is not
+“does this picture resemble an electron?” It is “what remains the same
+while the surrounding structure and its constituent nodes change?”
 
-The selected reaction rules can turn three reflection faces into one
-face of each type, and reverse that change. Assign weights zero, one, and
-two to E, R, and Z. The total then stays the same: three ones become zero
-plus one plus two.
+A candidate must survive actual rewrites. Its identity cannot depend
+on keeping the same node IDs or freezing the region that supports it.
+Motion must be measured relative to the surrounding network, not the
+positions assigned by a renderer.
 
-This conserved total is called *charge* in the model. The name describes
-a conserved quantity; it does not identify it with electric charge.
-Likewise, “reaction” means an allowed local rearrangement, not a chemical
-reaction.
+The present fixed-fiber calculations give a useful warning: a prepared
+defect can support localized graph modes, yet allowed interactions can
+remove those modes. Localization in one snapshot is not persistence.
 
-![A three-face reaction on shared links, with conserved weight before and after](docs/images/triangle-feedback.png)
+![Localized graph modes and their response to specified link dynamics](docs/images/triangle-modes.png)
 
-*The left and middle panels show one update. Orange lines are the changed
-links. The right panel shows why the face types alone do not determine
-whether a reaction is possible—the next section explains the missing information.*
+*These calculations use a supplied two-dimensional lattice, triangle
+fibers, and prepared link defects. They concern the graph's spectrum.
+They are not electron orbitals, and no atomic energy scale is assigned.*
 
 <details>
-<summary>Mathematics: relational reaction rules and the conserved charge</summary>
+<summary>Mathematics: localization, persistence, and interaction</summary>
 
-For odd <span>n</span>, let <span>E = e</span>, let <span>R</span> denote reflections, and let <span>Z</span> denote
-nonidentity rotations. The twelve relational rules act on triples of
-based holonomies with one equal adjacent reflection pair:
+For a graph with `N` vertices, its Laplacian is mathematically an
+`N`-by-`N` real matrix. A normalized real eigenmode is a
+`list[float]` of length `N`; its eigenvalue is one `float`.
+A spatially concentrated mode does not by itself define a quantum state
+or a physical Hamiltonian.
 
-```math
-(r,r,s)\quad\text{or}\quad(s,r,r),\qquad r\ne s.
-```
-
-They preserve the ordered product and exchange types
-<span>RRR ↔ ERZ</span>, with the latter in different layouts.
-Each rule is an involution and is equivariant under simultaneous
-conjugation.
-
-After setting <span>q(e) = 0</span>, the common additive class-charge space is
+The [specified triangle-fiber defect](docs/triangle-modes.md) has an
+exact certificate for two modes above the full flat background spectrum.
+The same work bounds the possible mode count using the conserved weight
+on the two face orientations:
 
 ```math
-q(E)=0,\qquad q(R)=c,\qquad q(Z)=2c.
+n_+(L_{\mathrm{bundle}}-12I)
+\le\min(Q_\uparrow,Q_\downarrow).
 ```
 
-Taking <span>c = 1</span> gives
+Actual reactions can redistribute that weight and force mode loss.
+This is a reason to test temporal stability rather than infer particles
+from static eigenvectors.
 
-```math
-Q=\sum_f q_f=N_R+2N_Z,
-\qquad
-(\Delta N_E,\Delta N_R,\Delta N_Z)=(1,-2,1)
-```
+A stronger candidate would need an invariant descriptor, a tracked
+causal history, a lifetime measured against local background activity,
+and survival under encounters. A motif copied by a rule is not
+automatically a particle; an apparently persistent patch that has never
+been updated is a separate control.
 
-for a forward reaction. At the event level, currents on the written
-links satisfy a discrete continuity equation,
-<span>Δq = Bj</span>, with <span>B</span> the oriented incidence matrix
-for charge transport.
+For a bound pair, compare separation and breakup behavior with isolated
+candidates and the model's accessible background. No attractive
+potential, target bond distance, or molecular geometry should be fed
+into the update law to obtain the desired answer.
 
-The rules are modeling choices. The original finite-bank selection
-included a positive-charge condition; writing the resulting laws as
-group words does not make that selection an unbiased derivation from
-adjacency alone.
-
-**Data and units.** The charge field is a derived `list[int]`, one entry
-per face, with values `0`, `1`, or `2`. Its total is an `int`. These are
-dimensionless conserved weights, not coulombs or joules. For example,
-`[1, 1, 1]` can become `[0, 1, 2]` without changing the sum. The update
-still acts on the underlying link maps: this list alone does not contain
-enough information to decide whether a reaction is allowed.
-
-See [reaction formulas and conservation](docs/cycle-relational-dynamics.md)
-and [event-derived currents](docs/triangle-charge-current.md).
+See [phenomenon-detection criteria](docs/phenomenon-detection.md) and
+[encounter-resolved persistence](docs/triangle-encounter-memory.md).
 
 </details>
 
-## 5. Keep the relationships that a coarse picture hides
+# Progress So Far
 
-Two connections can give every face the same type and charge, yet react
-differently. A reflection can have a different alignment relative to
-another reflection. The face-type map hides that relationship.
+- **Exact finite rewrite histories and event provenance.** We can
+  inspect spatial states, dependencies, and alternative histories using
+  the upstream engine. A restricted connection-aware extension preserves
+  these records through edge subdivision. This is a starting point for
+  the interview's causal and multiway questions, not a general evolving
+  gauge field. [Construction](docs/product-evolution.md).
 
-Transport can change these relationships even when every defect returns
-to its starting face. In the triangle-fiber example below, making circuit
-A and then circuit B gives a different connection from doing B and then
-A. The state retains information about the order of the motions.
+- **Intrinsic geometry measurements and a bounded rule survey.**
+  Graph-ball and random-walk probes measure structure without taking
+  dimension from a drawing. The present short survey has not found or
+  established emergent 3D spacetime. [Scope](docs/phenomenon-detection.md).
 
-This is memory in the current connection—not a separate history field
-added to the rules. It can change the fluctuations of charge and, later,
-its average motion.
+- **Exact descriptions of specified finite gauge states.** Small-patch
+  results show when local measurements lose information needed to
+  predict an interaction, and how relative alignment restores it. This
+  supplies a concrete test for a future observer-based description;
+  it does not derive that observer or fiber.
+  [Patch reconstruction and gluing](docs/triangle-patch-observer.md).
 
-![The recorded circuit actions lead from state zero to state one or two depending on order](docs/images/readme-transport-memory.svg)
-
-*Read each row left to right. The circles are complete connection states,
-not spatial positions. Both rows start from the same state and execute
-the same two closed circuits. Only their order changes.*
-
-<details>
-<summary>Mathematics: relative holonomy, noise, and complete observations</summary>
-
-Individual conjugacy classes do not determine the simultaneous-conjugacy
-orbit of a loop tuple. For the displayed <span>C<sub>3</sub></span> example, the four reachable
-gauge states carry an action of
-<span>PSL(2, 𝔽<sub>3</sub>) ≅ A<sub>4</sub></span>.
-
-The spatial circuits and the full four-state action are shown here:
-
-![Recorded spatial circuits and their complete four-state gauge action](docs/images/fiber-transport-order.png)
-
-For any odd cycle, write <span>r<sub>a</sub>(v) = a − v</span> and <span>t<sub>k</sub>(v) = v + k</span>.
-The tuples
-
-```math
-w_1=(r_1,r_0,r_0,t_1),\qquad
-w_2=(r_1,r_0,r_1,t_2)
-```
-
-have the same ordered product <span>r<sub>0</sub></span> and charge field <span>(1, 1, 1, 2)</span>.
-An allowed angular move connects them without changing these quantities.
-The first three loops enable twelve reaction channels in <span>w<sub>1</sub></span> and none
-in <span>w<sub>2</sub></span>.
-
-For jump rates <span>c(w, w′)</span>, distinguish the instantaneous drift from the
-increment covariance:
-
-```math
-b_i(w)=\sum_{w'}c(w,w')\Delta q_i,
-\qquad
-\Gamma_{ij}(w)=\sum_{w'}c(w,w')\Delta q_i\Delta q_j.
-```
-
-In the equal-rate bank, <span>b</span> depends only on the charge field, but
-<span>Γ</span> also depends on relative holonomy. Equal initial drift therefore
-does not imply equal later mean response. This is classical stochastic
-memory, not quantum phase or entanglement.
-
-**Data shape.** The connection still contains the memory. An observer
-extracts loop permutations and relationships between them; it need not
-append a new hidden scalar to every face. For a patch with `k` faces,
-the mean charge-change rate has `k` real entries. Its fluctuation
-covariance is a `k`-by-`k` real matrix, conceptually `list[list[float]]`.
-The units are weight per model time and weight squared per model time,
-respectively. These are calculated observations, not the microscopic state.
-
-A complete three-loop <span>S<sub>3</sub></span> patch has 49 gauge states. Separate complete
-patch descriptions still need relative alignment to describe their union;
-double-coset gluing retains that information. Whole-mesh loop coordinates
-also retain the noncontractible loops of the periodic mesh.
-
-See [closed transport](docs/noncommuting-fiber-transport.md),
-[relative-angle response](docs/fiber-relative-angle.md),
-[patch gluing](docs/triangle-patch-observer.md), and
-[whole-mesh gauge coordinates](docs/triangle-lazy-gauge.md).
-
-</details>
-
-## 6. Ask what survives at larger scales
-
-Making the fiber larger adds internal directions. It does not, by itself,
-produce richer large-scale physics.
-
-If those directions are populated diffusely, the exact alignments needed
-for reactions become rare. Over a fixed observation time, the charge
-process approaches a simpler one: binary occupations exchange between
-neighboring faces. On large meshes, their average density obeys a heat
-equation. That equation follows from the link rules; it is not used to
-drive them.
-
-This result depends on how the initial states and limits are chosen.
-Embedding an already aligned small-fiber state in a larger fiber can
-preserve its reactions.
-
-```mermaid
-flowchart LR
-    F["Increase the cycle-fiber size"] --> D["Populate new directions diffusely"]
-    F --> A["Embed an existing aligned state"]
-    D --> R["Exact reaction matches become rare"]
-    R --> H["Exclusion transport and a heat-equation limit"]
-    A --> P["Existing reactions can persist"]
-```
+- **Restrictions on proposed routes to matter.** In studied models,
+  some apparent internal motion is only relabeling; diffuse large fibers
+  reduce to ordinary exchange diffusion; and localized modes can be
+  destroyed by the permitted dynamics. These delimit particular
+  constructions, not all rewriting models.
+  [Unary restriction](docs/causal-dynamics.md),
+  [refinement limit](docs/fiber-refinement-limit.md),
+  [localization and loss](docs/triangle-modes.md).
 
 <details>
-<summary>Mathematics: the diffuse ensemble and its diffusion limit</summary>
-
-Let <span>F = 2L<sup>2</sup></span> be the face count, and <span>n</span> the odd cycle size. With independent
-uniform raw links, twelve reaction channels per rooted fan at rate one give
-
-```math
-\mathbb E[\lambda_{\rm reaction}]
-=\frac{18F(n-1)}{n^2}.
-```
-
-Let <span>η<sub>f</sub></span> indicate even holonomy, including identity. Then
-
-```math
-q_f=1+\eta_f-2\mathbf1_{\{E_f\}}.
-```
-
-The Hurwitz channels exchange the parity bits at rate four per undirected
-dual edge. Couple an exclusion process <span>ξ</span> to those same clocks.
-For the stationary reference,
-
-```math
-\Pr\!\left(\exists t\le T:q_t\ne1+\xi_t\right)
-\le
-\min\!\left(1,\frac{F}{2n}+\frac{18FT(n-1)}{n^2}\right).
-```
-
-This bound is uniform over finite angular rates, including sequences of
-rates that grow with <span>n</span>. A separate bound treats nonuniform initial
-density with conditional-uniform internal shifts.
-
-The exclusion mean closes exactly:
-
-```math
-\partial_t\mathbb E\xi=-4\mathcal L_{\rm dual}\mathbb E\xi.
-```
-
-With <span>X = x/L</span>, <span>Y = y/L</span>, and <span>t = L<sup>2</sup>τ</span>, the corresponding density limit is
-
-```math
-\partial_\tau\rho=\nabla\cdot D\nabla\rho,
-\qquad
-D=\begin{pmatrix}4/3&2/3\\2/3&4/3\end{pmatrix}.
-```
-
-These are mesh cell coordinates. The sufficient scaling
-<span>n/L<sup>4</sup> → ∞</span> transfers the nonuniform-profile limit to the raw-link
-charge process. It is not asserted to be necessary. The geometry and
-clock are supplied; this is neither emergent spacetime nor a quantum
-wave equation.
-
-**Resolution and precision.** Increasing `n` adds positions around the
-internal cycle. It does not add decimal places to a float or subdivide
-ordinary space. For `n = 1_000_000_007`, a link can still be represented
-exactly by one sign and one integer shift; there is no billion-entry
-list of angles. The finite link rules need exact integer arithmetic,
-not a tolerance such as “equal within six decimal places.”
-
-Numerical averages, waiting times, projections, and spectral calculations
-use `float`. Those need error estimates or convergence checks, not a
-universal promised digit count. There is not yet a physical calibration
-from fiber size or graph hops to an atomic length scale.
-
-See [coupling bounds and profile measurements](docs/fiber-refinement-limit.md)
-and [embedded-state refinement](docs/cycle-relational-dynamics.md).
-
-</details>
-
-## 7. A rare reaction can make nearby reactions more likely
-
-Rarity at a randomly chosen time does not mean isolation once a reaction
-occurs. A reaction leaves a local alignment that nearby updates can use.
-
-One example exchanges a flat two-face region for a flat single face.
-“Flat” means that transport around its boundary returns the fiber
-unchanged. A neighboring reaction can consume that new flat face. The
-two reactions together can move conserved charge beyond the region of
-the first reaction.
-
-This saved two-event example shows the charge movement:
-
-![Three actual shared-link states show one unit transferred through overlapping reactions](docs/images/readme-reaction-transfer.svg)
-
-*Read the panels from left to right. Face colors show conserved weights;
-cyan edges show the actual changed links. One unit moves from source to
-destination, while the shared face returns to its initial charge. Every
-other face also has its initial charge after the pair. The drawing unwraps
-a patch of the supplied periodic mesh; it does not infer physical space.*
-
-<details>
-<summary>Mathematics: event-conditioned rates and overlapping reactions</summary>
-
-For a rooted three-face fan <span>p</span>,
-
-```math
-\lambda_p=
-\begin{cases}
-12,& RRR\text{ with exactly one adjacent equality},\\
-4,& ERZ\text{ in any order},\\
-0,& \text{otherwise}.
-\end{cases}
-```
-
-Under uniform raw-link measure <span>μ</span>,
-<span>λ̄<sub>p</sub> = 6(n − 1)/n<sup>2</sup></span>. The distribution immediately after a typical
-stationary reaction on <span>p</span> is the event-conditioned, or Palm, law
-
-```math
-\mu_p^+(x)=\frac{\mu(x)\lambda_p(x)}{\bar\lambda_p}.
-```
-
-Reversibility gives the same incoming and outgoing event weights.
-Exact counting yields
-
-```math
-\mathbb E_{\mu_p^+}\lambda_p=8,\qquad
-\mathbb E_{\mu_p^+}\lambda_q=
-\frac13+\frac{16(n-1)}{3n^2}
-```
-
-for a specified one-face-overlap neighbor <span>q</span> with the stated independent
-exterior rim links. At fixed mesh volume,
-
-```math
-\lim_{n\to\infty}
-\mathbb E_{\mu_p^+}\lambda_{\rm total}
-=\tfrac12(20+30)=25.
-```
-
-These are rates in the specified per-channel clock, not probabilities.
-The ordinary stationary total rate still tends to zero. Different
-neighbors can compete for the same new identity face, so their possible
-reactions are not independent offspring in a branching process.
-
-The figure uses the saved <span>C<sub>5</sub></span> witness: source face 3, shared face 0,
-destination face 6, and unchanged total <span>Q = 52</span>. It is an allowed
-two-event sequence, not an estimate of its spontaneous frequency.
-
-See [reaction bursts, local rates, and the link-level witness](docs/fiber-reaction-bursts.md).
-
-</details>
-
-## 8. Follow the memory after it stops looking local
-
-The alignment left by a reaction need not remain attached to one
-recognizable face. Local updates can spread the relation over many links.
-The information can still be present even when no nearby reaction can
-use it.
-
-For one typical rare reaction, a limiting description tracks the link
-signs and one exact relation among their internal shifts. The same local
-rules update that relation. It can become inactive because it spreads
-across too many links, shifts away from an exact match, or lacks a
-suitable neighboring face.
-
-```mermaid
-flowchart TB
-    R["One relation left by a reaction"] --> U["Evolve with the same local rules"]
-    U --> L["Matches a local reaction condition"]
-    U --> S["Spread over links: no local match"]
-    U --> O["Offset from the required exact match"]
-    L --> A["Can react if the surrounding face types permit"]
-    S --> I["Information remains; reaction is inactive"]
-    O --> I
-```
-
-*These are possible states of one evolving relation, not three independent
-objects. Inactive states reached by the reversible dynamics have a reverse
-path back to activity; that does not guarantee a typical return time.*
-
-<details>
-<summary>Mathematics: the integer constraint carried by the connection</summary>
-
-Write each raw link as <span>U<sub>e</sub>(v) = s<sub>e</sub>v + a<sub>e</sub> (mod n)</span>. The generic
-event-conditioned relation is represented by
-
-```math
-(s,\ell,b),\qquad
-\ell\in\mathbb Z^m\text{ primitive},\qquad
-\ell\cdot a=b,
-```
-
-with <span>m</span> raw links. It begins as a flat triangle or two-face boundary.
-For a branch with invertible integer affine update <span>a′ = Ma + d</span>,
-
-```math
-\ell'=M^{-T}\ell,\qquad b'=b+\ell'\cdot d.
-```
-
-Reaction branches map the incoming constraint plane to the outgoing
-plane using the original link formulas. The local zero tests are
-determined by this relation and the signs. Its twisted closure,
-<span>C<sub>s</sub>ℓ = 0</span>, makes the condition invariant under vertex-frame
-translations; its support, absolute coefficient norms, and <span>|b|</span> are
-gauge-invariant diagnostics.
-
-At fixed volume, finite angular rate, and finite observation time,
-accidental additional equalities vanish in probability as odd <span>n</span>
-grows. This gives a one-constraint limit, not a model for arbitrarily
-long times or for many independently arriving correlations.
-
-In this limit, <span>N<sub>E</sub></span> is zero or one and reaction directions alternate:
-
-```math
-\left|N_{RRR\to ERZ}(t)-N_{ERZ\to RRR}(t)\right|\le1.
-```
-
-An auxiliary two-sheeted cover gives a topological interpretation.
-For <span>R = N<sub>R</sub> &gt; 0</span> on the supplied torus,
-
-```math
-g=1+R/2,\qquad g+N_E=1+F-Q/2.
-```
-
-The second identity is the existing charge conservation law in cover
-coordinates, not an additional conserved quantity. This constructed
-surface is a diagnostic, not a change in physical spacetime topology.
-
-**Data shape.** This limiting state contains `signs: list[int]`,
-`coefficients: list[int]`, and `offset: int`. Each list has one entry per
-raw link. They describe one exact relation among the link shifts—not a
-list of matrices or a vector of complex amplitudes. The integer
-coefficients can grow, so arbitrary-size integers are used rather than
-rounding them to a fixed number of digits.
-
-See [integer constraint dynamics, gauge invariance, and the cover construction](docs/fiber-constraint-dynamics.md).
-
-</details>
-
-## 9. Distinguish a localized pattern from a persistent object
-
-The graph can support mathematical modes concentrated near a defect.
-A useful analogy is a vibration concentrated near a flaw in a material.
-Here, however, the mode is a probe of the connection at one instant;
-no physical vibration law has been established.
-
-Some such modes are proved to be localized, even on an infinite supplied
-lattice. But an allowed update can remove them. A bright spot in a mode
-plot is therefore not enough to identify a particle or a bound state.
-
-Memory needs a similar distinction. A pattern that remains because no
-update has touched it is different from one that survives encounters,
-moves, and keeps its internal relationships.
-
-![Localized graph modes and changes in their number during evolution](docs/images/triangle-modes.png)
-
-*The upper panels show where two modes are concentrated. The lower-left
-panel shows that the number of localized modes changes under the rules.
-The plotted density is a graph-mode diagnostic, not an electron probability density.*
-
-<details>
-<summary>Mathematics: spectral localization, persistence, and binding limits</summary>
-
-The bundle graph defines a diagnostic Laplacian <span>L<sub>bundle</sub></span>.
-For the displayed triangle-fiber construction, two modes lie above the
-entire infinite flat spectrum, with eigenvalues exceeding <span>12.05</span> and
-exponentially decaying spatial tails. This does not promote
-<span>L<sub>bundle</sub></span> to a physical Hamiltonian.
-
-The instantaneous above-band mode count obeys
-
-```math
-n_+(L_{\rm bundle}-12I)
-\le \min(Q_\uparrow,Q_\downarrow)
-\le \lfloor Q/2\rfloor.
-```
-
-Here <span>Q<sub>↑</sub></span> and <span>Q<sub>↓</sub></span> are the charge sums on the two
-triangle orientations. Updates can change their split while preserving
-<span>Q</span>, forcing mode loss.
-
-**Data shape.** For `V` base vertices and `n` vertices in each fiber,
-the full bundle graph has `V * n` vertices. Its Laplacian is mathematically
-a `(V * n)`-by-`(V * n)` real matrix, though sparse calculations need not
-store every zero. A real mode is a `list[float]` of length `V * n` and
-its eigenvalue is one `float`. The plotted mode density squares and sums
-entries belonging to each base location.
-
-These are not yet quantum wavefunctions with physical energies. A
-separate subdivision-amplitude construction uses `complex` numbers;
-that does not turn this classical mode calculation into quantum dynamics.
-
-Separate encounter-resolved measurements distinguish untouched memory
-from change-and-return histories. In the measured triangle-fiber runs,
-most long-wavelength persistence comes from untouched patches; a smaller
-return signal after reconfiguration is transient.
-
-Equilibrium also imposes restrictions. A studied square-fiber bank has
-no separation preference beyond graph geometry in its reachable class
-equilibrium. Positive, state-independent reweighting of the same
-reversible generators does not change that equilibrium. The diffuse
-exclusion limit likewise supplies no attractive interaction.
-
-See [localization and mode-loss bounds](docs/triangle-modes.md),
-[encounter-resolved memory](docs/triangle-encounter-memory.md), and
-[equilibrium restrictions](docs/reachable-gauge-equilibrium.md).
+<summary>Supporting finite-model work: what it is useful for</summary>
+
+The fixed-mesh reaction and memory studies are available as experiments
+in conditional dynamics. Their relevance is to specific questions:
+which internal relations affect later changes, whether those relations
+survive encounters, and when a reduced description loses predictive
+information.
+
+The triangle reaction bank and its odd-cycle extensions have a conserved
+integer weight with values 0, 1, and 2 on three holonomy types. Here
+“charge” names that weight; it has not been identified with electric
+charge. The rules remain chosen, including the original positive-charge
+selection criterion.
+
+[Reaction construction](docs/cycle-relational-dynamics.md),
+[relative-angle dependence](docs/fiber-relative-angle.md),
+[reaction bursts](docs/fiber-reaction-bursts.md), and
+[transported constraints](docs/fiber-constraint-dynamics.md) contain the
+assumptions, derivations, scripts, and saved results.
+
+These studies warrant further compute when they resolve a stated
+obstacle to the rewrite-based program, not merely because a larger run
+is possible. A diffusion limit is useful here as a restriction on that
+model; recovering the known heat equation is not itself progress toward
+quantum matter.
+
+The [research map](docs/STATE_OF_THE_ART.md) separates reusable
+constructions from the missing physical connections. The [research
+direction](docs/research-direction.md) defines which questions should
+drive new experiments.
 
 </details>
 
 # Future Work
 
-1. **Describe encounters between independent correlations.** Extend the
-   one-relation description to two or more relations. Determine which
-   encounters create, preserve, or remove local reaction conditions.
+1. **Construct internal alternatives from actual rewrites.** On a small,
+   completely explored example, specify a projection or observer and
+   derive its candidate fibers and the maps between them. Determine
+   which choices are equivalent descriptions and which change later
+   observable behavior. A failure to define consistent transport is a
+   useful result; attaching a preferred fiber is not a substitute.
 
-2. **Determine whether dispersed memory returns.** Separate finite-time
-   inactivity from eventual escape. Find return probabilities, time
-   scales, and their dependence on mesh size and angular dynamics.
+2. **Follow the consequences of a local rewrite choice.** Compare
+   alternatives with a common prior state and boundary. Track which
+   later matches become possible or impossible, preserving event
+   dependencies. Determine whether any effect survives relabeling,
+   branch merging, and a change of description. This directly tests
+   Wolfram's proposed route from local choices to gauge-like effects.
 
-3. **Connect rare events to sustained large-scale behavior.** Study times
-   that grow with fiber size and ensembles in which alignment is produced
-   by the dynamics. Keep these limits separate from the fixed-time
-   diffuse result.
+3. **Find and characterize stable geometric regimes.** Extend selected
+   rule families far enough to separate growth, finite-size effects,
+   and local dimension variation. Test several seeds and update
+   schedules. Explain any regularity from the rewrite process before
+   interpreting it as space or curvature.
 
-4. **Find a sufficient large-scale state description.** Determine which
-   transported loop relations must accompany charge density to predict
-   currents, fluctuations, and encounters. Preserve the relative
-   alignment between overlapping regions.
+4. **Search for persistent, moving structures.** Identify candidates by
+   invariant relationships, follow them through replacement of their
+   constituent nodes, and test encounters. Distinguish genuine survival
+   from inactivity, imposed defects, and renderer artifacts.
 
-5. **Test persistent localized structures.** Ask whether a structure
-   survives actual encounters and has reproducible relative motion.
-   Compare separation statistics with the accessible equilibrium before
-   interpreting clustering as binding.
+5. **Connect measured dynamics to an effective physical description.**
+   If a reproducible geometric or interaction regime appears, derive
+   its scale dependence and observable laws. Quantum amplitudes,
+   interference, physical charge, and mass each need their own
+   construction. Known physics provides comparison targets, not hidden
+   terms in the microscopic updates.
 
-6. **Let geometry and fibers evolve together.** Extend the fixed-mesh
-   dynamics to gauge-aware base rewrites and changing fiber types.
-   Measure dimension, propagation, and dependence on update order without
-   reading them from a chosen drawing.
+6. **Spend compute on the limiting question.** Use parallel enumeration
+   for finite rule/transition problems and longer runs for declared
+   persistence or scaling questions. Optimize the limiting operation
+   only when it unlocks an otherwise inaccessible mathematical test.
+   Keep counterexamples, null results, and incomplete runs.
 
-7. **Establish the missing route to physical predictions.** Quantum
-   probabilities, a physical time and length scale, effective forces,
-   and stable bound states remain to be derived and calibrated.
-   A molecular interpretation requires these steps, not just a shape
-   that resembles an orbital.
+## Inspect the experiments
 
-<details>
-<summary>Details: mathematical questions and supporting computation</summary>
+![Debugger showing a bounded slice of an exported evolution](docs/images/simulation-debugger.png)
 
-The immediate problems are recurrence versus transience of the reversible
-integer-constraint process, the rank and interaction of multiple inherited
-constraints, and a controlled long-time/refinement limit. A fixed-reference
-[alignment-boundary calculation](docs/fiber-alignment-boundary.md) gives a
-conditional limit; establishing a sufficiently persistent reference in
-the unrestricted dynamics is a separate problem.
-
-For changing geometry, connection data must participate in rewrite
-identity and matching. Causal dependencies must follow actual read/write
-supports. Comparisons with
-[InfraGaugeTheory](https://github.com/WolframInstitute/InfraGaugeTheory)
-should state which fiber, connection, and quotient are being represented.
-
-Computation serves these questions. Finite groups already compile to
-integer lookup tables; an end-to-end GPU path still needs matching,
-affected-loop updates, and state reduction. Any amplitude compression
-must bound discarded norm and observable error rather than assume a
-small representation exists. The elementary square-fiber subdivision
-orbit has a flat rank-eight Schmidt spectrum: rank-four truncation loses
-half its norm.
-
-See [measurement criteria](docs/phenomenon-detection.md),
-[GPU execution](docs/gpu-execution.md),
-[finite-model reference data](data/), and
-[mathematical scope](docs/STATE_OF_THE_ART.md).
-
-</details>
-
-## Run and inspect an example
-
-The debugger keeps the current network, event ancestry, alternative
-states, and a best-effort spatial projection in separate views. It is an
-inspection tool for the calculations above.
-
-![Debugger displaying a bounded slice of an exported evolution](docs/images/simulation-debugger.png)
-
-*This is an actual debugger screenshot. A three-coordinate projection
-does not establish three-dimensional space; view limits and projection
-distortion are reported separately.*
+*The debugger separates graph state, causal ancestry, branchial slices,
+and a best-effort spatial projection. It is a way to inspect the
+calculation—not evidence that the pictured state is three-dimensional.*
 
 <details>
-<summary>Commands: build, export a rewrite history, and open the debugger</summary>
+<summary>Commands: build, export a history, and view it</summary>
 
 Requirements: CMake 3.20+ and a C++20 compiler.
 
@@ -884,40 +541,22 @@ git clone https://github.com/pirate/wolfram-gauge-physics.git
 cd wolfram-gauge-physics
 cmake -S . -B build -DCMAKE_BUILD_TYPE=Release
 cmake --build build -j
-ctest --test-dir build -L wgphysics --output-on-failure
-./build/fiber_demo
-./build/research_demo
-./build/cell_dynamics_demo
-```
-
-Run a Wolfram-model rule with exact state canonicalization and export
-its evolution:
-
-```bash
 ./build/wgphysics_evolve \
   --rule '0,1;0,2->0,2;0,3;1,3;2,3' \
   --init '1,2;1,3' \
   --steps 3 \
   --output out/evolution.json
-```
-
-From the repository directory, start the local viewer:
-
-```bash
 python3 -m http.server 8765 --bind 127.0.0.1
 ```
 
-Open [localhost:8765/viewer/](http://localhost:8765/viewer/) and load the
-export. See the [debugger guide](docs/debugger.md) for view budgets and
-interpretation. The individual mathematical notes link their experiment
-scripts and datasets; the rewrite command above is not a molecular
-simulation.
+Open [localhost:8765/viewer/](http://localhost:8765/viewer/) and load
+the export. See the [debugger guide](docs/debugger.md) for interpretation.
+Experiment notes link their own scripts and data; this command exports
+a rewrite history, not a molecular simulation.
 
 </details>
 
 MIT licensed. This is an independent experimental project, not an official
-Wolfram Institute or Wolfram Research repository. It depends on and cites
-their MIT-licensed research software; no Wolfram Language source is vendored.
-The attributed Wolfram website screenshot remains the original publisher's
-material, not part of this repository's MIT license. See
-[figure sources and reproduction](docs/readme-visuals.md).
+Wolfram Institute or Wolfram Research repository. The attributed Wolfram
+website screenshot remains the original publisher's material, not part
+of this repository's MIT license. See [figure sources](docs/readme-visuals.md).

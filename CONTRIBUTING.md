@@ -1,6 +1,11 @@
 # Contributing
 
-Contributions are welcome, especially small constructions with exact finite tests.
+The purpose of this repository is to resolve concrete questions from
+[Wolfram's interview](https://www.youtube.com/watch?v=yAJTctpzp5w), not to
+build a general-purpose simulation product. Start with the
+[research direction](docs/research-direction.md): explain which open
+question a calculation addresses and what result would change our
+understanding. Small constructions and counterexamples are welcome.
 
 Please preserve these rules:
 

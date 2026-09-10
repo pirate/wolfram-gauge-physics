@@ -1,5 +1,11 @@
 # From finite gauge dynamics to measurable phenomena
 
+These measurements serve the [interview-driven research questions](research-direction.md):
+geometric regimes, consequences of rewrite choices, and persistent
+structures. Fixed-fiber measurements are controls for candidate
+constructions, not replacements for deriving their connection to the
+underlying rewrite system.
+
 The present code can test finite algebra, explore small rewrite histories, and estimate intrinsic
 graph statistics. It has not recovered a physical space, time unit, particle, or molecular state.
 The following measurements separate intermediate progress from those later claims.

@@ -1,5 +1,35 @@
 # README figure sources
 
+## Interview-first explanations
+
+Run `node tools/render_primitives_visuals.mjs` to regenerate three
+specified examples. They are explanatory diagrams, not measured physical
+states or a claim that the open constructions have been completed.
+
+- **Rewrite primitives:** the exact labeled rule in the README's export
+  command. It consumes `(0,1),(0,2)` and produces
+  `(0,2),(0,3),(1,3),(2,3)`. The shared endpoint pair is consumed and
+  reproduced as a new edge occurrence. Layout coordinates have no units.
+- **History versus causality:** A subdivides `(0,1)` through node 3;
+  B subdivides `(1,2)` through node 4. The generator verifies that either
+  order reaches the same labeled edge collection. A later joining event C
+  consumes `(3,1),(1,4)` and produces `(3,4)`. It therefore depends on both
+  A and B, although A and B do not depend on one another. This illustrates
+  two specified rules, not every possible history. Graph-isomorphism
+  reduction can also identify the two intermediate states.
+- **Fiber projection:** two connected graphs with endpoints 0 and 3,
+  one a four-node path and one a four-node cycle. A deliberately supplied
+  observer retains only the endpoints and their connectivity. Both map
+  to one coarse description; the generator checks their connectivity.
+  Their common projection does not imply gauge equivalence or equal
+  future behavior. The figure distinguishes a set-theoretic fiber from
+  the unresolved derivation of useful internal structure and transport.
+
+All three figures have SVG titles/descriptions and use text as well as
+color. Their labeled graphs can be reconstructed without reading pixel
+coordinates. The main text pairs them with actual engine exports and an
+attributed Wolfram documentation screenshot.
+
 The README distinguishes specified mathematical examples, recorded model
 states, and screenshots of external tools. Drawing coordinates are not
 inferred physical coordinates.

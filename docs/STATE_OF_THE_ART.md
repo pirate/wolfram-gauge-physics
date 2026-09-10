@@ -1,167 +1,123 @@
-# State of the art and contribution boundary
+# Research map and current boundaries
 
-This note records the public work used to position the repository. It is not a comprehensive
-history of discrete gauge theory; its scope is gauge/fiber computation around the Wolfram Physics
-Project.
+The project is organized around open questions in
+[Wolfram's interview](https://www.youtube.com/watch?v=yAJTctpzp5w), not a
+claim to have advanced every layer of gauge theory. The
+[research direction](research-direction.md) specifies the questions and
+what would count as an answer. The [README](../README.md) explains the
+conceptual sequence.
 
-## Wolfram-model motivation
+## Rewrite-based work
 
-The Wolfram Physics technical introduction proposes that a spatial hypergraph acts as a fiber
-bundle base, while branchlike choices in the multiway causal graph act like gauge choices. It
-suggests that local phenomena may reflect an effective Lie algebra and that causal consequences
-encode gauge-field propagation:
+[HypergraphRewritingEngine](https://github.com/WolframInstitute/HypergraphRewritingEngine)
+is the upstream engine for raw rewrite histories and their causal and
+multiway records. The local [product construction](product-evolution.md)
+adds a supplied finite-fiber connection and jointly identifies equivalent
+base/connection states. Its supported base-event morphology is edge
+subdivision. It is not a general derivation of gauge interactions from
+arbitrary hypergraph rewrites.
 
-- [Local Gauge Invariance](https://www.wolframphysics.org/technical-introduction/potential-relation-to-physics/local-gauge-invariance/)
-- [Gauge Groups Meet Hypergraphs](https://writings.stephenwolfram.com/2020/07/a-burst-of-physics-progress-at-the-2020-wolfram-summer-school/#gauge-groups-meet-hypergraphs)
+[Intrinsic geometry probes](phenomenon-detection.md) measure graph-ball
+growth and random-walk returns. The bounded rule survey is exploratory;
+its small graphs and short histories do not establish emergent physical
+dimension. Projection, source sampling, and finite-size limitations are
+part of the measurement.
 
-That conceptual proposal does not by itself specify a production data structure for connections
-that evolve with hypergraph rules.
+These are available starting points for investigating geometry, local
+rewrite alternatives, and event dependencies. A debugger or a faster
+kernel is useful only insofar as it makes those experiments possible.
 
-## Public computational foundations
+## The missing gauge connection
 
-### InfraGaugeTheory
+Wolfram's [local gauge-invariance proposal](https://www.wolframphysics.org/technical-introduction/potential-relation-to-physics/local-gauge-invariance/)
+suggests investigating symmetry among local rewrite choices and the
+causal consequences of selecting them.
+[InfraGaugeTheory](https://github.com/WolframInstitute/InfraGaugeTheory)
+provides combinatorial fiber and connection constructions and identifies
+obtaining fibered graphs from rewriting as a goal.
 
-[WolframInstitute/InfraGaugeTheory](https://github.com/WolframInstitute/InfraGaugeTheory) develops
-fibered graphs, graph projections, bundle predicates, sections, connection subgraphs, horizontal
-lifts, parallel transport, holonomy matrices, flatness, and horizontal leaves. It explicitly lists
-obtaining fibered graphs from hypergraph rewriting and gauge dynamics in the Wolfram Physics
-Project among its goals.
+Our finite-fiber machinery starts with a specified internal graph.
+Its automorphisms and gauge quotients follow from that graph, but the
+choice of graph has not been derived from the raw rewriting process.
+The [foundations note](infragauge-foundations.md) states those inputs.
 
-Relative to the [inspected InfraGaugeTheory revision](https://github.com/WolframInstitute/InfraGaugeTheory/tree/edd9bdca46b7838d6b3e940e8ae8cde90b60ef2c), this repository adds
-an exact fiber-automorphism group, explicit local-frame action on connections, a spanning-forest
-gauge quotient, rewrite transport factorization, quantum amplitudes over rewrite gauge orbits, a
-compact device representation, and an exact connection-aware product evolution over real engine
-event provenance.
+The next construction must specify a projection, determine its internal
+alternatives, and recover consistent transport from actual events—or
+identify why that construction fails. It must not silently replace
+general partial relations with a desired finite group.
 
-### HypergraphRewritingEngine
+## Supporting finite-model results
 
-[WolframInstitute/HypergraphRewritingEngine](https://github.com/WolframInstitute/HypergraphRewritingEngine)
-provides exact canonicalization, multiway/causal/branchial evolution, quotient exploration,
-incremental matching, and a persistent CUDA backend. This repository uses pinned commit
-[this engine revision](https://github.com/WolframInstitute/HypergraphRewritingEngine/tree/03fe60ddf338983060b6bb4b23e8b4b5d7ae7337) as its base-space evolution engine.
+### Equivalent descriptions and lost information
 
-The product runner now attaches connection sectors to every raw state and supported subdivision
-event from that engine, then applies a joint base/gauge quotient. Connection data is not yet part of
-the engine's internal match key, canonical state, event identity, or CUDA storage. The runner must
-therefore retain full raw provenance for exactness. The integration design is in `gpu-execution.md`.
+[Complete loop observables](complete-loop-observer.md) and
+[triangle patch gluing](triangle-patch-observer.md) give exact descriptions
+for specified finite gauge systems. The patch results show why separate
+local summaries may lose relative alignment needed to predict their
+interaction. This is a concrete reference for testing proposed reduced
+descriptions, not a derivation of a physical observer.
 
-### Infrageometry projects
+### What local rules can preserve or change
 
-[Infrageometry](https://github.com/WolframInstitute/Infrageometry) and
-[SyntheticInfrageometry](https://github.com/WolframInstitute/SyntheticInfrageometry) investigate
-which geometric structures can be built or observed on discrete graphs at different information
-ceilings. They motivate keeping the fiber graph and observer-accessible invariants explicit rather
-than assuming continuum coordinates.
+The [unary census](causal-dynamics.md) separates apparent motion within a
+gauge orbit from changes in invariant loop sectors. The
+[shared-edge](shared-edge-transport.md) and
+[three-face](three-face-feedback.md) constructions study particular
+boundary-preserving interaction laws. The
+[cycle reaction formulas](cycle-relational-dynamics.md) make the chosen
+rule bank and its conserved weight explicit.
 
-## Selected community investigations
+These results characterize selected finite dynamics. Reversibility,
+gauge covariance, and a positive conserved weight do not uniquely select
+a physical law. The original positive-charge criterion is a selection
+assumption, not an unbiased prediction of charge.
 
-- Graham Van Goffrier, [Full Discretization of Fiber Bundle Topology for Gauge Theory](https://community.wolfram.com/groups/-/m/t/2030337), Wolfram Summer School 2020.
-- Chang Wu, [Exploring Gauge Symmetries in the Wolfram Model](https://community.wolfram.com/groups/-/m/t/2162318), Wolfram Winter School 2021.
-- Matthew Maddock, [Gauge Field Theories in Terms of a Discrete Principal Fibre Bundle](https://community.wolfram.com/groups/-/m/t/2312018), Wolfram Summer School 2021.
-- Omar Medina, [SU(2) Gauge Theory in the Wolfram Model](https://community.wolfram.com/groups/-/m/t/2163358), Wolfram Winter School 2021.
-- Ioana-Alexandra Milea, [An Investigation of Discrete SU(2) Gauge Theory through the Hopf Fibration and Wilson Loops](https://community.wolfram.com/groups/-/m/t/3497643), Wolfram Summer School 2025.
-- [The Fine-Structure Constant Challenge](https://community.wolfram.com/groups/-/m/t/2131169), whose discussion explicitly identifies constructing a specific gauge field from a Wolfram model as an open target.
+### Internal relationships, encounters, and memory
 
-These works explore important discrete gauge constructions and physical interpretations. This
-repository's narrower contribution is an executable bridge between combinatorial fibers and exact
-rewrite evolution, with strict treatment of gauge copies.
+[Relative-angle dependence](fiber-relative-angle.md),
+[reaction bursts](fiber-reaction-bursts.md), and
+[transported constraints](fiber-constraint-dynamics.md) study how internal
+relations affect subsequent updates on a fixed mesh.
+[Encounter-resolved measurements](triangle-encounter-memory.md) distinguish
+untouched regions from states that change and return.
 
-## New finite-model results
+These are useful for asking whether candidate structure survives
+activity. A finite-mesh memory effect is not automatically a particle,
+a force, or a quantum correlation.
 
-The [pair-gate classification](braid-quotient-classification.md) and
-[exact diffusion bridge](emergent-diffusion.md) identify known exclusion-process dynamics
-inside the independent-cell construction. These are finite classifications and validation,
-not a claim to have discovered diffusion or generalized permutation gates.
+### Restrictions on persistence and binding
 
-The [shared-face follow-up](shared-face-dynamics.md) supplies a fixed-boundary counterexample
-to extending that closed sector description to an actual mesh. It derives the failure of all
-nontrivial rational one-face additive class charges for the selected local law, implements
-full incident-face updates, and observes reversible coarse relaxation near an exact
-stationary uniform-link reference. This is a concrete improvement in the fidelity and
-testability of our gauge/fiber simulator, not evidence of a continuum gauge theory or matter.
+The [diffuse-refinement result](fiber-refinement-limit.md) bounds a
+reduction of the actual charge process to known exclusion dynamics in a
+specified regime. It identifies the disappearance of reactions in that
+limit; it is not a discovery of diffusion or a general no-go theorem for
+matter.
 
-The [one-face energy obstruction](face-energy-obstruction.md) generalizes the selected-rule
-failure to a finite-group normal-subgroup criterion and excludes every nonconstant one-face
-energy for all 5,730 nonidentity strict rules in our square-fiber census. Surviving quotient
-observables in other controls are fixed locally, not transported. The accompanying
-[observable audit](observable-memory-and-invariants.md) measures exact coarse-memory errors,
-frozen sectors and schedule dependence, and eliminates a specified neighboring-loop density
-ansatz with larger-mesh counterexamples and a universal constant-function certificate.
-These are scoped mathematical results with executable checks; literature priority and a
-connection to physical energy remain unestablished.
+The [localization construction](triangle-modes.md) certifies modes for a
+prepared defect and bounds how allowed dynamics can destroy them.
+[Reachable equilibrium](reachable-gauge-equilibrium.md) excludes a
+separation preference in a particular finite model. Together these
+provide reasons not to identify static localization or clustering with
+persistent bound matter.
 
-The [shared-edge construction](shared-edge-transport.md) gives a constructive escape specific
-to a different link realization: the same pair table now preserves all exterior links, affects
-only its two input faces, and transports the derived additive charges globally. Its two-state
-class memory, bipartite parity, and 4.92 million independently replayed link updates are exact
-finite-model results. The autonomous exclusion factor remains an explicit limitation; this is
-not yet a microscopic derivation of interacting matter or physical energy.
+## Boundaries that remain open
 
-The [three-face fan construction](three-face-feedback.md) subsequently combines a derived positive
-conserved weight with nonautonomous charge transport: identical individual face classes and
-exterior links can have different conserved-density responses. Two independent searches agree
-on 945 minimal closures and 354 such feedback rules. A boundary-fixed lift and 15.31 million
-independently replayed updates verify conditional curvature conversion, with explicit sparse-seed
-failures and sublattice constraints. This is a scoped finite-model contribution, not a claim to
-have discovered gauge-invariant automata or derived a physical Hamiltonian, quantum theory, or matter.
+- A fiber or internal state structure obtained from underlying rewrites,
+  rather than supplied at each base node.
+- Consistent interacting geometry and internal dynamics beyond the
+  restricted subdivision construction.
+- Reproducible geometric scaling on growing evolved networks.
+- Persistent structures that move and survive encounters under those
+  rewrites.
+- A construction of quantum amplitudes, interference, and probabilities.
+  The existing normalized subdivision-orbit map is only a kinematic
+  isometry, not a quantum dynamics.
+- Identification of physical charge, energy, mass, and length/time scales.
+- Predictions for bound systems that were not put into the microscopic
+  rules or initial geometry.
 
-The [sparse-encounter analysis](three-face-encounters.md) derives an exact commuting-subgroup
-face factor from that link law, constructs transport-generated reactions, and exhausts two
-small charge sectors into reactive and central-only components. Combinatorial state and event
-counts give a stationary conversion-rate benchmark for explicitly uniform random scheduling.
-Larger sparse runs exhibit rare encounters and retained null results. These expose a catalytic
-kinetic restriction, not two-body binding or a derived physical clock; kinetically constrained
-dynamics and symmetric-update stationary measures are established ideas.
-
-## Contribution matrix
-
-The [compatible noncommuting channel banks](nonabelian-channel-banks.md) classify positivity
-and activation across all 945 minimal triple laws, identify 144 converting laws in three
-48-rule charge families, and implement them with mixed-arity link updates and rule-aware
-provenance. The uniform-bank face observer closes to an exact classical conversion/transport
-process. Degeneracy-weighted detailed balance supplies a stationary occupation benchmark;
-252 full-link runs retain both conversions and null controls. This is an explicit microscopic
-derivation and validation, not a discovery of chemical equilibrium or a quantum gauge theory.
-
-The [reachable canonical benchmark](reachable-gauge-equilibrium.md) closes the realizability
-gap for one 18-face noncommuting sector: all 468,180 formal class states are reachable from
-an actual link seed. Exact finite-charge probabilities and conversion frequencies are
-compared with independently replayed raw-link residence measurements, including null controls
-and independent-run uncertainty. Spatial exchangeability supplies an equilibrium class-binding
-restriction; a raw-permutation argument extends it to positive, state-independent reweighting
-of the same supported generators. This is a scoped diagnostic against false molecular claims,
-not a general no-go theorem for finite-group gauge matter or evolving geometry.
-
-The [complete loop observer](complete-loop-observer.md) specializes the fixed-graph gauge
-quotient to the central extension derived from the square fiber, supplies a reconstructible
-linear-size set of two/three-loop relation probes, and cross-checks a linear-pass C++ observer
-against the general quotient. An actual two-branch conversion has identical face classes and
-exterior data but different gauge relations and exact lifted-graph spectral moments. Its
-two-component diagnostic space is derived from fiber adjacency, not installed as a physical
-Hamiltonian or matter dynamics. CPU measurements reach 1.08 million observed edges with
-explicit preprocessing and validation boundaries. This is finite algebra and observer tooling,
-not a general Wilson-loop completeness theorem or an emergent quantum theory.
-
-| Layer | Public upstream capability | Implemented here | Still open |
-|---|---|---|---|
-| Fiber | Total graph, projection, fiber predicates | Exact `Aut(F)` derivation, compact tables, and exact open-link inference | Compare rule, link, and multiway-derived fibers |
-| Connection | Connection subgraph and horizontal lifts | Explicit transport maps, local-frame action, non-isomorphic fibers, and partial lifts | Twists, hypergraph fibers, dynamic fiber type |
-| Curvature | Holonomy matrices and flatness | Conjugacy observables and exact gauge signature | Dynamical curvature action from rewrites |
-| Rewriting | Exact bare-hypergraph multiway evolution | Strict event-provenance subdivision, explicit oriented faces, and joint physical state identity | Carry cell incidence in upstream arena and add proven morphisms |
-| Quantum | Multiway structure; separate community work | Normalized fresh-fiber orbit isometry and exact Schmidt bound | Multi-event complex amplitudes and interference |
-| Performance | Persistent CUDA rewrite engine | `uint16` group tables, physical-only subdivision, and verified Metal probe | End-to-end fiber-aware CUDA integration |
-| Physics | Conceptual gauge emergence program | Exact independent-cell diffusion factor, shared-face multi-loop feedback, and reversible coarse relaxation | Derived conserved energy, correlation scaling, engine-integrated geometry changes, continuum limit, matter |
-| Reproducibility | Public demonstrations and technical documents | Finite fiber/rule censuses, complete pair classification, exhaustive shared-face patch oracle, and controlled mesh runs | Broader rules, independent replication, multi-face invariants and localization census |
-
-## Claim discipline
-
-The repository does not claim:
-
-- that `Aut(F)` is uniquely the gauge group of a Wolfram model;
-- that a continuous Lie group has emerged;
-- that branch counts alone define quantum amplitudes;
-- that a gauge-invariant kinematics specifies a force law;
-- that nuclei, atoms, molecules, photons, or fermions have been derived;
-- that a microkernel throughput number is an end-to-end simulation speedup.
-
-Each such statement is instead represented as a testable research milestone.
+No literature-priority claim follows from these local calculations.
+Their value is the specific construction, counterexample, or restriction
+they establish under stated assumptions. Scripts and datasets remain
+available through the linked notes; they are not a list of completed
+steps toward the Standard Model.
