@@ -1,0 +1,44 @@
+docs/research-direction.md
+  s_eac889b4a6700f::t_bdf664acfe26a0 1-161
+CONTRIBUTING.md
+  s_eac889b4a6700f::t_864054a49d867c 3-8
+docs/phenomenon-detection.md
+  s_eac889b4a6700f::t_6d4a5a09b4514e 3-8
+FORUM_POST.md
+  s_eac889b4a6700f::t_c22a8511bcb4e1 3,5-8,10-16,18,20-26,28-31,33-38,40-44,46,48-57,59-64,66-68
+tools/render_primitives_visuals.mjs
+  s_eac889b4a6700f::t_37c4b509d4de8f 1-36,38-73,75-106,108-122
+  s_eac889b4a6700f::t_6d4a5a09b4514e 37,74,107
+README.md
+  s_eac889b4a6700f::t_5a4cdd1149bd19 55-56,59,64-65,67,69-72,96,98-99,120,122-124,152,154-156,255,257-261,311,313-316
+  s_eac889b4a6700f::t_6d4a5a09b4514e 125-127
+  s_eac889b4a6700f::t_e19ea577b0e7e7 18-52,60-62,75,77-81,83-86,88-91,93-94,101-103,107,109-111,113-115,117-118,129-132,135,137-139,141-145,147-150,158-161,163,165-167,169-170,174,176-179,181-183,185-188,192-196,200,202-203,206,209-210,213,216-218,220-223,225-229,231-234,238,240-241,243-248,250-253,263-286,288-289,291-292,295,298-302,304-305,308,318,321-322,325-328,330-333,335,337-339,341,344,347-349,351-354,356-357,361,363-366,368-371,373-375,377,379-381,384,386-390,392-395,398-399,402-404,406-410,412-415,417-418,422,424-450,453-482,486,488-532,535,552-555,560-562
+docs/readme-visuals.md
+  s_eac889b4a6700f::t_6d4a5a09b4514e 3-32
+docs/STATE_OF_THE_ART.md
+  s_eac889b4a6700f::t_6ad98bdac27931 1-123
+docs/infragauge-foundations.md
+  s_eac889b4a6700f::t_0f34cc629b65e0 1-8,18,20,32,62-65,75,90-95
+docs/images/readme-fiber-projection.svg
+  s_eac889b4a6700f::t_e1c19ce5f22a84 1
+docs/images/readme-history-vs-causality.svg
+  s_eac889b4a6700f::t_2d7d49f8f048ae 1
+docs/images/readme-rewrite-primitives.svg
+  s_eac889b4a6700f::t_4c56ffd6ef587e 1
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "801ec5e0885e5870689352a1def3bff918711f2e",
+  "prompts": {},
+  "sessions": {
+    "s_eac889b4a6700f": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a08883-688f-7a32-a256-739410e0f062",
+        "model": "gpt-6-astra"
+      },
+      "human_author": "Nick Sweeting <git@sweeting.me>"
+    }
+  }
+}
