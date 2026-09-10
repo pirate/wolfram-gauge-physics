@@ -1,0 +1,441 @@
+docs/cycle-prime-power-reactions.md
+  s_33c6c7a35bd0ca::t_2124edfb1568c2 1-197,207-215
+  s_33c6c7a35bd0ca::t_abd98439f69f7b 198-206
+docs/triangle-overlap-algebra.md
+  s_33c6c7a35bd0ca::t_44bab8526c2824 194-196
+  s_33c6c7a35bd0ca::t_4615ecb0d109da 174-180
+  s_33c6c7a35bd0ca::t_5842196795cc60 1-173,181-193,197-215
+tools/triangle_reaction_channel.py
+  s_33c6c7a35bd0ca::t_53ed05930fb117 1-88,106-112,116-119
+  s_33c6c7a35bd0ca::t_2486a767335e41 89-105,113-115
+docs/fiber-angular-transport.md
+  s_33c6c7a35bd0ca::t_c40aef3e44d06d 300-306
+  s_33c6c7a35bd0ca::t_811dfe0ba4f2aa 1-50,57-299,307-316
+  s_33c6c7a35bd0ca::t_977354b70aef25 51-56
+tools/fiber_angular_transport.py
+  s_33c6c7a35bd0ca::t_46d15c79ddbbe5 1-18,20-256,337-342,344-353
+  s_33c6c7a35bd0ca::t_78abf8309a6b5b 19,257-336,343
+docs/fiber-charge-coupling.md
+  s_33c6c7a35bd0ca::t_90d42e8a9965f7 1-2,7-135,148-213,223-229
+  s_33c6c7a35bd0ca::t_3097eb2a316458 3-6
+  s_33c6c7a35bd0ca::t_3b27d7d98560d6 136-147,214-222
+tools/fiber_reaction_carriers.py
+  s_33c6c7a35bd0ca::t_8485a8b060520a 1-8,11-62,110,113-118
+  s_33c6c7a35bd0ca::t_fa8791d58835a5 9-10,63-109,111-112
+tools/fiber_alignment_boundary.py
+  s_33c6c7a35bd0ca::t_da0d122bde9340 1-14,16,18-21,23-27,30-32,35,37-39,41,44,46-47,49-59,63-65
+  s_33c6c7a35bd0ca::t_b501b1bdb9adc9 15,17,22,28-29,33-34,36,40,42-43,45,48,60-62
+docs/triangle-variance-current.md
+  s_33c6c7a35bd0ca::t_7538e399c4cfb3 184-187
+  s_33c6c7a35bd0ca::t_d57f7f56b107c5 1-183,188-196
+tools/fiber_angular_stars.py
+  s_33c6c7a35bd0ca::t_4fef3ad22752dd 1-10,12-20,22-176,178-183,283-285,288-290
+  s_33c6c7a35bd0ca::t_089648e32427c4 11,21,184-265,269-270,274-275,279-282,286-287
+  s_33c6c7a35bd0ca::t_f67f4c6da65e12 266-268,271-273,276-278
+  s_33c6c7a35bd0ca::t_303b770b3d2016 177
+docs/triangle-strip-memory.md
+  s_33c6c7a35bd0ca::t_475d564f08e909 132-265,267-270,376-377
+  s_33c6c7a35bd0ca::t_eccdffd84af25c 370-374
+  s_33c6c7a35bd0ca::t_aab81f30b348fb 1-131,355-362,367-369,375,380-381
+  s_33c6c7a35bd0ca::t_20405f685d57d8 266,271-354,363-366,378-379
+tools/triangle_gauge_bulk_witness.py
+  s_33c6c7a35bd0ca::t_275488cad76914 1-131
+tools/fiber_word_conservation.py
+  s_33c6c7a35bd0ca::t_c1f849cf074ef9 149-215,224-225,234-235
+  s_33c6c7a35bd0ca::t_abd98439f69f7b 69-75,97-98,100-101
+  s_33c6c7a35bd0ca::t_2b132f2fb5119f 1-68,76-96,99,102-148,216-223,226-233
+tools/plot_triangle_wilson_loops.py
+  s_33c6c7a35bd0ca::t_1509c13607c4f2 1-61
+docs/triangle-charge-memory-kernel.md
+  s_33c6c7a35bd0ca::t_7538e399c4cfb3 1-200
+tools/triangle_gauge_stratified_moments.py
+  s_33c6c7a35bd0ca::t_f76c6a06d41a27 138,140,143-144,151,153-157
+  s_33c6c7a35bd0ca::t_07d544dbe1abfc 1-27,29-69,71-87,90-93,95-137,139,141-142,145-150,152,158-167
+  s_33c6c7a35bd0ca::t_8de35a82645915 28,70,88-89,94
+docs/triangle-wilson-relaxation.md
+  s_33c6c7a35bd0ca::t_e70c2ce930b6cc 19-20
+  s_33c6c7a35bd0ca::t_20c5d6a17ede67 1-18,21-258
+docs/triangle-winding-transport.md
+  s_33c6c7a35bd0ca::t_4018cf7fed5b37 210-213
+  s_33c6c7a35bd0ca::t_7a73d7de93d1d4 1-209,214-217
+data/triangle-reaction-memory-summary.json
+  s_33c6c7a35bd0ca::t_2bcdff9ab52543 1-37
+tools/triangle_feedback.py
+  s_12ff4017224de0::t_bf267fad84e4d3 40-42
+tools/cycle_prime_power_reactions.py
+  s_33c6c7a35bd0ca::t_eddfad88f94f90 1-177
+tools/fiber_angular_activation.py
+  s_33c6c7a35bd0ca::t_24ce6a51225612 1-3,5-17,19-26,30-32,37-65,78-91,110-115,118-125,128-129,131-132
+  s_33c6c7a35bd0ca::t_191699a74877e8 92-108,116
+  s_33c6c7a35bd0ca::t_99aadb68b988aa 4,18,27-29,33-36,66-77,109,117,126-127,130
+docs/triangle-reaction-channel.md
+  s_33c6c7a35bd0ca::t_220863521fc1f9 1-157,159,172-176,214,244-255
+  s_33c6c7a35bd0ca::t_2bcdff9ab52543 158,160-171,177-213,215-243,256-267
+tools/triangle_wilson_quench.py
+  s_33c6c7a35bd0ca::t_5f22056f1f9546 1-168
+tools/triangle_wilson_dynamics.py
+  s_33c6c7a35bd0ca::t_8a48dcded8edf3 34,161,170-173,182,189-192
+  s_33c6c7a35bd0ca::t_7f314ecc612da9 1-33,35-160,162-169,174-181,183-188,193-195
+tools/triangle_strip_memory.py
+  s_33c6c7a35bd0ca::t_1ba933385d9914 14,148-162,183-187
+  s_33c6c7a35bd0ca::t_4d5767add41d1b 82
+  s_33c6c7a35bd0ca::t_79580fbc2cd5e9 103
+  s_33c6c7a35bd0ca::t_35c201beb62807 110,144-147,163-169,182,188-189
+  s_33c6c7a35bd0ca::t_4628f99142dbe1 1-13,15-21,23,26-32,41-46,59-81,83-97,99-102,104-109,111-116,128-143,170-175,178-181,190-192,194-198
+  s_33c6c7a35bd0ca::t_1c51981ac9b780 22,24-25,33-40,47-58,98,117-127,176-177,193
+tools/triangle_winding_trajectories.py
+  s_33c6c7a35bd0ca::t_0184eeb48efd3b 9,12,20,38-57
+  s_33c6c7a35bd0ca::t_b4a9971be5593f 1-8,10-11,13-19,21-37,58-146
+tools/triangle_mode_rates.py
+  s_12ff4017224de0::t_bf267fad84e4d3 91-93
+tools/fiber_refinement_limit.py
+  s_33c6c7a35bd0ca::t_1cdec79c810952 1-202
+docs/triangle-wilson-loops.md
+  s_33c6c7a35bd0ca::t_5a74a7e67f976c 156-160,256
+  s_33c6c7a35bd0ca::t_20c5d6a17ede67 251-255
+  s_33c6c7a35bd0ca::t_7109e7d58c1de0 21-22
+  s_33c6c7a35bd0ca::t_a67752d594cc2c 1-20,23-155,161-250,257-294
+tools/triangle_reference.py
+  s_12ff4017224de0::t_bf267fad84e4d3 76-80
+docs/triangle-released-traps.md
+  s_33c6c7a35bd0ca::t_65f2c992e41d57 1-112,114-115,118,173
+  s_33c6c7a35bd0ca::t_eccdffd84af25c 113,116-117,119-172,174-175
+tools/fiber_constraint_dynamics.py
+  s_33c6c7a35bd0ca::t_3ca11745f782fc 1-131,148-191,194-288,290-296,298-309,311-316,319-326,329-330,333-336,339-340,342
+  s_33c6c7a35bd0ca::t_b9f3f82da83693 132-147,192-193,289,297,310,317-318,327-328,331-332,337-338,341
+tools/fiber_reaction_bursts.py
+  s_33c6c7a35bd0ca::t_890a49b0c6e31e 1-28,31-50,54-110,114-124,128-137,146-249
+  s_33c6c7a35bd0ca::t_8559708f9ea07a 29-30,51-53,111-113,125-127,138-145
+docs/fiber-bulk-transport.md
+  s_33c6c7a35bd0ca::t_33099dc028d6d4 3-7
+  s_33c6c7a35bd0ca::t_e0d9ac591d93b1 1-2,8-259
+docs/triangle-gauge-resolved-transport.md
+  s_33c6c7a35bd0ca::t_3e2c74d3d111df 1-143,151-152
+  s_33c6c7a35bd0ca::t_648c1c702b3516 144-150
+docs/fiber-alignment-boundary.md
+  s_33c6c7a35bd0ca::t_77e39d848d003c 2-114,171-177,179-198,211-213,215-220,226-233,236-239
+  s_33c6c7a35bd0ca::t_f6c6f60c99e1ad 199-205
+  s_33c6c7a35bd0ca::t_d306708814eeef 206-210
+  s_33c6c7a35bd0ca::t_cc9436f45080cc 1,115-170,178,214,221-225,234-235
+tools/triangle_projective_lift.py
+  s_33c6c7a35bd0ca::t_44dbee5c92c21b 1-94
+data/triangle-charge-mode-dynamics.json
+  s_33c6c7a35bd0ca::t_5e964b99e57721 1-40
+tools/fiber_collective_modes.py
+  s_33c6c7a35bd0ca::t_85c610b75f1163 7,18,40,185-192
+  s_33c6c7a35bd0ca::t_66d63d52b6045f 203-222,235-237
+  s_33c6c7a35bd0ca::t_0df9661b3d8053 10-11,20,59-99,193,224-226,238
+  s_33c6c7a35bd0ca::t_2f223e6c3d1479 1-6,8-9,12-17,19,21-39,41-58,100-184,194-202,223,227-234,239-252
+docs/fiber-reaction-bursts.md
+  s_33c6c7a35bd0ca::t_82fce327da736a 121-136
+  s_33c6c7a35bd0ca::t_6dedca47b9ebb9 355-361
+  s_33c6c7a35bd0ca::t_d306708814eeef 1-120,137-354,362-368
+tools/triangle_rewrite_history.py
+  s_33c6c7a35bd0ca::t_bc1d5ba664e155 1-8,10-86,115-127,130-140
+  s_33c6c7a35bd0ca::t_43107c7cdbc7f9 9,87-114,128-129
+src/infragauge.hpp
+  s_12ff4017224de0::t_bf267fad84e4d3 352-355,417-418,480-481,490-492,522-525
+docs/triangle-boundary-framing.md
+  s_33c6c7a35bd0ca::t_68f7346bb0bbd0 202-205
+  s_33c6c7a35bd0ca::t_5a733191354f92 1-201,206-215
+docs/triangle-modes.md
+  s_12ff4017224de0::t_13bbac058e1c5e 142-144
+docs/fiber-constraint-intersection.md
+  s_33c6c7a35bd0ca::t_02bb062bede9fc 145-176,186-215,219-236
+  s_33c6c7a35bd0ca::t_bb396fabe6c4e6 237-244
+  s_33c6c7a35bd0ca::t_af2db633d84baa 1-144,245-247
+  s_33c6c7a35bd0ca::t_8b45c6be39e8f5 177-185,216-218
+docs/cycle-charge-compatibility.md
+  s_33c6c7a35bd0ca::t_e5d009f3bc475c 1-175
+tools/fiber_released_activation.py
+  s_33c6c7a35bd0ca::t_e7907546273159 1-142
+docs/fiber-dilute-encounter.md
+  s_33c6c7a35bd0ca::t_bcb9b4cc4b6f8f 1-172
+docs/triangle-winding-fluctuations.md
+  s_33c6c7a35bd0ca::t_648c1c702b3516 9-18,94-188,191
+  s_33c6c7a35bd0ca::t_30d02cdfbb286c 1-8,19-93,189-190
+tools/fiber_charge_coupling.py
+  s_33c6c7a35bd0ca::t_4e9b85d2759012 1-21,107-129,131-132,134-214,217-221,223-229,233-239
+  s_33c6c7a35bd0ca::t_90d42e8a9965f7 222,232
+  s_33c6c7a35bd0ca::t_aa9161f1da5d05 22-55,61-66,68-71,73-75,77-83,85-95,98-106,215-216,230-231
+  s_33c6c7a35bd0ca::t_9c76d7f751e3ef 56-60,67,72,76,84,96-97,130,133
+tools/triangle_strip_mechanism.py
+  s_33c6c7a35bd0ca::t_ea2b25c1dcb30d 7,10-38
+  s_33c6c7a35bd0ca::t_4333b45ee6b912 80-97,123,125-127
+  s_33c6c7a35bd0ca::t_55dd24e3b9e4f4 63-74,124
+  s_33c6c7a35bd0ca::t_79580fbc2cd5e9 1-6,8-9,39-55,98-111,115-118,130-134
+  s_33c6c7a35bd0ca::t_4d5767add41d1b 56-62,75-79,112-114,119-122,128-129
+docs/triangle-gauge-bulk-correction.md
+  s_33c6c7a35bd0ca::t_3e2c74d3d111df 13-16
+  s_33c6c7a35bd0ca::t_aefd6b921b7beb 1-12,17-187
+docs/fiber-collective-modes.md
+  s_33c6c7a35bd0ca::t_3b27d7d98560d6 3-7
+  s_33c6c7a35bd0ca::t_03ef7e741d9b53 1-2,8-261
+docs/fiber-relative-angle.md
+  s_33c6c7a35bd0ca::t_e0d9ac591d93b1 3-7
+  s_33c6c7a35bd0ca::t_3097eb2a316458 1-2,8-18,27-282
+  s_33c6c7a35bd0ca::t_a0dcb6692f3b9f 19-26
+tools/plot_triangle_wilson_relaxation.py
+  s_33c6c7a35bd0ca::t_b19e4c1b7c733e 39
+  s_33c6c7a35bd0ca::t_ffca9f2679b3c7 1-38,40-51
+tools/cycle_charge_compatibility.py
+  s_33c6c7a35bd0ca::t_f2bd9790d45b56 1-16,18-64,66-67,69,102-152
+  s_33c6c7a35bd0ca::t_5e953800a16ef1 17,65,68,70-101
+docs/fiber-angular-activation.md
+  s_33c6c7a35bd0ca::t_bb396fabe6c4e6 1-180
+docs/fiber-constraint-dynamics.md
+  s_33c6c7a35bd0ca::t_bcb9b4cc4b6f8f 317-322
+  s_33c6c7a35bd0ca::t_6dedca47b9ebb9 1-222,228-239,243-316,323-327
+  s_33c6c7a35bd0ca::t_5d7630080e6c1b 223-227,240-242
+tools/fiber_bulk_transport.py
+  s_33c6c7a35bd0ca::t_cddd9c597c6443 1-146,148-151,153-168,175-185,187-190,192-194,197-206,211,214-216
+  s_33c6c7a35bd0ca::t_35643b32fc70a7 191,207-210,212-213
+  s_33c6c7a35bd0ca::t_3cb8bbbbe558f6 147
+  s_33c6c7a35bd0ca::t_3ea5bcdb14c0e0 152,169-174,186,195-196
+tools/triangle_released_traps.py
+  s_33c6c7a35bd0ca::t_e19cc34565e300 118-130
+  s_33c6c7a35bd0ca::t_61a9394dbd6a65 64-86,100-102
+  s_33c6c7a35bd0ca::t_f8a34e11aec411 1-63,87-99,103-117,131-175
+tools/triangle_wilson_seed_drift.py
+  s_33c6c7a35bd0ca::t_a9ec4b1777b6bc 1-82
+tools/fiber_three_constraints.py
+  s_33c6c7a35bd0ca::t_a900f67a3a80c2 1-98
+docs/cycle-relational-dynamics.md
+  s_33c6c7a35bd0ca::t_7f9db1e5694771 1-285,293-301
+  s_33c6c7a35bd0ca::t_811dfe0ba4f2aa 286-292
+tools/fiber_refinement_heat.py
+  s_33c6c7a35bd0ca::t_699c451cf1ae87 1-133
+tools/triangle_charge_mode_dynamics.py
+  s_33c6c7a35bd0ca::t_887fe9a15d0ee8 1-107
+tools/fiber_dilute_encounter.py
+  s_33c6c7a35bd0ca::t_5ecde903b0b618 1-96
+docs/fiber-two-constraints.md
+  s_33c6c7a35bd0ca::t_8b45c6be39e8f5 107-110
+  s_33c6c7a35bd0ca::t_bcb9b4cc4b6f8f 1-100,112-191
+  s_33c6c7a35bd0ca::t_af2db633d84baa 101-106,111
+tools/triangle_winding_corrector.py
+  s_33c6c7a35bd0ca::t_7a73d7de93d1d4 124-142,150
+  s_33c6c7a35bd0ca::t_20553f48bbe22a 1-56,58-69,71-78,82,85-98,100-123,143-149
+  s_33c6c7a35bd0ca::t_2accba75619b93 70,79-81,99
+  s_33c6c7a35bd0ca::t_aa7c7c288fbc59 57,83-84
+tools/triangle_overlap_algebra.py
+  s_33c6c7a35bd0ca::t_afd59e325d8c23 1-7,9-10,13-71,119-122,124-125,129-135,165-167,174-180
+  s_33c6c7a35bd0ca::t_1b8bcc758347ec 8,123,126-128,137-164,168-172
+  s_33c6c7a35bd0ca::t_ce5dad7e2d1655 90
+  s_33c6c7a35bd0ca::t_7c73afee20aa0e 11-12,72-89,91-110,113-118,173
+  s_33c6c7a35bd0ca::t_4615ecb0d109da 111-112,136
+tools/triangle_spectral_capacity.py
+  s_12ff4017224de0::t_bf267fad84e4d3 63-66
+tools/triangle_seeded_activity.py
+  s_33c6c7a35bd0ca::t_c523ec0ce987ac 1-9,11-23,26-103
+  s_33c6c7a35bd0ca::t_36b0afaac2cc04 10,24-25
+tools/triangle_charge_current.py
+  s_12ff4017224de0::t_bf267fad84e4d3 22,26-28
+tools/triangle_gauge_current_corrector.py
+  s_33c6c7a35bd0ca::t_22d67e9b5bd3e4 12,34-44,47-53,63,66,72-85
+  s_33c6c7a35bd0ca::t_aa7c7c288fbc59 25-26,86-112
+  s_33c6c7a35bd0ca::t_566ae6d1a74cbf 1-11,13-24,27-33,45-46,54-62,64-65,67-71,113-163
+docs/fiber-angular-stars.md
+  s_33c6c7a35bd0ca::t_33099dc028d6d4 1-118,120-241
+  s_33c6c7a35bd0ca::t_734d10f8edccbb 242-247
+  s_33c6c7a35bd0ca::t_927f756db4a382 119
+docs/triangle-local-control-group.md
+  s_33c6c7a35bd0ca::t_ecf315261b6faf 133-140
+  s_33c6c7a35bd0ca::t_c1dddb52ce7955 1-132,141-200
+tools/fiber_two_constraint_witness.py
+  s_33c6c7a35bd0ca::t_6e10891624e99a 1-81
+data/triangle-winding-fluctuations.json
+  s_33c6c7a35bd0ca::t_e2762949ce865c 1-56
+docs/fiber-refinement-limit.md
+  s_33c6c7a35bd0ca::t_77e39d848d003c 293-299
+  s_33c6c7a35bd0ca::t_d306708814eeef 300-305
+  s_33c6c7a35bd0ca::t_734d10f8edccbb 1-292,306-310
+docs/triangle-rewrite-history.md
+  s_33c6c7a35bd0ca::t_1034f0ff2f54d3 1-159
+tools/triangle_modes.py
+  s_12ff4017224de0::t_bf267fad84e4d3 119-121,128-130,218-220
+tools/fiber_angular_current.py
+  s_33c6c7a35bd0ca::t_3cb8bbbbe558f6 1-111,151-157
+  s_33c6c7a35bd0ca::t_f26924816056a4 112-150
+docs/fiber-word-conservation.md
+  s_33c6c7a35bd0ca::t_f0cd7a23641f22 198-199,238-316,330-332
+  s_33c6c7a35bd0ca::t_7f9db1e5694771 317-321
+  s_33c6c7a35bd0ca::t_abd98439f69f7b 1-197,200-237,322-329,333-352
+tools/triangle_framed_overlap.py
+  s_33c6c7a35bd0ca::t_c1be2581587f35 175-185,197,235-237
+  s_33c6c7a35bd0ca::t_f7163ae1f2859e 186-191,198
+  s_33c6c7a35bd0ca::t_1c295f0192e6af 125,147-174,192-196,199-234,238-244,249-250
+  s_33c6c7a35bd0ca::t_bde34cd2f05fb4 1-124,126-146,245-248,251-254
+docs/triangle-gauge-current-corrector.md
+  s_33c6c7a35bd0ca::t_0dffbfdca8fe89 15-17,132-133,209-212
+  s_33c6c7a35bd0ca::t_3e2c74d3d111df 9-14,134-135,214,216-218,244-247
+  s_33c6c7a35bd0ca::t_4018cf7fed5b37 1-8,18-131,136,250-282
+  s_33c6c7a35bd0ca::t_e2367374f4a726 137-208,213,215,219-243,248-249,283-284
+tools/fiber_constraint_intersection.py
+  s_33c6c7a35bd0ca::t_e2ba5695477eb2 1-8,10-15,17-91,192,195-196,199-205,213-215,219,223-225,236-239
+  s_33c6c7a35bd0ca::t_2de423decd7fbe 16,126-133,137-138,141-152,190-191,193,198,206-212,216-218,221
+  s_33c6c7a35bd0ca::t_cc348d9c9b0f0c 134-136,139-140,153-189,226-235
+  s_33c6c7a35bd0ca::t_5f0fa27f0d23d3 119
+  s_33c6c7a35bd0ca::t_8beaa7dbc5f287 92-118,120-125,220,222
+  s_33c6c7a35bd0ca::t_e3da143b8b98fe 9,194,197,240-243
+tools/triangle_wilson_reference.py
+  s_33c6c7a35bd0ca::t_65290dbd0c1d52 1-101,124-176
+  s_33c6c7a35bd0ca::t_5f22056f1f9546 102-123
+tools/fiber_constraint_topology.py
+  s_33c6c7a35bd0ca::t_efc280650a5e70 1-55
+tools/cycle_spectral_reactions.py
+  s_33c6c7a35bd0ca::t_a6957da67cbe7c 1-83
+tools/fiber_two_constraints.py
+  s_33c6c7a35bd0ca::t_e3da143b8b98fe 84-87,89-90
+  s_33c6c7a35bd0ca::t_da88a463735769 1-48,50-55,62-83,88,91-114,117-255
+  s_33c6c7a35bd0ca::t_191699a74877e8 115-116
+  s_33c6c7a35bd0ca::t_a900f67a3a80c2 49,56-61
+docs/triangle-projective-lift.md
+  s_33c6c7a35bd0ca::t_ecf315261b6faf 1-9,16-209
+  s_33c6c7a35bd0ca::t_1034f0ff2f54d3 10-15
+tools/triangle_overlap_symplectic.py
+  s_33c6c7a35bd0ca::t_e780df4baa6fcc 1-9,11-41,43-127
+  s_33c6c7a35bd0ca::t_1b8bcc758347ec 10,42
+tools/fiber_reaction_sector_rates.py
+  s_33c6c7a35bd0ca::t_0bd927112958fb 1-59
+docs/cycle-spectral-reactions.md
+  s_33c6c7a35bd0ca::t_da9479e3eaca6d 165-166
+  s_33c6c7a35bd0ca::t_e5d009f3bc475c 1-164,167-179,185-203
+  s_33c6c7a35bd0ca::t_2124edfb1568c2 180-184
+tools/plot_triangle_winding_fluctuations.py
+  s_33c6c7a35bd0ca::t_e2762949ce865c 1-47
+tools/fiber_relative_angle.py
+  s_33c6c7a35bd0ca::t_52deaaa5e58c85 14,64-101,170-179,184
+  s_33c6c7a35bd0ca::t_9c76d7f751e3ef 1-13,15-63,129-169,180-183,186-198
+  s_33c6c7a35bd0ca::t_3097eb2a316458 102-128,185
+tools/triangle_charge_memory_kernel.py
+  s_33c6c7a35bd0ca::t_4b2266e1085d3f 85-95,100,104,108-109,111,163-164
+  s_33c6c7a35bd0ca::t_045280fb122e99 1-7,10-35,97-99,101-103,105-107,110,112-119,139-156,158-161,165-167,170-177
+  s_33c6c7a35bd0ca::t_573f766ef1fbc0 8-9,36-84,96,157,162
+  s_33c6c7a35bd0ca::t_6f18d66d3edd81 120-138,168-169
+tools/triangle_coupled_star.py
+  s_33c6c7a35bd0ca::t_8ea2196c5602a0 110-128,143-162,164-169,193
+  s_33c6c7a35bd0ca::t_bb3b1ed988ccdc 1-109,170-187,191-192,197-200
+  s_33c6c7a35bd0ca::t_2ec5f29e8d4e0b 129-142,163,188-190,194-196
+docs/triangle-charge-mode-dynamics.md
+  s_33c6c7a35bd0ca::t_6f57dbf0ec044e 1-88,92-124,195
+  s_33c6c7a35bd0ca::t_5e964b99e57721 89-91,125-194,196-197
+tools/triangle_gauge_transport_moments.py
+  s_33c6c7a35bd0ca::t_22d67e9b5bd3e4 1-18,20-31,33-56,58-69
+  s_33c6c7a35bd0ca::t_5eec63ed4a60f9 19,32,57
+tools/face_energy_obstruction.py
+  s_12ff4017224de0::t_bf267fad84e4d3 78-81
+docs/triangle-feedback.md
+  s_33c6c7a35bd0ca::t_da9479e3eaca6d 54-59
+tools/cycle_relational_dynamics.py
+  s_33c6c7a35bd0ca::t_ba605c98b2a014 9,211-261,266-268
+  s_33c6c7a35bd0ca::t_d664332aef62eb 1-8,10-210,262-265,269-277
+tools/triangle_local_control_group.py
+  s_33c6c7a35bd0ca::t_22dfb905768995 49-64,79-80,91,170
+  s_33c6c7a35bd0ca::t_48050deae8cead 145-168,178
+  s_33c6c7a35bd0ca::t_a88650eba9693f 1-48,65-78,81-90,92-144,169,171-177,179-185
+tools/triangle_rotation_episodes.py
+  s_33c6c7a35bd0ca::t_3e3ab972aa2a37 1-165,182,187-201,230-231
+  s_33c6c7a35bd0ca::t_2486a767335e41 202-229
+  s_33c6c7a35bd0ca::t_461909a6fb536d 166-181,183-186
+data/cycle-charge-compatibility.json
+  s_33c6c7a35bd0ca::t_bd962ab308281a 1-2406
+data/cycle-prime-power-reactions.json
+  s_33c6c7a35bd0ca::t_f85c3da70f9d4a 1-1647
+data/cycle-relational-dynamics.json
+  s_33c6c7a35bd0ca::t_c35343963a1531 1-8519
+data/cycle-spectral-reactions.json
+  s_33c6c7a35bd0ca::t_eecb50d1fa9135 1-9654
+data/fiber-alignment-boundary.json
+  s_33c6c7a35bd0ca::t_ac772aabeee27f 1-455
+data/fiber-angular-activation.json
+  s_33c6c7a35bd0ca::t_7c517ac0a68baa 1-18359
+data/fiber-angular-current-moments.json
+  s_33c6c7a35bd0ca::t_28ac07b94516f0 1-40
+data/fiber-angular-current.json
+  s_33c6c7a35bd0ca::t_1ec31e5a36e2e4 1-3266
+data/fiber-angular-stars.json
+  s_33c6c7a35bd0ca::t_a35ee6cc949bc8 1-4363
+data/fiber-angular-transport.json
+  s_33c6c7a35bd0ca::t_13a5ccbafa6de0 1-1976
+data/fiber-bulk-transport-confirmation.json
+  s_33c6c7a35bd0ca::t_66ad02687c5955 1-143942
+data/fiber-bulk-transport-summary.json
+  s_33c6c7a35bd0ca::t_f483997e782587 1-210
+data/fiber-bulk-transport.json
+  s_33c6c7a35bd0ca::t_eef06ad928a23b 1-9256
+data/fiber-charge-coupling.json
+  s_33c6c7a35bd0ca::t_9ee237a87e39da 1-1629
+data/fiber-collective-modes.json
+  s_33c6c7a35bd0ca::t_8f55cc8ab3efbf 1-1217
+data/fiber-constraint-dynamics.json
+  s_33c6c7a35bd0ca::t_2790636d19708e 1-30088
+data/fiber-constraint-intersection.json
+  s_33c6c7a35bd0ca::t_40a1425820afde 1-112321
+data/fiber-constraint-proximity.json
+  s_33c6c7a35bd0ca::t_79ab7c82321d62 1-185
+data/fiber-constraint-topology.json
+  s_33c6c7a35bd0ca::t_1cedb7003b0221 1-388
+data/fiber-dilute-encounter.json
+  s_33c6c7a35bd0ca::t_6a37c71bc68849 1-100
+data/fiber-reaction-bursts.json
+  s_33c6c7a35bd0ca::t_a3e56e0632eb6a 1-8577
+data/fiber-reaction-carriers.json
+  s_33c6c7a35bd0ca::t_46573f740c678f 1-608
+data/fiber-reaction-sector-rates.json
+  s_33c6c7a35bd0ca::t_3cab4376d38ef5 1-472
+data/fiber-refinement-heat.json
+  s_33c6c7a35bd0ca::t_b1eed3d7387cb4 1-1758
+data/fiber-relative-angle.json
+  s_33c6c7a35bd0ca::t_4d784a6db7c2d3 1-4817
+data/fiber-released-activation.json
+  s_3dff2a00c4a5b5::t_211a4ffdff7017 1-35445
+data/fiber-three-constraints.json
+  s_33c6c7a35bd0ca::t_32d1f6d98b70dd 1-2901
+data/fiber-two-constraint-witness.json
+  s_33c6c7a35bd0ca::t_5f225ce4fbbd45 1-656
+data/fiber-two-constraints.json
+  s_33c6c7a35bd0ca::t_5dd7c31cd18c64 1-21784
+data/fiber-word-conservation.json
+  s_33c6c7a35bd0ca::t_4e96ec66956696 1-1798
+data/triangle-wilson-confirmation.json
+  s_33c6c7a35bd0ca::t_487f94989cbfbc 1-144236
+data/triangle-wilson-dynamics.json
+  s_33c6c7a35bd0ca::t_6fd9189dfac3f4 1-32308
+data/triangle-wilson-quench.json
+  s_33c6c7a35bd0ca::t_3c52bc7d99d021 1-389733
+data/triangle-wilson-seed-drift.json
+  s_33c6c7a35bd0ca::t_e451d28cdaf8d7 1-756
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.2",
+  "base_commit_sha": "fc193ad19696d3154b2ac7187469a3174ca910bf",
+  "prompts": {},
+  "sessions": {
+    "s_12ff4017224de0": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a088a0-2bb3-7330-92e6-f74acf5fc005",
+        "model": "gpt-6-astra"
+      },
+      "human_author": "Nick Sweeting <git@sweeting.me>"
+    },
+    "s_33c6c7a35bd0ca": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a061ab-263d-7860-b882-4955b6e0b240",
+        "model": "gpt-6-astra"
+      },
+      "human_author": "Nick Sweeting <git@sweeting.me>"
+    },
+    "s_3dff2a00c4a5b5": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a078ff-a665-72d3-a593-c4eb6ed6ba9f",
+        "model": "gpt-6-astra"
+      },
+      "human_author": "Nick Sweeting <git@sweeting.me>"
+    }
+  }
+}
