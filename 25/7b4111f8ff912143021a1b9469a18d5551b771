@@ -1,0 +1,19 @@
+README.md
+  s_eac889b4a6700f::t_0669798693c715 34-732,747-748,758,760-762,764-768,770,772-774
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.2",
+  "base_commit_sha": "257b4111f8ff912143021a1b9469a18d5551b771",
+  "prompts": {},
+  "sessions": {
+    "s_eac889b4a6700f": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a08883-688f-7a32-a256-739410e0f062",
+        "model": "gpt-6-astra"
+      },
+      "human_author": "Nick Sweeting <git@sweeting.me>"
+    }
+  }
+}
