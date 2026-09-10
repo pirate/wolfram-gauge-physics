@@ -1,0 +1,46 @@
+README.md
+  s_eac889b4a6700f::t_d2a639dc3d6bbe 128,132,134,204,206-208,210-211,216-217,219,221,229,231-234,277,279,281-282,289,291,293,295,300,302,345,349,351,354,358,360,362,364,366,370,374,419,421,427,430,433,435,437-438,440,443,447,449-450,462,502,505,508,510,512,514,517,520,524,527,532,534,536,538,542,545,591,593,600,602-604,606,608,613,617,619,622,626,633-634,672,675,679,681-682,684,686,691-692,696,700,702,704,707,709,711,752,754,756,760,764,766,768
+  s_eac889b4a6700f::t_89c55965e90f0f 382-388,454-460,550-561,717-723,769-779
+  s_eac889b4a6700f::t_33e00cd59e4324 60-65,67-70,102-108,167-170,173-177,236-247,309-313
+  s_eac889b4a6700f::t_d1e49cd370d534 115-124,194-200,409,411-413,422-423,425,580,582-586,921-923
+  s_eac889b4a6700f::t_9c0712d932ffe2 36-59,72-77,79-82,89-93,145,147-152,154-159,161,163-166,178-192
+  s_eac889b4a6700f::t_8ba1d8c3db3fb6 109
+  s_eac889b4a6700f::t_c0b1871c388c0f 193
+  s_eac889b4a6700f::t_949d263af5c502 314
+  s_eac889b4a6700f::t_611d4e8c2119af 426
+  s_eac889b4a6700f::t_913fd10cd95c83 461
+tools/render_readme_visuals.mjs
+  s_eac889b4a6700f::t_ab7cbc2084c1fe 61
+  s_eac889b4a6700f::t_eb2c6f32e9d9c7 1-19,44-60,62-74,77-126
+  s_eac889b4a6700f::t_f2d60250420d29 75-76,127-155
+  s_eac889b4a6700f::t_366f395bdf75f3 20-43,156
+docs/readme-visuals.md
+  s_eac889b4a6700f::t_ede2f887d95c26 1-6,8-19,23-66
+  s_eac889b4a6700f::t_bf6635127d2de5 7,20-22
+docs/images/readme-visual-data.json
+  s_eac889b4a6700f::t_d41a02a19f3f2b 1-354
+docs/images/readme-fiber-holonomy.svg
+  s_eac889b4a6700f::t_a40f0e4d80c26d 1
+docs/images/readme-reaction-transfer.svg
+  s_eac889b4a6700f::t_744c461409dae8 1
+docs/images/readme-transport-memory.svg
+  s_eac889b4a6700f::t_ba2eed0c50a0c8 1
+docs/images/readme-what-is-a-fiber.svg
+  s_eac889b4a6700f::t_a394f1bfdee712 1
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.2",
+  "base_commit_sha": "208973fc0d7fbd3e13b8da0328a3ef84922a4623",
+  "prompts": {},
+  "sessions": {
+    "s_eac889b4a6700f": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a08883-688f-7a32-a256-739410e0f062",
+        "model": "gpt-6-astra"
+      },
+      "human_author": "Nick Sweeting <git@sweeting.me>"
+    }
+  }
+}
