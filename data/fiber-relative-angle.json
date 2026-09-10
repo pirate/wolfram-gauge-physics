@@ -1,0 +1,4817 @@
+{
+  "scope": "Relative-holonomy coupling to charge, without a physical energy or continuum force.",
+  "calculations": [
+    {
+      "cycle_vertices": 3,
+      "faces": 4,
+      "total_charge": 5,
+      "boundary": "reflection",
+      "framed_states": 120,
+      "inventory_counts": {
+        "ERZZ": 4,
+        "EZRZ": 4,
+        "EZZR": 4,
+        "REZZ": 4,
+        "RRRZ": 18,
+        "RRZR": 18,
+        "RZEZ": 4,
+        "RZRR": 18,
+        "RZZE": 4,
+        "ZERZ": 4,
+        "ZEZR": 4,
+        "ZREZ": 4,
+        "ZRRR": 18,
+        "ZRZE": 4,
+        "ZZER": 4,
+        "ZZRE": 4
+      },
+      "observables": [
+        {
+          "observable": "endpoint_charge",
+          "first_visible_depth": 2,
+          "first_changed_autocorrelation_derivative": 5,
+          "exact_angular_dirichlet_energies": [
+            "0",
+            "0",
+            "2304/5"
+          ],
+          "witness": {
+            "before_tuple": [
+              3,
+              2,
+              1,
+              2
+            ],
+            "after_tuple": [
+              4,
+              1,
+              1,
+              2
+            ],
+            "pair_position": 0,
+            "angular_channel_index": 0,
+            "charge_field": [
+              2,
+              1,
+              1,
+              1
+            ],
+            "response_before": 32,
+            "response_after": -64
+          },
+          "angular_off": {
+            "normalized_integrated_autocorrelation": 0.30476779435017043,
+            "poisson_relative_residual": 5.096229598978541e-13,
+            "stationary_components": 1
+          },
+          "angular_on": {
+            "normalized_integrated_autocorrelation": 0.303175206575836,
+            "poisson_relative_residual": 7.911454121252569e-13,
+            "stationary_components": 1
+          },
+          "relative_integrated_correlation_reduction": 0.005225577649141555
+        },
+        {
+          "observable": "charge_dipole",
+          "first_visible_depth": 2,
+          "first_changed_autocorrelation_derivative": 5,
+          "exact_angular_dirichlet_energies": [
+            "0",
+            "0",
+            "2048/5"
+          ],
+          "witness": {
+            "before_tuple": [
+              2,
+              1,
+              1,
+              3
+            ],
+            "after_tuple": [
+              2,
+              1,
+              2,
+              4
+            ],
+            "pair_position": 2,
+            "angular_channel_index": 0,
+            "charge_field": [
+              1,
+              1,
+              1,
+              2
+            ],
+            "response_before": -56,
+            "response_after": 8
+          },
+          "angular_off": {
+            "normalized_integrated_autocorrelation": 0.4076542240233061,
+            "poisson_relative_residual": 9.70669727449445e-16,
+            "stationary_components": 1
+          },
+          "angular_on": {
+            "normalized_integrated_autocorrelation": 0.40487969885714253,
+            "poisson_relative_residual": 3.331387464248776e-13,
+            "stationary_components": 1
+          },
+          "relative_integrated_correlation_reduction": 0.006806074861142486
+        },
+        {
+          "observable": "rotation_count",
+          "first_visible_depth": 1,
+          "first_changed_autocorrelation_derivative": 3,
+          "exact_angular_dirichlet_energies": [
+            "0",
+            "72/5"
+          ],
+          "witness": {
+            "before_tuple": [
+              2,
+              1,
+              1,
+              3
+            ],
+            "after_tuple": [
+              2,
+              1,
+              2,
+              4
+            ],
+            "pair_position": 2,
+            "angular_channel_index": 0,
+            "charge_field": [
+              1,
+              1,
+              1,
+              2
+            ],
+            "response_before": -12,
+            "response_after": 0
+          },
+          "angular_off": {
+            "normalized_integrated_autocorrelation": 0.4962835269927006,
+            "poisson_relative_residual": 1.0906799388377795e-15,
+            "stationary_components": 1
+          },
+          "angular_on": {
+            "normalized_integrated_autocorrelation": 0.43776323682890445,
+            "poisson_relative_residual": 1.0787444882093146e-15,
+            "stationary_components": 1
+          },
+          "relative_integrated_correlation_reduction": 0.11791705140488551
+        }
+      ],
+      "algebraic_witness": {
+        "before_tuple": [
+          2,
+          1,
+          1,
+          3
+        ],
+        "after_tuple": [
+          2,
+          1,
+          2,
+          4
+        ],
+        "pair_position": 2,
+        "angular_channel_index": 0,
+        "before_labels": [
+          "r1",
+          "r0",
+          "r0",
+          "t1"
+        ],
+        "after_labels": [
+          "r1",
+          "r0",
+          "r1",
+          "t2"
+        ],
+        "shared_link_realization": {
+          "base_mesh_side": 4,
+          "root": 0,
+          "rim_vertices": [
+            1,
+            5,
+            4,
+            3,
+            15
+          ],
+          "native_three_face_patch": 0,
+          "edges": [
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              3
+            ],
+            [
+              0,
+              4
+            ],
+            [
+              0,
+              5
+            ],
+            [
+              0,
+              12
+            ],
+            [
+              0,
+              15
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              1,
+              5
+            ],
+            [
+              1,
+              6
+            ],
+            [
+              1,
+              12
+            ],
+            [
+              1,
+              13
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              2,
+              6
+            ],
+            [
+              2,
+              7
+            ],
+            [
+              2,
+              13
+            ],
+            [
+              2,
+              14
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              3,
+              7
+            ],
+            [
+              3,
+              14
+            ],
+            [
+              3,
+              15
+            ],
+            [
+              4,
+              5
+            ],
+            [
+              4,
+              7
+            ],
+            [
+              4,
+              8
+            ],
+            [
+              4,
+              9
+            ],
+            [
+              5,
+              6
+            ],
+            [
+              5,
+              9
+            ],
+            [
+              5,
+              10
+            ],
+            [
+              6,
+              7
+            ],
+            [
+              6,
+              10
+            ],
+            [
+              6,
+              11
+            ],
+            [
+              7,
+              8
+            ],
+            [
+              7,
+              11
+            ],
+            [
+              8,
+              9
+            ],
+            [
+              8,
+              11
+            ],
+            [
+              8,
+              12
+            ],
+            [
+              8,
+              13
+            ],
+            [
+              9,
+              10
+            ],
+            [
+              9,
+              13
+            ],
+            [
+              9,
+              14
+            ],
+            [
+              10,
+              11
+            ],
+            [
+              10,
+              14
+            ],
+            [
+              10,
+              15
+            ],
+            [
+              11,
+              12
+            ],
+            [
+              11,
+              15
+            ],
+            [
+              12,
+              13
+            ],
+            [
+              12,
+              15
+            ],
+            [
+              13,
+              14
+            ],
+            [
+              14,
+              15
+            ]
+          ],
+          "initial_links": [
+            0,
+            4,
+            5,
+            4,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "final_links": [
+            0,
+            4,
+            5,
+            3,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "changed_edge_indices": [
+            3
+          ],
+          "whole_mesh_charge": 6,
+          "exterior_fixed": true,
+          "inverse_restores_links": true
+        },
+        "positive_generator_on_rotation_count": [
+          -12,
+          0
+        ],
+        "conditional_charge_moments": [
+          {
+            "charge_drift": [
+              0,
+              0,
+              2,
+              -2
+            ],
+            "instantaneous_charge_covariance": [
+              [
+                8,
+                -4,
+                -4,
+                0
+              ],
+              [
+                -4,
+                8,
+                -4,
+                0
+              ],
+              [
+                -4,
+                -4,
+                10,
+                -2
+              ],
+              [
+                0,
+                0,
+                -2,
+                2
+              ]
+            ],
+            "second_generator_power_on_charge": [
+              0,
+              12,
+              4,
+              -16
+            ]
+          },
+          {
+            "charge_drift": [
+              0,
+              0,
+              2,
+              -2
+            ],
+            "instantaneous_charge_covariance": [
+              [
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                2,
+                -2
+              ],
+              [
+                0,
+                0,
+                -2,
+                2
+              ]
+            ],
+            "second_generator_power_on_charge": [
+              0,
+              4,
+              -12,
+              8
+            ]
+          }
+        ]
+      },
+      "first_reaction": {
+        "reactant_states": 72,
+        "relative_exponents": [
+          1,
+          2
+        ],
+        "angular_off": {
+          "uniform_mean_time": 1.1638631732418279,
+          "initial_uniform_hazard": 2.6666666666666665,
+          "seed_mean_times_by_relative_exponent": [
+            0.3742636947422984,
+            1.1288700204344784
+          ],
+          "poisson_relative_residual": 1.497544130946035e-15
+        },
+        "angular_on": {
+          "uniform_mean_time": 1.0175624478323373,
+          "initial_uniform_hazard": 2.6666666666666665,
+          "seed_mean_times_by_relative_exponent": [
+            0.38078039862595864,
+            0.9549625006590945
+          ],
+          "poisson_relative_residual": 1.98710451925054e-15
+        }
+      },
+      "charge_plus_activity_nonclosure": null,
+      "scope": "Invariant sector containing at least one reflection. Each unchanged channel has its own rate-one clock."
+    },
+    {
+      "cycle_vertices": 5,
+      "faces": 4,
+      "total_charge": 5,
+      "boundary": "reflection",
+      "framed_states": 592,
+      "inventory_counts": {
+        "ERZZ": 16,
+        "EZRZ": 16,
+        "EZZR": 16,
+        "REZZ": 16,
+        "RRRZ": 100,
+        "RRZR": 100,
+        "RZEZ": 16,
+        "RZRR": 100,
+        "RZZE": 16,
+        "ZERZ": 16,
+        "ZEZR": 16,
+        "ZREZ": 16,
+        "ZRRR": 100,
+        "ZRZE": 16,
+        "ZZER": 16,
+        "ZZRE": 16
+      },
+      "observables": [
+        {
+          "observable": "endpoint_charge",
+          "first_visible_depth": 2,
+          "first_changed_autocorrelation_derivative": 5,
+          "exact_angular_dirichlet_energies": [
+            "0",
+            "0",
+            "17280/37"
+          ],
+          "witness": {
+            "before_tuple": [
+              3,
+              2,
+              1,
+              6
+            ],
+            "after_tuple": [
+              5,
+              1,
+              1,
+              6
+            ],
+            "pair_position": 0,
+            "angular_channel_index": 0,
+            "charge_field": [
+              2,
+              1,
+              1,
+              1
+            ],
+            "response_before": 32,
+            "response_after": -64
+          },
+          "angular_off": {
+            "normalized_integrated_autocorrelation": 0.33104755486296755,
+            "poisson_relative_residual": 5.554019447041419e-13,
+            "stationary_components": 1
+          },
+          "angular_on": {
+            "normalized_integrated_autocorrelation": 0.3285889463114706,
+            "poisson_relative_residual": 9.55579048388764e-13,
+            "stationary_components": 1
+          },
+          "relative_integrated_correlation_reduction": 0.00742675339352572
+        },
+        {
+          "observable": "charge_dipole",
+          "first_visible_depth": 2,
+          "first_changed_autocorrelation_derivative": 5,
+          "exact_angular_dirichlet_energies": [
+            "0",
+            "0",
+            "15360/37"
+          ],
+          "witness": {
+            "before_tuple": [
+              2,
+              1,
+              1,
+              3
+            ],
+            "after_tuple": [
+              2,
+              1,
+              2,
+              5
+            ],
+            "pair_position": 2,
+            "angular_channel_index": 0,
+            "charge_field": [
+              1,
+              1,
+              1,
+              2
+            ],
+            "response_before": -56,
+            "response_after": 8
+          },
+          "angular_off": {
+            "normalized_integrated_autocorrelation": 0.44907953626571284,
+            "poisson_relative_residual": 2.463263930520793e-13,
+            "stationary_components": 1
+          },
+          "angular_on": {
+            "normalized_integrated_autocorrelation": 0.44479627388620346,
+            "poisson_relative_residual": 8.074588999903902e-13,
+            "stationary_components": 1
+          },
+          "relative_integrated_correlation_reduction": 0.009537870318310437
+        },
+        {
+          "observable": "rotation_count",
+          "first_visible_depth": 1,
+          "first_changed_autocorrelation_derivative": 3,
+          "exact_angular_dirichlet_energies": [
+            "0",
+            "540/37"
+          ],
+          "witness": {
+            "before_tuple": [
+              2,
+              1,
+              1,
+              3
+            ],
+            "after_tuple": [
+              2,
+              1,
+              2,
+              5
+            ],
+            "pair_position": 2,
+            "angular_channel_index": 0,
+            "charge_field": [
+              1,
+              1,
+              1,
+              2
+            ],
+            "response_before": -12,
+            "response_after": 0
+          },
+          "angular_off": {
+            "normalized_integrated_autocorrelation": 0.641876299618439,
+            "poisson_relative_residual": 3.264934478779942e-13,
+            "stationary_components": 1
+          },
+          "angular_on": {
+            "normalized_integrated_autocorrelation": 0.5414741858942078,
+            "poisson_relative_residual": 9.246446884455798e-13,
+            "stationary_components": 1
+          },
+          "relative_integrated_correlation_reduction": 0.1564197241492088
+        }
+      ],
+      "algebraic_witness": {
+        "before_tuple": [
+          2,
+          1,
+          1,
+          3
+        ],
+        "after_tuple": [
+          2,
+          1,
+          2,
+          5
+        ],
+        "pair_position": 2,
+        "angular_channel_index": 0,
+        "before_labels": [
+          "r1",
+          "r0",
+          "r0",
+          "t1"
+        ],
+        "after_labels": [
+          "r1",
+          "r0",
+          "r1",
+          "t2"
+        ],
+        "shared_link_realization": {
+          "base_mesh_side": 4,
+          "root": 0,
+          "rim_vertices": [
+            1,
+            5,
+            4,
+            3,
+            15
+          ],
+          "native_three_face_patch": 0,
+          "edges": [
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              3
+            ],
+            [
+              0,
+              4
+            ],
+            [
+              0,
+              5
+            ],
+            [
+              0,
+              12
+            ],
+            [
+              0,
+              15
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              1,
+              5
+            ],
+            [
+              1,
+              6
+            ],
+            [
+              1,
+              12
+            ],
+            [
+              1,
+              13
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              2,
+              6
+            ],
+            [
+              2,
+              7
+            ],
+            [
+              2,
+              13
+            ],
+            [
+              2,
+              14
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              3,
+              7
+            ],
+            [
+              3,
+              14
+            ],
+            [
+              3,
+              15
+            ],
+            [
+              4,
+              5
+            ],
+            [
+              4,
+              7
+            ],
+            [
+              4,
+              8
+            ],
+            [
+              4,
+              9
+            ],
+            [
+              5,
+              6
+            ],
+            [
+              5,
+              9
+            ],
+            [
+              5,
+              10
+            ],
+            [
+              6,
+              7
+            ],
+            [
+              6,
+              10
+            ],
+            [
+              6,
+              11
+            ],
+            [
+              7,
+              8
+            ],
+            [
+              7,
+              11
+            ],
+            [
+              8,
+              9
+            ],
+            [
+              8,
+              11
+            ],
+            [
+              8,
+              12
+            ],
+            [
+              8,
+              13
+            ],
+            [
+              9,
+              10
+            ],
+            [
+              9,
+              13
+            ],
+            [
+              9,
+              14
+            ],
+            [
+              10,
+              11
+            ],
+            [
+              10,
+              14
+            ],
+            [
+              10,
+              15
+            ],
+            [
+              11,
+              12
+            ],
+            [
+              11,
+              15
+            ],
+            [
+              12,
+              13
+            ],
+            [
+              12,
+              15
+            ],
+            [
+              13,
+              14
+            ],
+            [
+              14,
+              15
+            ]
+          ],
+          "initial_links": [
+            0,
+            8,
+            9,
+            8,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "final_links": [
+            0,
+            8,
+            9,
+            7,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "changed_edge_indices": [
+            3
+          ],
+          "whole_mesh_charge": 6,
+          "exterior_fixed": true,
+          "inverse_restores_links": true
+        },
+        "positive_generator_on_rotation_count": [
+          -12,
+          0
+        ],
+        "conditional_charge_moments": [
+          {
+            "charge_drift": [
+              0,
+              0,
+              2,
+              -2
+            ],
+            "instantaneous_charge_covariance": [
+              [
+                8,
+                -4,
+                -4,
+                0
+              ],
+              [
+                -4,
+                8,
+                -4,
+                0
+              ],
+              [
+                -4,
+                -4,
+                10,
+                -2
+              ],
+              [
+                0,
+                0,
+                -2,
+                2
+              ]
+            ],
+            "second_generator_power_on_charge": [
+              0,
+              12,
+              4,
+              -16
+            ]
+          },
+          {
+            "charge_drift": [
+              0,
+              0,
+              2,
+              -2
+            ],
+            "instantaneous_charge_covariance": [
+              [
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                2,
+                -2
+              ],
+              [
+                0,
+                0,
+                -2,
+                2
+              ]
+            ],
+            "second_generator_power_on_charge": [
+              0,
+              4,
+              -12,
+              8
+            ]
+          }
+        ]
+      },
+      "first_reaction": {
+        "reactant_states": 400,
+        "relative_exponents": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "angular_off": {
+          "uniform_mean_time": 1.8721196896729737,
+          "initial_uniform_hazard": 1.92,
+          "seed_mean_times_by_relative_exponent": [
+            0.5603289973433949,
+            1.932147987072763,
+            2.3723422775755147,
+            2.230027312510153
+          ],
+          "poisson_relative_residual": 6.98172758405907e-13
+        },
+        "angular_on": {
+          "uniform_mean_time": 1.5618797477139839,
+          "initial_uniform_hazard": 1.92,
+          "seed_mean_times_by_relative_exponent": [
+            0.5431015969935356,
+            1.4876836114739769,
+            1.8812136950119667,
+            1.9346041309684618
+          ],
+          "poisson_relative_residual": 6.95047692390137e-13
+        }
+      },
+      "charge_plus_activity_nonclosure": {
+        "relative_exponents": [
+          2,
+          3
+        ],
+        "source_tuples": [
+          [
+            2,
+            1,
+            2,
+            5
+          ],
+          [
+            2,
+            1,
+            4,
+            7
+          ]
+        ],
+        "common_source_charge_and_activity": [
+          [
+            1,
+            1,
+            1,
+            2
+          ],
+          [
+            0,
+            0
+          ]
+        ],
+        "target_charge_and_activity": [
+          [
+            1,
+            1,
+            1,
+            2
+          ],
+          [
+            1,
+            0
+          ]
+        ],
+        "transition_rates": [
+          {
+            "legacy_rate": 2,
+            "angular_rate": 1
+          },
+          {
+            "legacy_rate": 0,
+            "angular_rate": 0
+          }
+        ]
+      },
+      "scope": "Invariant sector containing at least one reflection. Each unchanged channel has its own rate-one clock."
+    },
+    {
+      "cycle_vertices": 7,
+      "faces": 4,
+      "total_charge": 5,
+      "boundary": "reflection",
+      "framed_states": 1608,
+      "inventory_counts": {
+        "ERZZ": 36,
+        "EZRZ": 36,
+        "EZZR": 36,
+        "REZZ": 36,
+        "RRRZ": 294,
+        "RRZR": 294,
+        "RZEZ": 36,
+        "RZRR": 294,
+        "RZZE": 36,
+        "ZERZ": 36,
+        "ZEZR": 36,
+        "ZREZ": 36,
+        "ZRRR": 294,
+        "ZRZE": 36,
+        "ZZER": 36,
+        "ZZRE": 36
+      },
+      "observables": [
+        {
+          "observable": "endpoint_charge",
+          "first_visible_depth": 2,
+          "first_changed_autocorrelation_derivative": 5,
+          "exact_angular_dirichlet_energies": [
+            "0",
+            "0",
+            "26880/67"
+          ],
+          "witness": {
+            "before_tuple": [
+              3,
+              2,
+              1,
+              10
+            ],
+            "after_tuple": [
+              5,
+              1,
+              1,
+              10
+            ],
+            "pair_position": 0,
+            "angular_channel_index": 0,
+            "charge_field": [
+              2,
+              1,
+              1,
+              1
+            ],
+            "response_before": 32,
+            "response_after": -64
+          },
+          "angular_off": {
+            "normalized_integrated_autocorrelation": 0.35566623561751265,
+            "poisson_relative_residual": 5.309391795824786e-13,
+            "stationary_components": 1
+          },
+          "angular_on": {
+            "normalized_integrated_autocorrelation": 0.35257234531078596,
+            "poisson_relative_residual": 7.863790228357829e-13,
+            "stationary_components": 1
+          },
+          "relative_integrated_correlation_reduction": 0.00869885864019404
+        },
+        {
+          "observable": "charge_dipole",
+          "first_visible_depth": 2,
+          "first_changed_autocorrelation_derivative": 5,
+          "exact_angular_dirichlet_energies": [
+            "0",
+            "0",
+            "71680/201"
+          ],
+          "witness": {
+            "before_tuple": [
+              2,
+              1,
+              1,
+              3
+            ],
+            "after_tuple": [
+              2,
+              1,
+              2,
+              5
+            ],
+            "pair_position": 2,
+            "angular_channel_index": 0,
+            "charge_field": [
+              1,
+              1,
+              1,
+              2
+            ],
+            "response_before": -56,
+            "response_after": 8
+          },
+          "angular_off": {
+            "normalized_integrated_autocorrelation": 0.4881090510417259,
+            "poisson_relative_residual": 5.549855017735631e-13,
+            "stationary_components": 1
+          },
+          "angular_on": {
+            "normalized_integrated_autocorrelation": 0.4827190332005119,
+            "poisson_relative_residual": 8.682510854571043e-13,
+            "stationary_components": 1
+          },
+          "relative_integrated_correlation_reduction": 0.011042650878344884
+        },
+        {
+          "observable": "rotation_count",
+          "first_visible_depth": 1,
+          "first_changed_autocorrelation_derivative": 3,
+          "exact_angular_dirichlet_energies": [
+            "0",
+            "840/67"
+          ],
+          "witness": {
+            "before_tuple": [
+              2,
+              1,
+              1,
+              3
+            ],
+            "after_tuple": [
+              2,
+              1,
+              2,
+              5
+            ],
+            "pair_position": 2,
+            "angular_channel_index": 0,
+            "charge_field": [
+              1,
+              1,
+              1,
+              2
+            ],
+            "response_before": -12,
+            "response_after": 0
+          },
+          "angular_off": {
+            "normalized_integrated_autocorrelation": 0.8014661432867559,
+            "poisson_relative_residual": 2.6628259249595636e-13,
+            "stationary_components": 1
+          },
+          "angular_on": {
+            "normalized_integrated_autocorrelation": 0.6375428343899511,
+            "poisson_relative_residual": 5.110856575844872e-13,
+            "stationary_components": 1
+          },
+          "relative_integrated_correlation_reduction": 0.204529299546662
+        }
+      ],
+      "algebraic_witness": {
+        "before_tuple": [
+          2,
+          1,
+          1,
+          3
+        ],
+        "after_tuple": [
+          2,
+          1,
+          2,
+          5
+        ],
+        "pair_position": 2,
+        "angular_channel_index": 0,
+        "before_labels": [
+          "r1",
+          "r0",
+          "r0",
+          "t1"
+        ],
+        "after_labels": [
+          "r1",
+          "r0",
+          "r1",
+          "t2"
+        ],
+        "shared_link_realization": {
+          "base_mesh_side": 4,
+          "root": 0,
+          "rim_vertices": [
+            1,
+            5,
+            4,
+            3,
+            15
+          ],
+          "native_three_face_patch": 0,
+          "edges": [
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              3
+            ],
+            [
+              0,
+              4
+            ],
+            [
+              0,
+              5
+            ],
+            [
+              0,
+              12
+            ],
+            [
+              0,
+              15
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              1,
+              5
+            ],
+            [
+              1,
+              6
+            ],
+            [
+              1,
+              12
+            ],
+            [
+              1,
+              13
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              2,
+              6
+            ],
+            [
+              2,
+              7
+            ],
+            [
+              2,
+              13
+            ],
+            [
+              2,
+              14
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              3,
+              7
+            ],
+            [
+              3,
+              14
+            ],
+            [
+              3,
+              15
+            ],
+            [
+              4,
+              5
+            ],
+            [
+              4,
+              7
+            ],
+            [
+              4,
+              8
+            ],
+            [
+              4,
+              9
+            ],
+            [
+              5,
+              6
+            ],
+            [
+              5,
+              9
+            ],
+            [
+              5,
+              10
+            ],
+            [
+              6,
+              7
+            ],
+            [
+              6,
+              10
+            ],
+            [
+              6,
+              11
+            ],
+            [
+              7,
+              8
+            ],
+            [
+              7,
+              11
+            ],
+            [
+              8,
+              9
+            ],
+            [
+              8,
+              11
+            ],
+            [
+              8,
+              12
+            ],
+            [
+              8,
+              13
+            ],
+            [
+              9,
+              10
+            ],
+            [
+              9,
+              13
+            ],
+            [
+              9,
+              14
+            ],
+            [
+              10,
+              11
+            ],
+            [
+              10,
+              14
+            ],
+            [
+              10,
+              15
+            ],
+            [
+              11,
+              12
+            ],
+            [
+              11,
+              15
+            ],
+            [
+              12,
+              13
+            ],
+            [
+              12,
+              15
+            ],
+            [
+              13,
+              14
+            ],
+            [
+              14,
+              15
+            ]
+          ],
+          "initial_links": [
+            0,
+            12,
+            13,
+            12,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "final_links": [
+            0,
+            12,
+            13,
+            11,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "changed_edge_indices": [
+            3
+          ],
+          "whole_mesh_charge": 6,
+          "exterior_fixed": true,
+          "inverse_restores_links": true
+        },
+        "positive_generator_on_rotation_count": [
+          -12,
+          0
+        ],
+        "conditional_charge_moments": [
+          {
+            "charge_drift": [
+              0,
+              0,
+              2,
+              -2
+            ],
+            "instantaneous_charge_covariance": [
+              [
+                8,
+                -4,
+                -4,
+                0
+              ],
+              [
+                -4,
+                8,
+                -4,
+                0
+              ],
+              [
+                -4,
+                -4,
+                10,
+                -2
+              ],
+              [
+                0,
+                0,
+                -2,
+                2
+              ]
+            ],
+            "second_generator_power_on_charge": [
+              0,
+              12,
+              4,
+              -16
+            ]
+          },
+          {
+            "charge_drift": [
+              0,
+              0,
+              2,
+              -2
+            ],
+            "instantaneous_charge_covariance": [
+              [
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                2,
+                -2
+              ],
+              [
+                0,
+                0,
+                -2,
+                2
+              ]
+            ],
+            "second_generator_power_on_charge": [
+              0,
+              4,
+              -12,
+              8
+            ]
+          }
+        ]
+      },
+      "first_reaction": {
+        "reactant_states": 1176,
+        "relative_exponents": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "angular_off": {
+          "uniform_mean_time": 2.842427579958522,
+          "initial_uniform_hazard": 1.469387755102041,
+          "seed_mean_times_by_relative_exponent": [
+            0.7449737744766713,
+            2.8170326608957965,
+            3.5997944576927443,
+            3.5790276436935105,
+            3.5609137794181276,
+            3.1693016874371445
+          ],
+          "poisson_relative_residual": 7.46981456809458e-13
+        },
+        "angular_on": {
+          "uniform_mean_time": 2.2306339189739326,
+          "initial_uniform_hazard": 1.469387755102041,
+          "seed_mean_times_by_relative_exponent": [
+            0.6960343349672953,
+            1.9701701229966266,
+            2.6028626525096366,
+            2.7084348425936313,
+            2.689535694107661,
+            2.653559008203964
+          ],
+          "poisson_relative_residual": 4.111361265645229e-13
+        }
+      },
+      "charge_plus_activity_nonclosure": {
+        "relative_exponents": [
+          2,
+          3
+        ],
+        "source_tuples": [
+          [
+            2,
+            1,
+            2,
+            5
+          ],
+          [
+            2,
+            1,
+            4,
+            7
+          ]
+        ],
+        "common_source_charge_and_activity": [
+          [
+            1,
+            1,
+            1,
+            2
+          ],
+          [
+            0,
+            0
+          ]
+        ],
+        "target_charge_and_activity": [
+          [
+            1,
+            1,
+            1,
+            2
+          ],
+          [
+            1,
+            0
+          ]
+        ],
+        "transition_rates": [
+          {
+            "legacy_rate": 2,
+            "angular_rate": 1
+          },
+          {
+            "legacy_rate": 0,
+            "angular_rate": 0
+          }
+        ]
+      },
+      "scope": "Invariant sector containing at least one reflection. Each unchanged channel has its own rate-one clock."
+    },
+    {
+      "cycle_vertices": 11,
+      "faces": 4,
+      "total_charge": 5,
+      "boundary": "reflection",
+      "framed_states": 6040,
+      "inventory_counts": {
+        "ERZZ": 100,
+        "EZRZ": 100,
+        "EZZR": 100,
+        "REZZ": 100,
+        "RRRZ": 1210,
+        "RRZR": 1210,
+        "RZEZ": 100,
+        "RZRR": 1210,
+        "RZZE": 100,
+        "ZERZ": 100,
+        "ZEZR": 100,
+        "ZREZ": 100,
+        "ZRRR": 1210,
+        "ZRZE": 100,
+        "ZZER": 100,
+        "ZZRE": 100
+      },
+      "observables": [
+        {
+          "observable": "endpoint_charge",
+          "first_visible_depth": 2,
+          "first_changed_autocorrelation_derivative": 5,
+          "exact_angular_dirichlet_energies": [
+            "0",
+            "0",
+            "228096/755"
+          ],
+          "witness": {
+            "before_tuple": [
+              3,
+              2,
+              1,
+              18
+            ],
+            "after_tuple": [
+              5,
+              1,
+              1,
+              18
+            ],
+            "pair_position": 0,
+            "angular_channel_index": 0,
+            "charge_field": [
+              2,
+              1,
+              1,
+              1
+            ],
+            "response_before": 32,
+            "response_after": -64
+          },
+          "angular_off": {
+            "normalized_integrated_autocorrelation": 0.39410595525611913,
+            "poisson_relative_residual": 5.083520763944402e-13,
+            "stationary_components": 1
+          },
+          "angular_on": {
+            "normalized_integrated_autocorrelation": 0.39057412770115785,
+            "poisson_relative_residual": 6.079282726727796e-13,
+            "stationary_components": 1
+          },
+          "relative_integrated_correlation_reduction": 0.008961619350984051
+        },
+        {
+          "observable": "charge_dipole",
+          "first_visible_depth": 2,
+          "first_changed_autocorrelation_derivative": 5,
+          "exact_angular_dirichlet_energies": [
+            "0",
+            "0",
+            "202752/755"
+          ],
+          "witness": {
+            "before_tuple": [
+              2,
+              1,
+              1,
+              3
+            ],
+            "after_tuple": [
+              2,
+              1,
+              2,
+              5
+            ],
+            "pair_position": 2,
+            "angular_channel_index": 0,
+            "charge_field": [
+              1,
+              1,
+              1,
+              2
+            ],
+            "response_before": -56,
+            "response_after": 8
+          },
+          "angular_off": {
+            "normalized_integrated_autocorrelation": 0.5491616059578164,
+            "poisson_relative_residual": 7.240433815384468e-13,
+            "stationary_components": 1
+          },
+          "angular_on": {
+            "normalized_integrated_autocorrelation": 0.5430086361864096,
+            "poisson_relative_residual": 9.244580970764321e-13,
+            "stationary_components": 1
+          },
+          "relative_integrated_correlation_reduction": 0.01120429706784598
+        },
+        {
+          "observable": "rotation_count",
+          "first_visible_depth": 1,
+          "first_changed_autocorrelation_derivative": 3,
+          "exact_angular_dirichlet_energies": [
+            "0",
+            "7128/755"
+          ],
+          "witness": {
+            "before_tuple": [
+              2,
+              1,
+              1,
+              3
+            ],
+            "after_tuple": [
+              2,
+              1,
+              2,
+              5
+            ],
+            "pair_position": 2,
+            "angular_channel_index": 0,
+            "charge_field": [
+              1,
+              1,
+              1,
+              2
+            ],
+            "response_before": -12,
+            "response_after": 0
+          },
+          "angular_off": {
+            "normalized_integrated_autocorrelation": 1.0516496486205458,
+            "poisson_relative_residual": 4.978217220967604e-13,
+            "stationary_components": 1
+          },
+          "angular_on": {
+            "normalized_integrated_autocorrelation": 0.7714642905177197,
+            "poisson_relative_residual": 8.220403223198855e-13,
+            "stationary_components": 1
+          },
+          "relative_integrated_correlation_reduction": 0.26642462009125056
+        }
+      ],
+      "algebraic_witness": {
+        "before_tuple": [
+          2,
+          1,
+          1,
+          3
+        ],
+        "after_tuple": [
+          2,
+          1,
+          2,
+          5
+        ],
+        "pair_position": 2,
+        "angular_channel_index": 0,
+        "before_labels": [
+          "r1",
+          "r0",
+          "r0",
+          "t1"
+        ],
+        "after_labels": [
+          "r1",
+          "r0",
+          "r1",
+          "t2"
+        ],
+        "shared_link_realization": {
+          "base_mesh_side": 4,
+          "root": 0,
+          "rim_vertices": [
+            1,
+            5,
+            4,
+            3,
+            15
+          ],
+          "native_three_face_patch": 0,
+          "edges": [
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              3
+            ],
+            [
+              0,
+              4
+            ],
+            [
+              0,
+              5
+            ],
+            [
+              0,
+              12
+            ],
+            [
+              0,
+              15
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              1,
+              5
+            ],
+            [
+              1,
+              6
+            ],
+            [
+              1,
+              12
+            ],
+            [
+              1,
+              13
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              2,
+              6
+            ],
+            [
+              2,
+              7
+            ],
+            [
+              2,
+              13
+            ],
+            [
+              2,
+              14
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              3,
+              7
+            ],
+            [
+              3,
+              14
+            ],
+            [
+              3,
+              15
+            ],
+            [
+              4,
+              5
+            ],
+            [
+              4,
+              7
+            ],
+            [
+              4,
+              8
+            ],
+            [
+              4,
+              9
+            ],
+            [
+              5,
+              6
+            ],
+            [
+              5,
+              9
+            ],
+            [
+              5,
+              10
+            ],
+            [
+              6,
+              7
+            ],
+            [
+              6,
+              10
+            ],
+            [
+              6,
+              11
+            ],
+            [
+              7,
+              8
+            ],
+            [
+              7,
+              11
+            ],
+            [
+              8,
+              9
+            ],
+            [
+              8,
+              11
+            ],
+            [
+              8,
+              12
+            ],
+            [
+              8,
+              13
+            ],
+            [
+              9,
+              10
+            ],
+            [
+              9,
+              13
+            ],
+            [
+              9,
+              14
+            ],
+            [
+              10,
+              11
+            ],
+            [
+              10,
+              14
+            ],
+            [
+              10,
+              15
+            ],
+            [
+              11,
+              12
+            ],
+            [
+              11,
+              15
+            ],
+            [
+              12,
+              13
+            ],
+            [
+              12,
+              15
+            ],
+            [
+              13,
+              14
+            ],
+            [
+              14,
+              15
+            ]
+          ],
+          "initial_links": [
+            0,
+            20,
+            21,
+            20,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "final_links": [
+            0,
+            20,
+            21,
+            19,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "changed_edge_indices": [
+            3
+          ],
+          "whole_mesh_charge": 6,
+          "exterior_fixed": true,
+          "inverse_restores_links": true
+        },
+        "positive_generator_on_rotation_count": [
+          -12,
+          0
+        ],
+        "conditional_charge_moments": [
+          {
+            "charge_drift": [
+              0,
+              0,
+              2,
+              -2
+            ],
+            "instantaneous_charge_covariance": [
+              [
+                8,
+                -4,
+                -4,
+                0
+              ],
+              [
+                -4,
+                8,
+                -4,
+                0
+              ],
+              [
+                -4,
+                -4,
+                10,
+                -2
+              ],
+              [
+                0,
+                0,
+                -2,
+                2
+              ]
+            ],
+            "second_generator_power_on_charge": [
+              0,
+              12,
+              4,
+              -16
+            ]
+          },
+          {
+            "charge_drift": [
+              0,
+              0,
+              2,
+              -2
+            ],
+            "instantaneous_charge_covariance": [
+              [
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                2,
+                -2
+              ],
+              [
+                0,
+                0,
+                -2,
+                2
+              ]
+            ],
+            "second_generator_power_on_charge": [
+              0,
+              4,
+              -12,
+              8
+            ]
+          }
+        ]
+      },
+      "first_reaction": {
+        "reactant_states": 4840,
+        "relative_exponents": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "angular_off": {
+          "uniform_mean_time": 5.0778233978927245,
+          "initial_uniform_hazard": 0.9917355371900827,
+          "seed_mean_times_by_relative_exponent": [
+            1.0875476654604335,
+            4.4548814516060595,
+            6.272882277971132,
+            6.592133978361991,
+            6.097242941204996,
+            5.844777295951459,
+            6.297160642734981,
+            6.376922808287589,
+            5.948546016357772,
+            4.824438027796656
+          ],
+          "poisson_relative_residual": 8.130275468809324e-13
+        },
+        "angular_on": {
+          "uniform_mean_time": 3.6659070781158327,
+          "initial_uniform_hazard": 0.9917355371900827,
+          "seed_mean_times_by_relative_exponent": [
+            0.9594837051901729,
+            2.8148415327446212,
+            3.8930408290213045,
+            4.244602146814409,
+            4.30090927685553,
+            4.224300152428269,
+            4.21836326405908,
+            4.220738091635276,
+            4.040321775468594,
+            3.8145582761654047
+          ],
+          "poisson_relative_residual": 9.754969338224799e-13
+        }
+      },
+      "charge_plus_activity_nonclosure": {
+        "relative_exponents": [
+          2,
+          3
+        ],
+        "source_tuples": [
+          [
+            2,
+            1,
+            2,
+            5
+          ],
+          [
+            2,
+            1,
+            4,
+            7
+          ]
+        ],
+        "common_source_charge_and_activity": [
+          [
+            1,
+            1,
+            1,
+            2
+          ],
+          [
+            0,
+            0
+          ]
+        ],
+        "target_charge_and_activity": [
+          [
+            1,
+            1,
+            1,
+            2
+          ],
+          [
+            1,
+            0
+          ]
+        ],
+        "transition_rates": [
+          {
+            "legacy_rate": 2,
+            "angular_rate": 1
+          },
+          {
+            "legacy_rate": 0,
+            "angular_rate": 0
+          }
+        ]
+      },
+      "scope": "Invariant sector containing at least one reflection. Each unchanged channel has its own rate-one clock."
+    },
+    {
+      "cycle_vertices": 3,
+      "faces": 5,
+      "total_charge": 6,
+      "boundary": "identity",
+      "framed_states": 630,
+      "inventory_counts": {
+        "ERRZZ": 12,
+        "ERZRZ": 12,
+        "ERZZR": 12,
+        "EZRRZ": 12,
+        "EZRZR": 12,
+        "EZZRR": 12,
+        "RERZZ": 12,
+        "REZRZ": 12,
+        "REZZR": 12,
+        "RREZZ": 12,
+        "RRRRZ": 54,
+        "RRRZR": 54,
+        "RRZEZ": 12,
+        "RRZRR": 54,
+        "RRZZE": 12,
+        "RZERZ": 12,
+        "RZEZR": 12,
+        "RZREZ": 12,
+        "RZRRR": 54,
+        "RZRZE": 12,
+        "RZZER": 12,
+        "RZZRE": 12,
+        "ZERRZ": 12,
+        "ZERZR": 12,
+        "ZEZRR": 12,
+        "ZRERZ": 12,
+        "ZREZR": 12,
+        "ZRREZ": 12,
+        "ZRRRR": 54,
+        "ZRRZE": 12,
+        "ZRZER": 12,
+        "ZRZRE": 12,
+        "ZZERR": 12,
+        "ZZRER": 12,
+        "ZZRRE": 12
+      },
+      "observables": [
+        {
+          "observable": "endpoint_charge",
+          "first_visible_depth": 2,
+          "first_changed_autocorrelation_derivative": 5,
+          "exact_angular_dirichlet_energies": [
+            "0",
+            "0",
+            "2960/7"
+          ],
+          "witness": {
+            "before_tuple": [
+              5,
+              1,
+              1,
+              1,
+              3
+            ],
+            "after_tuple": [
+              5,
+              1,
+              1,
+              2,
+              4
+            ],
+            "pair_position": 3,
+            "angular_channel_index": 0,
+            "charge_field": [
+              1,
+              1,
+              1,
+              1,
+              2
+            ],
+            "response_before": 0,
+            "response_after": -20
+          },
+          "angular_off": {
+            "normalized_integrated_autocorrelation": 0.3435345193945676,
+            "poisson_relative_residual": 9.141039528075933e-13,
+            "stationary_components": 1
+          },
+          "angular_on": {
+            "normalized_integrated_autocorrelation": 0.34298065142891804,
+            "poisson_relative_residual": 2.768889134780644e-13,
+            "stationary_components": 1
+          },
+          "relative_integrated_correlation_reduction": 0.0016122629150213674
+        },
+        {
+          "observable": "charge_dipole",
+          "first_visible_depth": 2,
+          "first_changed_autocorrelation_derivative": 5,
+          "exact_angular_dirichlet_energies": [
+            "0",
+            "0",
+            "24704/35"
+          ],
+          "witness": {
+            "before_tuple": [
+              5,
+              1,
+              1,
+              1,
+              3
+            ],
+            "after_tuple": [
+              5,
+              1,
+              1,
+              2,
+              4
+            ],
+            "pair_position": 3,
+            "angular_channel_index": 0,
+            "charge_field": [
+              1,
+              1,
+              1,
+              1,
+              2
+            ],
+            "response_before": -64,
+            "response_after": -120
+          },
+          "angular_off": {
+            "normalized_integrated_autocorrelation": 0.5236046431971554,
+            "poisson_relative_residual": 4.657311285223389e-13,
+            "stationary_components": 1
+          },
+          "angular_on": {
+            "normalized_integrated_autocorrelation": 0.5223066330797124,
+            "poisson_relative_residual": 5.32461467830603e-13,
+            "stationary_components": 1
+          },
+          "relative_integrated_correlation_reduction": 0.002478988936227333
+        },
+        {
+          "observable": "rotation_count",
+          "first_visible_depth": 1,
+          "first_changed_autocorrelation_derivative": 3,
+          "exact_angular_dirichlet_energies": [
+            "0",
+            "576/35"
+          ],
+          "witness": {
+            "before_tuple": [
+              5,
+              1,
+              1,
+              1,
+              3
+            ],
+            "after_tuple": [
+              5,
+              1,
+              1,
+              2,
+              4
+            ],
+            "pair_position": 3,
+            "angular_channel_index": 0,
+            "charge_field": [
+              1,
+              1,
+              1,
+              1,
+              2
+            ],
+            "response_before": -12,
+            "response_after": -24
+          },
+          "angular_off": {
+            "normalized_integrated_autocorrelation": 0.24424248191803874,
+            "poisson_relative_residual": 2.61073081527616e-13,
+            "stationary_components": 1
+          },
+          "angular_on": {
+            "normalized_integrated_autocorrelation": 0.23265573265099967,
+            "poisson_relative_residual": 4.756840144448731e-13,
+            "stationary_components": 1
+          },
+          "relative_integrated_correlation_reduction": 0.04743953294303349
+        }
+      ],
+      "algebraic_witness": {
+        "before_tuple": [
+          2,
+          1,
+          1,
+          3,
+          1
+        ],
+        "after_tuple": [
+          2,
+          1,
+          2,
+          4,
+          1
+        ],
+        "pair_position": 2,
+        "angular_channel_index": 0,
+        "before_labels": [
+          "r1",
+          "r0",
+          "r0",
+          "t1",
+          "r0"
+        ],
+        "after_labels": [
+          "r1",
+          "r0",
+          "r1",
+          "t2",
+          "r0"
+        ],
+        "shared_link_realization": {
+          "base_mesh_side": 4,
+          "root": 0,
+          "rim_vertices": [
+            1,
+            5,
+            4,
+            3,
+            15,
+            12
+          ],
+          "native_three_face_patch": 0,
+          "edges": [
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              3
+            ],
+            [
+              0,
+              4
+            ],
+            [
+              0,
+              5
+            ],
+            [
+              0,
+              12
+            ],
+            [
+              0,
+              15
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              1,
+              5
+            ],
+            [
+              1,
+              6
+            ],
+            [
+              1,
+              12
+            ],
+            [
+              1,
+              13
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              2,
+              6
+            ],
+            [
+              2,
+              7
+            ],
+            [
+              2,
+              13
+            ],
+            [
+              2,
+              14
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              3,
+              7
+            ],
+            [
+              3,
+              14
+            ],
+            [
+              3,
+              15
+            ],
+            [
+              4,
+              5
+            ],
+            [
+              4,
+              7
+            ],
+            [
+              4,
+              8
+            ],
+            [
+              4,
+              9
+            ],
+            [
+              5,
+              6
+            ],
+            [
+              5,
+              9
+            ],
+            [
+              5,
+              10
+            ],
+            [
+              6,
+              7
+            ],
+            [
+              6,
+              10
+            ],
+            [
+              6,
+              11
+            ],
+            [
+              7,
+              8
+            ],
+            [
+              7,
+              11
+            ],
+            [
+              8,
+              9
+            ],
+            [
+              8,
+              11
+            ],
+            [
+              8,
+              12
+            ],
+            [
+              8,
+              13
+            ],
+            [
+              9,
+              10
+            ],
+            [
+              9,
+              13
+            ],
+            [
+              9,
+              14
+            ],
+            [
+              10,
+              11
+            ],
+            [
+              10,
+              14
+            ],
+            [
+              10,
+              15
+            ],
+            [
+              11,
+              12
+            ],
+            [
+              11,
+              15
+            ],
+            [
+              12,
+              13
+            ],
+            [
+              12,
+              15
+            ],
+            [
+              13,
+              14
+            ],
+            [
+              14,
+              15
+            ]
+          ],
+          "initial_links": [
+            0,
+            3,
+            2,
+            1,
+            0,
+            2,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "final_links": [
+            0,
+            3,
+            5,
+            1,
+            0,
+            2,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "changed_edge_indices": [
+            2
+          ],
+          "whole_mesh_charge": 6,
+          "exterior_fixed": true,
+          "inverse_restores_links": true
+        },
+        "positive_generator_on_rotation_count": [
+          -12,
+          0
+        ],
+        "conditional_charge_moments": [
+          {
+            "charge_drift": [
+              0,
+              0,
+              2,
+              -4,
+              2
+            ],
+            "instantaneous_charge_covariance": [
+              [
+                8,
+                -4,
+                -4,
+                0,
+                0
+              ],
+              [
+                -4,
+                8,
+                -4,
+                0,
+                0
+              ],
+              [
+                -4,
+                -4,
+                10,
+                -2,
+                0
+              ],
+              [
+                0,
+                0,
+                -2,
+                4,
+                -2
+              ],
+              [
+                0,
+                0,
+                0,
+                -2,
+                2
+              ]
+            ],
+            "second_generator_power_on_charge": [
+              0,
+              12,
+              16,
+              -16,
+              -12
+            ]
+          },
+          {
+            "charge_drift": [
+              0,
+              0,
+              2,
+              -4,
+              2
+            ],
+            "instantaneous_charge_covariance": [
+              [
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                2,
+                -2,
+                0
+              ],
+              [
+                0,
+                0,
+                -2,
+                4,
+                -2
+              ],
+              [
+                0,
+                0,
+                0,
+                -2,
+                2
+              ]
+            ],
+            "second_generator_power_on_charge": [
+              0,
+              4,
+              -16,
+              24,
+              -12
+            ]
+          }
+        ]
+      },
+      "first_reaction": {
+        "reactant_states": 270,
+        "relative_exponents": [
+          1,
+          2
+        ],
+        "angular_off": {
+          "uniform_mean_time": 0.37838535337803003,
+          "initial_uniform_hazard": 6.4,
+          "seed_mean_times_by_relative_exponent": [
+            0.20272689010809122,
+            0.5553846778780744
+          ],
+          "poisson_relative_residual": 8.517339559763614e-16
+        },
+        "angular_on": {
+          "uniform_mean_time": 0.35690148559052465,
+          "initial_uniform_hazard": 6.4,
+          "seed_mean_times_by_relative_exponent": [
+            0.2107554370524452,
+            0.5019233813708077
+          ],
+          "poisson_relative_residual": 6.90198255844049e-13
+        }
+      },
+      "charge_plus_activity_nonclosure": null,
+      "scope": "Invariant sector containing at least one reflection. Each unchanged channel has its own rate-one clock."
+    },
+    {
+      "cycle_vertices": 5,
+      "faces": 5,
+      "total_charge": 6,
+      "boundary": "identity",
+      "framed_states": 4900,
+      "inventory_counts": {
+        "ERRZZ": 80,
+        "ERZRZ": 80,
+        "ERZZR": 80,
+        "EZRRZ": 80,
+        "EZRZR": 80,
+        "EZZRR": 80,
+        "RERZZ": 80,
+        "REZRZ": 80,
+        "REZZR": 80,
+        "RREZZ": 80,
+        "RRRRZ": 500,
+        "RRRZR": 500,
+        "RRZEZ": 80,
+        "RRZRR": 500,
+        "RRZZE": 80,
+        "RZERZ": 80,
+        "RZEZR": 80,
+        "RZREZ": 80,
+        "RZRRR": 500,
+        "RZRZE": 80,
+        "RZZER": 80,
+        "RZZRE": 80,
+        "ZERRZ": 80,
+        "ZERZR": 80,
+        "ZEZRR": 80,
+        "ZRERZ": 80,
+        "ZREZR": 80,
+        "ZRREZ": 80,
+        "ZRRRR": 500,
+        "ZRRZE": 80,
+        "ZRZER": 80,
+        "ZRZRE": 80,
+        "ZZERR": 80,
+        "ZZRER": 80,
+        "ZZRRE": 80
+      },
+      "observables": [
+        {
+          "observable": "endpoint_charge",
+          "first_visible_depth": 2,
+          "first_changed_autocorrelation_derivative": 5,
+          "exact_angular_dirichlet_energies": [
+            "0",
+            "0",
+            "22200/49"
+          ],
+          "witness": {
+            "before_tuple": [
+              9,
+              1,
+              1,
+              1,
+              3
+            ],
+            "after_tuple": [
+              9,
+              1,
+              1,
+              2,
+              5
+            ],
+            "pair_position": 3,
+            "angular_channel_index": 0,
+            "charge_field": [
+              1,
+              1,
+              1,
+              1,
+              2
+            ],
+            "response_before": 0,
+            "response_after": -20
+          },
+          "angular_off": {
+            "normalized_integrated_autocorrelation": 0.3636593823108854,
+            "poisson_relative_residual": 9.401117374346955e-13,
+            "stationary_components": 1
+          },
+          "angular_on": {
+            "normalized_integrated_autocorrelation": 0.36233738155905953,
+            "poisson_relative_residual": 8.532818435293927e-13,
+            "stationary_components": 1
+          },
+          "relative_integrated_correlation_reduction": 0.0036352719498811137
+        },
+        {
+          "observable": "charge_dipole",
+          "first_visible_depth": 2,
+          "first_changed_autocorrelation_derivative": 5,
+          "exact_angular_dirichlet_energies": [
+            "0",
+            "0",
+            "37056/49"
+          ],
+          "witness": {
+            "before_tuple": [
+              9,
+              1,
+              1,
+              1,
+              3
+            ],
+            "after_tuple": [
+              9,
+              1,
+              1,
+              2,
+              5
+            ],
+            "pair_position": 3,
+            "angular_channel_index": 0,
+            "charge_field": [
+              1,
+              1,
+              1,
+              1,
+              2
+            ],
+            "response_before": -64,
+            "response_after": -120
+          },
+          "angular_off": {
+            "normalized_integrated_autocorrelation": 0.5601987677408345,
+            "poisson_relative_residual": 3.425027579660144e-13,
+            "stationary_components": 1
+          },
+          "angular_on": {
+            "normalized_integrated_autocorrelation": 0.5571290530738771,
+            "poisson_relative_residual": 4.580700016969992e-13,
+            "stationary_components": 1
+          },
+          "relative_integrated_correlation_reduction": 0.005479688360145785
+        },
+        {
+          "observable": "rotation_count",
+          "first_visible_depth": 1,
+          "first_changed_autocorrelation_derivative": 3,
+          "exact_angular_dirichlet_energies": [
+            "0",
+            "864/49"
+          ],
+          "witness": {
+            "before_tuple": [
+              9,
+              1,
+              1,
+              1,
+              3
+            ],
+            "after_tuple": [
+              9,
+              1,
+              1,
+              2,
+              5
+            ],
+            "pair_position": 3,
+            "angular_channel_index": 0,
+            "charge_field": [
+              1,
+              1,
+              1,
+              1,
+              2
+            ],
+            "response_before": -12,
+            "response_after": -24
+          },
+          "angular_off": {
+            "normalized_integrated_autocorrelation": 0.38397760707020573,
+            "poisson_relative_residual": 3.210421718080261e-13,
+            "stationary_components": 1
+          },
+          "angular_on": {
+            "normalized_integrated_autocorrelation": 0.34448880793625336,
+            "poisson_relative_residual": 8.731447886465804e-13,
+            "stationary_components": 1
+          },
+          "relative_integrated_correlation_reduction": 0.10284141160016214
+        }
+      ],
+      "algebraic_witness": {
+        "before_tuple": [
+          2,
+          1,
+          1,
+          3,
+          1
+        ],
+        "after_tuple": [
+          2,
+          1,
+          2,
+          5,
+          1
+        ],
+        "pair_position": 2,
+        "angular_channel_index": 0,
+        "before_labels": [
+          "r1",
+          "r0",
+          "r0",
+          "t1",
+          "r0"
+        ],
+        "after_labels": [
+          "r1",
+          "r0",
+          "r1",
+          "t2",
+          "r0"
+        ],
+        "shared_link_realization": {
+          "base_mesh_side": 4,
+          "root": 0,
+          "rim_vertices": [
+            1,
+            5,
+            4,
+            3,
+            15,
+            12
+          ],
+          "native_three_face_patch": 0,
+          "edges": [
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              3
+            ],
+            [
+              0,
+              4
+            ],
+            [
+              0,
+              5
+            ],
+            [
+              0,
+              12
+            ],
+            [
+              0,
+              15
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              1,
+              5
+            ],
+            [
+              1,
+              6
+            ],
+            [
+              1,
+              12
+            ],
+            [
+              1,
+              13
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              2,
+              6
+            ],
+            [
+              2,
+              7
+            ],
+            [
+              2,
+              13
+            ],
+            [
+              2,
+              14
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              3,
+              7
+            ],
+            [
+              3,
+              14
+            ],
+            [
+              3,
+              15
+            ],
+            [
+              4,
+              5
+            ],
+            [
+              4,
+              7
+            ],
+            [
+              4,
+              8
+            ],
+            [
+              4,
+              9
+            ],
+            [
+              5,
+              6
+            ],
+            [
+              5,
+              9
+            ],
+            [
+              5,
+              10
+            ],
+            [
+              6,
+              7
+            ],
+            [
+              6,
+              10
+            ],
+            [
+              6,
+              11
+            ],
+            [
+              7,
+              8
+            ],
+            [
+              7,
+              11
+            ],
+            [
+              8,
+              9
+            ],
+            [
+              8,
+              11
+            ],
+            [
+              8,
+              12
+            ],
+            [
+              8,
+              13
+            ],
+            [
+              9,
+              10
+            ],
+            [
+              9,
+              13
+            ],
+            [
+              9,
+              14
+            ],
+            [
+              10,
+              11
+            ],
+            [
+              10,
+              14
+            ],
+            [
+              10,
+              15
+            ],
+            [
+              11,
+              12
+            ],
+            [
+              11,
+              15
+            ],
+            [
+              12,
+              13
+            ],
+            [
+              12,
+              15
+            ],
+            [
+              13,
+              14
+            ],
+            [
+              14,
+              15
+            ]
+          ],
+          "initial_links": [
+            0,
+            3,
+            2,
+            1,
+            0,
+            2,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "final_links": [
+            0,
+            3,
+            4,
+            1,
+            0,
+            2,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "changed_edge_indices": [
+            2
+          ],
+          "whole_mesh_charge": 6,
+          "exterior_fixed": true,
+          "inverse_restores_links": true
+        },
+        "positive_generator_on_rotation_count": [
+          -12,
+          0
+        ],
+        "conditional_charge_moments": [
+          {
+            "charge_drift": [
+              0,
+              0,
+              2,
+              -4,
+              2
+            ],
+            "instantaneous_charge_covariance": [
+              [
+                8,
+                -4,
+                -4,
+                0,
+                0
+              ],
+              [
+                -4,
+                8,
+                -4,
+                0,
+                0
+              ],
+              [
+                -4,
+                -4,
+                10,
+                -2,
+                0
+              ],
+              [
+                0,
+                0,
+                -2,
+                4,
+                -2
+              ],
+              [
+                0,
+                0,
+                0,
+                -2,
+                2
+              ]
+            ],
+            "second_generator_power_on_charge": [
+              0,
+              12,
+              16,
+              -16,
+              -12
+            ]
+          },
+          {
+            "charge_drift": [
+              0,
+              0,
+              2,
+              -4,
+              2
+            ],
+            "instantaneous_charge_covariance": [
+              [
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                2,
+                -2,
+                0
+              ],
+              [
+                0,
+                0,
+                -2,
+                4,
+                -2
+              ],
+              [
+                0,
+                0,
+                0,
+                -2,
+                2
+              ]
+            ],
+            "second_generator_power_on_charge": [
+              0,
+              4,
+              -16,
+              24,
+              -12
+            ]
+          }
+        ]
+      },
+      "first_reaction": {
+        "reactant_states": 2500,
+        "relative_exponents": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "angular_off": {
+          "uniform_mean_time": 0.7167712170287117,
+          "initial_uniform_hazard": 4.608,
+          "seed_mean_times_by_relative_exponent": [
+            0.26661148711693217,
+            0.9807546635332535,
+            1.2194789913676019,
+            0.9555772866933127
+          ],
+          "poisson_relative_residual": 7.268772885315483e-13
+        },
+        "angular_on": {
+          "uniform_mean_time": 0.6355213242850799,
+          "initial_uniform_hazard": 4.608,
+          "seed_mean_times_by_relative_exponent": [
+            0.28400748173322604,
+            0.8036116098645265,
+            0.992812049207973,
+            0.9319936379970906
+          ],
+          "poisson_relative_residual": 2.8104656848061694e-13
+        }
+      },
+      "charge_plus_activity_nonclosure": {
+        "relative_exponents": [
+          2,
+          3
+        ],
+        "source_tuples": [
+          [
+            2,
+            1,
+            2,
+            5,
+            1
+          ],
+          [
+            2,
+            1,
+            4,
+            7,
+            1
+          ]
+        ],
+        "common_source_charge_and_activity": [
+          [
+            1,
+            1,
+            1,
+            2,
+            1
+          ],
+          [
+            0,
+            0,
+            0
+          ]
+        ],
+        "target_charge_and_activity": [
+          [
+            1,
+            1,
+            1,
+            2,
+            1
+          ],
+          [
+            1,
+            0,
+            0
+          ]
+        ],
+        "transition_rates": [
+          {
+            "legacy_rate": 2,
+            "angular_rate": 1
+          },
+          {
+            "legacy_rate": 0,
+            "angular_rate": 0
+          }
+        ]
+      },
+      "scope": "Invariant sector containing at least one reflection. Each unchanged channel has its own rate-one clock."
+    },
+    {
+      "cycle_vertices": 7,
+      "faces": 5,
+      "total_charge": 6,
+      "boundary": "identity",
+      "framed_states": 17850,
+      "inventory_counts": {
+        "ERRZZ": 252,
+        "ERZRZ": 252,
+        "ERZZR": 252,
+        "EZRRZ": 252,
+        "EZRZR": 252,
+        "EZZRR": 252,
+        "RERZZ": 252,
+        "REZRZ": 252,
+        "REZZR": 252,
+        "RREZZ": 252,
+        "RRRRZ": 2058,
+        "RRRZR": 2058,
+        "RRZEZ": 252,
+        "RRZRR": 2058,
+        "RRZZE": 252,
+        "RZERZ": 252,
+        "RZEZR": 252,
+        "RZREZ": 252,
+        "RZRRR": 2058,
+        "RZRZE": 252,
+        "RZZER": 252,
+        "RZZRE": 252,
+        "ZERRZ": 252,
+        "ZERZR": 252,
+        "ZEZRR": 252,
+        "ZRERZ": 252,
+        "ZREZR": 252,
+        "ZRREZ": 252,
+        "ZRRRR": 2058,
+        "ZRRZE": 252,
+        "ZRZER": 252,
+        "ZRZRE": 252,
+        "ZZERR": 252,
+        "ZZRER": 252,
+        "ZZRRE": 252
+      },
+      "observables": [
+        {
+          "observable": "endpoint_charge",
+          "first_visible_depth": 2,
+          "first_changed_autocorrelation_derivative": 5,
+          "exact_angular_dirichlet_energies": [
+            "0",
+            "0",
+            "20720/51"
+          ],
+          "witness": {
+            "before_tuple": [
+              13,
+              1,
+              1,
+              1,
+              3
+            ],
+            "after_tuple": [
+              13,
+              1,
+              1,
+              2,
+              5
+            ],
+            "pair_position": 3,
+            "angular_channel_index": 0,
+            "charge_field": [
+              1,
+              1,
+              1,
+              1,
+              2
+            ],
+            "response_before": 0,
+            "response_after": -20
+          },
+          "angular_off": {
+            "normalized_integrated_autocorrelation": 0.3853086755644102,
+            "poisson_relative_residual": 5.824609835764499e-13,
+            "stationary_components": 1
+          },
+          "angular_on": {
+            "normalized_integrated_autocorrelation": 0.3831645884556174,
+            "poisson_relative_residual": 6.816378346123192e-13,
+            "stationary_components": 1
+          },
+          "relative_integrated_correlation_reduction": 0.005564595984380749
+        },
+        {
+          "observable": "charge_dipole",
+          "first_visible_depth": 2,
+          "first_changed_autocorrelation_derivative": 5,
+          "exact_angular_dirichlet_energies": [
+            "0",
+            "0",
+            "172928/255"
+          ],
+          "witness": {
+            "before_tuple": [
+              13,
+              1,
+              1,
+              1,
+              3
+            ],
+            "after_tuple": [
+              13,
+              1,
+              1,
+              2,
+              5
+            ],
+            "pair_position": 3,
+            "angular_channel_index": 0,
+            "charge_field": [
+              1,
+              1,
+              1,
+              1,
+              2
+            ],
+            "response_before": -64,
+            "response_after": -120
+          },
+          "angular_off": {
+            "normalized_integrated_autocorrelation": 0.6005447998262611,
+            "poisson_relative_residual": 6.702500103260415e-13,
+            "stationary_components": 1
+          },
+          "angular_on": {
+            "normalized_integrated_autocorrelation": 0.5955813216193659,
+            "poisson_relative_residual": 8.075420259717545e-13,
+            "stationary_components": 1
+          },
+          "relative_integrated_correlation_reduction": 0.008264959097691094
+        },
+        {
+          "observable": "rotation_count",
+          "first_visible_depth": 1,
+          "first_changed_autocorrelation_derivative": 3,
+          "exact_angular_dirichlet_energies": [
+            "0",
+            "1344/85"
+          ],
+          "witness": {
+            "before_tuple": [
+              13,
+              1,
+              1,
+              1,
+              3
+            ],
+            "after_tuple": [
+              13,
+              1,
+              1,
+              2,
+              5
+            ],
+            "pair_position": 3,
+            "angular_channel_index": 0,
+            "charge_field": [
+              1,
+              1,
+              1,
+              1,
+              2
+            ],
+            "response_before": -12,
+            "response_after": -24
+          },
+          "angular_off": {
+            "normalized_integrated_autocorrelation": 0.5224332669687661,
+            "poisson_relative_residual": 4.190726654795267e-13,
+            "stationary_components": 1
+          },
+          "angular_on": {
+            "normalized_integrated_autocorrelation": 0.44969235879277164,
+            "poisson_relative_residual": 4.1691717270089545e-13,
+            "stationary_components": 1
+          },
+          "relative_integrated_correlation_reduction": 0.13923483203519527
+        }
+      ],
+      "algebraic_witness": {
+        "before_tuple": [
+          2,
+          1,
+          1,
+          3,
+          1
+        ],
+        "after_tuple": [
+          2,
+          1,
+          2,
+          5,
+          1
+        ],
+        "pair_position": 2,
+        "angular_channel_index": 0,
+        "before_labels": [
+          "r1",
+          "r0",
+          "r0",
+          "t1",
+          "r0"
+        ],
+        "after_labels": [
+          "r1",
+          "r0",
+          "r1",
+          "t2",
+          "r0"
+        ],
+        "shared_link_realization": {
+          "base_mesh_side": 4,
+          "root": 0,
+          "rim_vertices": [
+            1,
+            5,
+            4,
+            3,
+            15,
+            12
+          ],
+          "native_three_face_patch": 0,
+          "edges": [
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              3
+            ],
+            [
+              0,
+              4
+            ],
+            [
+              0,
+              5
+            ],
+            [
+              0,
+              12
+            ],
+            [
+              0,
+              15
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              1,
+              5
+            ],
+            [
+              1,
+              6
+            ],
+            [
+              1,
+              12
+            ],
+            [
+              1,
+              13
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              2,
+              6
+            ],
+            [
+              2,
+              7
+            ],
+            [
+              2,
+              13
+            ],
+            [
+              2,
+              14
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              3,
+              7
+            ],
+            [
+              3,
+              14
+            ],
+            [
+              3,
+              15
+            ],
+            [
+              4,
+              5
+            ],
+            [
+              4,
+              7
+            ],
+            [
+              4,
+              8
+            ],
+            [
+              4,
+              9
+            ],
+            [
+              5,
+              6
+            ],
+            [
+              5,
+              9
+            ],
+            [
+              5,
+              10
+            ],
+            [
+              6,
+              7
+            ],
+            [
+              6,
+              10
+            ],
+            [
+              6,
+              11
+            ],
+            [
+              7,
+              8
+            ],
+            [
+              7,
+              11
+            ],
+            [
+              8,
+              9
+            ],
+            [
+              8,
+              11
+            ],
+            [
+              8,
+              12
+            ],
+            [
+              8,
+              13
+            ],
+            [
+              9,
+              10
+            ],
+            [
+              9,
+              13
+            ],
+            [
+              9,
+              14
+            ],
+            [
+              10,
+              11
+            ],
+            [
+              10,
+              14
+            ],
+            [
+              10,
+              15
+            ],
+            [
+              11,
+              12
+            ],
+            [
+              11,
+              15
+            ],
+            [
+              12,
+              13
+            ],
+            [
+              12,
+              15
+            ],
+            [
+              13,
+              14
+            ],
+            [
+              14,
+              15
+            ]
+          ],
+          "initial_links": [
+            0,
+            3,
+            2,
+            1,
+            0,
+            2,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "final_links": [
+            0,
+            3,
+            4,
+            1,
+            0,
+            2,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "changed_edge_indices": [
+            2
+          ],
+          "whole_mesh_charge": 6,
+          "exterior_fixed": true,
+          "inverse_restores_links": true
+        },
+        "positive_generator_on_rotation_count": [
+          -12,
+          0
+        ],
+        "conditional_charge_moments": [
+          {
+            "charge_drift": [
+              0,
+              0,
+              2,
+              -4,
+              2
+            ],
+            "instantaneous_charge_covariance": [
+              [
+                8,
+                -4,
+                -4,
+                0,
+                0
+              ],
+              [
+                -4,
+                8,
+                -4,
+                0,
+                0
+              ],
+              [
+                -4,
+                -4,
+                10,
+                -2,
+                0
+              ],
+              [
+                0,
+                0,
+                -2,
+                4,
+                -2
+              ],
+              [
+                0,
+                0,
+                0,
+                -2,
+                2
+              ]
+            ],
+            "second_generator_power_on_charge": [
+              0,
+              12,
+              16,
+              -16,
+              -12
+            ]
+          },
+          {
+            "charge_drift": [
+              0,
+              0,
+              2,
+              -4,
+              2
+            ],
+            "instantaneous_charge_covariance": [
+              [
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                2,
+                -2,
+                0
+              ],
+              [
+                0,
+                0,
+                -2,
+                4,
+                -2
+              ],
+              [
+                0,
+                0,
+                0,
+                -2,
+                2
+              ]
+            ],
+            "second_generator_power_on_charge": [
+              0,
+              4,
+              -16,
+              24,
+              -12
+            ]
+          }
+        ]
+      },
+      "first_reaction": {
+        "reactant_states": 10290,
+        "relative_exponents": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "angular_off": {
+          "uniform_mean_time": 1.1412710266988024,
+          "initial_uniform_hazard": 3.526530612244898,
+          "seed_mean_times_by_relative_exponent": [
+            0.3197127684807663,
+            1.3342790699800988,
+            1.6894541355146175,
+            1.6957489147121498,
+            1.6954356012390133,
+            1.2788180553657527
+          ],
+          "poisson_relative_residual": 5.96466807584428e-13
+        },
+        "angular_on": {
+          "uniform_mean_time": 0.973778955718566,
+          "initial_uniform_hazard": 3.526530612244898,
+          "seed_mean_times_by_relative_exponent": [
+            0.34716424127308415,
+            1.0522148927988488,
+            1.3871878769736476,
+            1.420717626890497,
+            1.3824071812262964,
+            1.246305548070655
+          ],
+          "poisson_relative_residual": 9.495343067977109e-13
+        }
+      },
+      "charge_plus_activity_nonclosure": {
+        "relative_exponents": [
+          2,
+          3
+        ],
+        "source_tuples": [
+          [
+            2,
+            1,
+            2,
+            5,
+            1
+          ],
+          [
+            2,
+            1,
+            4,
+            7,
+            1
+          ]
+        ],
+        "common_source_charge_and_activity": [
+          [
+            1,
+            1,
+            1,
+            2,
+            1
+          ],
+          [
+            0,
+            0,
+            0
+          ]
+        ],
+        "target_charge_and_activity": [
+          [
+            1,
+            1,
+            1,
+            2,
+            1
+          ],
+          [
+            1,
+            0,
+            0
+          ]
+        ],
+        "transition_rates": [
+          {
+            "legacy_rate": 2,
+            "angular_rate": 1
+          },
+          {
+            "legacy_rate": 0,
+            "angular_rate": 0
+          }
+        ]
+      },
+      "scope": "Invariant sector containing at least one reflection. Each unchanged channel has its own rate-one clock."
+    }
+  ]
+}

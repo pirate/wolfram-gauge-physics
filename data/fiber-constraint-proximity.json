@@ -1,0 +1,185 @@
+{
+  "scope": "Exact local reaction-count coefficients, not fitted trajectories",
+  "runs": [
+    {
+      "condition": "contact",
+      "side": 4,
+      "faces": 32,
+      "seed": 914407001,
+      "initial_pair_faces": [
+        [
+          6,
+          1
+        ],
+        [
+          1,
+          0
+        ]
+      ],
+      "lambda_0": 72,
+      "G_lambda_0": -4608,
+      "G0_A_lambda_0": -960,
+      "feedback_reaction_channels": 8
+    },
+    {
+      "condition": "near_disjoint",
+      "side": 4,
+      "faces": 32,
+      "seed": 914407001,
+      "initial_pair_faces": [
+        [
+          6,
+          1
+        ],
+        [
+          30,
+          31
+        ]
+      ],
+      "lambda_0": 96,
+      "G_lambda_0": -6720,
+      "G0_A_lambda_0": -3456,
+      "feedback_reaction_channels": 24
+    },
+    {
+      "condition": "separated",
+      "side": 4,
+      "faces": 32,
+      "seed": 914407001,
+      "initial_pair_faces": [
+        [
+          6,
+          1
+        ],
+        [
+          26,
+          27
+        ]
+      ],
+      "lambda_0": 96,
+      "G_lambda_0": -4992,
+      "G0_A_lambda_0": 0,
+      "feedback_reaction_channels": 0
+    },
+    {
+      "condition": "contact",
+      "side": 8,
+      "faces": 128,
+      "seed": 914407001,
+      "initial_pair_faces": [
+        [
+          14,
+          1
+        ],
+        [
+          1,
+          0
+        ]
+      ],
+      "lambda_0": 72,
+      "G_lambda_0": -4608,
+      "G0_A_lambda_0": -960,
+      "feedback_reaction_channels": 8
+    },
+    {
+      "condition": "near_disjoint",
+      "side": 8,
+      "faces": 128,
+      "seed": 914407001,
+      "initial_pair_faces": [
+        [
+          14,
+          1
+        ],
+        [
+          126,
+          127
+        ]
+      ],
+      "lambda_0": 96,
+      "G_lambda_0": -6720,
+      "G0_A_lambda_0": -3456,
+      "feedback_reaction_channels": 24
+    },
+    {
+      "condition": "separated",
+      "side": 8,
+      "faces": 128,
+      "seed": 914407001,
+      "initial_pair_faces": [
+        [
+          14,
+          1
+        ],
+        [
+          40,
+          43
+        ]
+      ],
+      "lambda_0": 96,
+      "G_lambda_0": -4992,
+      "G0_A_lambda_0": 0,
+      "feedback_reaction_channels": 0
+    },
+    {
+      "condition": "contact",
+      "side": 16,
+      "faces": 512,
+      "seed": 914407001,
+      "initial_pair_faces": [
+        [
+          30,
+          1
+        ],
+        [
+          1,
+          0
+        ]
+      ],
+      "lambda_0": 72,
+      "G_lambda_0": -4608,
+      "G0_A_lambda_0": -960,
+      "feedback_reaction_channels": 8
+    },
+    {
+      "condition": "near_disjoint",
+      "side": 16,
+      "faces": 512,
+      "seed": 914407001,
+      "initial_pair_faces": [
+        [
+          30,
+          1
+        ],
+        [
+          510,
+          511
+        ]
+      ],
+      "lambda_0": 96,
+      "G_lambda_0": -6720,
+      "G0_A_lambda_0": -3456,
+      "feedback_reaction_channels": 24
+    },
+    {
+      "condition": "separated",
+      "side": 16,
+      "faces": 512,
+      "seed": 914407001,
+      "initial_pair_faces": [
+        [
+          30,
+          1
+        ],
+        [
+          181,
+          180
+        ]
+      ],
+      "lambda_0": 96,
+      "G_lambda_0": -4992,
+      "G0_A_lambda_0": 0,
+      "feedback_reaction_channels": 0
+    }
+  ]
+}

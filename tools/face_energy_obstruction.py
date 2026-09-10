@@ -75,6 +75,10 @@ def derive_fiber_group():
 def certificate(group, table):
     group.validate(table)
     n, mul, inv = group.n, group.mul, group.inv
+    # Varying an independent spectator C forces q(L^-1 C)-q(C) to be
+    # constant. Summing over finite G makes that constant zero over R or Q.
+    # Class invariance extends this to the normal closure of L=X A^-1.
+    # Without independent spectators (or for torsion charges), this proof fails.
     increments = sorted({mul[output//n][inv[p//n]] for p, output in enumerate(table)})
     normal = group.normal_closure(increments)
     cosets = [min(mul[h][a] for h in normal) for a in range(n)]

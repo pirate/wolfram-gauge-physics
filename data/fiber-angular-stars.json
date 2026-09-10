@@ -1,0 +1,4363 @@
+{
+  "raw_factorizations": [
+    {
+      "cycle_vertices": 3,
+      "side": 4,
+      "faces": 32,
+      "seed": 721903001,
+      "initial_links": [
+        3,
+        2,
+        0,
+        5,
+        5,
+        1,
+        2,
+        1,
+        2,
+        1,
+        4,
+        4,
+        1,
+        1,
+        2,
+        3,
+        3,
+        2,
+        5,
+        1,
+        4,
+        1,
+        0,
+        4,
+        3,
+        4,
+        3,
+        2,
+        4,
+        1,
+        3,
+        3,
+        1,
+        1,
+        2,
+        5,
+        2,
+        5,
+        1,
+        1,
+        0,
+        0,
+        4,
+        4,
+        4,
+        2,
+        5,
+        1
+      ],
+      "uniform_orbit_sample_links": [
+        3,
+        2,
+        0,
+        5,
+        5,
+        1,
+        5,
+        1,
+        2,
+        1,
+        0,
+        3,
+        1,
+        5,
+        2,
+        3,
+        0,
+        2,
+        5,
+        1,
+        3,
+        1,
+        0,
+        0,
+        3,
+        3,
+        4,
+        2,
+        4,
+        1,
+        3,
+        3,
+        1,
+        2,
+        2,
+        1,
+        2,
+        5,
+        2,
+        1,
+        3,
+        0,
+        3,
+        4,
+        0,
+        2,
+        5,
+        1
+      ],
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          0,
+          4
+        ],
+        [
+          0,
+          5
+        ],
+        [
+          0,
+          12
+        ],
+        [
+          0,
+          15
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          5
+        ],
+        [
+          1,
+          6
+        ],
+        [
+          1,
+          12
+        ],
+        [
+          1,
+          13
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          2,
+          6
+        ],
+        [
+          2,
+          7
+        ],
+        [
+          2,
+          13
+        ],
+        [
+          2,
+          14
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          3,
+          7
+        ],
+        [
+          3,
+          14
+        ],
+        [
+          3,
+          15
+        ],
+        [
+          4,
+          5
+        ],
+        [
+          4,
+          7
+        ],
+        [
+          4,
+          8
+        ],
+        [
+          4,
+          9
+        ],
+        [
+          5,
+          6
+        ],
+        [
+          5,
+          9
+        ],
+        [
+          5,
+          10
+        ],
+        [
+          6,
+          7
+        ],
+        [
+          6,
+          10
+        ],
+        [
+          6,
+          11
+        ],
+        [
+          7,
+          8
+        ],
+        [
+          7,
+          11
+        ],
+        [
+          8,
+          9
+        ],
+        [
+          8,
+          11
+        ],
+        [
+          8,
+          12
+        ],
+        [
+          8,
+          13
+        ],
+        [
+          9,
+          10
+        ],
+        [
+          9,
+          13
+        ],
+        [
+          9,
+          14
+        ],
+        [
+          10,
+          11
+        ],
+        [
+          10,
+          14
+        ],
+        [
+          10,
+          15
+        ],
+        [
+          11,
+          12
+        ],
+        [
+          11,
+          15
+        ],
+        [
+          12,
+          13
+        ],
+        [
+          12,
+          15
+        ],
+        [
+          13,
+          14
+        ],
+        [
+          14,
+          15
+        ]
+      ],
+      "charge_field": [
+        0,
+        1,
+        1,
+        0,
+        2,
+        1,
+        1,
+        2,
+        2,
+        1,
+        2,
+        1,
+        2,
+        2,
+        1,
+        1,
+        1,
+        2,
+        2,
+        1,
+        1,
+        1,
+        2,
+        1,
+        1,
+        0,
+        0,
+        2,
+        1,
+        1,
+        1,
+        1
+      ],
+      "stars": [
+        {
+          "rotation_face": 4,
+          "active_edges": [
+            13,
+            11
+          ],
+          "coefficients": [
+            1,
+            1
+          ],
+          "constant": 2,
+          "rotation_shift": 1,
+          "degree": 2,
+          "orbit_size": 6
+        },
+        {
+          "rotation_face": 7,
+          "active_edges": [
+            21,
+            16
+          ],
+          "coefficients": [
+            -1,
+            1
+          ],
+          "constant": 1,
+          "rotation_shift": 2,
+          "degree": 2,
+          "orbit_size": 6
+        },
+        {
+          "rotation_face": 8,
+          "active_edges": [
+            23,
+            25,
+            20
+          ],
+          "coefficients": [
+            -1,
+            1,
+            1
+          ],
+          "constant": 0,
+          "rotation_shift": 2,
+          "degree": 3,
+          "orbit_size": 18
+        },
+        {
+          "rotation_face": 10,
+          "active_edges": [
+            26
+          ],
+          "coefficients": [
+            -1
+          ],
+          "constant": 0,
+          "rotation_shift": 2,
+          "degree": 1,
+          "orbit_size": 2
+        },
+        {
+          "rotation_face": 12,
+          "active_edges": [
+            31,
+            27
+          ],
+          "coefficients": [
+            -1,
+            -1
+          ],
+          "constant": 0,
+          "rotation_shift": 1,
+          "degree": 2,
+          "orbit_size": 6
+        },
+        {
+          "rotation_face": 13,
+          "active_edges": [
+            39
+          ],
+          "coefficients": [
+            1
+          ],
+          "constant": 1,
+          "rotation_shift": 1,
+          "degree": 1,
+          "orbit_size": 2
+        },
+        {
+          "rotation_face": 17,
+          "active_edges": [
+            44,
+            35
+          ],
+          "coefficients": [
+            1,
+            -1
+          ],
+          "constant": 1,
+          "rotation_shift": 1,
+          "degree": 2,
+          "orbit_size": 6
+        },
+        {
+          "rotation_face": 18,
+          "active_edges": [
+            38,
+            40,
+            36
+          ],
+          "coefficients": [
+            1,
+            -1,
+            -1
+          ],
+          "constant": 0,
+          "rotation_shift": 2,
+          "degree": 3,
+          "orbit_size": 18
+        },
+        {
+          "rotation_face": 22,
+          "active_edges": [
+            33,
+            42
+          ],
+          "coefficients": [
+            1,
+            1
+          ],
+          "constant": 2,
+          "rotation_shift": 1,
+          "degree": 2,
+          "orbit_size": 6
+        },
+        {
+          "rotation_face": 27,
+          "active_edges": [
+            6,
+            10
+          ],
+          "coefficients": [
+            1,
+            1
+          ],
+          "constant": 2,
+          "rotation_shift": 2,
+          "degree": 2,
+          "orbit_size": 6
+        }
+      ],
+      "star_degree_counts": {
+        "2": 6,
+        "3": 2,
+        "1": 2
+      },
+      "angular_component_size": "60466176",
+      "nonidle_rooted_channel_slots_initial": 40,
+      "nonidle_rooted_channel_slots_resampled": 40,
+      "rate_per_allowed_coordinate_step": 2,
+      "scope": "A conditional raw-link angular orbit, not independent physical faces or a finite-rate replacement rule."
+    },
+    {
+      "cycle_vertices": 5,
+      "side": 4,
+      "faces": 32,
+      "seed": 721903001,
+      "initial_links": [
+        5,
+        4,
+        0,
+        8,
+        9,
+        3,
+        4,
+        2,
+        3,
+        2,
+        6,
+        7,
+        3,
+        2,
+        4,
+        6,
+        6,
+        3,
+        8,
+        2,
+        6,
+        2,
+        0,
+        7,
+        6,
+        7,
+        5,
+        4,
+        8,
+        2,
+        5,
+        5,
+        3,
+        2,
+        4,
+        8,
+        3,
+        9,
+        3,
+        2,
+        0,
+        0,
+        7,
+        7,
+        7,
+        4,
+        8,
+        1
+      ],
+      "uniform_orbit_sample_links": [
+        5,
+        4,
+        7,
+        8,
+        9,
+        3,
+        4,
+        9,
+        8,
+        2,
+        4,
+        7,
+        3,
+        2,
+        6,
+        1,
+        6,
+        3,
+        8,
+        2,
+        6,
+        2,
+        8,
+        5,
+        4,
+        0,
+        5,
+        4,
+        5,
+        2,
+        5,
+        5,
+        3,
+        4,
+        4,
+        8,
+        3,
+        9,
+        3,
+        2,
+        0,
+        0,
+        7,
+        7,
+        7,
+        6,
+        0,
+        1
+      ],
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          0,
+          4
+        ],
+        [
+          0,
+          5
+        ],
+        [
+          0,
+          12
+        ],
+        [
+          0,
+          15
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          5
+        ],
+        [
+          1,
+          6
+        ],
+        [
+          1,
+          12
+        ],
+        [
+          1,
+          13
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          2,
+          6
+        ],
+        [
+          2,
+          7
+        ],
+        [
+          2,
+          13
+        ],
+        [
+          2,
+          14
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          3,
+          7
+        ],
+        [
+          3,
+          14
+        ],
+        [
+          3,
+          15
+        ],
+        [
+          4,
+          5
+        ],
+        [
+          4,
+          7
+        ],
+        [
+          4,
+          8
+        ],
+        [
+          4,
+          9
+        ],
+        [
+          5,
+          6
+        ],
+        [
+          5,
+          9
+        ],
+        [
+          5,
+          10
+        ],
+        [
+          6,
+          7
+        ],
+        [
+          6,
+          10
+        ],
+        [
+          6,
+          11
+        ],
+        [
+          7,
+          8
+        ],
+        [
+          7,
+          11
+        ],
+        [
+          8,
+          9
+        ],
+        [
+          8,
+          11
+        ],
+        [
+          8,
+          12
+        ],
+        [
+          8,
+          13
+        ],
+        [
+          9,
+          10
+        ],
+        [
+          9,
+          13
+        ],
+        [
+          9,
+          14
+        ],
+        [
+          10,
+          11
+        ],
+        [
+          10,
+          14
+        ],
+        [
+          10,
+          15
+        ],
+        [
+          11,
+          12
+        ],
+        [
+          11,
+          15
+        ],
+        [
+          12,
+          13
+        ],
+        [
+          12,
+          15
+        ],
+        [
+          13,
+          14
+        ],
+        [
+          14,
+          15
+        ]
+      ],
+      "charge_field": [
+        1,
+        1,
+        1,
+        2,
+        1,
+        0,
+        2,
+        2,
+        1,
+        2,
+        1,
+        2,
+        2,
+        2,
+        1,
+        1,
+        1,
+        1,
+        0,
+        1,
+        1,
+        1,
+        2,
+        1,
+        2,
+        0,
+        2,
+        1,
+        0,
+        1,
+        2,
+        2
+      ],
+      "stars": [
+        {
+          "rotation_face": 3,
+          "active_edges": [
+            7,
+            24,
+            8
+          ],
+          "coefficients": [
+            1,
+            -1,
+            1
+          ],
+          "constant": 0,
+          "rotation_shift": 4,
+          "degree": 3,
+          "orbit_size": 100
+        },
+        {
+          "rotation_face": 6,
+          "active_edges": [
+            2
+          ],
+          "coefficients": [
+            1
+          ],
+          "constant": 4,
+          "rotation_shift": 4,
+          "degree": 1,
+          "orbit_size": 4
+        },
+        {
+          "rotation_face": 7,
+          "active_edges": [
+            17,
+            21
+          ],
+          "coefficients": [
+            -1,
+            1
+          ],
+          "constant": 2,
+          "rotation_shift": 2,
+          "degree": 2,
+          "orbit_size": 20
+        },
+        {
+          "rotation_face": 9,
+          "active_edges": [
+            22,
+            32,
+            23
+          ],
+          "coefficients": [
+            -1,
+            -1,
+            1
+          ],
+          "constant": 0,
+          "rotation_shift": 2,
+          "degree": 3,
+          "orbit_size": 100
+        },
+        {
+          "rotation_face": 11,
+          "active_edges": [
+            25,
+            26
+          ],
+          "coefficients": [
+            -1,
+            1
+          ],
+          "constant": 4,
+          "rotation_shift": 3,
+          "degree": 2,
+          "orbit_size": 20
+        },
+        {
+          "rotation_face": 12,
+          "active_edges": [
+            31
+          ],
+          "coefficients": [
+            -1
+          ],
+          "constant": 4,
+          "rotation_shift": 2,
+          "degree": 1,
+          "orbit_size": 4
+        },
+        {
+          "rotation_face": 13,
+          "active_edges": [
+            28,
+            39
+          ],
+          "coefficients": [
+            -1,
+            1
+          ],
+          "constant": 4,
+          "rotation_shift": 1,
+          "degree": 2,
+          "orbit_size": 20
+        },
+        {
+          "rotation_face": 22,
+          "active_edges": [
+            33,
+            42,
+            34
+          ],
+          "coefficients": [
+            1,
+            1,
+            -1
+          ],
+          "constant": 0,
+          "rotation_shift": 2,
+          "degree": 3,
+          "orbit_size": 100
+        },
+        {
+          "rotation_face": 24,
+          "active_edges": [
+            10,
+            44
+          ],
+          "coefficients": [
+            1,
+            -1
+          ],
+          "constant": 4,
+          "rotation_shift": 4,
+          "degree": 2,
+          "orbit_size": 20
+        },
+        {
+          "rotation_face": 26,
+          "active_edges": [
+            15,
+            46,
+            14
+          ],
+          "coefficients": [
+            1,
+            -1,
+            -1
+          ],
+          "constant": 0,
+          "rotation_shift": 2,
+          "degree": 3,
+          "orbit_size": 100
+        },
+        {
+          "rotation_face": 30,
+          "active_edges": [
+            45
+          ],
+          "coefficients": [
+            -1
+          ],
+          "constant": 0,
+          "rotation_shift": 3,
+          "degree": 1,
+          "orbit_size": 4
+        }
+      ],
+      "star_degree_counts": {
+        "3": 4,
+        "1": 3,
+        "2": 4
+      },
+      "angular_component_size": "1024000000000000",
+      "nonidle_rooted_channel_slots_initial": 76,
+      "nonidle_rooted_channel_slots_resampled": 82,
+      "rate_per_allowed_coordinate_step": 2,
+      "scope": "A conditional raw-link angular orbit, not independent physical faces or a finite-rate replacement rule."
+    },
+    {
+      "cycle_vertices": 5,
+      "side": 8,
+      "faces": 128,
+      "seed": 721903001,
+      "initial_links": [
+        5,
+        4,
+        0,
+        8,
+        9,
+        3,
+        4,
+        2,
+        3,
+        2,
+        6,
+        7,
+        3,
+        2,
+        4,
+        6,
+        6,
+        3,
+        8,
+        2,
+        6,
+        2,
+        0,
+        7,
+        6,
+        7,
+        5,
+        4,
+        8,
+        2,
+        5,
+        5,
+        3,
+        2,
+        4,
+        8,
+        3,
+        9,
+        3,
+        2,
+        0,
+        0,
+        7,
+        7,
+        7,
+        4,
+        8,
+        1,
+        9,
+        5,
+        0,
+        3,
+        2,
+        4,
+        8,
+        3,
+        4,
+        1,
+        1,
+        3,
+        4,
+        6,
+        5,
+        7,
+        6,
+        4,
+        7,
+        0,
+        1,
+        3,
+        4,
+        2,
+        2,
+        6,
+        2,
+        9,
+        0,
+        7,
+        7,
+        6,
+        7,
+        9,
+        8,
+        6,
+        8,
+        7,
+        1,
+        8,
+        4,
+        0,
+        8,
+        1,
+        3,
+        6,
+        8,
+        5,
+        2,
+        7,
+        9,
+        8,
+        5,
+        6,
+        4,
+        2,
+        3,
+        7,
+        1,
+        1,
+        9,
+        6,
+        3,
+        7,
+        5,
+        3,
+        9,
+        6,
+        4,
+        0,
+        5,
+        0,
+        3,
+        6,
+        1,
+        1,
+        5,
+        3,
+        6,
+        4,
+        0,
+        8,
+        7,
+        0,
+        5,
+        1,
+        9,
+        0,
+        7,
+        9,
+        0,
+        7,
+        6,
+        2,
+        4,
+        5,
+        7,
+        7,
+        1,
+        6,
+        7,
+        9,
+        9,
+        7,
+        9,
+        3,
+        7,
+        5,
+        8,
+        1,
+        8,
+        3,
+        5,
+        0,
+        2,
+        9,
+        9,
+        8,
+        6,
+        9,
+        8,
+        1,
+        1,
+        4,
+        8,
+        7,
+        4,
+        2,
+        7,
+        6,
+        8,
+        2,
+        1,
+        3,
+        8,
+        3,
+        1,
+        0,
+        2,
+        9,
+        0,
+        7,
+        1,
+        6
+      ],
+      "uniform_orbit_sample_links": [
+        5,
+        2,
+        5,
+        8,
+        9,
+        7,
+        4,
+        2,
+        3,
+        2,
+        6,
+        7,
+        5,
+        9,
+        4,
+        6,
+        6,
+        8,
+        3,
+        2,
+        6,
+        2,
+        0,
+        7,
+        6,
+        5,
+        5,
+        4,
+        8,
+        2,
+        5,
+        5,
+        0,
+        4,
+        6,
+        8,
+        3,
+        1,
+        3,
+        2,
+        3,
+        5,
+        8,
+        7,
+        7,
+        6,
+        8,
+        4,
+        9,
+        5,
+        0,
+        5,
+        2,
+        2,
+        0,
+        3,
+        4,
+        1,
+        1,
+        3,
+        4,
+        6,
+        3,
+        7,
+        6,
+        4,
+        7,
+        0,
+        6,
+        3,
+        4,
+        2,
+        2,
+        6,
+        2,
+        9,
+        0,
+        7,
+        7,
+        6,
+        7,
+        1,
+        5,
+        6,
+        0,
+        7,
+        1,
+        8,
+        4,
+        0,
+        5,
+        1,
+        3,
+        6,
+        8,
+        5,
+        2,
+        3,
+        9,
+        0,
+        0,
+        6,
+        4,
+        2,
+        0,
+        7,
+        4,
+        1,
+        9,
+        6,
+        3,
+        7,
+        5,
+        3,
+        9,
+        9,
+        4,
+        0,
+        5,
+        8,
+        3,
+        1,
+        9,
+        1,
+        5,
+        0,
+        1,
+        4,
+        5,
+        8,
+        0,
+        0,
+        8,
+        1,
+        9,
+        0,
+        5,
+        9,
+        7,
+        7,
+        1,
+        2,
+        9,
+        5,
+        0,
+        7,
+        1,
+        2,
+        7,
+        9,
+        2,
+        7,
+        9,
+        0,
+        8,
+        5,
+        5,
+        6,
+        5,
+        0,
+        7,
+        0,
+        2,
+        9,
+        9,
+        0,
+        6,
+        9,
+        8,
+        1,
+        1,
+        4,
+        0,
+        3,
+        4,
+        2,
+        5,
+        6,
+        0,
+        2,
+        6,
+        7,
+        3,
+        5,
+        1,
+        7,
+        2,
+        9,
+        0,
+        7,
+        1,
+        6
+      ],
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          7
+        ],
+        [
+          0,
+          8
+        ],
+        [
+          0,
+          9
+        ],
+        [
+          0,
+          56
+        ],
+        [
+          0,
+          63
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          9
+        ],
+        [
+          1,
+          10
+        ],
+        [
+          1,
+          56
+        ],
+        [
+          1,
+          57
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          2,
+          10
+        ],
+        [
+          2,
+          11
+        ],
+        [
+          2,
+          57
+        ],
+        [
+          2,
+          58
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          3,
+          11
+        ],
+        [
+          3,
+          12
+        ],
+        [
+          3,
+          58
+        ],
+        [
+          3,
+          59
+        ],
+        [
+          4,
+          5
+        ],
+        [
+          4,
+          12
+        ],
+        [
+          4,
+          13
+        ],
+        [
+          4,
+          59
+        ],
+        [
+          4,
+          60
+        ],
+        [
+          5,
+          6
+        ],
+        [
+          5,
+          13
+        ],
+        [
+          5,
+          14
+        ],
+        [
+          5,
+          60
+        ],
+        [
+          5,
+          61
+        ],
+        [
+          6,
+          7
+        ],
+        [
+          6,
+          14
+        ],
+        [
+          6,
+          15
+        ],
+        [
+          6,
+          61
+        ],
+        [
+          6,
+          62
+        ],
+        [
+          7,
+          8
+        ],
+        [
+          7,
+          15
+        ],
+        [
+          7,
+          62
+        ],
+        [
+          7,
+          63
+        ],
+        [
+          8,
+          9
+        ],
+        [
+          8,
+          15
+        ],
+        [
+          8,
+          16
+        ],
+        [
+          8,
+          17
+        ],
+        [
+          9,
+          10
+        ],
+        [
+          9,
+          17
+        ],
+        [
+          9,
+          18
+        ],
+        [
+          10,
+          11
+        ],
+        [
+          10,
+          18
+        ],
+        [
+          10,
+          19
+        ],
+        [
+          11,
+          12
+        ],
+        [
+          11,
+          19
+        ],
+        [
+          11,
+          20
+        ],
+        [
+          12,
+          13
+        ],
+        [
+          12,
+          20
+        ],
+        [
+          12,
+          21
+        ],
+        [
+          13,
+          14
+        ],
+        [
+          13,
+          21
+        ],
+        [
+          13,
+          22
+        ],
+        [
+          14,
+          15
+        ],
+        [
+          14,
+          22
+        ],
+        [
+          14,
+          23
+        ],
+        [
+          15,
+          16
+        ],
+        [
+          15,
+          23
+        ],
+        [
+          16,
+          17
+        ],
+        [
+          16,
+          23
+        ],
+        [
+          16,
+          24
+        ],
+        [
+          16,
+          25
+        ],
+        [
+          17,
+          18
+        ],
+        [
+          17,
+          25
+        ],
+        [
+          17,
+          26
+        ],
+        [
+          18,
+          19
+        ],
+        [
+          18,
+          26
+        ],
+        [
+          18,
+          27
+        ],
+        [
+          19,
+          20
+        ],
+        [
+          19,
+          27
+        ],
+        [
+          19,
+          28
+        ],
+        [
+          20,
+          21
+        ],
+        [
+          20,
+          28
+        ],
+        [
+          20,
+          29
+        ],
+        [
+          21,
+          22
+        ],
+        [
+          21,
+          29
+        ],
+        [
+          21,
+          30
+        ],
+        [
+          22,
+          23
+        ],
+        [
+          22,
+          30
+        ],
+        [
+          22,
+          31
+        ],
+        [
+          23,
+          24
+        ],
+        [
+          23,
+          31
+        ],
+        [
+          24,
+          25
+        ],
+        [
+          24,
+          31
+        ],
+        [
+          24,
+          32
+        ],
+        [
+          24,
+          33
+        ],
+        [
+          25,
+          26
+        ],
+        [
+          25,
+          33
+        ],
+        [
+          25,
+          34
+        ],
+        [
+          26,
+          27
+        ],
+        [
+          26,
+          34
+        ],
+        [
+          26,
+          35
+        ],
+        [
+          27,
+          28
+        ],
+        [
+          27,
+          35
+        ],
+        [
+          27,
+          36
+        ],
+        [
+          28,
+          29
+        ],
+        [
+          28,
+          36
+        ],
+        [
+          28,
+          37
+        ],
+        [
+          29,
+          30
+        ],
+        [
+          29,
+          37
+        ],
+        [
+          29,
+          38
+        ],
+        [
+          30,
+          31
+        ],
+        [
+          30,
+          38
+        ],
+        [
+          30,
+          39
+        ],
+        [
+          31,
+          32
+        ],
+        [
+          31,
+          39
+        ],
+        [
+          32,
+          33
+        ],
+        [
+          32,
+          39
+        ],
+        [
+          32,
+          40
+        ],
+        [
+          32,
+          41
+        ],
+        [
+          33,
+          34
+        ],
+        [
+          33,
+          41
+        ],
+        [
+          33,
+          42
+        ],
+        [
+          34,
+          35
+        ],
+        [
+          34,
+          42
+        ],
+        [
+          34,
+          43
+        ],
+        [
+          35,
+          36
+        ],
+        [
+          35,
+          43
+        ],
+        [
+          35,
+          44
+        ],
+        [
+          36,
+          37
+        ],
+        [
+          36,
+          44
+        ],
+        [
+          36,
+          45
+        ],
+        [
+          37,
+          38
+        ],
+        [
+          37,
+          45
+        ],
+        [
+          37,
+          46
+        ],
+        [
+          38,
+          39
+        ],
+        [
+          38,
+          46
+        ],
+        [
+          38,
+          47
+        ],
+        [
+          39,
+          40
+        ],
+        [
+          39,
+          47
+        ],
+        [
+          40,
+          41
+        ],
+        [
+          40,
+          47
+        ],
+        [
+          40,
+          48
+        ],
+        [
+          40,
+          49
+        ],
+        [
+          41,
+          42
+        ],
+        [
+          41,
+          49
+        ],
+        [
+          41,
+          50
+        ],
+        [
+          42,
+          43
+        ],
+        [
+          42,
+          50
+        ],
+        [
+          42,
+          51
+        ],
+        [
+          43,
+          44
+        ],
+        [
+          43,
+          51
+        ],
+        [
+          43,
+          52
+        ],
+        [
+          44,
+          45
+        ],
+        [
+          44,
+          52
+        ],
+        [
+          44,
+          53
+        ],
+        [
+          45,
+          46
+        ],
+        [
+          45,
+          53
+        ],
+        [
+          45,
+          54
+        ],
+        [
+          46,
+          47
+        ],
+        [
+          46,
+          54
+        ],
+        [
+          46,
+          55
+        ],
+        [
+          47,
+          48
+        ],
+        [
+          47,
+          55
+        ],
+        [
+          48,
+          49
+        ],
+        [
+          48,
+          55
+        ],
+        [
+          48,
+          56
+        ],
+        [
+          48,
+          57
+        ],
+        [
+          49,
+          50
+        ],
+        [
+          49,
+          57
+        ],
+        [
+          49,
+          58
+        ],
+        [
+          50,
+          51
+        ],
+        [
+          50,
+          58
+        ],
+        [
+          50,
+          59
+        ],
+        [
+          51,
+          52
+        ],
+        [
+          51,
+          59
+        ],
+        [
+          51,
+          60
+        ],
+        [
+          52,
+          53
+        ],
+        [
+          52,
+          60
+        ],
+        [
+          52,
+          61
+        ],
+        [
+          53,
+          54
+        ],
+        [
+          53,
+          61
+        ],
+        [
+          53,
+          62
+        ],
+        [
+          54,
+          55
+        ],
+        [
+          54,
+          62
+        ],
+        [
+          54,
+          63
+        ],
+        [
+          55,
+          56
+        ],
+        [
+          55,
+          63
+        ],
+        [
+          56,
+          57
+        ],
+        [
+          56,
+          63
+        ],
+        [
+          57,
+          58
+        ],
+        [
+          58,
+          59
+        ],
+        [
+          59,
+          60
+        ],
+        [
+          60,
+          61
+        ],
+        [
+          61,
+          62
+        ],
+        [
+          62,
+          63
+        ]
+      ],
+      "charge_field": [
+        1,
+        2,
+        1,
+        1,
+        1,
+        2,
+        1,
+        2,
+        2,
+        1,
+        2,
+        2,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        2,
+        1,
+        0,
+        1,
+        2,
+        2,
+        2,
+        1,
+        2,
+        1,
+        1,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        0,
+        1,
+        0,
+        2,
+        2,
+        2,
+        1,
+        1,
+        1,
+        0,
+        1,
+        1,
+        1,
+        1,
+        0,
+        2,
+        1,
+        2,
+        1,
+        0,
+        2,
+        2,
+        1,
+        0,
+        2,
+        2,
+        2,
+        1,
+        2,
+        1,
+        1,
+        2,
+        1,
+        2,
+        2,
+        1,
+        1,
+        2,
+        1,
+        1,
+        1,
+        2,
+        0,
+        1,
+        2,
+        2,
+        1,
+        1,
+        1,
+        2,
+        2,
+        1,
+        1,
+        1,
+        2,
+        1,
+        2,
+        1,
+        2,
+        1,
+        1,
+        0,
+        2,
+        1,
+        0,
+        2,
+        1,
+        2,
+        2,
+        1,
+        2,
+        1,
+        2,
+        1,
+        2,
+        1,
+        0,
+        1,
+        1,
+        1,
+        0,
+        1,
+        1,
+        1,
+        2,
+        2,
+        1,
+        2,
+        2,
+        1,
+        2
+      ],
+      "stars": [
+        {
+          "rotation_face": 1,
+          "active_edges": [
+            2,
+            40,
+            3
+          ],
+          "coefficients": [
+            -1,
+            -1,
+            1
+          ],
+          "constant": 0,
+          "rotation_shift": 4,
+          "degree": 3,
+          "orbit_size": 100
+        },
+        {
+          "rotation_face": 5,
+          "active_edges": [
+            12,
+            47,
+            13
+          ],
+          "coefficients": [
+            -1,
+            1,
+            -1
+          ],
+          "constant": 0,
+          "rotation_shift": 3,
+          "degree": 3,
+          "orbit_size": 100
+        },
+        {
+          "rotation_face": 7,
+          "active_edges": [
+            17,
+            50,
+            18
+          ],
+          "coefficients": [
+            -1,
+            -1,
+            1
+          ],
+          "constant": 0,
+          "rotation_shift": 3,
+          "degree": 3,
+          "orbit_size": 100
+        },
+        {
+          "rotation_face": 8,
+          "active_edges": [
+            23
+          ],
+          "coefficients": [
+            -1
+          ],
+          "constant": 1,
+          "rotation_shift": 3,
+          "degree": 1,
+          "orbit_size": 4
+        },
+        {
+          "rotation_face": 10,
+          "active_edges": [
+            32,
+            26
+          ],
+          "coefficients": [
+            1,
+            1
+          ],
+          "constant": 1,
+          "rotation_shift": 4,
+          "degree": 2,
+          "orbit_size": 20
+        },
+        {
+          "rotation_face": 11,
+          "active_edges": [
+            56
+          ],
+          "coefficients": [
+            -1
+          ],
+          "constant": 1,
+          "rotation_shift": 4,
+          "degree": 1,
+          "orbit_size": 4
+        },
+        {
+          "rotation_face": 12,
+          "active_edges": [
+            33,
+            37
+          ],
+          "coefficients": [
+            1,
+            -1
+          ],
+          "constant": 2,
+          "rotation_shift": 4,
+          "degree": 2,
+          "orbit_size": 20
+        },
+        {
+          "rotation_face": 19,
+          "active_edges": [
+            45,
+            68,
+            46
+          ],
+          "coefficients": [
+            1,
+            -1,
+            1
+          ],
+          "constant": 0,
+          "rotation_shift": 1,
+          "degree": 3,
+          "orbit_size": 100
+        },
+        {
+          "rotation_face": 23,
+          "active_edges": [
+            51,
+            74,
+            52
+          ],
+          "coefficients": [
+            -1,
+            1,
+            -1
+          ],
+          "constant": 0,
+          "rotation_shift": 4,
+          "degree": 3,
+          "orbit_size": 100
+        },
+        {
+          "rotation_face": 24,
+          "active_edges": [
+            53
+          ],
+          "coefficients": [
+            -1
+          ],
+          "constant": 4,
+          "rotation_shift": 2,
+          "degree": 1,
+          "orbit_size": 4
+        },
+        {
+          "rotation_face": 25,
+          "active_edges": [
+            54
+          ],
+          "coefficients": [
+            -1
+          ],
+          "constant": 3,
+          "rotation_shift": 4,
+          "degree": 1,
+          "orbit_size": 4
+        },
+        {
+          "rotation_face": 27,
+          "active_edges": [
+            58
+          ],
+          "coefficients": [
+            -1
+          ],
+          "constant": 3,
+          "rotation_shift": 3,
+          "degree": 1,
+          "orbit_size": 4
+        },
+        {
+          "rotation_face": 30,
+          "active_edges": [
+            41,
+            62,
+            42
+          ],
+          "coefficients": [
+            -1,
+            -1,
+            1
+          ],
+          "constant": 0,
+          "rotation_shift": 1,
+          "degree": 3,
+          "orbit_size": 100
+        },
+        {
+          "rotation_face": 40,
+          "active_edges": [
+            81
+          ],
+          "coefficients": [
+            -1
+          ],
+          "constant": 1,
+          "rotation_shift": 2,
+          "degree": 1,
+          "orbit_size": 4
+        },
+        {
+          "rotation_face": 41,
+          "active_edges": [
+            78
+          ],
+          "coefficients": [
+            -1
+          ],
+          "constant": 0,
+          "rotation_shift": 2,
+          "degree": 1,
+          "orbit_size": 4
+        },
+        {
+          "rotation_face": 42,
+          "active_edges": [
+            82,
+            84
+          ],
+          "coefficients": [
+            -1,
+            1
+          ],
+          "constant": 3,
+          "rotation_shift": 3,
+          "degree": 2,
+          "orbit_size": 20
+        },
+        {
+          "rotation_face": 52,
+          "active_edges": [
+            97,
+            99
+          ],
+          "coefficients": [
+            -1,
+            1
+          ],
+          "constant": 2,
+          "rotation_shift": 3,
+          "degree": 2,
+          "orbit_size": 20
+        },
+        {
+          "rotation_face": 54,
+          "active_edges": [
+            100
+          ],
+          "coefficients": [
+            -1
+          ],
+          "constant": 3,
+          "rotation_shift": 1,
+          "degree": 1,
+          "orbit_size": 4
+        },
+        {
+          "rotation_face": 57,
+          "active_edges": [
+            125
+          ],
+          "coefficients": [
+            1
+          ],
+          "constant": 1,
+          "rotation_shift": 2,
+          "degree": 1,
+          "orbit_size": 4
+        },
+        {
+          "rotation_face": 58,
+          "active_edges": [
+            106,
+            104
+          ],
+          "coefficients": [
+            1,
+            1
+          ],
+          "constant": 1,
+          "rotation_shift": 2,
+          "degree": 2,
+          "orbit_size": 20
+        },
+        {
+          "rotation_face": 61,
+          "active_edges": [
+            131
+          ],
+          "coefficients": [
+            1
+          ],
+          "constant": 1,
+          "rotation_shift": 1,
+          "degree": 1,
+          "orbit_size": 4
+        },
+        {
+          "rotation_face": 62,
+          "active_edges": [
+            89,
+            90
+          ],
+          "coefficients": [
+            -1,
+            1
+          ],
+          "constant": 4,
+          "rotation_shift": 3,
+          "degree": 2,
+          "orbit_size": 20
+        },
+        {
+          "rotation_face": 65,
+          "active_edges": [
+            136,
+            115
+          ],
+          "coefficients": [
+            1,
+            -1
+          ],
+          "constant": 4,
+          "rotation_shift": 4,
+          "degree": 2,
+          "orbit_size": 20
+        },
+        {
+          "rotation_face": 68,
+          "active_edges": [
+            121,
+            119
+          ],
+          "coefficients": [
+            1,
+            1
+          ],
+          "constant": 0,
+          "rotation_shift": 3,
+          "degree": 2,
+          "orbit_size": 20
+        },
+        {
+          "rotation_face": 70,
+          "active_edges": [
+            126,
+            122
+          ],
+          "coefficients": [
+            1,
+            -1
+          ],
+          "constant": 3,
+          "rotation_shift": 1,
+          "degree": 2,
+          "orbit_size": 20
+        },
+        {
+          "rotation_face": 74,
+          "active_edges": [
+            130,
+            132,
+            128
+          ],
+          "coefficients": [
+            -1,
+            1,
+            1
+          ],
+          "constant": 0,
+          "rotation_shift": 4,
+          "degree": 3,
+          "orbit_size": 100
+        },
+        {
+          "rotation_face": 81,
+          "active_edges": [
+            138,
+            160,
+            139
+          ],
+          "coefficients": [
+            -1,
+            -1,
+            1
+          ],
+          "constant": 0,
+          "rotation_shift": 1,
+          "degree": 3,
+          "orbit_size": 100
+        },
+        {
+          "rotation_face": 82,
+          "active_edges": [
+            142,
+            144,
+            140
+          ],
+          "coefficients": [
+            1,
+            -1,
+            -1
+          ],
+          "constant": 0,
+          "rotation_shift": 1,
+          "degree": 3,
+          "orbit_size": 100
+        },
+        {
+          "rotation_face": 86,
+          "active_edges": [
+            150
+          ],
+          "coefficients": [
+            1
+          ],
+          "constant": 2,
+          "rotation_shift": 1,
+          "degree": 1,
+          "orbit_size": 4
+        },
+        {
+          "rotation_face": 87,
+          "active_edges": [
+            147
+          ],
+          "coefficients": [
+            1
+          ],
+          "constant": 3,
+          "rotation_shift": 1,
+          "degree": 1,
+          "orbit_size": 4
+        },
+        {
+          "rotation_face": 91,
+          "active_edges": [
+            153,
+            176,
+            154
+          ],
+          "coefficients": [
+            -1,
+            -1,
+            1
+          ],
+          "constant": 0,
+          "rotation_shift": 4,
+          "degree": 3,
+          "orbit_size": 100
+        },
+        {
+          "rotation_face": 93,
+          "active_edges": [
+            156,
+            179,
+            157
+          ],
+          "coefficients": [
+            -1,
+            1,
+            -1
+          ],
+          "constant": 0,
+          "rotation_shift": 2,
+          "degree": 3,
+          "orbit_size": 100
+        },
+        {
+          "rotation_face": 95,
+          "active_edges": [
+            159,
+            161,
+            158
+          ],
+          "coefficients": [
+            -1,
+            1,
+            1
+          ],
+          "constant": 0,
+          "rotation_shift": 3,
+          "degree": 3,
+          "orbit_size": 100
+        },
+        {
+          "rotation_face": 99,
+          "active_edges": [
+            165,
+            186
+          ],
+          "coefficients": [
+            -1,
+            1
+          ],
+          "constant": 2,
+          "rotation_shift": 4,
+          "degree": 2,
+          "orbit_size": 20
+        },
+        {
+          "rotation_face": 102,
+          "active_edges": [
+            172
+          ],
+          "coefficients": [
+            -1
+          ],
+          "constant": 2,
+          "rotation_shift": 3,
+          "degree": 1,
+          "orbit_size": 4
+        },
+        {
+          "rotation_face": 104,
+          "active_edges": [
+            173
+          ],
+          "coefficients": [
+            1
+          ],
+          "constant": 3,
+          "rotation_shift": 1,
+          "degree": 1,
+          "orbit_size": 4
+        },
+        {
+          "rotation_face": 105,
+          "active_edges": [
+            189
+          ],
+          "coefficients": [
+            1
+          ],
+          "constant": 1,
+          "rotation_shift": 4,
+          "degree": 1,
+          "orbit_size": 4
+        },
+        {
+          "rotation_face": 107,
+          "active_edges": [
+            178
+          ],
+          "coefficients": [
+            1
+          ],
+          "constant": 3,
+          "rotation_shift": 2,
+          "degree": 1,
+          "orbit_size": 4
+        },
+        {
+          "rotation_face": 109,
+          "active_edges": [
+            180,
+            181
+          ],
+          "coefficients": [
+            1,
+            1
+          ],
+          "constant": 2,
+          "rotation_shift": 3,
+          "degree": 2,
+          "orbit_size": 20
+        },
+        {
+          "rotation_face": 111,
+          "active_edges": [
+            183,
+            185,
+            182
+          ],
+          "coefficients": [
+            -1,
+            1,
+            1
+          ],
+          "constant": 0,
+          "rotation_shift": 3,
+          "degree": 3,
+          "orbit_size": 100
+        },
+        {
+          "rotation_face": 121,
+          "active_edges": [
+            29,
+            25
+          ],
+          "coefficients": [
+            -1,
+            1
+          ],
+          "constant": 1,
+          "rotation_shift": 3,
+          "degree": 2,
+          "orbit_size": 20
+        },
+        {
+          "rotation_face": 122,
+          "active_edges": [
+            34
+          ],
+          "coefficients": [
+            -1
+          ],
+          "constant": 1,
+          "rotation_shift": 4,
+          "degree": 1,
+          "orbit_size": 4
+        },
+        {
+          "rotation_face": 127,
+          "active_edges": [
+            5,
+            1
+          ],
+          "coefficients": [
+            -1,
+            -1
+          ],
+          "constant": 1,
+          "rotation_shift": 3,
+          "degree": 2,
+          "orbit_size": 20
+        }
+      ],
+      "star_degree_counts": {
+        "3": 13,
+        "1": 17,
+        "2": 13
+      },
+      "angular_component_size": "140737488355328000000000000000000000000000000000000000",
+      "nonidle_rooted_channel_slots_initial": 242,
+      "nonidle_rooted_channel_slots_resampled": 248,
+      "rate_per_allowed_coordinate_step": 2,
+      "scope": "A conditional raw-link angular orbit, not independent physical faces or a finite-rate replacement rule."
+    },
+    {
+      "cycle_vertices": 7,
+      "side": 4,
+      "faces": 32,
+      "seed": 721903001,
+      "initial_links": [
+        7,
+        6,
+        0,
+        12,
+        13,
+        4,
+        6,
+        3,
+        5,
+        3,
+        9,
+        10,
+        4,
+        3,
+        6,
+        9,
+        8,
+        5,
+        11,
+        3,
+        9,
+        2,
+        0,
+        9,
+        8,
+        10,
+        7,
+        5,
+        11,
+        3,
+        7,
+        7,
+        4,
+        3,
+        6,
+        12,
+        5,
+        12,
+        4,
+        2,
+        0,
+        0,
+        10,
+        10,
+        10,
+        5,
+        12,
+        2
+      ],
+      "uniform_orbit_sample_links": [
+        9,
+        6,
+        0,
+        12,
+        8,
+        4,
+        6,
+        12,
+        5,
+        3,
+        11,
+        10,
+        1,
+        3,
+        6,
+        9,
+        8,
+        7,
+        11,
+        7,
+        11,
+        13,
+        0,
+        9,
+        8,
+        10,
+        7,
+        5,
+        11,
+        5,
+        7,
+        7,
+        4,
+        3,
+        6,
+        0,
+        5,
+        12,
+        4,
+        13,
+        0,
+        5,
+        10,
+        10,
+        2,
+        5,
+        12,
+        2
+      ],
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          0,
+          4
+        ],
+        [
+          0,
+          5
+        ],
+        [
+          0,
+          12
+        ],
+        [
+          0,
+          15
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          5
+        ],
+        [
+          1,
+          6
+        ],
+        [
+          1,
+          12
+        ],
+        [
+          1,
+          13
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          2,
+          6
+        ],
+        [
+          2,
+          7
+        ],
+        [
+          2,
+          13
+        ],
+        [
+          2,
+          14
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          3,
+          7
+        ],
+        [
+          3,
+          14
+        ],
+        [
+          3,
+          15
+        ],
+        [
+          4,
+          5
+        ],
+        [
+          4,
+          7
+        ],
+        [
+          4,
+          8
+        ],
+        [
+          4,
+          9
+        ],
+        [
+          5,
+          6
+        ],
+        [
+          5,
+          9
+        ],
+        [
+          5,
+          10
+        ],
+        [
+          6,
+          7
+        ],
+        [
+          6,
+          10
+        ],
+        [
+          6,
+          11
+        ],
+        [
+          7,
+          8
+        ],
+        [
+          7,
+          11
+        ],
+        [
+          8,
+          9
+        ],
+        [
+          8,
+          11
+        ],
+        [
+          8,
+          12
+        ],
+        [
+          8,
+          13
+        ],
+        [
+          9,
+          10
+        ],
+        [
+          9,
+          13
+        ],
+        [
+          9,
+          14
+        ],
+        [
+          10,
+          11
+        ],
+        [
+          10,
+          14
+        ],
+        [
+          10,
+          15
+        ],
+        [
+          11,
+          12
+        ],
+        [
+          11,
+          15
+        ],
+        [
+          12,
+          13
+        ],
+        [
+          12,
+          15
+        ],
+        [
+          13,
+          14
+        ],
+        [
+          14,
+          15
+        ]
+      ],
+      "charge_field": [
+        2,
+        2,
+        2,
+        1,
+        1,
+        1,
+        2,
+        2,
+        1,
+        1,
+        1,
+        1,
+        2,
+        1,
+        1,
+        2,
+        1,
+        2,
+        1,
+        1,
+        2,
+        1,
+        2,
+        2,
+        1,
+        1,
+        1,
+        2,
+        1,
+        1,
+        2,
+        2
+      ],
+      "stars": [
+        {
+          "rotation_face": 0,
+          "active_edges": [
+            7,
+            0
+          ],
+          "coefficients": [
+            1,
+            1
+          ],
+          "constant": 1,
+          "rotation_shift": 5,
+          "degree": 2,
+          "orbit_size": 42
+        },
+        {
+          "rotation_face": 1,
+          "active_edges": [
+            20
+          ],
+          "coefficients": [
+            -1
+          ],
+          "constant": 6,
+          "rotation_shift": 2,
+          "degree": 1,
+          "orbit_size": 6
+        },
+        {
+          "rotation_face": 2,
+          "active_edges": [
+            8,
+            12
+          ],
+          "coefficients": [
+            -1,
+            1
+          ],
+          "constant": 4,
+          "rotation_shift": 4,
+          "degree": 2,
+          "orbit_size": 42
+        },
+        {
+          "rotation_face": 7,
+          "active_edges": [
+            17,
+            21
+          ],
+          "coefficients": [
+            -1,
+            1
+          ],
+          "constant": 3,
+          "rotation_shift": 2,
+          "degree": 2,
+          "orbit_size": 42
+        },
+        {
+          "rotation_face": 12,
+          "active_edges": [
+            29,
+            27
+          ],
+          "coefficients": [
+            -1,
+            1
+          ],
+          "constant": 3,
+          "rotation_shift": 4,
+          "degree": 2,
+          "orbit_size": 42
+        },
+        {
+          "rotation_face": 15,
+          "active_edges": [
+            30
+          ],
+          "coefficients": [
+            1
+          ],
+          "constant": 5,
+          "rotation_shift": 1,
+          "degree": 1,
+          "orbit_size": 6
+        },
+        {
+          "rotation_face": 17,
+          "active_edges": [
+            44,
+            35
+          ],
+          "coefficients": [
+            -1,
+            1
+          ],
+          "constant": 3,
+          "rotation_shift": 4,
+          "degree": 2,
+          "orbit_size": 42
+        },
+        {
+          "rotation_face": 20,
+          "active_edges": [
+            41,
+            39
+          ],
+          "coefficients": [
+            -1,
+            -1
+          ],
+          "constant": 5,
+          "rotation_shift": 4,
+          "degree": 2,
+          "orbit_size": 42
+        },
+        {
+          "rotation_face": 27,
+          "active_edges": [
+            14,
+            10
+          ],
+          "coefficients": [
+            -1,
+            1
+          ],
+          "constant": 3,
+          "rotation_shift": 4,
+          "degree": 2,
+          "orbit_size": 42
+        },
+        {
+          "rotation_face": 30,
+          "active_edges": [
+            4
+          ],
+          "coefficients": [
+            1
+          ],
+          "constant": 0,
+          "rotation_shift": 6,
+          "degree": 1,
+          "orbit_size": 6
+        },
+        {
+          "rotation_face": 31,
+          "active_edges": [
+            19
+          ],
+          "coefficients": [
+            -1
+          ],
+          "constant": 6,
+          "rotation_shift": 5,
+          "degree": 1,
+          "orbit_size": 6
+        }
+      ],
+      "star_degree_counts": {
+        "2": 7,
+        "1": 4
+      },
+      "angular_component_size": "298778975889408",
+      "nonidle_rooted_channel_slots_initial": 68,
+      "nonidle_rooted_channel_slots_resampled": 64,
+      "rate_per_allowed_coordinate_step": 2,
+      "scope": "A conditional raw-link angular orbit, not independent physical faces or a finite-rate replacement rule."
+    }
+  ],
+  "small_full_star_spectra": [
+    {
+      "n": 3,
+      "degree": 1,
+      "three_lowest_full_graph_eigenvalues": [
+        0.0,
+        4.0
+      ],
+      "Fourier_predicted_gap": 3.9999999999999996
+    },
+    {
+      "n": 3,
+      "degree": 2,
+      "three_lowest_full_graph_eigenvalues": [
+        1.4784770366406233e-16,
+        1.9999999999999998,
+        2.0
+      ],
+      "Fourier_predicted_gap": 1.9999999999999991
+    },
+    {
+      "n": 3,
+      "degree": 3,
+      "three_lowest_full_graph_eigenvalues": [
+        -1.7763568394002568e-15,
+        2.5358983848622434,
+        2.5358983848622443
+      ],
+      "Fourier_predicted_gap": 2.5358983848622447
+    },
+    {
+      "n": 5,
+      "degree": 1,
+      "three_lowest_full_graph_eigenvalues": [
+        4.061202964920229e-31,
+        1.17157287525381,
+        4.0
+      ],
+      "Fourier_predicted_gap": 1.1715728752538097
+    },
+    {
+      "n": 5,
+      "degree": 2,
+      "three_lowest_full_graph_eigenvalues": [
+        1.920647207899126e-15,
+        1.1234335211942064,
+        1.1234335211942081
+      ],
+      "Fourier_predicted_gap": 1.1234335211942073
+    },
+    {
+      "n": 5,
+      "degree": 3,
+      "three_lowest_full_graph_eigenvalues": [
+        -3.774764164873143e-15,
+        1.483119878207752,
+        1.4831198782077524
+      ],
+      "Fourier_predicted_gap": 1.4831198782077473
+    },
+    {
+      "n": 7,
+      "degree": 1,
+      "three_lowest_full_graph_eigenvalues": [
+        -4.708830773698427e-32,
+        0.5358983848622453,
+        1.9999999999999996
+      ],
+      "Fourier_predicted_gap": 0.5358983848622452
+    },
+    {
+      "n": 7,
+      "degree": 2,
+      "three_lowest_full_graph_eigenvalues": [
+        6.992650121178082e-15,
+        0.651939548701865,
+        0.651939548701866
+      ],
+      "Fourier_predicted_gap": 0.6519395487018623
+    },
+    {
+      "n": 7,
+      "degree": 3,
+      "three_lowest_full_graph_eigenvalues": [
+        -1.0011576904692862e-15,
+        0.8654374755887171,
+        0.8654374755887182
+      ],
+      "Fourier_predicted_gap": 0.8654374755887191
+    }
+  ],
+  "spectral_gaps": [
+    {
+      "n": 3,
+      "degree": 1,
+      "states": 2,
+      "gap": 3.9999999999999996,
+      "n_squared_gap": 35.99999999999999,
+      "slowest_sector": "longitudinal"
+    },
+    {
+      "n": 3,
+      "degree": 2,
+      "states": 6,
+      "gap": 1.9999999999999991,
+      "n_squared_gap": 17.999999999999993,
+      "longitudinal_gap": 7.999999999999999,
+      "lowest_transverse_rate": 1.9999999999999991,
+      "maximal_transverse_hopping": 1.0000000000000002,
+      "transverse_frequency": [
+        1
+      ],
+      "rigorous_gap_lower_bound": 1.4999999999999998,
+      "slowest_sector": "transverse"
+    },
+    {
+      "n": 3,
+      "degree": 3,
+      "states": 18,
+      "gap": 2.5358983848622447,
+      "n_squared_gap": 22.8230854637602,
+      "longitudinal_gap": 11.999999999999998,
+      "lowest_transverse_rate": 2.5358983848622447,
+      "maximal_transverse_hopping": 1.7320508075688776,
+      "transverse_frequency": [
+        0,
+        1
+      ],
+      "rigorous_gap_lower_bound": 1.9999999999999996,
+      "slowest_sector": "transverse"
+    },
+    {
+      "n": 5,
+      "degree": 1,
+      "states": 4,
+      "gap": 1.1715728752538097,
+      "n_squared_gap": 29.28932188134524,
+      "slowest_sector": "longitudinal"
+    },
+    {
+      "n": 5,
+      "degree": 2,
+      "states": 20,
+      "gap": 1.1234335211942073,
+      "n_squared_gap": 28.085838029855182,
+      "longitudinal_gap": 2.3431457505076194,
+      "lowest_transverse_rate": 1.1234335211942073,
+      "maximal_transverse_hopping": 1.618033988749895,
+      "transverse_frequency": [
+        1
+      ],
+      "rigorous_gap_lower_bound": 0.6909830056250525,
+      "slowest_sector": "transverse"
+    },
+    {
+      "n": 5,
+      "degree": 3,
+      "states": 100,
+      "gap": 1.4831198782077473,
+      "n_squared_gap": 37.07799695519368,
+      "longitudinal_gap": 3.514718625761429,
+      "lowest_transverse_rate": 1.4831198782077473,
+      "maximal_transverse_hopping": 2.497212040956833,
+      "transverse_frequency": [
+        0,
+        1
+      ],
+      "rigorous_gap_lower_bound": 0.9213106741667367,
+      "slowest_sector": "transverse"
+    },
+    {
+      "n": 9,
+      "degree": 1,
+      "states": 8,
+      "gap": 0.30448186995485305,
+      "n_squared_gap": 24.663031466343096,
+      "slowest_sector": "longitudinal"
+    },
+    {
+      "n": 9,
+      "degree": 2,
+      "states": 72,
+      "gap": 0.4186575987037965,
+      "n_squared_gap": 33.91126549500751,
+      "longitudinal_gap": 0.6089637399097061,
+      "lowest_transverse_rate": 0.4186575987037965,
+      "maximal_transverse_hopping": 1.8793852415718166,
+      "transverse_frequency": [
+        1
+      ],
+      "rigorous_gap_lower_bound": 0.233955556881022,
+      "slowest_sector": "transverse"
+    },
+    {
+      "n": 9,
+      "degree": 3,
+      "states": 648,
+      "gap": 0.5568094746466568,
+      "n_squared_gap": 45.1015674463792,
+      "longitudinal_gap": 0.9134456098645591,
+      "lowest_transverse_rate": 0.5568094746466568,
+      "maximal_transverse_hopping": 2.8397495967912225,
+      "transverse_frequency": [
+        0,
+        1
+      ],
+      "rigorous_gap_lower_bound": 0.3119407425080293,
+      "slowest_sector": "transverse"
+    },
+    {
+      "n": 27,
+      "degree": 1,
+      "states": 26,
+      "gap": 0.02916450360778411,
+      "n_squared_gap": 21.260923130074616,
+      "slowest_sector": "longitudinal"
+    },
+    {
+      "n": 27,
+      "degree": 2,
+      "states": 702,
+      "gap": 0.051957079170856395,
+      "n_squared_gap": 37.87671071555431,
+      "longitudinal_gap": 0.05832900721556822,
+      "lowest_transverse_rate": 0.051957079170856395,
+      "maximal_transverse_hopping": 1.986476715483886,
+      "transverse_frequency": [
+        1
+      ],
+      "rigorous_gap_lower_bound": 0.026955129420176194,
+      "slowest_sector": "transverse"
+    },
+    {
+      "n": 27,
+      "degree": 3,
+      "states": 18954,
+      "gap": 0.06925837126231217,
+      "n_squared_gap": 50.48935265022557,
+      "longitudinal_gap": 0.08749351082335233,
+      "lowest_transverse_rate": 0.06925837126231217,
+      "maximal_transverse_hopping": 2.9819757682314085,
+      "transverse_frequency": [
+        0,
+        1
+      ],
+      "rigorous_gap_lower_bound": 0.03594017256023492,
+      "slowest_sector": "transverse"
+    },
+    {
+      "n": 81,
+      "degree": 1,
+      "states": 80,
+      "gap": 0.003083855037108396,
+      "n_squared_gap": 20.233172898468187,
+      "slowest_sector": "longitudinal"
+    },
+    {
+      "n": 81,
+      "degree": 2,
+      "states": 6480,
+      "gap": 0.005940443077552993,
+      "n_squared_gap": 38.975247031825184,
+      "longitudinal_gap": 0.006167710074216792,
+      "lowest_transverse_rate": 0.005940443077552993,
+      "maximal_transverse_hopping": 1.99849590500846,
+      "transverse_frequency": [
+        1
+      ],
+      "rigorous_gap_lower_bound": 0.003007058832207976,
+      "slowest_sector": "transverse"
+    },
+    {
+      "n": 81,
+      "degree": 3,
+      "states": 524880,
+      "gap": 0.007920368925319542,
+      "n_squared_gap": 51.965540519021516,
+      "longitudinal_gap": 0.009251565111325188,
+      "lowest_transverse_rate": 0.007920368925319542,
+      "maximal_transverse_hopping": 2.997994623856282,
+      "transverse_frequency": [
+        0,
+        1
+      ],
+      "rigorous_gap_lower_bound": 0.004009411776277301,
+      "slowest_sector": "transverse"
+    },
+    {
+      "n": 243,
+      "degree": 1,
+      "states": 242,
+      "gap": 0.0003370488967324725,
+      "n_squared_gap": 19.90240030315577,
+      "slowest_sector": "longitudinal"
+    },
+    {
+      "n": 243,
+      "degree": 2,
+      "states": 58806,
+      "gap": 0.0006657892850968941,
+      "n_squared_gap": 39.3141914956865,
+      "longitudinal_gap": 0.000674097793464945,
+      "lowest_transverse_rate": 0.0006657892850968941,
+      "maximal_transverse_hopping": 1.9998328597108748,
+      "transverse_frequency": [
+        1
+      ],
+      "rigorous_gap_lower_bound": 0.00033426661031255023,
+      "slowest_sector": "transverse"
+    },
+    {
+      "n": 243,
+      "degree": 3,
+      "states": 14289858,
+      "gap": 0.0008877162945841484,
+      "n_squared_gap": 52.41875947889938,
+      "longitudinal_gap": 0.0010111466901974175,
+      "lowest_transverse_rate": 0.0008877162945841484,
+      "maximal_transverse_hopping": 2.999777147315905,
+      "transverse_frequency": [
+        0,
+        1
+      ],
+      "rigorous_gap_lower_bound": 0.00044568881375006697,
+      "slowest_sector": "transverse"
+    }
+  ],
+  "exact_averaged_reaction_examples": [
+    {
+      "cycle_vertices": 5,
+      "common_full_charge_field": [
+        2,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        1
+      ],
+      "examples": [
+        {
+          "anchor_labels": [
+            0,
+            1
+          ],
+          "initial_links": [
+            0,
+            0,
+            2,
+            8,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "reaction_patch": 3,
+          "angular_orbit_size": 4,
+          "exact_averaged_activity": "0",
+          "averaged_forward_reaction_rate": "0",
+          "whole_mesh_averaged_activity_sum": "1",
+          "whole_mesh_averaged_rotation_count_drift": "0"
+        },
+        {
+          "anchor_labels": [
+            1,
+            0
+          ],
+          "initial_links": [
+            0,
+            8,
+            9,
+            8,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "reaction_patch": 3,
+          "angular_orbit_size": 4,
+          "exact_averaged_activity": "1/4",
+          "averaged_forward_reaction_rate": "3",
+          "whole_mesh_averaged_activity_sum": "1/4",
+          "whole_mesh_averaged_rotation_count_drift": "-9"
+        },
+        {
+          "anchor_labels": [
+            1,
+            1
+          ],
+          "initial_links": [
+            0,
+            8,
+            1,
+            8,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "reaction_patch": 3,
+          "angular_orbit_size": 4,
+          "exact_averaged_activity": "3/4",
+          "averaged_forward_reaction_rate": "9",
+          "whole_mesh_averaged_activity_sum": "7/4",
+          "whole_mesh_averaged_rotation_count_drift": "9"
+        },
+        {
+          "anchor_labels": [
+            0,
+            0
+          ],
+          "initial_links": [
+            0,
+            0,
+            1,
+            8,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "reaction_patch": 3,
+          "angular_orbit_size": 4,
+          "exact_averaged_activity": "1",
+          "averaged_forward_reaction_rate": "12",
+          "whole_mesh_averaged_activity_sum": "1",
+          "whole_mesh_averaged_rotation_count_drift": "0"
+        }
+      ],
+      "scope": "Different actual angular components with the same whole charge field and boundary; averaging is conditional on the frozen raw data."
+    },
+    {
+      "cycle_vertices": 7,
+      "common_full_charge_field": [
+        2,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        1
+      ],
+      "examples": [
+        {
+          "anchor_labels": [
+            0,
+            1
+          ],
+          "initial_links": [
+            0,
+            0,
+            2,
+            12,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "reaction_patch": 3,
+          "angular_orbit_size": 6,
+          "exact_averaged_activity": "0",
+          "averaged_forward_reaction_rate": "0",
+          "whole_mesh_averaged_activity_sum": "1",
+          "whole_mesh_averaged_rotation_count_drift": "0"
+        },
+        {
+          "anchor_labels": [
+            1,
+            0
+          ],
+          "initial_links": [
+            0,
+            12,
+            13,
+            12,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "reaction_patch": 3,
+          "angular_orbit_size": 6,
+          "exact_averaged_activity": "1/6",
+          "averaged_forward_reaction_rate": "2",
+          "whole_mesh_averaged_activity_sum": "1/6",
+          "whole_mesh_averaged_rotation_count_drift": "-10"
+        },
+        {
+          "anchor_labels": [
+            1,
+            1
+          ],
+          "initial_links": [
+            0,
+            12,
+            1,
+            12,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "reaction_patch": 3,
+          "angular_orbit_size": 6,
+          "exact_averaged_activity": "5/6",
+          "averaged_forward_reaction_rate": "10",
+          "whole_mesh_averaged_activity_sum": "11/6",
+          "whole_mesh_averaged_rotation_count_drift": "10"
+        },
+        {
+          "anchor_labels": [
+            0,
+            0
+          ],
+          "initial_links": [
+            0,
+            0,
+            1,
+            12,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "reaction_patch": 3,
+          "angular_orbit_size": 6,
+          "exact_averaged_activity": "1",
+          "averaged_forward_reaction_rate": "12",
+          "whole_mesh_averaged_activity_sum": "1",
+          "whole_mesh_averaged_rotation_count_drift": "0"
+        }
+      ],
+      "scope": "Different actual angular components with the same whole charge field and boundary; averaging is conditional on the frozen raw data."
+    }
+  ]
+}

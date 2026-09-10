@@ -1,0 +1,37 @@
+{
+  "scope": "Actual unchanged elastic-bank trajectories, rotation episode and pair decomposition; not evidence of binding or quantum dynamics.",
+  "normalization": "Each pair signed sum divided by 3 times rooted support count times exact probability of charge 222; averages and standard errors across independent initializations.",
+  "exploratory_reanalysis": {
+    "side": 12,
+    "faces": 288,
+    "trials": 64,
+    "initial_seed_plus_index": 58112000,
+    "schedule_seed_plus_index": 68212000,
+    "times_attempts_per_face": [0, 1, 2, 4, 8, 16],
+    "reaction_born_pair_bin_order": ["same_two_original_episodes_same_faces", "at_least_one_different_episode"],
+    "reaction_born_pair_means": [[0,0], [0.0039027634322667737,0.0008672807627259496], [0.010407369152711397,0.005203684576355698], [0.01604469411043007,0.00997372877134842], [0.011708290296800322,-0.0017345615254518994], [0.0056373249577186734,-0.006504605720444621]],
+    "reaction_born_pair_standard_errors": [[0,0], [0.0012155198135056955,0.002620133144568671], [0.002658583419989003,0.005892324277188345], [0.0030157523163692884,0.0051480347637537106], [0.0026081442384355254,0.004901211307755033], [0.0017677985925690389,0.005449953616300622]],
+    "reaction_born_pair_counts": [[0,0], [9,18], [24,48], [37,83], [27,60], [13,77]],
+    "reaction_born_pair_signed_sums": [[0,0], [9,2], [24,12], [37,23], [27,-4], [13,-15]],
+    "cumulative_episode_census_at_tau16": {"initial_alive":463,"born_alive":3998,"births":14562,"deaths":14558,"rotation_hops":2342,"return_hops":190,"return_inversions":0}
+  },
+  "independent_check": {
+    "side": 12,
+    "faces": 288,
+    "trials": 256,
+    "initial_seed_plus_index": 79312000,
+    "schedule_seed_plus_index": 89412000,
+    "times_attempts_per_face": [0,4],
+    "total_attempts": 294912,
+    "episode_bin_order": ["untouched", "same_episodes_same_faces", "same_cohort_permuted", "other_initial_episodes", "at_least_one_reaction_born_episode"],
+    "episode_means_at_tau4": [0.3164490682996311,0.0029270725742000805,0,-0.0002168201906814874,0.015611053729067096],
+    "episode_standard_errors_at_tau4": [0.015718971243437466,0.0009602639438567478,0,0.000153014114126243,0.0029166697079883873],
+    "both_rotation_endpoint_counts_at_tau4": [973,9,0,2,144],
+    "same_orbit_endpoint_counts_at_tau4": [973,9,0,0,72],
+    "reaction_born_pair_bin_order": ["same_two_original_episodes_same_faces", "at_least_one_different_episode"],
+    "reaction_born_pair_means_at_tau4": [0.014960593157022634,0.0006504605720444621],
+    "reaction_born_pair_standard_errors_at_tau4": [0.0016097004178100924,0.0027347402197310084],
+    "reaction_born_pair_counts_at_tau4": [138,294],
+    "reaction_born_pair_signed_sums_at_tau4": [138,6]
+  }
+}

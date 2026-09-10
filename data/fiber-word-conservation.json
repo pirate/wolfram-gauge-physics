@@ -1,0 +1,1798 @@
+{
+  "scope": "Word-rule conservation and quotient obstructions, not a new energy law or deployed evolution.",
+  "primitive_word_calculations": [
+    {
+      "name": "Hurwitz",
+      "words": [
+        [
+          1,
+          2,
+          -1
+        ],
+        [
+          1
+        ]
+      ],
+      "inverse_words": [
+        [
+          2
+        ],
+        [
+          -2,
+          1,
+          2
+        ]
+      ],
+      "all_spectral_residuals_zero": true,
+      "sign_pattern_fourier_calculation": [
+        {
+          "input_signs": [
+            1,
+            1
+          ],
+          "output_affine_forms": [
+            [
+              1,
+              [
+                0,
+                1
+              ]
+            ],
+            [
+              1,
+              [
+                1,
+                0
+              ]
+            ]
+          ],
+          "spectral_residual_frequencies": []
+        },
+        {
+          "input_signs": [
+            1,
+            -1
+          ],
+          "output_affine_forms": [
+            [
+              -1,
+              [
+                2,
+                1
+              ]
+            ],
+            [
+              1,
+              [
+                1,
+                0
+              ]
+            ]
+          ],
+          "spectral_residual_frequencies": []
+        },
+        {
+          "input_signs": [
+            -1,
+            1
+          ],
+          "output_affine_forms": [
+            [
+              1,
+              [
+                0,
+                -1
+              ]
+            ],
+            [
+              -1,
+              [
+                1,
+                0
+              ]
+            ]
+          ],
+          "spectral_residual_frequencies": []
+        },
+        {
+          "input_signs": [
+            -1,
+            -1
+          ],
+          "output_affine_forms": [
+            [
+              -1,
+              [
+                2,
+                -1
+              ]
+            ],
+            [
+              -1,
+              [
+                1,
+                0
+              ]
+            ]
+          ],
+          "spectral_residual_frequencies": []
+        }
+      ],
+      "finite_additive_charge_spaces": [
+        {
+          "cycle_vertices": 3,
+          "nonidentity_class_representatives": [
+            1,
+            3
+          ],
+          "conserved_additive_class_basis": [
+            [
+              1,
+              0
+            ],
+            [
+              0,
+              1
+            ]
+          ],
+          "finite_spectral_conservation": true
+        },
+        {
+          "cycle_vertices": 4,
+          "nonidentity_class_representatives": [
+            1,
+            2,
+            3,
+            5
+          ],
+          "conserved_additive_class_basis": [
+            [
+              1,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              1,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              1
+            ]
+          ],
+          "finite_spectral_conservation": true
+        },
+        {
+          "cycle_vertices": 5,
+          "nonidentity_class_representatives": [
+            1,
+            3,
+            5
+          ],
+          "conserved_additive_class_basis": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              0,
+              0,
+              1
+            ]
+          ],
+          "finite_spectral_conservation": true
+        },
+        {
+          "cycle_vertices": 9,
+          "nonidentity_class_representatives": [
+            1,
+            3,
+            5,
+            7,
+            9
+          ],
+          "conserved_additive_class_basis": [
+            [
+              1,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              1,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              1
+            ]
+          ],
+          "finite_spectral_conservation": true
+        }
+      ]
+    },
+    {
+      "name": "BoundaryShear",
+      "words": [
+        [
+          1,
+          2,
+          1
+        ],
+        [
+          -1
+        ]
+      ],
+      "inverse_words": [
+        [
+          -2
+        ],
+        [
+          2,
+          1,
+          2
+        ]
+      ],
+      "all_spectral_residuals_zero": false,
+      "sign_pattern_fourier_calculation": [
+        {
+          "input_signs": [
+            1,
+            1
+          ],
+          "output_affine_forms": [
+            [
+              1,
+              [
+                2,
+                1
+              ]
+            ],
+            [
+              1,
+              [
+                -1,
+                0
+              ]
+            ]
+          ],
+          "spectral_residual_frequencies": [
+            [
+              [
+                -2,
+                -1
+              ],
+              1
+            ],
+            [
+              [
+                0,
+                -1
+              ],
+              -1
+            ],
+            [
+              [
+                0,
+                1
+              ],
+              -1
+            ],
+            [
+              [
+                2,
+                1
+              ],
+              1
+            ]
+          ]
+        },
+        {
+          "input_signs": [
+            1,
+            -1
+          ],
+          "output_affine_forms": [
+            [
+              -1,
+              [
+                0,
+                1
+              ]
+            ],
+            [
+              1,
+              [
+                -1,
+                0
+              ]
+            ]
+          ],
+          "spectral_residual_frequencies": []
+        },
+        {
+          "input_signs": [
+            -1,
+            1
+          ],
+          "output_affine_forms": [
+            [
+              1,
+              [
+                0,
+                -1
+              ]
+            ],
+            [
+              -1,
+              [
+                1,
+                0
+              ]
+            ]
+          ],
+          "spectral_residual_frequencies": []
+        },
+        {
+          "input_signs": [
+            -1,
+            -1
+          ],
+          "output_affine_forms": [
+            [
+              -1,
+              [
+                2,
+                -1
+              ]
+            ],
+            [
+              -1,
+              [
+                1,
+                0
+              ]
+            ]
+          ],
+          "spectral_residual_frequencies": []
+        }
+      ],
+      "finite_additive_charge_spaces": [
+        {
+          "cycle_vertices": 3,
+          "nonidentity_class_representatives": [
+            1,
+            3
+          ],
+          "conserved_additive_class_basis": [
+            [
+              1,
+              0
+            ]
+          ],
+          "finite_spectral_conservation": false
+        },
+        {
+          "cycle_vertices": 4,
+          "nonidentity_class_representatives": [
+            1,
+            2,
+            3,
+            5
+          ],
+          "conserved_additive_class_basis": [
+            [
+              1,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              1,
+              0
+            ]
+          ],
+          "finite_spectral_conservation": false
+        },
+        {
+          "cycle_vertices": 5,
+          "nonidentity_class_representatives": [
+            1,
+            3,
+            5
+          ],
+          "conserved_additive_class_basis": [
+            [
+              1,
+              0,
+              0
+            ]
+          ],
+          "finite_spectral_conservation": false
+        },
+        {
+          "cycle_vertices": 9,
+          "nonidentity_class_representatives": [
+            1,
+            3,
+            5,
+            7,
+            9
+          ],
+          "conserved_additive_class_basis": [
+            [
+              1,
+              0,
+              0,
+              0,
+              0
+            ]
+          ],
+          "finite_spectral_conservation": false
+        }
+      ]
+    },
+    {
+      "name": "PartialProductSwap",
+      "words": [
+        [
+          1,
+          2
+        ],
+        [
+          -2
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "inverse_words": [
+        [
+          1,
+          2
+        ],
+        [
+          -2
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "all_spectral_residuals_zero": false,
+      "sign_pattern_fourier_calculation": [
+        {
+          "input_signs": [
+            1,
+            1,
+            1
+          ],
+          "output_affine_forms": [
+            [
+              1,
+              [
+                1,
+                1,
+                0
+              ]
+            ],
+            [
+              1,
+              [
+                0,
+                -1,
+                0
+              ]
+            ],
+            [
+              1,
+              [
+                0,
+                1,
+                1
+              ]
+            ]
+          ],
+          "spectral_residual_frequencies": [
+            [
+              [
+                -1,
+                -1,
+                0
+              ],
+              1
+            ],
+            [
+              [
+                -1,
+                0,
+                0
+              ],
+              -1
+            ],
+            [
+              [
+                0,
+                -1,
+                -1
+              ],
+              1
+            ],
+            [
+              [
+                0,
+                0,
+                -1
+              ],
+              -1
+            ],
+            [
+              [
+                0,
+                0,
+                1
+              ],
+              -1
+            ],
+            [
+              [
+                0,
+                1,
+                1
+              ],
+              1
+            ],
+            [
+              [
+                1,
+                0,
+                0
+              ],
+              -1
+            ],
+            [
+              [
+                1,
+                1,
+                0
+              ],
+              1
+            ]
+          ]
+        },
+        {
+          "input_signs": [
+            1,
+            1,
+            -1
+          ],
+          "output_affine_forms": [
+            [
+              1,
+              [
+                1,
+                1,
+                0
+              ]
+            ],
+            [
+              1,
+              [
+                0,
+                -1,
+                0
+              ]
+            ],
+            [
+              -1,
+              [
+                0,
+                1,
+                1
+              ]
+            ]
+          ],
+          "spectral_residual_frequencies": [
+            [
+              [
+                -1,
+                -1,
+                0
+              ],
+              1
+            ],
+            [
+              [
+                -1,
+                0,
+                0
+              ],
+              -1
+            ],
+            [
+              [
+                1,
+                0,
+                0
+              ],
+              -1
+            ],
+            [
+              [
+                1,
+                1,
+                0
+              ],
+              1
+            ]
+          ]
+        },
+        {
+          "input_signs": [
+            1,
+            -1,
+            1
+          ],
+          "output_affine_forms": [
+            [
+              -1,
+              [
+                1,
+                1,
+                0
+              ]
+            ],
+            [
+              -1,
+              [
+                0,
+                1,
+                0
+              ]
+            ],
+            [
+              -1,
+              [
+                0,
+                1,
+                -1
+              ]
+            ]
+          ],
+          "spectral_residual_frequencies": [
+            [
+              [
+                -1,
+                0,
+                0
+              ],
+              -1
+            ],
+            [
+              [
+                0,
+                0,
+                -1
+              ],
+              -1
+            ],
+            [
+              [
+                0,
+                0,
+                1
+              ],
+              -1
+            ],
+            [
+              [
+                1,
+                0,
+                0
+              ],
+              -1
+            ]
+          ]
+        },
+        {
+          "input_signs": [
+            1,
+            -1,
+            -1
+          ],
+          "output_affine_forms": [
+            [
+              -1,
+              [
+                1,
+                1,
+                0
+              ]
+            ],
+            [
+              -1,
+              [
+                0,
+                1,
+                0
+              ]
+            ],
+            [
+              1,
+              [
+                0,
+                1,
+                -1
+              ]
+            ]
+          ],
+          "spectral_residual_frequencies": [
+            [
+              [
+                -1,
+                0,
+                0
+              ],
+              -1
+            ],
+            [
+              [
+                0,
+                -1,
+                1
+              ],
+              1
+            ],
+            [
+              [
+                0,
+                1,
+                -1
+              ],
+              1
+            ],
+            [
+              [
+                1,
+                0,
+                0
+              ],
+              -1
+            ]
+          ]
+        },
+        {
+          "input_signs": [
+            -1,
+            1,
+            1
+          ],
+          "output_affine_forms": [
+            [
+              -1,
+              [
+                1,
+                -1,
+                0
+              ]
+            ],
+            [
+              1,
+              [
+                0,
+                -1,
+                0
+              ]
+            ],
+            [
+              1,
+              [
+                0,
+                1,
+                1
+              ]
+            ]
+          ],
+          "spectral_residual_frequencies": [
+            [
+              [
+                0,
+                -1,
+                -1
+              ],
+              1
+            ],
+            [
+              [
+                0,
+                0,
+                -1
+              ],
+              -1
+            ],
+            [
+              [
+                0,
+                0,
+                1
+              ],
+              -1
+            ],
+            [
+              [
+                0,
+                1,
+                1
+              ],
+              1
+            ]
+          ]
+        },
+        {
+          "input_signs": [
+            -1,
+            1,
+            -1
+          ],
+          "output_affine_forms": [
+            [
+              -1,
+              [
+                1,
+                -1,
+                0
+              ]
+            ],
+            [
+              1,
+              [
+                0,
+                -1,
+                0
+              ]
+            ],
+            [
+              -1,
+              [
+                0,
+                1,
+                1
+              ]
+            ]
+          ],
+          "spectral_residual_frequencies": []
+        },
+        {
+          "input_signs": [
+            -1,
+            -1,
+            1
+          ],
+          "output_affine_forms": [
+            [
+              1,
+              [
+                1,
+                -1,
+                0
+              ]
+            ],
+            [
+              -1,
+              [
+                0,
+                1,
+                0
+              ]
+            ],
+            [
+              -1,
+              [
+                0,
+                1,
+                -1
+              ]
+            ]
+          ],
+          "spectral_residual_frequencies": [
+            [
+              [
+                -1,
+                1,
+                0
+              ],
+              1
+            ],
+            [
+              [
+                0,
+                0,
+                -1
+              ],
+              -1
+            ],
+            [
+              [
+                0,
+                0,
+                1
+              ],
+              -1
+            ],
+            [
+              [
+                1,
+                -1,
+                0
+              ],
+              1
+            ]
+          ]
+        },
+        {
+          "input_signs": [
+            -1,
+            -1,
+            -1
+          ],
+          "output_affine_forms": [
+            [
+              1,
+              [
+                1,
+                -1,
+                0
+              ]
+            ],
+            [
+              -1,
+              [
+                0,
+                1,
+                0
+              ]
+            ],
+            [
+              1,
+              [
+                0,
+                1,
+                -1
+              ]
+            ]
+          ],
+          "spectral_residual_frequencies": [
+            [
+              [
+                -1,
+                1,
+                0
+              ],
+              1
+            ],
+            [
+              [
+                0,
+                -1,
+                1
+              ],
+              1
+            ],
+            [
+              [
+                0,
+                1,
+                -1
+              ],
+              1
+            ],
+            [
+              [
+                1,
+                -1,
+                0
+              ],
+              1
+            ]
+          ]
+        }
+      ],
+      "finite_additive_charge_spaces": [
+        {
+          "cycle_vertices": 3,
+          "nonidentity_class_representatives": [
+            1,
+            3
+          ],
+          "conserved_additive_class_basis": [],
+          "finite_spectral_conservation": false
+        },
+        {
+          "cycle_vertices": 4,
+          "nonidentity_class_representatives": [
+            1,
+            2,
+            3,
+            5
+          ],
+          "conserved_additive_class_basis": [],
+          "finite_spectral_conservation": false
+        },
+        {
+          "cycle_vertices": 5,
+          "nonidentity_class_representatives": [
+            1,
+            3,
+            5
+          ],
+          "conserved_additive_class_basis": [],
+          "finite_spectral_conservation": false
+        },
+        {
+          "cycle_vertices": 9,
+          "nonidentity_class_representatives": [
+            1,
+            3,
+            5,
+            7,
+            9
+          ],
+          "conserved_additive_class_basis": [],
+          "finite_spectral_conservation": false
+        }
+      ]
+    }
+  ],
+  "triangle_lookup_rule_quotient_witnesses": {
+    "quotient": "sign: Aut(C3) -> C2",
+    "every_selected_rule_fails_quotient_descent": [
+      {
+        "rule_id": 27,
+        "same_quotient_input": [
+          -1,
+          -1,
+          -1
+        ],
+        "parallel_input": [
+          1,
+          1,
+          1
+        ],
+        "mixed_input": [
+          1,
+          1,
+          2
+        ],
+        "parallel_output": [
+          1,
+          1,
+          1
+        ],
+        "mixed_output": [
+          0,
+          1,
+          4
+        ],
+        "parallel_quotient_output": [
+          -1,
+          -1,
+          -1
+        ],
+        "mixed_quotient_output": [
+          1,
+          -1,
+          1
+        ]
+      },
+      {
+        "rule_id": 31,
+        "same_quotient_input": [
+          -1,
+          -1,
+          -1
+        ],
+        "parallel_input": [
+          1,
+          1,
+          1
+        ],
+        "mixed_input": [
+          1,
+          1,
+          2
+        ],
+        "parallel_output": [
+          1,
+          1,
+          1
+        ],
+        "mixed_output": [
+          0,
+          5,
+          3
+        ],
+        "parallel_quotient_output": [
+          -1,
+          -1,
+          -1
+        ],
+        "mixed_quotient_output": [
+          1,
+          -1,
+          1
+        ]
+      },
+      {
+        "rule_id": 42,
+        "same_quotient_input": [
+          -1,
+          -1,
+          -1
+        ],
+        "parallel_input": [
+          1,
+          1,
+          1
+        ],
+        "mixed_input": [
+          1,
+          1,
+          2
+        ],
+        "parallel_output": [
+          1,
+          1,
+          1
+        ],
+        "mixed_output": [
+          3,
+          1,
+          0
+        ],
+        "parallel_quotient_output": [
+          -1,
+          -1,
+          -1
+        ],
+        "mixed_quotient_output": [
+          1,
+          -1,
+          1
+        ]
+      },
+      {
+        "rule_id": 43,
+        "same_quotient_input": [
+          -1,
+          -1,
+          -1
+        ],
+        "parallel_input": [
+          1,
+          1,
+          1
+        ],
+        "mixed_input": [
+          1,
+          1,
+          2
+        ],
+        "parallel_output": [
+          1,
+          1,
+          1
+        ],
+        "mixed_output": [
+          4,
+          5,
+          0
+        ],
+        "parallel_quotient_output": [
+          -1,
+          -1,
+          -1
+        ],
+        "mixed_quotient_output": [
+          1,
+          -1,
+          1
+        ]
+      },
+      {
+        "rule_id": 50,
+        "same_quotient_input": [
+          -1,
+          -1,
+          -1
+        ],
+        "parallel_input": [
+          1,
+          1,
+          1
+        ],
+        "mixed_input": [
+          1,
+          1,
+          2
+        ],
+        "parallel_output": [
+          1,
+          1,
+          1
+        ],
+        "mixed_output": [
+          0,
+          3,
+          1
+        ],
+        "parallel_quotient_output": [
+          -1,
+          -1,
+          -1
+        ],
+        "mixed_quotient_output": [
+          1,
+          1,
+          -1
+        ]
+      },
+      {
+        "rule_id": 53,
+        "same_quotient_input": [
+          -1,
+          -1,
+          -1
+        ],
+        "parallel_input": [
+          1,
+          1,
+          1
+        ],
+        "mixed_input": [
+          1,
+          1,
+          2
+        ],
+        "parallel_output": [
+          1,
+          1,
+          1
+        ],
+        "mixed_output": [
+          1,
+          4,
+          0
+        ],
+        "parallel_quotient_output": [
+          -1,
+          -1,
+          -1
+        ],
+        "mixed_quotient_output": [
+          -1,
+          1,
+          1
+        ]
+      },
+      {
+        "rule_id": 56,
+        "same_quotient_input": [
+          -1,
+          -1,
+          -1
+        ],
+        "parallel_input": [
+          1,
+          1,
+          1
+        ],
+        "mixed_input": [
+          1,
+          1,
+          2
+        ],
+        "parallel_output": [
+          1,
+          1,
+          1
+        ],
+        "mixed_output": [
+          5,
+          3,
+          0
+        ],
+        "parallel_quotient_output": [
+          -1,
+          -1,
+          -1
+        ],
+        "mixed_quotient_output": [
+          -1,
+          1,
+          1
+        ]
+      },
+      {
+        "rule_id": 66,
+        "same_quotient_input": [
+          -1,
+          -1,
+          -1
+        ],
+        "parallel_input": [
+          1,
+          1,
+          1
+        ],
+        "mixed_input": [
+          1,
+          1,
+          2
+        ],
+        "parallel_output": [
+          1,
+          1,
+          1
+        ],
+        "mixed_output": [
+          0,
+          4,
+          5
+        ],
+        "parallel_quotient_output": [
+          -1,
+          -1,
+          -1
+        ],
+        "mixed_quotient_output": [
+          1,
+          1,
+          -1
+        ]
+      },
+      {
+        "rule_id": 75,
+        "same_quotient_input": [
+          -1,
+          -1,
+          -1
+        ],
+        "parallel_input": [
+          1,
+          1,
+          1
+        ],
+        "mixed_input": [
+          1,
+          1,
+          2
+        ],
+        "parallel_output": [
+          1,
+          1,
+          1
+        ],
+        "mixed_output": [
+          1,
+          0,
+          4
+        ],
+        "parallel_quotient_output": [
+          -1,
+          -1,
+          -1
+        ],
+        "mixed_quotient_output": [
+          -1,
+          1,
+          1
+        ]
+      },
+      {
+        "rule_id": 78,
+        "same_quotient_input": [
+          -1,
+          -1,
+          -1
+        ],
+        "parallel_input": [
+          1,
+          1,
+          1
+        ],
+        "mixed_input": [
+          1,
+          1,
+          2
+        ],
+        "parallel_output": [
+          1,
+          1,
+          1
+        ],
+        "mixed_output": [
+          5,
+          0,
+          3
+        ],
+        "parallel_quotient_output": [
+          -1,
+          -1,
+          -1
+        ],
+        "mixed_quotient_output": [
+          -1,
+          1,
+          1
+        ]
+      },
+      {
+        "rule_id": 86,
+        "same_quotient_input": [
+          -1,
+          -1,
+          -1
+        ],
+        "parallel_input": [
+          1,
+          1,
+          1
+        ],
+        "mixed_input": [
+          1,
+          1,
+          2
+        ],
+        "parallel_output": [
+          1,
+          1,
+          1
+        ],
+        "mixed_output": [
+          3,
+          0,
+          1
+        ],
+        "parallel_quotient_output": [
+          -1,
+          -1,
+          -1
+        ],
+        "mixed_quotient_output": [
+          1,
+          1,
+          -1
+        ]
+      },
+      {
+        "rule_id": 87,
+        "same_quotient_input": [
+          -1,
+          -1,
+          -1
+        ],
+        "parallel_input": [
+          1,
+          1,
+          1
+        ],
+        "mixed_input": [
+          1,
+          1,
+          2
+        ],
+        "parallel_output": [
+          1,
+          1,
+          1
+        ],
+        "mixed_output": [
+          4,
+          0,
+          5
+        ],
+        "parallel_quotient_output": [
+          -1,
+          -1,
+          -1
+        ],
+        "mixed_quotient_output": [
+          1,
+          1,
+          -1
+        ]
+      }
+    ],
+    "uniform_bank_parallel_output_counts": [
+      [
+        [
+          -1,
+          -1,
+          -1
+        ],
+        12
+      ]
+    ],
+    "uniform_bank_mixed_output_counts": [
+      [
+        [
+          -1,
+          1,
+          1
+        ],
+        4
+      ],
+      [
+        [
+          1,
+          -1,
+          1
+        ],
+        4
+      ],
+      [
+        [
+          1,
+          1,
+          -1
+        ],
+        4
+      ]
+    ]
+  },
+  "prime_power_lookup_rule_subgroup_witnesses": [
+    {
+      "cycle_vertices": 9,
+      "source_generated_subgroup_order": 9,
+      "target_generated_subgroup_order": 3,
+      "source_tuple": [
+        5,
+        11,
+        16
+      ],
+      "target_tuple": [
+        7,
+        7,
+        0
+      ]
+    },
+    {
+      "cycle_vertices": 27,
+      "source_generated_subgroup_order": 9,
+      "target_generated_subgroup_order": 3,
+      "source_tuple": [
+        13,
+        31,
+        49
+      ],
+      "target_tuple": [
+        19,
+        19,
+        0
+      ]
+    },
+    {
+      "cycle_vertices": 81,
+      "source_generated_subgroup_order": 9,
+      "target_generated_subgroup_order": 3,
+      "source_tuple": [
+        37,
+        91,
+        145
+      ],
+      "target_tuple": [
+        55,
+        55,
+        0
+      ]
+    },
+    {
+      "cycle_vertices": 25,
+      "source_generated_subgroup_order": 25,
+      "target_generated_subgroup_order": 5,
+      "source_tuple": [
+        3,
+        13,
+        23,
+        33,
+        43
+      ],
+      "target_tuple": [
+        11,
+        11,
+        21,
+        21,
+        0
+      ]
+    },
+    {
+      "cycle_vertices": 49,
+      "source_generated_subgroup_order": 49,
+      "target_generated_subgroup_order": 7,
+      "source_tuple": [
+        11,
+        25,
+        39,
+        53,
+        67,
+        81,
+        95
+      ],
+      "target_tuple": [
+        15,
+        15,
+        29,
+        29,
+        43,
+        43,
+        0
+      ]
+    }
+  ],
+  "relationally_gated_word_family": {
+    "predicate": "All three inputs are nonidentity involutions, with exactly one equal adjacent pair; also enable the inverse image of this set under P.",
+    "word": "(A B, inverse(B), B C)",
+    "fibers": [
+      {
+        "cycle_vertices": 3,
+        "matching_source_count": 12,
+        "moved_tuples": 24,
+        "nonidentity_class_representatives": [
+          1,
+          3
+        ],
+        "derived_additive_charge_basis": [
+          [
+            1,
+            2
+          ]
+        ],
+        "exact_existing_triangle_rule_id": 27
+      },
+      {
+        "cycle_vertices": 5,
+        "matching_source_count": 40,
+        "moved_tuples": 80,
+        "nonidentity_class_representatives": [
+          1,
+          3,
+          5
+        ],
+        "derived_additive_charge_basis": [
+          [
+            1,
+            2,
+            2
+          ]
+        ]
+      },
+      {
+        "cycle_vertices": 9,
+        "matching_source_count": 144,
+        "moved_tuples": 288,
+        "nonidentity_class_representatives": [
+          1,
+          3,
+          5,
+          7,
+          9
+        ],
+        "derived_additive_charge_basis": [
+          [
+            1,
+            2,
+            2,
+            2,
+            2
+          ]
+        ]
+      },
+      {
+        "cycle_vertices": 27,
+        "matching_source_count": 1404,
+        "moved_tuples": 2808,
+        "nonidentity_class_representatives": [
+          1,
+          3,
+          5,
+          7,
+          9,
+          11,
+          13,
+          15,
+          17,
+          19,
+          21,
+          23,
+          25,
+          27
+        ],
+        "derived_additive_charge_basis": [
+          [
+            1,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ]
+        ]
+      }
+    ],
+    "injective_refinement_examples": [
+      {
+        "source_cycle": 3,
+        "target_cycle": 9,
+        "all_source_tuples": 216,
+        "intertwines_exactly": true
+      },
+      {
+        "source_cycle": 3,
+        "target_cycle": 27,
+        "all_source_tuples": 216,
+        "intertwines_exactly": true
+      },
+      {
+        "source_cycle": 9,
+        "target_cycle": 27,
+        "all_source_tuples": 5832,
+        "intertwines_exactly": true
+      }
+    ]
+  }
+}

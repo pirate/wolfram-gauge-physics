@@ -1,0 +1,511 @@
+{
+  "representation": [
+    {
+      "cycle_vertices": 3,
+      "old_channel_images_compared": 3240,
+      "angular_generator_tuple_count": 216
+    },
+    {
+      "cycle_vertices": 5,
+      "old_channel_images_compared": 15000,
+      "angular_generator_tuple_count": 1000
+    }
+  ],
+  "stationary_couplings": [
+    {
+      "n": 9,
+      "side": 4,
+      "faces": 32,
+      "angular_rate": 0,
+      "trials": 4096,
+      "duration": 0.02,
+      "seed": 831004001,
+      "columns": [
+        "path_mismatch",
+        "initial_identities",
+        "reaction_events",
+        "vacancy_events",
+        "final_L1_error_per_face"
+      ],
+      "means": [
+        0.9052734375,
+        1.767822265625,
+        1.114990234375,
+        0.20556640625,
+        0.13836669921875
+      ],
+      "independent_trajectory_SE": [
+        0.004576134962856142,
+        0.020141025325653567,
+        0.01917140596206983,
+        0.007288039905947703,
+        0.001389193203125388
+      ],
+      "exact_expected_reactions": 1.1377777777777778,
+      "path_mismatch_upper_bound": 1.0,
+      "expected_L1_error_upper_bound": 0.18888888888888888
+    },
+    {
+      "n": 9,
+      "side": 4,
+      "faces": 32,
+      "angular_rate": 1,
+      "trials": 4096,
+      "duration": 0.02,
+      "seed": 831004001,
+      "columns": [
+        "path_mismatch",
+        "initial_identities",
+        "reaction_events",
+        "vacancy_events",
+        "final_L1_error_per_face"
+      ],
+      "means": [
+        0.9072265625,
+        1.767822265625,
+        1.139404296875,
+        0.204345703125,
+        0.140228271484375
+      ],
+      "independent_trajectory_SE": [
+        0.004533595305790657,
+        0.020141025325653567,
+        0.019401027487094984,
+        0.007413951418671743,
+        0.0013995636230584474
+      ],
+      "exact_expected_reactions": 1.1377777777777778,
+      "path_mismatch_upper_bound": 1.0,
+      "expected_L1_error_upper_bound": 0.18888888888888888
+    },
+    {
+      "n": 9,
+      "side": 4,
+      "faces": 32,
+      "angular_rate": 8,
+      "trials": 4096,
+      "duration": 0.02,
+      "seed": 831004001,
+      "columns": [
+        "path_mismatch",
+        "initial_identities",
+        "reaction_events",
+        "vacancy_events",
+        "final_L1_error_per_face"
+      ],
+      "means": [
+        0.907470703125,
+        1.767822265625,
+        1.122314453125,
+        0.2021484375,
+        0.1390228271484375
+      ],
+      "independent_trajectory_SE": [
+        0.004528235285104936,
+        0.020141025325653567,
+        0.018716456786024793,
+        0.007295022668263498,
+        0.001390044230387666
+      ],
+      "exact_expected_reactions": 1.1377777777777778,
+      "path_mismatch_upper_bound": 1.0,
+      "expected_L1_error_upper_bound": 0.18888888888888888
+    },
+    {
+      "n": 27,
+      "side": 4,
+      "faces": 32,
+      "angular_rate": 0,
+      "trials": 4096,
+      "duration": 0.02,
+      "seed": 831004001,
+      "columns": [
+        "path_mismatch",
+        "initial_identities",
+        "reaction_events",
+        "vacancy_events",
+        "final_L1_error_per_face"
+      ],
+      "means": [
+        0.5419921875,
+        0.597412109375,
+        0.408935546875,
+        0.072021484375,
+        0.0479736328125
+      ],
+      "independent_trajectory_SE": [
+        0.007785849475863072,
+        0.01158493519055063,
+        0.011725350346638477,
+        0.004241498792375116,
+        0.0008486808467898837
+      ],
+      "exact_expected_reactions": 0.4108641975308642,
+      "path_mismatch_upper_bound": 1.0,
+      "expected_L1_error_upper_bound": 0.06493827160493827
+    },
+    {
+      "n": 27,
+      "side": 4,
+      "faces": 32,
+      "angular_rate": 1,
+      "trials": 4096,
+      "duration": 0.02,
+      "seed": 831004001,
+      "columns": [
+        "path_mismatch",
+        "initial_identities",
+        "reaction_events",
+        "vacancy_events",
+        "final_L1_error_per_face"
+      ],
+      "means": [
+        0.541015625,
+        0.597412109375,
+        0.410400390625,
+        0.064208984375,
+        0.04833984375
+      ],
+      "independent_trajectory_SE": [
+        0.00778712061665789,
+        0.01158493519055063,
+        0.012009405374966748,
+        0.00408657744945999,
+        0.0008589117423500156
+      ],
+      "exact_expected_reactions": 0.4108641975308642,
+      "path_mismatch_upper_bound": 1.0,
+      "expected_L1_error_upper_bound": 0.06493827160493827
+    },
+    {
+      "n": 27,
+      "side": 4,
+      "faces": 32,
+      "angular_rate": 8,
+      "trials": 4096,
+      "duration": 0.02,
+      "seed": 831004001,
+      "columns": [
+        "path_mismatch",
+        "initial_identities",
+        "reaction_events",
+        "vacancy_events",
+        "final_L1_error_per_face"
+      ],
+      "means": [
+        0.542236328125,
+        0.597412109375,
+        0.408203125,
+        0.065185546875,
+        0.0478057861328125
+      ],
+      "independent_trajectory_SE": [
+        0.007785526984351024,
+        0.01158493519055063,
+        0.011703596926203765,
+        0.004097376728718868,
+        0.0008395566348522977
+      ],
+      "exact_expected_reactions": 0.4108641975308642,
+      "path_mismatch_upper_bound": 1.0,
+      "expected_L1_error_upper_bound": 0.06493827160493827
+    },
+    {
+      "n": 81,
+      "side": 4,
+      "faces": 32,
+      "angular_rate": 0,
+      "trials": 4096,
+      "duration": 0.02,
+      "seed": 831004001,
+      "columns": [
+        "path_mismatch",
+        "initial_identities",
+        "reaction_events",
+        "vacancy_events",
+        "final_L1_error_per_face"
+      ],
+      "means": [
+        0.22265625,
+        0.196044921875,
+        0.1357421875,
+        0.021484375,
+        0.0159454345703125
+      ],
+      "independent_trajectory_SE": [
+        0.006501252707988108,
+        0.006878398225210044,
+        0.006865173559754113,
+        0.00236869704119829,
+        0.0005062288225007129
+      ],
+      "exact_expected_reactions": 0.14046639231824415,
+      "path_mismatch_upper_bound": 0.337997256515775,
+      "expected_L1_error_upper_bound": 0.021865569272976677
+    },
+    {
+      "n": 81,
+      "side": 4,
+      "faces": 32,
+      "angular_rate": 1,
+      "trials": 4096,
+      "duration": 0.02,
+      "seed": 831004001,
+      "columns": [
+        "path_mismatch",
+        "initial_identities",
+        "reaction_events",
+        "vacancy_events",
+        "final_L1_error_per_face"
+      ],
+      "means": [
+        0.219970703125,
+        0.196044921875,
+        0.129638671875,
+        0.02001953125,
+        0.0157470703125
+      ],
+      "independent_trajectory_SE": [
+        0.006473079273800588,
+        0.006878398225210044,
+        0.006758547008261329,
+        0.0022951812672863427,
+        0.0005001175233455572
+      ],
+      "exact_expected_reactions": 0.14046639231824415,
+      "path_mismatch_upper_bound": 0.337997256515775,
+      "expected_L1_error_upper_bound": 0.021865569272976677
+    },
+    {
+      "n": 81,
+      "side": 4,
+      "faces": 32,
+      "angular_rate": 8,
+      "trials": 4096,
+      "duration": 0.02,
+      "seed": 831004001,
+      "columns": [
+        "path_mismatch",
+        "initial_identities",
+        "reaction_events",
+        "vacancy_events",
+        "final_L1_error_per_face"
+      ],
+      "means": [
+        0.225830078125,
+        0.196044921875,
+        0.13818359375,
+        0.022705078125,
+        0.01611328125
+      ],
+      "independent_trajectory_SE": [
+        0.006534044476865366,
+        0.006878398225210044,
+        0.006887978603876224,
+        0.002403416437998506,
+        0.0005037749042623306
+      ],
+      "exact_expected_reactions": 0.14046639231824415,
+      "path_mismatch_upper_bound": 0.337997256515775,
+      "expected_L1_error_upper_bound": 0.021865569272976677
+    },
+    {
+      "n": 243,
+      "side": 4,
+      "faces": 32,
+      "angular_rate": 0,
+      "trials": 4096,
+      "duration": 0.02,
+      "seed": 831004001,
+      "columns": [
+        "path_mismatch",
+        "initial_identities",
+        "reaction_events",
+        "vacancy_events",
+        "final_L1_error_per_face"
+      ],
+      "means": [
+        0.082763671875,
+        0.0673828125,
+        0.050048828125,
+        0.007568359375,
+        0.005615234375
+      ],
+      "independent_trajectory_SE": [
+        0.004305598663567429,
+        0.004139407914507064,
+        0.004105695080595541,
+        0.0013976572550280573,
+        0.0003040424023222609
+      ],
+      "exact_expected_reactions": 0.04721231519585428,
+      "path_mismatch_upper_bound": 0.11305593659503124,
+      "expected_L1_error_upper_bound": 0.007312909617436367
+    },
+    {
+      "n": 243,
+      "side": 4,
+      "faces": 32,
+      "angular_rate": 1,
+      "trials": 4096,
+      "duration": 0.02,
+      "seed": 831004001,
+      "columns": [
+        "path_mismatch",
+        "initial_identities",
+        "reaction_events",
+        "vacancy_events",
+        "final_L1_error_per_face"
+      ],
+      "means": [
+        0.0830078125,
+        0.0673828125,
+        0.04541015625,
+        0.0087890625,
+        0.005645751953125
+      ],
+      "independent_trajectory_SE": [
+        0.004311370534834149,
+        0.004139407914507064,
+        0.0038105744268549426,
+        0.0016138094445031434,
+        0.00030466971631086656
+      ],
+      "exact_expected_reactions": 0.04721231519585428,
+      "path_mismatch_upper_bound": 0.11305593659503124,
+      "expected_L1_error_upper_bound": 0.007312909617436367
+    },
+    {
+      "n": 243,
+      "side": 4,
+      "faces": 32,
+      "angular_rate": 8,
+      "trials": 4096,
+      "duration": 0.02,
+      "seed": 831004001,
+      "columns": [
+        "path_mismatch",
+        "initial_identities",
+        "reaction_events",
+        "vacancy_events",
+        "final_L1_error_per_face"
+      ],
+      "means": [
+        0.080810546875,
+        0.0673828125,
+        0.051025390625,
+        0.0087890625,
+        0.00537109375
+      ],
+      "independent_trajectory_SE": [
+        0.004259019084552168,
+        0.004139407914507064,
+        0.00431522933872624,
+        0.0015381495773138395,
+        0.0002950283096272675
+      ],
+      "exact_expected_reactions": 0.04721231519585428,
+      "path_mismatch_upper_bound": 0.11305593659503124,
+      "expected_L1_error_upper_bound": 0.007312909617436367
+    },
+    {
+      "n": 729,
+      "side": 4,
+      "faces": 32,
+      "angular_rate": 0,
+      "trials": 4096,
+      "duration": 0.02,
+      "seed": 831004001,
+      "columns": [
+        "path_mismatch",
+        "initial_identities",
+        "reaction_events",
+        "vacancy_events",
+        "final_L1_error_per_face"
+      ],
+      "means": [
+        0.029052734375,
+        0.02197265625,
+        0.01806640625,
+        0.00390625,
+        0.0018463134765625
+      ],
+      "independent_trajectory_SE": [
+        0.002624607558330733,
+        0.002316693144356522,
+        0.002425327663887614,
+        0.0010902558437672978,
+        0.0001695413368217205
+      ],
+      "exact_expected_reactions": 0.015780792223407676,
+      "path_mismatch_upper_bound": 0.03772866602313332,
+      "expected_L1_error_upper_bound": 0.0024403461531948044
+    },
+    {
+      "n": 729,
+      "side": 4,
+      "faces": 32,
+      "angular_rate": 1,
+      "trials": 4096,
+      "duration": 0.02,
+      "seed": 831004001,
+      "columns": [
+        "path_mismatch",
+        "initial_identities",
+        "reaction_events",
+        "vacancy_events",
+        "final_L1_error_per_face"
+      ],
+      "means": [
+        0.0302734375,
+        0.02197265625,
+        0.015869140625,
+        0.00244140625,
+        0.0019378662109375
+      ],
+      "independent_trajectory_SE": [
+        0.0026774943402114084,
+        0.002316693144356522,
+        0.0022374394215344423,
+        0.000771191581619665,
+        0.00017470764504300154
+      ],
+      "exact_expected_reactions": 0.015780792223407676,
+      "path_mismatch_upper_bound": 0.03772866602313332,
+      "expected_L1_error_upper_bound": 0.0024403461531948044
+    },
+    {
+      "n": 729,
+      "side": 4,
+      "faces": 32,
+      "angular_rate": 8,
+      "trials": 4096,
+      "duration": 0.02,
+      "seed": 831004001,
+      "columns": [
+        "path_mismatch",
+        "initial_identities",
+        "reaction_events",
+        "vacancy_events",
+        "final_L1_error_per_face"
+      ],
+      "means": [
+        0.027099609375,
+        0.02197265625,
+        0.015869140625,
+        0.001953125,
+        0.001739501953125
+      ],
+      "independent_trajectory_SE": [
+        0.002537398923287962,
+        0.002316693144356522,
+        0.0024656197536181415,
+        0.0006899435135935306,
+        0.0001649472116865894
+      ],
+      "exact_expected_reactions": 0.015780792223407676,
+      "path_mismatch_upper_bound": 0.03772866602313332,
+      "expected_L1_error_upper_bound": 0.0024403461531948044
+    }
+  ]
+}

@@ -73,6 +73,11 @@ def field_weight(n0, n1, n2, sector='all'):
         raise ValueError('unknown reference sector')
     if n1 % 2:
         return 0
+    # On the torus, summing the two handle holonomies gives |G| times the
+    # product of central class-sum eigenvalues, summed over irreps. For S3 the
+    # (E,R,Z) eigenvalues are (1,3,2), (1,-3,2), (1,0,-1), giving this formula.
+    # Only populations enter: this reference is spatially exchangeable, not
+    # evidence that a single reachable component equilibrates or binds defects.
     total = 6*(2*3**n1*2**n2 + ((-1)**n2 if n1 == 0 else 0))
     if sector == 'all':
         return total

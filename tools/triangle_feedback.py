@@ -37,6 +37,9 @@ def derive_bank(group):
         record = {'id': index, 'transpositions': pairs, 'positive_certificate': positive,
                   'changes_occupied_count': changes_count, **audit}
         records.append(record)
+        # Positivity is a selection hypothesis, not an emergent prediction.
+        # The subsequent nullspace derives the common charge of this selected
+        # bank; adjacency/equivariance alone do not select it or its clock.
         if positive['exists'] and changes_count:
             chosen.append(index); equations += rows
     basis = nullspace(equations, len(labels))

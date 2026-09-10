@@ -139,7 +139,9 @@ therefore yields
 $$n_+(L_{\mathrm{bundle}}-12I)\le\min(Q_\uparrow,Q_\downarrow),
 \qquad Q_\uparrow+Q_\downarrow=Q.$$
 
-This strengthens the earlier total-charge bound by at least a factor of two. Both
+Compared with the all-face decomposition's bound $n_+\le Q$, this improves the
+bound by at least a factor of two. It need not improve $\lfloor Q/2\rfloor$
+further: balanced orientation charges give equality. Both
 orientation identities are checked against an independently assembled integer graph
 matrix. Only the sum $Q$ is conserved by the mixed reaction/transport dynamics; a
 vacancy move can transfer charge between orientations, and a reaction can redistribute it.

@@ -88,6 +88,9 @@ class ModeRates:
                 if obs[0] != initial[0]:
                     witnesses.append([rule*supports+patch, obs[0]])
                 if rule == 0 and initial[0] == initial[1] == initial[2]:
+                    # Saturation forces Q_up=Q_down=Q/2. A vacancy transfers
+                    # q across orientations, lowering min(Q_up,Q_down) by q;
+                    # the capacity bound forces loss, not any eigenmode identity.
                     moved = sum(e.charges[x] for x in divmod(code, e.geometry.group.n))
                     bound = initial[0]-moved
                     if obs[0] > bound:

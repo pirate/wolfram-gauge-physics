@@ -1,0 +1,2901 @@
+{
+  "scope": "All distinct third adjacent-pair constraints added to a fixed overlapping pair",
+  "runs": [
+    {
+      "side": 4,
+      "seed": 914407001,
+      "third_pair_selection": [
+        1,
+        0
+      ],
+      "initial_pairs": [
+        [
+          6,
+          1
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          25,
+          30
+        ]
+      ],
+      "initial": {
+        "identity_count": 0,
+        "reaction_rate": 120,
+        "zero_offset_rank": 3,
+        "intersection_rank": 2,
+        "all_equal_RRR_fans": 1,
+        "joint_support": 10
+      },
+      "G0_A_lambda": -4032,
+      "angular_delta_counts": [
+        [
+          -36,
+          80
+        ],
+        [
+          -24,
+          16
+        ],
+        [
+          -12,
+          64
+        ]
+      ],
+      "post_reaction_A_lambda_counts": [
+        [
+          -288,
+          1
+        ],
+        [
+          -240,
+          1
+        ],
+        [
+          -144,
+          17
+        ],
+        [
+          -96,
+          3
+        ],
+        [
+          -48,
+          16
+        ],
+        [
+          0,
+          82
+        ]
+      ],
+      "positive_step_example": null
+    },
+    {
+      "side": 4,
+      "seed": 914407001,
+      "third_pair_selection": [
+        1,
+        1
+      ],
+      "initial_pairs": [
+        [
+          6,
+          1
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          30,
+          31
+        ]
+      ],
+      "initial": {
+        "identity_count": 0,
+        "reaction_rate": 120,
+        "zero_offset_rank": 3,
+        "intersection_rank": 2,
+        "all_equal_RRR_fans": 1,
+        "joint_support": 10
+      },
+      "G0_A_lambda": -4032,
+      "angular_delta_counts": [
+        [
+          -36,
+          80
+        ],
+        [
+          -24,
+          16
+        ],
+        [
+          -12,
+          64
+        ]
+      ],
+      "post_reaction_A_lambda_counts": [
+        [
+          -288,
+          1
+        ],
+        [
+          -240,
+          1
+        ],
+        [
+          -144,
+          17
+        ],
+        [
+          -96,
+          3
+        ],
+        [
+          -48,
+          16
+        ],
+        [
+          0,
+          82
+        ]
+      ],
+      "positive_step_example": null
+    },
+    {
+      "side": 4,
+      "seed": 914407001,
+      "third_pair_selection": [
+        2,
+        1
+      ],
+      "initial_pairs": [
+        [
+          6,
+          1
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          31,
+          6
+        ]
+      ],
+      "initial": {
+        "identity_count": 0,
+        "reaction_rate": 96,
+        "zero_offset_rank": 3,
+        "intersection_rank": 2,
+        "all_equal_RRR_fans": 2,
+        "joint_support": 9
+      },
+      "G0_A_lambda": -4320,
+      "angular_delta_counts": [
+        [
+          -36,
+          104
+        ],
+        [
+          -24,
+          16
+        ],
+        [
+          -12,
+          16
+        ]
+      ],
+      "post_reaction_A_lambda_counts": [
+        [
+          -144,
+          26
+        ],
+        [
+          -96,
+          4
+        ],
+        [
+          -48,
+          4
+        ],
+        [
+          0,
+          62
+        ]
+      ],
+      "positive_step_example": null
+    },
+    {
+      "side": 4,
+      "seed": 914407001,
+      "third_pair_selection": [
+        4,
+        1
+      ],
+      "initial_pairs": [
+        [
+          6,
+          1
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          25
+        ]
+      ],
+      "initial": {
+        "identity_count": 0,
+        "reaction_rate": 96,
+        "zero_offset_rank": 3,
+        "intersection_rank": 2,
+        "all_equal_RRR_fans": 2,
+        "joint_support": 9
+      },
+      "G0_A_lambda": -4320,
+      "angular_delta_counts": [
+        [
+          -36,
+          104
+        ],
+        [
+          -24,
+          16
+        ],
+        [
+          -12,
+          16
+        ]
+      ],
+      "post_reaction_A_lambda_counts": [
+        [
+          -144,
+          26
+        ],
+        [
+          -96,
+          4
+        ],
+        [
+          -48,
+          4
+        ],
+        [
+          0,
+          62
+        ]
+      ],
+      "positive_step_example": null
+    },
+    {
+      "side": 4,
+      "seed": 914407001,
+      "third_pair_selection": [
+        6,
+        0
+      ],
+      "initial_pairs": [
+        [
+          6,
+          1
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          27,
+          24
+        ]
+      ],
+      "initial": {
+        "identity_count": 0,
+        "reaction_rate": 120,
+        "zero_offset_rank": 3,
+        "intersection_rank": 2,
+        "all_equal_RRR_fans": 1,
+        "joint_support": 11
+      },
+      "G0_A_lambda": -1728,
+      "angular_delta_counts": [
+        [
+          -36,
+          32
+        ],
+        [
+          -24,
+          16
+        ],
+        [
+          -12,
+          16
+        ]
+      ],
+      "post_reaction_A_lambda_counts": [
+        [
+          -144,
+          8
+        ],
+        [
+          -96,
+          4
+        ],
+        [
+          -48,
+          4
+        ],
+        [
+          0,
+          104
+        ]
+      ],
+      "positive_step_example": null
+    },
+    {
+      "side": 4,
+      "seed": 914407001,
+      "third_pair_selection": [
+        6,
+        1
+      ],
+      "initial_pairs": [
+        [
+          6,
+          1
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          24,
+          25
+        ]
+      ],
+      "initial": {
+        "identity_count": 0,
+        "reaction_rate": 120,
+        "zero_offset_rank": 3,
+        "intersection_rank": 2,
+        "all_equal_RRR_fans": 1,
+        "joint_support": 10
+      },
+      "G0_A_lambda": -3264,
+      "angular_delta_counts": [
+        [
+          -36,
+          64
+        ],
+        [
+          -24,
+          16
+        ],
+        [
+          -12,
+          48
+        ]
+      ],
+      "post_reaction_A_lambda_counts": [
+        [
+          -288,
+          1
+        ],
+        [
+          -240,
+          1
+        ],
+        [
+          -144,
+          13
+        ],
+        [
+          -96,
+          3
+        ],
+        [
+          -48,
+          12
+        ],
+        [
+          0,
+          90
+        ]
+      ],
+      "positive_step_example": null
+    },
+    {
+      "side": 4,
+      "seed": 914407001,
+      "third_pair_selection": [
+        7,
+        0
+      ],
+      "initial_pairs": [
+        [
+          6,
+          1
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "initial": {
+        "identity_count": 0,
+        "reaction_rate": 96,
+        "zero_offset_rank": 3,
+        "intersection_rank": 2,
+        "all_equal_RRR_fans": 2,
+        "joint_support": 9
+      },
+      "G0_A_lambda": -4320,
+      "angular_delta_counts": [
+        [
+          -36,
+          104
+        ],
+        [
+          -24,
+          16
+        ],
+        [
+          -12,
+          16
+        ]
+      ],
+      "post_reaction_A_lambda_counts": [
+        [
+          -144,
+          26
+        ],
+        [
+          -96,
+          4
+        ],
+        [
+          -48,
+          4
+        ],
+        [
+          0,
+          62
+        ]
+      ],
+      "positive_step_example": null
+    },
+    {
+      "side": 4,
+      "seed": 914407001,
+      "third_pair_selection": [
+        7,
+        1
+      ],
+      "initial_pairs": [
+        [
+          6,
+          1
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          3,
+          2
+        ]
+      ],
+      "initial": {
+        "identity_count": 0,
+        "reaction_rate": 120,
+        "zero_offset_rank": 3,
+        "intersection_rank": 2,
+        "all_equal_RRR_fans": 1,
+        "joint_support": 10
+      },
+      "G0_A_lambda": -3264,
+      "angular_delta_counts": [
+        [
+          -36,
+          64
+        ],
+        [
+          -24,
+          16
+        ],
+        [
+          -12,
+          48
+        ]
+      ],
+      "post_reaction_A_lambda_counts": [
+        [
+          -288,
+          1
+        ],
+        [
+          -240,
+          1
+        ],
+        [
+          -144,
+          13
+        ],
+        [
+          -96,
+          3
+        ],
+        [
+          -48,
+          12
+        ],
+        [
+          0,
+          90
+        ]
+      ],
+      "positive_step_example": null
+    },
+    {
+      "side": 4,
+      "seed": 914407001,
+      "third_pair_selection": [
+        10,
+        0
+      ],
+      "initial_pairs": [
+        [
+          6,
+          1
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          2,
+          27
+        ]
+      ],
+      "initial": {
+        "identity_count": 0,
+        "reaction_rate": 120,
+        "zero_offset_rank": 3,
+        "intersection_rank": 2,
+        "all_equal_RRR_fans": 1,
+        "joint_support": 11
+      },
+      "G0_A_lambda": -1728,
+      "angular_delta_counts": [
+        [
+          -36,
+          32
+        ],
+        [
+          -24,
+          16
+        ],
+        [
+          -12,
+          16
+        ]
+      ],
+      "post_reaction_A_lambda_counts": [
+        [
+          -144,
+          8
+        ],
+        [
+          -96,
+          4
+        ],
+        [
+          -48,
+          4
+        ],
+        [
+          0,
+          104
+        ]
+      ],
+      "positive_step_example": null
+    },
+    {
+      "side": 4,
+      "seed": 914407001,
+      "third_pair_selection": [
+        12,
+        0
+      ],
+      "initial_pairs": [
+        [
+          6,
+          1
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          29,
+          26
+        ]
+      ],
+      "initial": {
+        "identity_count": 0,
+        "reaction_rate": 120,
+        "zero_offset_rank": 3,
+        "intersection_rank": 2,
+        "all_equal_RRR_fans": 1,
+        "joint_support": 11
+      },
+      "G0_A_lambda": -960,
+      "angular_delta_counts": [
+        [
+          -36,
+          16
+        ],
+        [
+          -24,
+          16
+        ]
+      ],
+      "post_reaction_A_lambda_counts": [
+        [
+          -144,
+          4
+        ],
+        [
+          -96,
+          4
+        ],
+        [
+          0,
+          112
+        ]
+      ],
+      "positive_step_example": null
+    },
+    {
+      "side": 4,
+      "seed": 914407001,
+      "third_pair_selection": [
+        12,
+        1
+      ],
+      "initial_pairs": [
+        [
+          6,
+          1
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          26,
+          27
+        ]
+      ],
+      "initial": {
+        "identity_count": 0,
+        "reaction_rate": 120,
+        "zero_offset_rank": 3,
+        "intersection_rank": 2,
+        "all_equal_RRR_fans": 1,
+        "joint_support": 11
+      },
+      "G0_A_lambda": -960,
+      "angular_delta_counts": [
+        [
+          -36,
+          16
+        ],
+        [
+          -24,
+          16
+        ]
+      ],
+      "post_reaction_A_lambda_counts": [
+        [
+          -144,
+          4
+        ],
+        [
+          -96,
+          4
+        ],
+        [
+          0,
+          112
+        ]
+      ],
+      "positive_step_example": null
+    },
+    {
+      "side": 4,
+      "seed": 914407001,
+      "third_pair_selection": [
+        13,
+        0
+      ],
+      "initial_pairs": [
+        [
+          6,
+          1
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          2,
+          5
+        ]
+      ],
+      "initial": {
+        "identity_count": 0,
+        "reaction_rate": 120,
+        "zero_offset_rank": 3,
+        "intersection_rank": 2,
+        "all_equal_RRR_fans": 1,
+        "joint_support": 11
+      },
+      "G0_A_lambda": -1728,
+      "angular_delta_counts": [
+        [
+          -36,
+          32
+        ],
+        [
+          -24,
+          16
+        ],
+        [
+          -12,
+          16
+        ]
+      ],
+      "post_reaction_A_lambda_counts": [
+        [
+          -144,
+          8
+        ],
+        [
+          -96,
+          4
+        ],
+        [
+          -48,
+          4
+        ],
+        [
+          0,
+          104
+        ]
+      ],
+      "positive_step_example": null
+    },
+    {
+      "side": 4,
+      "seed": 914407001,
+      "third_pair_selection": [
+        13,
+        1
+      ],
+      "initial_pairs": [
+        [
+          6,
+          1
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          5,
+          4
+        ]
+      ],
+      "initial": {
+        "identity_count": 0,
+        "reaction_rate": 120,
+        "zero_offset_rank": 3,
+        "intersection_rank": 2,
+        "all_equal_RRR_fans": 1,
+        "joint_support": 11
+      },
+      "G0_A_lambda": -1728,
+      "angular_delta_counts": [
+        [
+          -36,
+          32
+        ],
+        [
+          -24,
+          16
+        ],
+        [
+          -12,
+          16
+        ]
+      ],
+      "post_reaction_A_lambda_counts": [
+        [
+          -144,
+          8
+        ],
+        [
+          -96,
+          4
+        ],
+        [
+          -48,
+          4
+        ],
+        [
+          0,
+          104
+        ]
+      ],
+      "positive_step_example": null
+    },
+    {
+      "side": 4,
+      "seed": 914407001,
+      "third_pair_selection": [
+        16,
+        0
+      ],
+      "initial_pairs": [
+        [
+          6,
+          1
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          4,
+          29
+        ]
+      ],
+      "initial": {
+        "identity_count": 0,
+        "reaction_rate": 120,
+        "zero_offset_rank": 3,
+        "intersection_rank": 2,
+        "all_equal_RRR_fans": 1,
+        "joint_support": 11
+      },
+      "G0_A_lambda": -1728,
+      "angular_delta_counts": [
+        [
+          -36,
+          32
+        ],
+        [
+          -24,
+          16
+        ],
+        [
+          -12,
+          16
+        ]
+      ],
+      "post_reaction_A_lambda_counts": [
+        [
+          -144,
+          8
+        ],
+        [
+          -96,
+          4
+        ],
+        [
+          -48,
+          4
+        ],
+        [
+          0,
+          104
+        ]
+      ],
+      "positive_step_example": null
+    },
+    {
+      "side": 4,
+      "seed": 914407001,
+      "third_pair_selection": [
+        18,
+        0
+      ],
+      "initial_pairs": [
+        [
+          6,
+          1
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          4,
+          7
+        ]
+      ],
+      "initial": {
+        "identity_count": 0,
+        "reaction_rate": 120,
+        "zero_offset_rank": 3,
+        "intersection_rank": 2,
+        "all_equal_RRR_fans": 1,
+        "joint_support": 10
+      },
+      "G0_A_lambda": -3264,
+      "angular_delta_counts": [
+        [
+          -36,
+          64
+        ],
+        [
+          -24,
+          16
+        ],
+        [
+          -12,
+          48
+        ]
+      ],
+      "post_reaction_A_lambda_counts": [
+        [
+          -288,
+          1
+        ],
+        [
+          -240,
+          1
+        ],
+        [
+          -144,
+          13
+        ],
+        [
+          -96,
+          3
+        ],
+        [
+          -48,
+          12
+        ],
+        [
+          0,
+          90
+        ]
+      ],
+      "positive_step_example": null
+    },
+    {
+      "side": 4,
+      "seed": 914407001,
+      "third_pair_selection": [
+        18,
+        1
+      ],
+      "initial_pairs": [
+        [
+          6,
+          1
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          7,
+          6
+        ]
+      ],
+      "initial": {
+        "identity_count": 0,
+        "reaction_rate": 96,
+        "zero_offset_rank": 3,
+        "intersection_rank": 2,
+        "all_equal_RRR_fans": 2,
+        "joint_support": 9
+      },
+      "G0_A_lambda": -4320,
+      "angular_delta_counts": [
+        [
+          -36,
+          104
+        ],
+        [
+          -24,
+          16
+        ],
+        [
+          -12,
+          16
+        ]
+      ],
+      "post_reaction_A_lambda_counts": [
+        [
+          -144,
+          26
+        ],
+        [
+          -96,
+          4
+        ],
+        [
+          -48,
+          4
+        ],
+        [
+          0,
+          62
+        ]
+      ],
+      "positive_step_example": null
+    },
+    {
+      "side": 4,
+      "seed": 914407001,
+      "third_pair_selection": [
+        19,
+        0
+      ],
+      "initial_pairs": [
+        [
+          6,
+          1
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          31,
+          28
+        ]
+      ],
+      "initial": {
+        "identity_count": 0,
+        "reaction_rate": 120,
+        "zero_offset_rank": 3,
+        "intersection_rank": 2,
+        "all_equal_RRR_fans": 1,
+        "joint_support": 10
+      },
+      "G0_A_lambda": -3264,
+      "angular_delta_counts": [
+        [
+          -36,
+          64
+        ],
+        [
+          -24,
+          16
+        ],
+        [
+          -12,
+          48
+        ]
+      ],
+      "post_reaction_A_lambda_counts": [
+        [
+          -288,
+          1
+        ],
+        [
+          -240,
+          1
+        ],
+        [
+          -144,
+          13
+        ],
+        [
+          -96,
+          3
+        ],
+        [
+          -48,
+          12
+        ],
+        [
+          0,
+          90
+        ]
+      ],
+      "positive_step_example": null
+    },
+    {
+      "side": 4,
+      "seed": 914407001,
+      "third_pair_selection": [
+        19,
+        1
+      ],
+      "initial_pairs": [
+        [
+          6,
+          1
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          28,
+          29
+        ]
+      ],
+      "initial": {
+        "identity_count": 0,
+        "reaction_rate": 120,
+        "zero_offset_rank": 3,
+        "intersection_rank": 2,
+        "all_equal_RRR_fans": 1,
+        "joint_support": 11
+      },
+      "G0_A_lambda": -1728,
+      "angular_delta_counts": [
+        [
+          -36,
+          32
+        ],
+        [
+          -24,
+          16
+        ],
+        [
+          -12,
+          16
+        ]
+      ],
+      "post_reaction_A_lambda_counts": [
+        [
+          -144,
+          8
+        ],
+        [
+          -96,
+          4
+        ],
+        [
+          -48,
+          4
+        ],
+        [
+          0,
+          104
+        ]
+      ],
+      "positive_step_example": null
+    },
+    {
+      "side": 4,
+      "seed": 914407001,
+      "third_pair_selection": [
+        24,
+        0
+      ],
+      "initial_pairs": [
+        [
+          6,
+          1
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          9,
+          8
+        ]
+      ],
+      "initial": {
+        "identity_count": 0,
+        "reaction_rate": 120,
+        "zero_offset_rank": 3,
+        "intersection_rank": 2,
+        "all_equal_RRR_fans": 1,
+        "joint_support": 10
+      },
+      "G0_A_lambda": -5568,
+      "angular_delta_counts": [
+        [
+          -48,
+          48
+        ],
+        [
+          -36,
+          80
+        ],
+        [
+          -24,
+          16
+        ]
+      ],
+      "post_reaction_A_lambda_counts": [
+        [
+          -192,
+          12
+        ],
+        [
+          -144,
+          20
+        ],
+        [
+          -96,
+          4
+        ],
+        [
+          0,
+          84
+        ]
+      ],
+      "positive_step_example": null
+    },
+    {
+      "side": 4,
+      "seed": 914407001,
+      "third_pair_selection": [
+        24,
+        1
+      ],
+      "initial_pairs": [
+        [
+          6,
+          1
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          8,
+          1
+        ]
+      ],
+      "initial": {
+        "identity_count": 0,
+        "reaction_rate": 72,
+        "zero_offset_rank": 3,
+        "intersection_rank": 2,
+        "all_equal_RRR_fans": 3,
+        "joint_support": 9
+      },
+      "G0_A_lambda": -1152,
+      "angular_delta_counts": [
+        [
+          -48,
+          24
+        ]
+      ],
+      "post_reaction_A_lambda_counts": [
+        [
+          -192,
+          6
+        ],
+        [
+          0,
+          66
+        ]
+      ],
+      "positive_step_example": null
+    },
+    {
+      "side": 4,
+      "seed": 914407001,
+      "third_pair_selection": [
+        26,
+        0
+      ],
+      "initial_pairs": [
+        [
+          6,
+          1
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          14,
+          9
+        ]
+      ],
+      "initial": {
+        "identity_count": 0,
+        "reaction_rate": 120,
+        "zero_offset_rank": 3,
+        "intersection_rank": 2,
+        "all_equal_RRR_fans": 1,
+        "joint_support": 11
+      },
+      "G0_A_lambda": -3648,
+      "angular_delta_counts": [
+        [
+          -48,
+          16
+        ],
+        [
+          -36,
+          64
+        ],
+        [
+          -24,
+          16
+        ],
+        [
+          -12,
+          16
+        ]
+      ],
+      "post_reaction_A_lambda_counts": [
+        [
+          -240,
+          2
+        ],
+        [
+          -192,
+          4
+        ],
+        [
+          -144,
+          14
+        ],
+        [
+          -96,
+          2
+        ],
+        [
+          -48,
+          4
+        ],
+        [
+          0,
+          94
+        ]
+      ],
+      "positive_step_example": null
+    },
+    {
+      "side": 4,
+      "seed": 914407001,
+      "third_pair_selection": [
+        28,
+        1
+      ],
+      "initial_pairs": [
+        [
+          6,
+          1
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          7,
+          14
+        ]
+      ],
+      "initial": {
+        "identity_count": 0,
+        "reaction_rate": 120,
+        "zero_offset_rank": 3,
+        "intersection_rank": 2,
+        "all_equal_RRR_fans": 1,
+        "joint_support": 10
+      },
+      "G0_A_lambda": -3264,
+      "angular_delta_counts": [
+        [
+          -36,
+          64
+        ],
+        [
+          -24,
+          16
+        ],
+        [
+          -12,
+          48
+        ]
+      ],
+      "post_reaction_A_lambda_counts": [
+        [
+          -288,
+          1
+        ],
+        [
+          -240,
+          1
+        ],
+        [
+          -144,
+          13
+        ],
+        [
+          -96,
+          3
+        ],
+        [
+          -48,
+          12
+        ],
+        [
+          0,
+          90
+        ]
+      ],
+      "positive_step_example": null
+    },
+    {
+      "side": 4,
+      "seed": 914407001,
+      "third_pair_selection": [
+        30,
+        0
+      ],
+      "initial_pairs": [
+        [
+          6,
+          1
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          10,
+          3
+        ]
+      ],
+      "initial": {
+        "identity_count": 0,
+        "reaction_rate": 120,
+        "zero_offset_rank": 3,
+        "intersection_rank": 2,
+        "all_equal_RRR_fans": 1,
+        "joint_support": 10
+      },
+      "G0_A_lambda": -3264,
+      "angular_delta_counts": [
+        [
+          -36,
+          64
+        ],
+        [
+          -24,
+          16
+        ],
+        [
+          -12,
+          48
+        ]
+      ],
+      "post_reaction_A_lambda_counts": [
+        [
+          -288,
+          1
+        ],
+        [
+          -240,
+          1
+        ],
+        [
+          -144,
+          13
+        ],
+        [
+          -96,
+          3
+        ],
+        [
+          -48,
+          12
+        ],
+        [
+          0,
+          90
+        ]
+      ],
+      "positive_step_example": null
+    },
+    {
+      "side": 4,
+      "seed": 914407001,
+      "third_pair_selection": [
+        31,
+        0
+      ],
+      "initial_pairs": [
+        [
+          6,
+          1
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          11,
+          10
+        ]
+      ],
+      "initial": {
+        "identity_count": 0,
+        "reaction_rate": 120,
+        "zero_offset_rank": 3,
+        "intersection_rank": 2,
+        "all_equal_RRR_fans": 1,
+        "joint_support": 11
+      },
+      "G0_A_lambda": -3648,
+      "angular_delta_counts": [
+        [
+          -48,
+          16
+        ],
+        [
+          -36,
+          64
+        ],
+        [
+          -24,
+          16
+        ],
+        [
+          -12,
+          16
+        ]
+      ],
+      "post_reaction_A_lambda_counts": [
+        [
+          -240,
+          2
+        ],
+        [
+          -192,
+          4
+        ],
+        [
+          -144,
+          14
+        ],
+        [
+          -96,
+          2
+        ],
+        [
+          -48,
+          4
+        ],
+        [
+          0,
+          94
+        ]
+      ],
+      "positive_step_example": null
+    },
+    {
+      "side": 4,
+      "seed": 914407001,
+      "third_pair_selection": [
+        33,
+        0
+      ],
+      "initial_pairs": [
+        [
+          6,
+          1
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          8,
+          11
+        ]
+      ],
+      "initial": {
+        "identity_count": 0,
+        "reaction_rate": 120,
+        "zero_offset_rank": 3,
+        "intersection_rank": 2,
+        "all_equal_RRR_fans": 1,
+        "joint_support": 10
+      },
+      "G0_A_lambda": -5568,
+      "angular_delta_counts": [
+        [
+          -48,
+          48
+        ],
+        [
+          -36,
+          80
+        ],
+        [
+          -24,
+          16
+        ]
+      ],
+      "post_reaction_A_lambda_counts": [
+        [
+          -192,
+          12
+        ],
+        [
+          -144,
+          20
+        ],
+        [
+          -96,
+          4
+        ],
+        [
+          0,
+          84
+        ]
+      ],
+      "positive_step_example": null
+    },
+    {
+      "side": 4,
+      "seed": 914407001,
+      "third_pair_selection": [
+        36,
+        0
+      ],
+      "initial_pairs": [
+        [
+          6,
+          1
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          12,
+          5
+        ]
+      ],
+      "initial": {
+        "identity_count": 0,
+        "reaction_rate": 120,
+        "zero_offset_rank": 3,
+        "intersection_rank": 2,
+        "all_equal_RRR_fans": 1,
+        "joint_support": 11
+      },
+      "G0_A_lambda": -960,
+      "angular_delta_counts": [
+        [
+          -36,
+          16
+        ],
+        [
+          -24,
+          16
+        ]
+      ],
+      "post_reaction_A_lambda_counts": [
+        [
+          -144,
+          4
+        ],
+        [
+          -96,
+          4
+        ],
+        [
+          0,
+          112
+        ]
+      ],
+      "positive_step_example": null
+    },
+    {
+      "side": 4,
+      "seed": 914407001,
+      "third_pair_selection": [
+        37,
+        0
+      ],
+      "initial_pairs": [
+        [
+          6,
+          1
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          13,
+          12
+        ]
+      ],
+      "initial": {
+        "identity_count": 0,
+        "reaction_rate": 120,
+        "zero_offset_rank": 3,
+        "intersection_rank": 2,
+        "all_equal_RRR_fans": 1,
+        "joint_support": 11
+      },
+      "G0_A_lambda": -960,
+      "angular_delta_counts": [
+        [
+          -36,
+          16
+        ],
+        [
+          -24,
+          16
+        ]
+      ],
+      "post_reaction_A_lambda_counts": [
+        [
+          -144,
+          4
+        ],
+        [
+          -96,
+          4
+        ],
+        [
+          0,
+          112
+        ]
+      ],
+      "positive_step_example": null
+    },
+    {
+      "side": 4,
+      "seed": 914407001,
+      "third_pair_selection": [
+        39,
+        0
+      ],
+      "initial_pairs": [
+        [
+          6,
+          1
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          10,
+          13
+        ]
+      ],
+      "initial": {
+        "identity_count": 0,
+        "reaction_rate": 120,
+        "zero_offset_rank": 3,
+        "intersection_rank": 2,
+        "all_equal_RRR_fans": 1,
+        "joint_support": 11
+      },
+      "G0_A_lambda": -1728,
+      "angular_delta_counts": [
+        [
+          -36,
+          32
+        ],
+        [
+          -24,
+          16
+        ],
+        [
+          -12,
+          16
+        ]
+      ],
+      "post_reaction_A_lambda_counts": [
+        [
+          -144,
+          8
+        ],
+        [
+          -96,
+          4
+        ],
+        [
+          -48,
+          4
+        ],
+        [
+          0,
+          104
+        ]
+      ],
+      "positive_step_example": null
+    },
+    {
+      "side": 4,
+      "seed": 914407001,
+      "third_pair_selection": [
+        43,
+        0
+      ],
+      "initial_pairs": [
+        [
+          6,
+          1
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          15,
+          14
+        ]
+      ],
+      "initial": {
+        "identity_count": 0,
+        "reaction_rate": 120,
+        "zero_offset_rank": 3,
+        "intersection_rank": 2,
+        "all_equal_RRR_fans": 1,
+        "joint_support": 11
+      },
+      "G0_A_lambda": -1728,
+      "angular_delta_counts": [
+        [
+          -36,
+          32
+        ],
+        [
+          -24,
+          16
+        ],
+        [
+          -12,
+          16
+        ]
+      ],
+      "post_reaction_A_lambda_counts": [
+        [
+          -144,
+          8
+        ],
+        [
+          -96,
+          4
+        ],
+        [
+          -48,
+          4
+        ],
+        [
+          0,
+          104
+        ]
+      ],
+      "positive_step_example": null
+    },
+    {
+      "side": 4,
+      "seed": 914407001,
+      "third_pair_selection": [
+        44,
+        0
+      ],
+      "initial_pairs": [
+        [
+          6,
+          1
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          12,
+          15
+        ]
+      ],
+      "initial": {
+        "identity_count": 0,
+        "reaction_rate": 120,
+        "zero_offset_rank": 3,
+        "intersection_rank": 2,
+        "all_equal_RRR_fans": 1,
+        "joint_support": 11
+      },
+      "G0_A_lambda": -960,
+      "angular_delta_counts": [
+        [
+          -36,
+          16
+        ],
+        [
+          -24,
+          16
+        ]
+      ],
+      "post_reaction_A_lambda_counts": [
+        [
+          -144,
+          4
+        ],
+        [
+          -96,
+          4
+        ],
+        [
+          0,
+          112
+        ]
+      ],
+      "positive_step_example": null
+    },
+    {
+      "side": 4,
+      "seed": 914407001,
+      "third_pair_selection": [
+        48,
+        0
+      ],
+      "initial_pairs": [
+        [
+          6,
+          1
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          17,
+          16
+        ]
+      ],
+      "initial": {
+        "identity_count": 0,
+        "reaction_rate": 120,
+        "zero_offset_rank": 3,
+        "intersection_rank": 2,
+        "all_equal_RRR_fans": 1,
+        "joint_support": 11
+      },
+      "G0_A_lambda": -960,
+      "angular_delta_counts": [
+        [
+          -36,
+          16
+        ],
+        [
+          -24,
+          16
+        ]
+      ],
+      "post_reaction_A_lambda_counts": [
+        [
+          -144,
+          4
+        ],
+        [
+          -96,
+          4
+        ],
+        [
+          0,
+          112
+        ]
+      ],
+      "positive_step_example": null
+    },
+    {
+      "side": 4,
+      "seed": 914407001,
+      "third_pair_selection": [
+        48,
+        1
+      ],
+      "initial_pairs": [
+        [
+          6,
+          1
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          16,
+          9
+        ]
+      ],
+      "initial": {
+        "identity_count": 0,
+        "reaction_rate": 120,
+        "zero_offset_rank": 3,
+        "intersection_rank": 2,
+        "all_equal_RRR_fans": 1,
+        "joint_support": 11
+      },
+      "G0_A_lambda": -2880,
+      "angular_delta_counts": [
+        [
+          -48,
+          16
+        ],
+        [
+          -36,
+          48
+        ],
+        [
+          -24,
+          16
+        ]
+      ],
+      "post_reaction_A_lambda_counts": [
+        [
+          -240,
+          2
+        ],
+        [
+          -192,
+          4
+        ],
+        [
+          -144,
+          10
+        ],
+        [
+          -96,
+          2
+        ],
+        [
+          0,
+          102
+        ]
+      ],
+      "positive_step_example": null
+    },
+    {
+      "side": 4,
+      "seed": 914407001,
+      "third_pair_selection": [
+        50,
+        0
+      ],
+      "initial_pairs": [
+        [
+          6,
+          1
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          22,
+          17
+        ]
+      ],
+      "initial": {
+        "identity_count": 0,
+        "reaction_rate": 120,
+        "zero_offset_rank": 3,
+        "intersection_rank": 2,
+        "all_equal_RRR_fans": 1,
+        "joint_support": 11
+      },
+      "G0_A_lambda": -960,
+      "angular_delta_counts": [
+        [
+          -36,
+          16
+        ],
+        [
+          -24,
+          16
+        ]
+      ],
+      "post_reaction_A_lambda_counts": [
+        [
+          -144,
+          4
+        ],
+        [
+          -96,
+          4
+        ],
+        [
+          0,
+          112
+        ]
+      ],
+      "positive_step_example": null
+    },
+    {
+      "side": 4,
+      "seed": 914407001,
+      "third_pair_selection": [
+        52,
+        1
+      ],
+      "initial_pairs": [
+        [
+          6,
+          1
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          15,
+          22
+        ]
+      ],
+      "initial": {
+        "identity_count": 0,
+        "reaction_rate": 120,
+        "zero_offset_rank": 3,
+        "intersection_rank": 2,
+        "all_equal_RRR_fans": 1,
+        "joint_support": 11
+      },
+      "G0_A_lambda": -960,
+      "angular_delta_counts": [
+        [
+          -36,
+          16
+        ],
+        [
+          -24,
+          16
+        ]
+      ],
+      "post_reaction_A_lambda_counts": [
+        [
+          -144,
+          4
+        ],
+        [
+          -96,
+          4
+        ],
+        [
+          0,
+          112
+        ]
+      ],
+      "positive_step_example": null
+    },
+    {
+      "side": 4,
+      "seed": 914407001,
+      "third_pair_selection": [
+        54,
+        0
+      ],
+      "initial_pairs": [
+        [
+          6,
+          1
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          18,
+          11
+        ]
+      ],
+      "initial": {
+        "identity_count": 0,
+        "reaction_rate": 120,
+        "zero_offset_rank": 3,
+        "intersection_rank": 2,
+        "all_equal_RRR_fans": 1,
+        "joint_support": 11
+      },
+      "G0_A_lambda": -2880,
+      "angular_delta_counts": [
+        [
+          -48,
+          16
+        ],
+        [
+          -36,
+          48
+        ],
+        [
+          -24,
+          16
+        ]
+      ],
+      "post_reaction_A_lambda_counts": [
+        [
+          -240,
+          2
+        ],
+        [
+          -192,
+          4
+        ],
+        [
+          -144,
+          10
+        ],
+        [
+          -96,
+          2
+        ],
+        [
+          0,
+          102
+        ]
+      ],
+      "positive_step_example": null
+    },
+    {
+      "side": 4,
+      "seed": 914407001,
+      "third_pair_selection": [
+        55,
+        0
+      ],
+      "initial_pairs": [
+        [
+          6,
+          1
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          19,
+          18
+        ]
+      ],
+      "initial": {
+        "identity_count": 0,
+        "reaction_rate": 120,
+        "zero_offset_rank": 3,
+        "intersection_rank": 2,
+        "all_equal_RRR_fans": 1,
+        "joint_support": 11
+      },
+      "G0_A_lambda": -960,
+      "angular_delta_counts": [
+        [
+          -36,
+          16
+        ],
+        [
+          -24,
+          16
+        ]
+      ],
+      "post_reaction_A_lambda_counts": [
+        [
+          -144,
+          4
+        ],
+        [
+          -96,
+          4
+        ],
+        [
+          0,
+          112
+        ]
+      ],
+      "positive_step_example": null
+    },
+    {
+      "side": 4,
+      "seed": 914407001,
+      "third_pair_selection": [
+        57,
+        0
+      ],
+      "initial_pairs": [
+        [
+          6,
+          1
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          16,
+          19
+        ]
+      ],
+      "initial": {
+        "identity_count": 0,
+        "reaction_rate": 120,
+        "zero_offset_rank": 3,
+        "intersection_rank": 2,
+        "all_equal_RRR_fans": 1,
+        "joint_support": 11
+      },
+      "G0_A_lambda": -960,
+      "angular_delta_counts": [
+        [
+          -36,
+          16
+        ],
+        [
+          -24,
+          16
+        ]
+      ],
+      "post_reaction_A_lambda_counts": [
+        [
+          -144,
+          4
+        ],
+        [
+          -96,
+          4
+        ],
+        [
+          0,
+          112
+        ]
+      ],
+      "positive_step_example": null
+    },
+    {
+      "side": 4,
+      "seed": 914407001,
+      "third_pair_selection": [
+        60,
+        0
+      ],
+      "initial_pairs": [
+        [
+          6,
+          1
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          20,
+          13
+        ]
+      ],
+      "initial": {
+        "identity_count": 0,
+        "reaction_rate": 120,
+        "zero_offset_rank": 3,
+        "intersection_rank": 2,
+        "all_equal_RRR_fans": 1,
+        "joint_support": 11
+      },
+      "G0_A_lambda": -960,
+      "angular_delta_counts": [
+        [
+          -36,
+          16
+        ],
+        [
+          -24,
+          16
+        ]
+      ],
+      "post_reaction_A_lambda_counts": [
+        [
+          -144,
+          4
+        ],
+        [
+          -96,
+          4
+        ],
+        [
+          0,
+          112
+        ]
+      ],
+      "positive_step_example": null
+    },
+    {
+      "side": 4,
+      "seed": 914407001,
+      "third_pair_selection": [
+        61,
+        0
+      ],
+      "initial_pairs": [
+        [
+          6,
+          1
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          21,
+          20
+        ]
+      ],
+      "initial": {
+        "identity_count": 0,
+        "reaction_rate": 120,
+        "zero_offset_rank": 3,
+        "intersection_rank": 2,
+        "all_equal_RRR_fans": 1,
+        "joint_support": 11
+      },
+      "G0_A_lambda": -960,
+      "angular_delta_counts": [
+        [
+          -36,
+          16
+        ],
+        [
+          -24,
+          16
+        ]
+      ],
+      "post_reaction_A_lambda_counts": [
+        [
+          -144,
+          4
+        ],
+        [
+          -96,
+          4
+        ],
+        [
+          0,
+          112
+        ]
+      ],
+      "positive_step_example": null
+    },
+    {
+      "side": 4,
+      "seed": 914407001,
+      "third_pair_selection": [
+        63,
+        0
+      ],
+      "initial_pairs": [
+        [
+          6,
+          1
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          18,
+          21
+        ]
+      ],
+      "initial": {
+        "identity_count": 0,
+        "reaction_rate": 120,
+        "zero_offset_rank": 3,
+        "intersection_rank": 2,
+        "all_equal_RRR_fans": 1,
+        "joint_support": 11
+      },
+      "G0_A_lambda": -960,
+      "angular_delta_counts": [
+        [
+          -36,
+          16
+        ],
+        [
+          -24,
+          16
+        ]
+      ],
+      "post_reaction_A_lambda_counts": [
+        [
+          -144,
+          4
+        ],
+        [
+          -96,
+          4
+        ],
+        [
+          0,
+          112
+        ]
+      ],
+      "positive_step_example": null
+    },
+    {
+      "side": 4,
+      "seed": 914407001,
+      "third_pair_selection": [
+        67,
+        0
+      ],
+      "initial_pairs": [
+        [
+          6,
+          1
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          23,
+          22
+        ]
+      ],
+      "initial": {
+        "identity_count": 0,
+        "reaction_rate": 120,
+        "zero_offset_rank": 3,
+        "intersection_rank": 2,
+        "all_equal_RRR_fans": 1,
+        "joint_support": 11
+      },
+      "G0_A_lambda": -960,
+      "angular_delta_counts": [
+        [
+          -36,
+          16
+        ],
+        [
+          -24,
+          16
+        ]
+      ],
+      "post_reaction_A_lambda_counts": [
+        [
+          -144,
+          4
+        ],
+        [
+          -96,
+          4
+        ],
+        [
+          0,
+          112
+        ]
+      ],
+      "positive_step_example": null
+    },
+    {
+      "side": 4,
+      "seed": 914407001,
+      "third_pair_selection": [
+        68,
+        0
+      ],
+      "initial_pairs": [
+        [
+          6,
+          1
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          20,
+          23
+        ]
+      ],
+      "initial": {
+        "identity_count": 0,
+        "reaction_rate": 120,
+        "zero_offset_rank": 3,
+        "intersection_rank": 2,
+        "all_equal_RRR_fans": 1,
+        "joint_support": 11
+      },
+      "G0_A_lambda": -960,
+      "angular_delta_counts": [
+        [
+          -36,
+          16
+        ],
+        [
+          -24,
+          16
+        ]
+      ],
+      "post_reaction_A_lambda_counts": [
+        [
+          -144,
+          4
+        ],
+        [
+          -96,
+          4
+        ],
+        [
+          0,
+          112
+        ]
+      ],
+      "positive_step_example": null
+    },
+    {
+      "side": 4,
+      "seed": 914407001,
+      "third_pair_selection": [
+        72,
+        1
+      ],
+      "initial_pairs": [
+        [
+          6,
+          1
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          23,
+          30
+        ]
+      ],
+      "initial": {
+        "identity_count": 0,
+        "reaction_rate": 120,
+        "zero_offset_rank": 3,
+        "intersection_rank": 2,
+        "all_equal_RRR_fans": 1,
+        "joint_support": 11
+      },
+      "G0_A_lambda": -2496,
+      "angular_delta_counts": [
+        [
+          -36,
+          48
+        ],
+        [
+          -24,
+          16
+        ],
+        [
+          -12,
+          32
+        ]
+      ],
+      "post_reaction_A_lambda_counts": [
+        [
+          -144,
+          12
+        ],
+        [
+          -96,
+          4
+        ],
+        [
+          -48,
+          8
+        ],
+        [
+          0,
+          96
+        ]
+      ],
+      "positive_step_example": null
+    },
+    {
+      "side": 4,
+      "seed": 914407001,
+      "third_pair_selection": [
+        74,
+        1
+      ],
+      "initial_pairs": [
+        [
+          6,
+          1
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          24,
+          17
+        ]
+      ],
+      "initial": {
+        "identity_count": 0,
+        "reaction_rate": 120,
+        "zero_offset_rank": 3,
+        "intersection_rank": 2,
+        "all_equal_RRR_fans": 1,
+        "joint_support": 11
+      },
+      "G0_A_lambda": -1728,
+      "angular_delta_counts": [
+        [
+          -36,
+          32
+        ],
+        [
+          -24,
+          16
+        ],
+        [
+          -12,
+          16
+        ]
+      ],
+      "post_reaction_A_lambda_counts": [
+        [
+          -144,
+          8
+        ],
+        [
+          -96,
+          4
+        ],
+        [
+          -48,
+          4
+        ],
+        [
+          0,
+          104
+        ]
+      ],
+      "positive_step_example": null
+    },
+    {
+      "side": 4,
+      "seed": 914407001,
+      "third_pair_selection": [
+        80,
+        0
+      ],
+      "initial_pairs": [
+        [
+          6,
+          1
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          26,
+          19
+        ]
+      ],
+      "initial": {
+        "identity_count": 0,
+        "reaction_rate": 120,
+        "zero_offset_rank": 3,
+        "intersection_rank": 2,
+        "all_equal_RRR_fans": 1,
+        "joint_support": 11
+      },
+      "G0_A_lambda": -960,
+      "angular_delta_counts": [
+        [
+          -36,
+          16
+        ],
+        [
+          -24,
+          16
+        ]
+      ],
+      "post_reaction_A_lambda_counts": [
+        [
+          -144,
+          4
+        ],
+        [
+          -96,
+          4
+        ],
+        [
+          0,
+          112
+        ]
+      ],
+      "positive_step_example": null
+    },
+    {
+      "side": 4,
+      "seed": 914407001,
+      "third_pair_selection": [
+        86,
+        0
+      ],
+      "initial_pairs": [
+        [
+          6,
+          1
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          28,
+          21
+        ]
+      ],
+      "initial": {
+        "identity_count": 0,
+        "reaction_rate": 120,
+        "zero_offset_rank": 3,
+        "intersection_rank": 2,
+        "all_equal_RRR_fans": 1,
+        "joint_support": 11
+      },
+      "G0_A_lambda": -1728,
+      "angular_delta_counts": [
+        [
+          -36,
+          32
+        ],
+        [
+          -24,
+          16
+        ],
+        [
+          -12,
+          16
+        ]
+      ],
+      "post_reaction_A_lambda_counts": [
+        [
+          -144,
+          8
+        ],
+        [
+          -96,
+          4
+        ],
+        [
+          -48,
+          4
+        ],
+        [
+          0,
+          104
+        ]
+      ],
+      "positive_step_example": null
+    }
+  ]
+}

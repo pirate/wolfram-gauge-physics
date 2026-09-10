@@ -19,9 +19,13 @@ def reaction_moments(values, charges):
     """Sums over all twelve rules, derived independently of their lookup tables."""
     q = [charges[x] for x in values]
     if sorted(q) == [0, 1, 2]:
+        # Four inverse channels have the same increment d; the other eight idle.
         d = [1-x for x in q]
         return [4*x for x in d], [[4*x for x in row] for row in outer(d)]
     active = q == [1, 1, 1] and ((values[0] == values[1]) != (values[1] == values[2]))
+    # At an active RRR input, each permutation of (-1,0,1) occurs twice.
+    # Their sum is zero and their outer-product sum is 4(3I-J). Cancellation
+    # needs equal channel rates: charge-only drift is not charge-process closure.
     return [0]*3, [[4*(3*int(i == j)-1) if active else 0 for j in range(3)] for i in range(3)]
 
 

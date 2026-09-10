@@ -1,0 +1,1629 @@
+{
+  "scope": "Charge-response coupling to angular primitives, not a derived spacetime transport coefficient.",
+  "calculations": [
+    {
+      "cycle_vertices": 9,
+      "faces_in_ordered_fan": 3,
+      "framed_states": 128,
+      "legacy_channels": 18,
+      "angular_channels": 8,
+      "observables": [
+        {
+          "observable": "endpoint_charge",
+          "first_nonzero_angular_response_depth": null,
+          "angular_dirichlet_energy_of_A_power_observable": [
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          "first_changed_autocorrelation_derivative_order": null,
+          "angular_off": {
+            "normalized_integrated_autocorrelation": 0.13035334230986406,
+            "poisson_relative_residual": 2.2002276234435342e-16,
+            "stationary_components": 2
+          },
+          "angular_on": {
+            "normalized_integrated_autocorrelation": 0.13035334230986406,
+            "poisson_relative_residual": 8.361725815266761e-13,
+            "stationary_components": 1
+          },
+          "response_witness": null
+        },
+        {
+          "observable": "charge_dipole",
+          "first_nonzero_angular_response_depth": null,
+          "angular_dirichlet_energy_of_A_power_observable": [
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          "first_changed_autocorrelation_derivative_order": null,
+          "angular_off": {
+            "normalized_integrated_autocorrelation": 0.14699792960662525,
+            "poisson_relative_residual": 1.7112242008454162e-16,
+            "stationary_components": 2
+          },
+          "angular_on": {
+            "normalized_integrated_autocorrelation": 0.14699792960662525,
+            "poisson_relative_residual": 2.8253098791372037e-16,
+            "stationary_components": 1
+          },
+          "response_witness": null
+        }
+      ],
+      "scope": "Fixed boundary reflection and charge three; angular clocks added without renormalizing legacy clocks.",
+      "response_depth_search_maximum": 16
+    },
+    {
+      "cycle_vertices": 9,
+      "faces_in_ordered_fan": 5,
+      "framed_states": 960,
+      "legacy_channels": 48,
+      "angular_channels": 16,
+      "observables": [
+        {
+          "observable": "endpoint_charge",
+          "first_nonzero_angular_response_depth": 6,
+          "angular_dirichlet_energy_of_A_power_observable": [
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "327680/3"
+          ],
+          "first_changed_autocorrelation_derivative_order": 13,
+          "angular_off": {
+            "normalized_integrated_autocorrelation": 0.43125178386923735,
+            "poisson_relative_residual": 7.761079036165574e-13,
+            "stationary_components": 2
+          },
+          "angular_on": {
+            "normalized_integrated_autocorrelation": 0.43125066750207225,
+            "poisson_relative_residual": 9.913732135483202e-13,
+            "stationary_components": 1
+          },
+          "response_witness": {
+            "before_tuple": [
+              0,
+              4,
+              5,
+              0,
+              0
+            ],
+            "after_tuple": [
+              0,
+              6,
+              7,
+              0,
+              0
+            ],
+            "pair_position": 1,
+            "angular_channel_index": 1,
+            "response_before": -36318200,
+            "response_after": -36315640,
+            "same_charge_field": [
+              0,
+              1,
+              2,
+              0,
+              0
+            ],
+            "shared_link_realization": {
+              "base_mesh_side": 4,
+              "root": 0,
+              "rim_vertices": [
+                1,
+                5,
+                4,
+                3,
+                15,
+                12
+              ],
+              "native_three_face_patch": 3,
+              "edges": [
+                [
+                  0,
+                  1
+                ],
+                [
+                  0,
+                  3
+                ],
+                [
+                  0,
+                  4
+                ],
+                [
+                  0,
+                  5
+                ],
+                [
+                  0,
+                  12
+                ],
+                [
+                  0,
+                  15
+                ],
+                [
+                  1,
+                  2
+                ],
+                [
+                  1,
+                  5
+                ],
+                [
+                  1,
+                  6
+                ],
+                [
+                  1,
+                  12
+                ],
+                [
+                  1,
+                  13
+                ],
+                [
+                  2,
+                  3
+                ],
+                [
+                  2,
+                  6
+                ],
+                [
+                  2,
+                  7
+                ],
+                [
+                  2,
+                  13
+                ],
+                [
+                  2,
+                  14
+                ],
+                [
+                  3,
+                  4
+                ],
+                [
+                  3,
+                  7
+                ],
+                [
+                  3,
+                  14
+                ],
+                [
+                  3,
+                  15
+                ],
+                [
+                  4,
+                  5
+                ],
+                [
+                  4,
+                  7
+                ],
+                [
+                  4,
+                  8
+                ],
+                [
+                  4,
+                  9
+                ],
+                [
+                  5,
+                  6
+                ],
+                [
+                  5,
+                  9
+                ],
+                [
+                  5,
+                  10
+                ],
+                [
+                  6,
+                  7
+                ],
+                [
+                  6,
+                  10
+                ],
+                [
+                  6,
+                  11
+                ],
+                [
+                  7,
+                  8
+                ],
+                [
+                  7,
+                  11
+                ],
+                [
+                  8,
+                  9
+                ],
+                [
+                  8,
+                  11
+                ],
+                [
+                  8,
+                  12
+                ],
+                [
+                  8,
+                  13
+                ],
+                [
+                  9,
+                  10
+                ],
+                [
+                  9,
+                  13
+                ],
+                [
+                  9,
+                  14
+                ],
+                [
+                  10,
+                  11
+                ],
+                [
+                  10,
+                  14
+                ],
+                [
+                  10,
+                  15
+                ],
+                [
+                  11,
+                  12
+                ],
+                [
+                  11,
+                  15
+                ],
+                [
+                  12,
+                  13
+                ],
+                [
+                  12,
+                  15
+                ],
+                [
+                  13,
+                  14
+                ],
+                [
+                  14,
+                  15
+                ]
+              ],
+              "initial_links": [
+                0,
+                15,
+                0,
+                0,
+                0,
+                1,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                1,
+                0,
+                0
+              ],
+              "final_links": [
+                0,
+                13,
+                0,
+                0,
+                0,
+                1,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                1,
+                0,
+                0
+              ],
+              "changed_edge_indices": [
+                1
+              ],
+              "whole_mesh_charge": 4,
+              "exterior_fixed": true,
+              "inverse_restores_links": true
+            }
+          }
+        },
+        {
+          "observable": "charge_dipole",
+          "first_nonzero_angular_response_depth": 6,
+          "angular_dirichlet_energy_of_A_power_observable": [
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "393216/5"
+          ],
+          "first_changed_autocorrelation_derivative_order": 13,
+          "angular_off": {
+            "normalized_integrated_autocorrelation": 0.7232840200616305,
+            "poisson_relative_residual": 2.540480946507266e-13,
+            "stationary_components": 2
+          },
+          "angular_on": {
+            "normalized_integrated_autocorrelation": 0.7232813308559539,
+            "poisson_relative_residual": 5.532255175748092e-13,
+            "stationary_components": 1
+          },
+          "response_witness": {
+            "before_tuple": [
+              4,
+              5,
+              0,
+              0,
+              0
+            ],
+            "after_tuple": [
+              6,
+              7,
+              0,
+              0,
+              0
+            ],
+            "pair_position": 0,
+            "angular_channel_index": 1,
+            "response_before": -4483088,
+            "response_after": -4481552,
+            "same_charge_field": [
+              1,
+              2,
+              0,
+              0,
+              0
+            ],
+            "shared_link_realization": {
+              "base_mesh_side": 4,
+              "root": 0,
+              "rim_vertices": [
+                1,
+                5,
+                4,
+                3,
+                15,
+                12
+              ],
+              "native_three_face_patch": 2,
+              "edges": [
+                [
+                  0,
+                  1
+                ],
+                [
+                  0,
+                  3
+                ],
+                [
+                  0,
+                  4
+                ],
+                [
+                  0,
+                  5
+                ],
+                [
+                  0,
+                  12
+                ],
+                [
+                  0,
+                  15
+                ],
+                [
+                  1,
+                  2
+                ],
+                [
+                  1,
+                  5
+                ],
+                [
+                  1,
+                  6
+                ],
+                [
+                  1,
+                  12
+                ],
+                [
+                  1,
+                  13
+                ],
+                [
+                  2,
+                  3
+                ],
+                [
+                  2,
+                  6
+                ],
+                [
+                  2,
+                  7
+                ],
+                [
+                  2,
+                  13
+                ],
+                [
+                  2,
+                  14
+                ],
+                [
+                  3,
+                  4
+                ],
+                [
+                  3,
+                  7
+                ],
+                [
+                  3,
+                  14
+                ],
+                [
+                  3,
+                  15
+                ],
+                [
+                  4,
+                  5
+                ],
+                [
+                  4,
+                  7
+                ],
+                [
+                  4,
+                  8
+                ],
+                [
+                  4,
+                  9
+                ],
+                [
+                  5,
+                  6
+                ],
+                [
+                  5,
+                  9
+                ],
+                [
+                  5,
+                  10
+                ],
+                [
+                  6,
+                  7
+                ],
+                [
+                  6,
+                  10
+                ],
+                [
+                  6,
+                  11
+                ],
+                [
+                  7,
+                  8
+                ],
+                [
+                  7,
+                  11
+                ],
+                [
+                  8,
+                  9
+                ],
+                [
+                  8,
+                  11
+                ],
+                [
+                  8,
+                  12
+                ],
+                [
+                  8,
+                  13
+                ],
+                [
+                  9,
+                  10
+                ],
+                [
+                  9,
+                  13
+                ],
+                [
+                  9,
+                  14
+                ],
+                [
+                  10,
+                  11
+                ],
+                [
+                  10,
+                  14
+                ],
+                [
+                  10,
+                  15
+                ],
+                [
+                  11,
+                  12
+                ],
+                [
+                  11,
+                  15
+                ],
+                [
+                  12,
+                  13
+                ],
+                [
+                  12,
+                  15
+                ],
+                [
+                  13,
+                  14
+                ],
+                [
+                  14,
+                  15
+                ]
+              ],
+              "initial_links": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                15,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                1,
+                0,
+                0
+              ],
+              "final_links": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                13,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                1,
+                0,
+                0
+              ],
+              "changed_edge_indices": [
+                5
+              ],
+              "whole_mesh_charge": 4,
+              "exterior_fixed": true,
+              "inverse_restores_links": true
+            }
+          }
+        }
+      ],
+      "scope": "Fixed boundary reflection and charge three; angular clocks added without renormalizing legacy clocks.",
+      "response_depth_search_maximum": 16
+    },
+    {
+      "cycle_vertices": 27,
+      "faces_in_ordered_fan": 5,
+      "framed_states": 7800,
+      "legacy_channels": 48,
+      "angular_channels": 52,
+      "observables": [
+        {
+          "observable": "endpoint_charge",
+          "first_nonzero_angular_response_depth": 6,
+          "angular_dirichlet_energy_of_A_power_observable": [
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "524288/39"
+          ],
+          "first_changed_autocorrelation_derivative_order": 13,
+          "angular_off": {
+            "normalized_integrated_autocorrelation": 0.4683191700885147,
+            "poisson_relative_residual": 6.27286855752042e-13,
+            "stationary_components": 3
+          },
+          "angular_on": {
+            "normalized_integrated_autocorrelation": 0.4683189940030398,
+            "poisson_relative_residual": 9.969413480449503e-13,
+            "stationary_components": 1
+          },
+          "response_witness": {
+            "before_tuple": [
+              0,
+              16,
+              17,
+              0,
+              0
+            ],
+            "after_tuple": [
+              0,
+              18,
+              19,
+              0,
+              0
+            ],
+            "pair_position": 1,
+            "angular_channel_index": 7,
+            "response_before": -36318200,
+            "response_after": -36315640,
+            "same_charge_field": [
+              0,
+              1,
+              2,
+              0,
+              0
+            ]
+          }
+        },
+        {
+          "observable": "charge_dipole",
+          "first_nonzero_angular_response_depth": 6,
+          "angular_dirichlet_energy_of_A_power_observable": [
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "3145728/325"
+          ],
+          "first_changed_autocorrelation_derivative_order": 13,
+          "angular_off": {
+            "normalized_integrated_autocorrelation": 0.8005756730913857,
+            "poisson_relative_residual": 4.1906616555330944e-13,
+            "stationary_components": 3
+          },
+          "angular_on": {
+            "normalized_integrated_autocorrelation": 0.8005752489039881,
+            "poisson_relative_residual": 7.996023041899026e-13,
+            "stationary_components": 1
+          },
+          "response_witness": {
+            "before_tuple": [
+              16,
+              17,
+              0,
+              0,
+              0
+            ],
+            "after_tuple": [
+              18,
+              19,
+              0,
+              0,
+              0
+            ],
+            "pair_position": 0,
+            "angular_channel_index": 7,
+            "response_before": -4483088,
+            "response_after": -4481552,
+            "same_charge_field": [
+              1,
+              2,
+              0,
+              0,
+              0
+            ]
+          }
+        }
+      ],
+      "scope": "Fixed boundary reflection and charge three; angular clocks added without renormalizing legacy clocks.",
+      "response_depth_search_maximum": 16
+    },
+    {
+      "cycle_vertices": 81,
+      "faces_in_ordered_fan": 5,
+      "framed_states": 67200,
+      "legacy_channels": 48,
+      "angular_channels": 160,
+      "observables": [
+        {
+          "observable": "endpoint_charge",
+          "first_nonzero_angular_response_depth": 6,
+          "angular_dirichlet_energy_of_A_power_observable": [
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "32768/21"
+          ],
+          "first_changed_autocorrelation_derivative_order": 13,
+          "angular_off": {
+            "normalized_integrated_autocorrelation": 0.4879013707658654,
+            "poisson_relative_residual": 9.963202120593212e-13,
+            "stationary_components": 4
+          },
+          "angular_on": {
+            "normalized_integrated_autocorrelation": 0.487901348720478,
+            "poisson_relative_residual": 9.332761907524565e-13,
+            "stationary_components": 1
+          },
+          "response_witness": {
+            "before_tuple": [
+              0,
+              52,
+              53,
+              0,
+              0
+            ],
+            "after_tuple": [
+              0,
+              54,
+              55,
+              0,
+              0
+            ],
+            "pair_position": 1,
+            "angular_channel_index": 25,
+            "response_before": -36318200,
+            "response_after": -36315640,
+            "same_charge_field": [
+              0,
+              1,
+              2,
+              0,
+              0
+            ]
+          }
+        },
+        {
+          "observable": "charge_dipole",
+          "first_nonzero_angular_response_depth": 6,
+          "angular_dirichlet_energy_of_A_power_observable": [
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "196608/175"
+          ],
+          "first_changed_autocorrelation_derivative_order": 13,
+          "angular_off": {
+            "normalized_integrated_autocorrelation": 0.8414251055680761,
+            "poisson_relative_residual": 6.710350230437922e-13,
+            "stationary_components": 4
+          },
+          "angular_on": {
+            "normalized_integrated_autocorrelation": 0.8414250524608606,
+            "poisson_relative_residual": 5.613286270447927e-13,
+            "stationary_components": 1
+          },
+          "response_witness": {
+            "before_tuple": [
+              52,
+              53,
+              0,
+              0,
+              0
+            ],
+            "after_tuple": [
+              54,
+              55,
+              0,
+              0,
+              0
+            ],
+            "pair_position": 0,
+            "angular_channel_index": 25,
+            "response_before": -4483088,
+            "response_after": -4481552,
+            "same_charge_field": [
+              1,
+              2,
+              0,
+              0,
+              0
+            ]
+          }
+        }
+      ],
+      "scope": "Fixed boundary reflection and charge three; angular clocks added without renormalizing legacy clocks.",
+      "response_depth_search_maximum": 16
+    },
+    {
+      "cycle_vertices": 9,
+      "faces_in_ordered_fan": 4,
+      "framed_states": 416,
+      "legacy_channels": 33,
+      "angular_channels": 12,
+      "observables": [
+        {
+          "observable": "endpoint_charge",
+          "first_nonzero_angular_response_depth": 6,
+          "angular_dirichlet_energy_of_A_power_observable": [
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "2097152/13"
+          ],
+          "first_changed_autocorrelation_derivative_order": 13,
+          "angular_off": {
+            "normalized_integrated_autocorrelation": 0.2954322786524019,
+            "poisson_relative_residual": 7.718683451402422e-13,
+            "stationary_components": 2
+          },
+          "angular_on": {
+            "normalized_integrated_autocorrelation": 0.29543204234858,
+            "poisson_relative_residual": 6.585586869672064e-13,
+            "stationary_components": 1
+          },
+          "response_witness": {
+            "before_tuple": [
+              0,
+              4,
+              5,
+              0
+            ],
+            "after_tuple": [
+              0,
+              6,
+              7,
+              0
+            ],
+            "pair_position": 1,
+            "angular_channel_index": 1,
+            "response_before": -26610240,
+            "response_after": -26608192,
+            "same_charge_field": [
+              0,
+              1,
+              2,
+              0
+            ]
+          }
+        },
+        {
+          "observable": "charge_dipole",
+          "first_nonzero_angular_response_depth": 6,
+          "angular_dirichlet_energy_of_A_power_observable": [
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "1179648/13"
+          ],
+          "first_changed_autocorrelation_derivative_order": 13,
+          "angular_off": {
+            "normalized_integrated_autocorrelation": 0.40958221352522617,
+            "poisson_relative_residual": 1.4681863200532825e-13,
+            "stationary_components": 2
+          },
+          "angular_on": {
+            "normalized_integrated_autocorrelation": 0.40958178959370817,
+            "poisson_relative_residual": 4.5185088541792495e-13,
+            "stationary_components": 1
+          },
+          "response_witness": {
+            "before_tuple": [
+              4,
+              5,
+              0,
+              0
+            ],
+            "after_tuple": [
+              6,
+              7,
+              0,
+              0
+            ],
+            "pair_position": 0,
+            "angular_channel_index": 1,
+            "response_before": -3954344,
+            "response_after": -3952808,
+            "same_charge_field": [
+              1,
+              2,
+              0,
+              0
+            ]
+          }
+        }
+      ],
+      "scope": "Fixed boundary reflection and charge three; angular clocks added without renormalizing legacy clocks.",
+      "response_depth_search_maximum": 16
+    },
+    {
+      "cycle_vertices": 5,
+      "faces_in_ordered_fan": 5,
+      "framed_states": 320,
+      "legacy_channels": 48,
+      "angular_channels": 8,
+      "observables": [
+        {
+          "observable": "endpoint_charge",
+          "first_nonzero_angular_response_depth": null,
+          "angular_dirichlet_energy_of_A_power_observable": [
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          "first_changed_autocorrelation_derivative_order": null,
+          "angular_off": {
+            "normalized_integrated_autocorrelation": 0.4070337237783563,
+            "poisson_relative_residual": 5.570123269513873e-13,
+            "stationary_components": 1
+          },
+          "angular_on": {
+            "normalized_integrated_autocorrelation": 0.4070337237783563,
+            "poisson_relative_residual": 9.277177999236152e-13,
+            "stationary_components": 1
+          },
+          "response_witness": null
+        },
+        {
+          "observable": "charge_dipole",
+          "first_nonzero_angular_response_depth": null,
+          "angular_dirichlet_energy_of_A_power_observable": [
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          "first_changed_autocorrelation_derivative_order": null,
+          "angular_off": {
+            "normalized_integrated_autocorrelation": 0.6727903494332883,
+            "poisson_relative_residual": 2.520333956681554e-13,
+            "stationary_components": 1
+          },
+          "angular_on": {
+            "normalized_integrated_autocorrelation": 0.6727903494332883,
+            "poisson_relative_residual": 3.8469782717099936e-13,
+            "stationary_components": 1
+          },
+          "response_witness": null
+        }
+      ],
+      "scope": "Fixed boundary reflection and charge three; angular clocks added without renormalizing legacy clocks.",
+      "response_depth_search_maximum": 16
+    },
+    {
+      "cycle_vertices": 7,
+      "faces_in_ordered_fan": 5,
+      "framed_states": 600,
+      "legacy_channels": 48,
+      "angular_channels": 12,
+      "observables": [
+        {
+          "observable": "endpoint_charge",
+          "first_nonzero_angular_response_depth": null,
+          "angular_dirichlet_energy_of_A_power_observable": [
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          "first_changed_autocorrelation_derivative_order": null,
+          "angular_off": {
+            "normalized_integrated_autocorrelation": 0.4208400248450815,
+            "poisson_relative_residual": 8.601940064893605e-13,
+            "stationary_components": 1
+          },
+          "angular_on": {
+            "normalized_integrated_autocorrelation": 0.4208400248450814,
+            "poisson_relative_residual": 8.528937111760644e-13,
+            "stationary_components": 1
+          },
+          "response_witness": null
+        },
+        {
+          "observable": "charge_dipole",
+          "first_nonzero_angular_response_depth": null,
+          "angular_dirichlet_energy_of_A_power_observable": [
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          "first_changed_autocorrelation_derivative_order": null,
+          "angular_off": {
+            "normalized_integrated_autocorrelation": 0.7015408833288149,
+            "poisson_relative_residual": 2.475849427161593e-13,
+            "stationary_components": 1
+          },
+          "angular_on": {
+            "normalized_integrated_autocorrelation": 0.7015408833288146,
+            "poisson_relative_residual": 4.007113876266164e-13,
+            "stationary_components": 1
+          },
+          "response_witness": null
+        }
+      ],
+      "scope": "Fixed boundary reflection and charge three; angular clocks added without renormalizing legacy clocks.",
+      "response_depth_search_maximum": 16
+    },
+    {
+      "cycle_vertices": 25,
+      "faces_in_ordered_fan": 4,
+      "framed_states": 2784,
+      "legacy_channels": 33,
+      "angular_channels": 36,
+      "observables": [
+        {
+          "observable": "endpoint_charge",
+          "first_nonzero_angular_response_depth": 7,
+          "angular_dirichlet_energy_of_A_power_observable": [
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "4194304/87"
+          ],
+          "first_changed_autocorrelation_derivative_order": 15,
+          "angular_off": {
+            "normalized_integrated_autocorrelation": 0.3357881027126424,
+            "poisson_relative_residual": 8.090148608253817e-13,
+            "stationary_components": 2
+          },
+          "angular_on": {
+            "normalized_integrated_autocorrelation": 0.33578809488557265,
+            "poisson_relative_residual": 6.885484219712625e-13,
+            "stationary_components": 1
+          },
+          "response_witness": {
+            "before_tuple": [
+              0,
+              8,
+              9,
+              0
+            ],
+            "after_tuple": [
+              0,
+              10,
+              11,
+              0
+            ],
+            "pair_position": 1,
+            "angular_channel_index": 3,
+            "response_before": -554193536,
+            "response_after": -554195584,
+            "same_charge_field": [
+              0,
+              1,
+              2,
+              0
+            ]
+          }
+        },
+        {
+          "observable": "charge_dipole",
+          "first_nonzero_angular_response_depth": 7,
+          "angular_dirichlet_energy_of_A_power_observable": [
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "786432/29"
+          ],
+          "first_changed_autocorrelation_derivative_order": 15,
+          "angular_off": {
+            "normalized_integrated_autocorrelation": 0.47740685074714717,
+            "poisson_relative_residual": 3.368809600000631e-13,
+            "stationary_components": 2
+          },
+          "angular_on": {
+            "normalized_integrated_autocorrelation": 0.47740683670530176,
+            "poisson_relative_residual": 8.897143319580966e-13,
+            "stationary_components": 1
+          },
+          "response_witness": {
+            "before_tuple": [
+              8,
+              9,
+              0,
+              0
+            ],
+            "after_tuple": [
+              10,
+              11,
+              0,
+              0
+            ],
+            "pair_position": 0,
+            "angular_channel_index": 3,
+            "response_before": -73999792,
+            "response_after": -74001328,
+            "same_charge_field": [
+              1,
+              2,
+              0,
+              0
+            ]
+          }
+        }
+      ],
+      "scope": "Fixed boundary reflection and charge three; angular clocks added without renormalizing legacy clocks.",
+      "response_depth_search_maximum": 16
+    },
+    {
+      "cycle_vertices": 49,
+      "faces_in_ordered_fan": 4,
+      "framed_states": 10176,
+      "legacy_channels": 33,
+      "angular_channels": 72,
+      "observables": [
+        {
+          "observable": "endpoint_charge",
+          "first_nonzero_angular_response_depth": 8,
+          "angular_dirichlet_energy_of_A_power_observable": [
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "4194304/53"
+          ],
+          "first_changed_autocorrelation_derivative_order": 17,
+          "angular_off": {
+            "normalized_integrated_autocorrelation": 0.3566746297758161,
+            "poisson_relative_residual": 8.570887439441297e-13,
+            "stationary_components": 2
+          },
+          "angular_on": {
+            "normalized_integrated_autocorrelation": 0.35667462924482174,
+            "poisson_relative_residual": 8.700066022455942e-13,
+            "stationary_components": 1
+          },
+          "response_witness": {
+            "before_tuple": [
+              0,
+              12,
+              13,
+              0
+            ],
+            "after_tuple": [
+              0,
+              14,
+              15,
+              0
+            ],
+            "pair_position": 1,
+            "angular_channel_index": 5,
+            "response_before": -11840792832,
+            "response_after": -11840788736,
+            "same_charge_field": [
+              0,
+              1,
+              2,
+              0
+            ]
+          }
+        },
+        {
+          "observable": "charge_dipole",
+          "first_nonzero_angular_response_depth": 8,
+          "angular_dirichlet_energy_of_A_power_observable": [
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "2359296/53"
+          ],
+          "first_changed_autocorrelation_derivative_order": 17,
+          "angular_off": {
+            "normalized_integrated_autocorrelation": 0.5125154463462663,
+            "poisson_relative_residual": 7.598845251971763e-13,
+            "stationary_components": 2
+          },
+          "angular_on": {
+            "normalized_integrated_autocorrelation": 0.5125154453936553,
+            "poisson_relative_residual": 7.491740421587862e-13,
+            "stationary_components": 1
+          },
+          "response_witness": {
+            "before_tuple": [
+              12,
+              13,
+              0,
+              0
+            ],
+            "after_tuple": [
+              14,
+              15,
+              0,
+              0
+            ],
+            "pair_position": 0,
+            "angular_channel_index": 5,
+            "response_before": -1411045568,
+            "response_after": -1411042496,
+            "same_charge_field": [
+              1,
+              2,
+              0,
+              0
+            ]
+          }
+        }
+      ],
+      "scope": "Fixed boundary reflection and charge three; angular clocks added without renormalizing legacy clocks.",
+      "response_depth_search_maximum": 16
+    }
+  ],
+  "single_fan_exact_closure": {
+    "layouts_as_charges": [
+      [
+        0,
+        1,
+        2
+      ],
+      [
+        0,
+        2,
+        1
+      ],
+      [
+        1,
+        0,
+        2
+      ],
+      [
+        1,
+        2,
+        0
+      ],
+      [
+        2,
+        0,
+        1
+      ],
+      [
+        2,
+        1,
+        0
+      ]
+    ],
+    "restricted_positive_generator": [
+      [
+        9,
+        -2,
+        -3,
+        0,
+        0,
+        0
+      ],
+      [
+        -2,
+        9,
+        0,
+        0,
+        -3,
+        0
+      ],
+      [
+        -3,
+        0,
+        10,
+        -3,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        -3,
+        9,
+        0,
+        -2
+      ],
+      [
+        0,
+        -3,
+        0,
+        0,
+        10,
+        -3
+      ],
+      [
+        0,
+        0,
+        0,
+        -2,
+        -3,
+        9
+      ]
+    ],
+    "exact_normalized_integrated_autocorrelations": {
+      "endpoint_charge": "24009/184184",
+      "charge_dipole": "71/483"
+    },
+    "scope": "Zero on RRR, zero-sum functions of the six ERZ layouts. Valid for every odd cycle n >= 3."
+  }
+}

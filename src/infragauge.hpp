@@ -349,6 +349,10 @@ public:
     // A deterministic spanning forest removes tree transports. Each chord gives
     // one root-based holonomy; simultaneous conjugation at a component root is
     // removed by choosing the lexicographically least representative.
+    // Completeness: root-to-v transport P_v gives frames P_v^-1 that set every
+    // tree link to identity. A frame change preserving those identities must
+    // be constant on each component. Thus simultaneous chord conjugacy is the
+    // entire remaining freedom; separate conjugacy classes would lose alignment.
     std::vector<Vertex> gauge_invariant_signature() const {
         std::set<Vertex> visited;
         std::vector<Vertex> signature;
@@ -410,6 +414,8 @@ public:
     // Extend the base rewrite (u--v) -> (u--w--v). Every factorization
     // U_uv = U_wv U_uw is enumerated from Aut(F). The resulting connections
     // are one orbit under changes of frame at the fresh fiber w.
+    // For factors (a,b), the fresh frame h sends (a,b) -> (ha,bh^-1).
+    // Taking h=a^-1 gives (1,ba), uniquely: the action is free and transitive.
     std::vector<FiberBundleConnection> subdivide_edge_extensions(
         Vertex from, Vertex to, Vertex midpoint) const {
         const auto total_transport = edge_transport(from, to);
@@ -471,8 +477,8 @@ private:
     }
 };
 
-// Quantum amplitude over connection factorizations created by an edge
-// subdivision. The basis is Aut(F) x Aut(F), derived from the fiber graph.
+// A chosen kinematic isometry over edge-subdivision factorizations in the
+// extended link basis Aut(F) x Aut(F); this does not derive quantum dynamics.
 class SubdivisionWavefunction {
 public:
     using Amplitude = std::complex<double>;
@@ -481,6 +487,9 @@ public:
         std::vector<Permutation> group, const Permutation& total_transport) {
         if (group.empty()) throw std::invalid_argument("local gauge group cannot be empty");
         SubdivisionWavefunction result(std::move(group));
+        // Fresh-frame invariance makes all |G| coefficients equal. Normalization
+        // fixes their magnitude; distinct total transports have disjoint support,
+        // so this map is an isometry with the endpoint frames held fixed.
         const auto magnitude = 1.0 / std::sqrt(static_cast<double>(result.group_.size()));
         for (std::size_t first = 0; first < result.group_.size(); ++first) {
             const auto second_value = Permutation::compose(
@@ -510,6 +519,10 @@ public:
     // magnitudes are therefore the exact Schmidt singular values. Computing
     // them from the stored amplitudes keeps this diagnostic honest if the
     // construction changes later.
+    // Here C C* = I/|G| in the two-link tensor factorization. This is not a
+    // lower bound on gauge-reduced storage: for fixed total transport the whole
+    // vector is one normalized orbit basis state. No physical subsystem
+    // factorization or gauge-invariant entanglement measure is established here.
     std::vector<double> schmidt_spectrum(double tolerance = 1e-12) const {
         std::vector<double> spectrum;
         std::vector<std::size_t> column_counts(group_.size(), 0);

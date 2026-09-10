@@ -1,0 +1,40 @@
+{
+  "calculations": [
+    {
+      "cycle_vertices": 5,
+      "side": 8,
+      "independent_local_samples": 50000,
+      "seed": 620891001,
+      "nonzero_current_response_samples": 4520,
+      "A_b_B_A_b_per_face_xx_xy_yy": [
+        991.0651733333617,
+        469.7015466666799,
+        983.8613333333634
+      ],
+      "independent_sample_SE": [
+        33.578013217773155,
+        23.23705760818958,
+        33.943189260536364
+      ],
+      "scope": "Direct stationary local Dirichlet moment; coefficient of short-time winding response, not DC mobility."
+    },
+    {
+      "cycle_vertices": 5,
+      "side": 12,
+      "independent_local_samples": 50000,
+      "seed": 620891001,
+      "nonzero_current_response_samples": 4512,
+      "A_b_B_A_b_per_face_xx_xy_yy": [
+        1040.8571733333663,
+        487.43850666667873,
+        955.7806933333551
+      ],
+      "independent_sample_SE": [
+        36.48236620597673,
+        24.23216883507908,
+        32.858920876858264
+      ],
+      "scope": "Direct stationary local Dirichlet moment; coefficient of short-time winding response, not DC mobility."
+    }
+  ]
+}

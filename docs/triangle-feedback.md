@@ -51,6 +51,12 @@ triangle-edge transpositions gives the same values $0,1,2$ on the derived automo
 That agreement is an algebraic interpretation of the derived charge, not an inserted
 energy law or a derivation of a physical mass ratio.
 
+This selection result is specific to the triangle. The
+[cycle-refinement calculation](cycle-charge-compatibility.md) proves that
+combining all individually positive occupied-changing minimal rules on larger
+odd cycles destroys the common additive charge; positivity must be considered
+jointly when extending the bank.
+
 Combine these twelve three-face primitives with the existing one-edge vacancy transport.
 Each attempted tick chooses one of the thirteen rules and one rooted support uniformly.
 The scheduler does not inspect the charge or holonomy state.

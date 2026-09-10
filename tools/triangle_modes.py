@@ -116,12 +116,18 @@ def verify_compact(record):
     for case in record['cases']:
         coords, laplacian = restriction(record['support_radius'], case['seed_pair'])
         delta, inertia = perturbation(case['seed_pair'])
+        # Since L_flat <= 12I, every above-band subspace is positive for Delta,
+        # hence has dimension <= n_+(Delta). The compact trial form below gives
+        # the matching lower bound by min-max after zero extension to infinity.
         rank = inertia['positive']
         if case['perturbation_matrix'] != delta or case['perturbation_inertia'] != inertia or case['certified_mode_count'] != rank:
             raise ValueError('compact perturbation upper bound differs')
         gram, mass = exact_forms(laplacian, case['integer_trial_columns'], rank)
         if gram != case['integer_rayleigh_matrix'] or mass != case['integer_mass_matrix']:
             raise ValueError('saved compact quadratic forms differ')
+        # 20G-M > 0 makes every trial Rayleigh quotient > 12+1/20, not just
+        # each column separately. Finite-rank Delta leaves the essential band
+        # unchanged, so the certified modes are discrete infinite-graph modes.
         if not positive(gram) or not positive([[20*gram[i][j]-mass[i][j] for j in range(rank)] for i in range(rank)]):
             raise ValueError('compact gap certificate 12 + 1/20 failed')
         if any(sum(case['integer_trial_columns'][3*v+a][j] for a in range(3)) for v in range(len(coords)) for j in range(rank)):
@@ -209,6 +215,9 @@ def exact_band_count(laplacian):
     for i in range(len(matrix)):
         matrix[i][i] -= 12
     coefficients = list(fmpz_mat(matrix).charpoly())
+    # Symmetry makes all roots real. Descartes' bounds for p(x) and p(-x)
+    # therefore saturate after zero roots are removed; sign variation is an
+    # exact inertia count here, not a floating eigenvalue threshold.
     signs = [1 if x > 0 else -1 for x in reversed(coefficients) if x]
     positive_count = sum(a != b for a, b in zip(signs, signs[1:]))
     nullity = next(i for i, x in enumerate(coefficients) if x)

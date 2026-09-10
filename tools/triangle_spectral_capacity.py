@@ -60,6 +60,10 @@ def capacity_certificate(group, charges):
                 oriented[color][3*v+a][3*v+b] += 1
     if lhs != rhs:
         raise ValueError('full-bundle triangle decomposition failed')
+    # Intersect the nonnegative subspaces of the face forms: codimensions add
+    # at most, yielding n_+ <= Q_color for EACH orientation, hence <= min <= Q/2.
+    # The factor 2 in the all-face identity cannot itself halve an inertia;
+    # positive rescaling preserves inertia. The separate orientations are vital.
     if any(2*color[i][j] != lhs[i][j] for color in oriented for i in range(count) for j in range(count)):
         raise ValueError('single-orientation triangle decomposition failed')
     return {'flat_full_bundle_upper_edge': 12,
